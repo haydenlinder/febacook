@@ -1,7 +1,8 @@
-import { $fetchUsers } from "../util/user_api_util";
+import { $fetchUsers, $fetchUser } from "../util/user_api_util";
 
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 export const REMOVE_USER = "REMOVE_USER";
 
 const receiveUser = user => ({
@@ -24,3 +25,11 @@ export const fetchUsers = () => dispatch => (
         payload => dispatch(receiveUsers(payload))
     )
 )
+
+export const fetchUser = userId => dispatch => (
+    $fetchUser(userId)
+    .then(
+        payload => dispatch(receiveUser(payload)),
+        payload => dispatch(receiveUserErrors)
+    )
+) 
