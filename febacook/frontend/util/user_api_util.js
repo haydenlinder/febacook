@@ -12,14 +12,6 @@ export const $fetchUser = userId => (
     })
 )
 
-export const $createUser = user => (
-    $.ajax({
-        url: `/api/users`,
-        method: `POST`,
-        data: { user: user }
-    })
-)
-
 export const $updateUser = user => (
     $.ajax({
         url: `/api/users/${user.id}`,
