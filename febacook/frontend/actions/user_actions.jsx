@@ -30,6 +30,15 @@ export const fetchUser = userId => dispatch => (
     $fetchUser(userId)
     .then(
         payload => dispatch(receiveUser(payload)),
-        payload => dispatch(receiveUserErrors)
+        payload => dispatch(receiveUserErrors(payload.responseJSON))
     )
-) 
+)
+ 
+export const updateUser = user => dispatch => (
+    $updateUser(user)
+    .then(
+        payload => dispatch(receiveUser(payload)),
+        payload => dispatch(receiveUserErrors(payload.responseJSON))
+    )
+)
+ 
