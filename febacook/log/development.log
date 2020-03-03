@@ -282,3 +282,269 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 329ms (Views: 325.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-03-02 22:42:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 440ms (Views: 437.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-02 22:43:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 437ms (Views: 433.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 22:48:33 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting keyword_end
+        :username, :session_token, :email, 
+                 ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:8: Can't assign to true
+        presence: true, uniqueness:true
+                      ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:10: syntax error, unexpected ',', expecting keyword_end
+        :first_name, :last_name, :birthday, :gend...
+                   ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:11: syntax error, unexpected ':', expecting keyword_end
+        presence: true
+                ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:13: syntax error, unexpected ',', expecting keyword_end
+        :password, length: { minimum: 6 }, allo...
+                 ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:13: syntax error, unexpected ',', expecting keyword_end
+...ssword, length: { minimum: 6 }, allow_nil: true
+...                              ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:17: syntax error, unexpected tIVAR, expecting keyword_end
+...er.is_password?(password) @user : nil 
+...                          ^~~~~:
+  app/models/user.rb:7:in `'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-02 22:52:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 440ms (Views: 436.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 22:52:49 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting keyword_end
+        :username, :session_token, :email, 
+                 ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:8: Can't assign to true
+        presence: true, uniqueness: true
+                      ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:10: syntax error, unexpected ',', expecting keyword_end
+        :first_name, :last_name, :birthday, 
+                   ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:14: syntax error, unexpected ',', expecting keyword_end
+        :password, 
+                 ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:15: syntax error, unexpected ',', expecting keyword_end
+        length: { minimum: 6 }, allow_nil: true
+                              ^:
+  app/models/user.rb:7:in `'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-02 22:53:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 22:53:52 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting keyword_end
+        :username, :session_token, :email, 
+                 ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:8: Can't assign to true
+        presence: true, uniqueness: true
+                      ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:10: syntax error, unexpected ',', expecting keyword_end
+        :first_name, :last_name, :birthday, 
+                   ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:14: syntax error, unexpected ',', expecting keyword_end
+        :password, 
+                 ^:
+  app/models/user.rb:7:in `'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-02 22:54:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 22:54:50 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting keyword_end
+        :username, :session_token, :email, 
+                 ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:8: Can't assign to true
+        presence: true, uniqueness: true
+                      ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:10: syntax error, unexpected ',', expecting keyword_end
+        :first_name, :last_name, :birthday, 
+                   ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:14: syntax error, unexpected ',', expecting keyword_end
+        :password, length: { minimum: 6, allow_...
+                 ^:
+  app/models/user.rb:7:in `'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-02 22:55:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 22:55:17 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting keyword_end
+        :username, :session_token, :email, 
+                 ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:8: Can't assign to true
+        presence: true, uniqueness: true
+                      ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:10: syntax error, unexpected ',', expecting keyword_end
+        :first_name, :last_name, :birthday, 
+                   ^:
+  app/models/user.rb:7:in `'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-02 22:55:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 22:55:52 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting keyword_end
+        :username, :session_token, :email, 
+                 ^
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:8: Can't assign to true
+        presence: true, uniqueness: true
+                      ^:
+  app/models/user.rb:7:in `'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-02 22:56:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 22:56:31 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 500 Internal Server Error in 382ms (ActiveRecord: 13.9ms)
+
+
+
+NameError - undefined local variable or method `session' for #<User:0x00007f8db5bed8c8>
+Did you mean?  session_token:
+  app/models/user.rb:35:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-03-02 22:59:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 23:00:02 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 14.5ms)
+
+
+
+NameError - undefined local variable or method `session' for #<User:0x00007f8db9866480>
+Did you mean?  session_token:
+  app/models/user.rb:40:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-02 23:04:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-02 23:04:19 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"user1", "first_name"=>"user", "last_name"=>"one", "birthday"=>"9/9/1993", "gender"=>"male", "pronouns"=>"he/him/his", "email"=>"email", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user1"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "noVnlb6lSTI-8xvlSWRhnw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "first_name", "last_name", "birthday", "gender", "pronouns", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["username", "user1"], ["email", "email"], ["first_name", "user"], ["last_name", "one"], ["birthday", "1993-09-09"], ["gender", "male"], ["pronouns", "he/him/his"], ["password_digest", "$2a$12$W4UoRdd11IKJ1Zi8OPFdiOapqOt.JYQPcAAHKm6DkKh1ZBCXoCgcK"], ["session_token", "noVnlb6lSTI-8xvlSWRhnw"], ["created_at", "2020-03-03 07:04:20.316209"], ["updated_at", "2020-03-03 07:04:20.316209"]]
+  ↳ app/models/user.rb:35
+  [1m[36mUser Exists (6.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "user1"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "noVnlb6lSTI-8xvlSWRhnw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "email"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  Rendering api/users/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/create.json.jbuilder (2.3ms)
+Completed 200 OK in 388ms (Views: 12.9ms | ActiveRecord: 21.3ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
