@@ -1,17 +1,21 @@
 import { 
     RECEIVE_CURRENT_USER, 
     RECEIVE_NULL_SESSION, 
-    RECEIVE_SESSION_ERRORS 
 } from "../actions/session_actions";
 
 const sessionReducer = (state ={}, action) => {
     Object.freeze(state);
-    let nextSatate = Object.assign({}, state);
+    let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            nextSatate[action.user.id]
-            
+            nextState.id = action.user.id;
+            return nextState;
+        case RECEIVE_NULL_SESSION:
+            nextState.id = null;
+            return nextState;
         default:
-            break;
+            return state;
     }
 }
+
+export default sessionReducer;
