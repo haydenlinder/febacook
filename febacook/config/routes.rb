@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'session/create'
+    get 'session/destroy'
+  end
   root to: 'static_pages#root'
 
   namespace :api, defaults: {format: :json} do 
