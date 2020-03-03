@@ -8,8 +8,16 @@
 
 
 user1 = User.create({
-    username: "user1", first_name: "user", last_name: "one", 
-    birthday: "9/13/1993", gender: "male", pronouns: "he/him/his", 
-    email: "email", password: "password"
+    username: "user1", first_name: "user1", last_name: "user1", 
+    birthday: "13/9/1993", gender: "male", pronouns: "he/him/his", 
+    email: "user1@email.com", password: "password"
 })
+
+user2 = User.create({
+    username: "user2", first_name: "user2", last_name: "user2", 
+    birthday: "13/9/1993", gender: "male", pronouns: "he/him/his", 
+    email: "user2@email.com", password: "password"
+})
+
+
 
