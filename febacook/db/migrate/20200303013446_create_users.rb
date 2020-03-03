@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.date :birthday, null: false
       t.string :gender, null: false
       t.string :pronouns, null: false
+      t.text :bio
       t.string :password_digest, null: false
       t.string :session_token, null: false
 
@@ -15,7 +16,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     end
     add_index :users, :username, unique: true
     add_index :users, :email, unique: true
-    add_index :users, :session, unique: true
+    add_index :users, :session_token, unique: true
 
   end
 end
