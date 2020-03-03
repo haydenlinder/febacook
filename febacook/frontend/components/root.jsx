@@ -9,3 +9,5 @@ const Root = ({ store }) => (
         </HashRouter>
     </Provider>
 )
+
+export default Root;
