@@ -1,10 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { $createUser, $fetchUsers } from './util/user_api_util'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root")
-    window.$createUser = user => $createUser(user).then((res) => console.log(res))
-    window.$fetchUsers = () => $fetchUsers().then((res) => console.log(res))
+
+    let store;
+    if (window.currentUser) {
+        const { currentUser } = window;
+        const { id } = currentUser;
+        const preloadedState = {
+            entities: {
+                users: {
+                    [id]: currentUser
+                }
+            },
+            session: { id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
+
     ReactDOM.render( <h1>react is working</h1>, root )
 })
