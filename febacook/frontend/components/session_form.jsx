@@ -18,34 +18,39 @@ class SessionForm extends React.Component {
 
     render(){
         return(
-            <form>
-                Email
-                < input
-                    type = "text"
-                    value = { this.state.email }
-                    onChange = {
-                        (e) => this.setState({ email: e.target.value })
-                    }
-                />
-                < br />
+            <div>
+                <div class="logo">febacook</div>
+                <form>
+                    Email
+                    < input
+                        type = "text"
+                        value = { this.state.email }
+                        onChange = {
+                            (e) => this.setState({ email: e.target.value })
+                        }
+                        />
+                    < br />
 
-                Password
-                < input
-                    type = "text"
-                    value = { this.state.password }
-                    onChange = {
-                        (e) => this.setState({ password: e.target.value })
-                    }
-                />
+                    Password
+                    < input
+                        type = "text"
+                        value = { this.state.password }
+                        onChange = {
+                            (e) => this.setState({ password: e.target.value })
+                        }
+                    />
+                    <br/> {this.props.errors} <br/>
+                    <button onClick={this.handleSubmit}>Log In</button>
 
-                <button onClick={this.handleSubmit}>Log In</button>
-
-            </form>
+                </form>
+            </div>
         )
     }
 }
 
-const msp = state => ({})
+const msp = state => ({
+    errors: state.errors.session.login
+})
 
 const mdp = dispatch => ({
     createSession: (credentials) => dispatch(createSession(credentials))

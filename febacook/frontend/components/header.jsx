@@ -5,7 +5,9 @@ import SessionFormContainer from './session_form';
 
 
 const Header = ({ currentUser, deleteSession }) => {
-    return currentUser ? <button onClick={deleteSession}>Sign Out</button> : <SessionFormContainer />
+    return currentUser ? 
+        <button onClick={deleteSession}>Sign Out</button> 
+        : <SessionFormContainer />
 }
 
 

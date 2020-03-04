@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       render :create
     else
-      render json: ["Invalid credentials"], status: 422
+      render json: { login: ["Invalid credentials"] }, status: 422
     end
   end
 

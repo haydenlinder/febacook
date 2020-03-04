@@ -1,5 +1,5 @@
 import React from 'react';
-import { createUser, createSession } from '../actions/session_actions'
+import { createUser, createSession } from '../actions/session_actions';
 import { connect } from 'react-redux';
 
 class NewUserForm extends React.Component {
@@ -10,14 +10,21 @@ class NewUserForm extends React.Component {
             first_name: "", last_name: "",
             birthday: "", gender: "", pronouns: "" 
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createUser(this.state)
+        if (e.target.id === "new") {
+            this.props.createUser(this.state)
+            .then(() => window.location.reload());
+        } else {
+            this.props.createSession({ 
+                email: "user1@email.com", password: "password"
+            }).then(() => window.location.reload());
+        }
+        
     }
-
 
     render () {
         return (
@@ -29,6 +36,7 @@ class NewUserForm extends React.Component {
                 <br/>
                 <div> Sign Up </div>
                 <div> It's quick and easy. </div>
+                <button id="demo" onClick={this.handleSubmit}> Try it out </button>
                 <br/>
                 <form>
                     
@@ -112,7 +120,7 @@ class NewUserForm extends React.Component {
                     />
                     <br/>
 
-                    <button onClick={this.handleSubmit}>Sign Up</button>
+                    <button id={"new"} onClick={this.handleSubmit}>Sign Up</button>
 
                 </form>
 
@@ -121,8 +129,10 @@ class NewUserForm extends React.Component {
     }
 }
 
-const msp = state => ({
-    errors: state.errors.session
+const msp = (state, ownProps) => ({
+    errors: state.errors.session,
+    state: state,
+    ownProps: ownProps
 })
 
 const mdp = dispatch => ({
