@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
 
     render(){
         return(
-            <div class="logged-out-header">
+            <div class="logged-out-header clearfix">
                 <Link className="logo" to="/"> febacook </Link>
         
                 <form class="session-form">

@@ -25,7 +25,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -84,33 +84,36 @@ table {
 	*zoom: 1;
 }
 
+
+//////////////////////////////////
+
+
 html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
     -webkit-font-smoothing: subpixel-antialiased
 }
 
 .logged-out-header {
-    height: 80px;
     border-bottom: 1px solid rgb(26, 57, 117);
     background-image: linear-gradient(rgb(65, 95, 156), rgb(35, 71, 145));
     color: white;
+    display: flex;
+    justify-content: space-around;
 }
 
 .logo {
     font-weight: 625;
     font-size: 40px;
     float: left;
-    margin-left: 200px;
     margin-top: 25px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .session-form {
     float: right;
+    display: flex;
 }
 
-.logged-out-header:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 
