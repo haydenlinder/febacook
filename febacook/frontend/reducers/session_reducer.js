@@ -3,7 +3,7 @@ import {
     RECEIVE_NULL_SESSION, 
 } from "../actions/session_actions";
 
-const sessionReducer = (state ={}, action) => {
+const sessionReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
     switch (action.type) {

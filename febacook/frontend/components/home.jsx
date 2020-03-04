@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Feed from './feed';
-import SessionFormContainer from './session_form';
+import NewUserFormContainer from './new_user_form';
 
 const Home = ({ currentUser }) => {
-    return currentUser ? <Feed /> : <SessionFormContainer /> 
+    return currentUser ? <Feed currentUser={currentUser}/> : <NewUserFormContainer /> 
 }
 
 const msp = state => ({
-    currentUser: state.users[state.session.id]
+    currentUser: state.entities.users[state.session.id]
 })
 
 const HomeContainer = connect(msp)(Home);

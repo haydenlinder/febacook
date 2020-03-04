@@ -1334,3 +1334,2565 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2020-03-03 13:28:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 547ms (Views: 541.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:32:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 554ms (Views: 549.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:40:14 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 518ms (Views: 514.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:41:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:41:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 74ms (Views: 67.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:43:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 517ms (Views: 513.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:43:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 53ms (Views: 47.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 13:44:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 503ms (Views: 498.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:10:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 538ms (Views: 533.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:10:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 522ms (Views: 516.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:11:21 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"a;sldkjf", "password"=>"[FILTERED]", "email"=>"a;dslkfj", "firstName"=>"asdflkj", "lastName"=>"als;kdjf", "birthday"=>"a;sdlkjf", "gender"=>"aslkdjfa;sldk", "pronouns"=>"asdfalksd"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "a;sldkjf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "y229OA3IJr2B_i9bcvtfzw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a;dslkfj"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 397ms (ActiveRecord: 13.0ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 14:14:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 563ms (Views: 559.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:14:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 83ms (Views: 73.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:15:08 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]", "email"=>"asdfasdf", "firstName"=>"asdfasd", "lastName"=>"asdfasdf", "birthday"=>"asdfasdf", "gender"=>"asdfadsf", "pronouns"=>"asdasdf"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ZHrexu1hGHGmCQnXF4Zxzw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 333ms (ActiveRecord: 2.2ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:15:23 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]", "email"=>"asdfasdf", "firstName"=>"asdfasd", "lastName"=>"asdfasdf", "birthday"=>"asdfasdf", "gender"=>"asdfadsf", "pronouns"=>"asdasdf"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wv5tgIyQZ_ohMGLa5SnEJA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 353ms (ActiveRecord: 2.3ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 14:16:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 66ms (Views: 44.5ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:17:28 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]", "email"=>"asdadsf", "firstName"=>"asdfasdf", "lastName"=>"asdfadsf", "birthday"=>"asdfadsf", "gender"=>"asdfadsf", "pronouns"=>"asdfadsf"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Tx9zakjpTJKKGCdIuO4xVg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdadsf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 377ms (ActiveRecord: 10.2ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 14:18:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 516ms (Views: 511.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:19:20 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasd", "password"=>"[FILTERED]", "email"=>"asdfasd", "firstName"=>"asdfasd", "lastName"=>"asdfasd", "birthday"=>"asdfasd", "gender"=>"asdfasd", "pronouns"=>"asdfasd"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RyVTBIGR4UjU32kY059EcA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 352ms (ActiveRecord: 3.9ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:22:01 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasd", "password"=>"[FILTERED]", "email"=>"asdfasd", "firstName"=>"asdfasd", "lastName"=>"asdfasd", "birthday"=>"asdfasd", "gender"=>"asdfasd", "pronouns"=>"asdfasd"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6Oi4iNxOrHoQEVZrA7kYTQ"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 384ms (ActiveRecord: 1.9ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 14:22:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 62ms (Views: 56.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:22:46 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasd", "password"=>"[FILTERED]", "email"=>"asdfasd", "firstName"=>"asdfasd", "lastName"=>"asdfasd", "birthday"=>"asdfasd", "gender"=>"asdfasd", "pronouns"=>"asdfasd"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9m2rMRMzopwHDVLMpDs3EQ"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 387ms (ActiveRecord: 1.9ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 14:29:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 58ms (Views: 48.0ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:30:16 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasd", "password"=>"[FILTERED]", "email"=>"asdfasd", "firstName"=>"asdfasd", "lastName"=>"asdfasd", "birthday"=>"asdfasd", "gender"=>"asdfasd", "pronouns"=>"asdfasd"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gb21dlQPHD_PXw0gnR5xmA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 388ms (ActiveRecord: 16.7ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 14:35:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 50ms (Views: 41.1ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:35:46 -0800
+
+SyntaxError - syntax error, unexpected '}', expecting =>
+... { @user.errors.full_messages }, status: 422
+...                              ^:
+  app/controllers/api/users_controller.rb:10:in `'
+
+Started GET "/" for ::1 at 2020-03-03 14:39:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 515ms (Views: 510.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:40:16 -0800
+
+SyntaxError - syntax error, unexpected '}', expecting =>
+... { @user.errors.full_messages }, status: 422
+...                              ^:
+  app/controllers/api/users_controller.rb:10:in `'
+
+Started GET "/" for ::1 at 2020-03-03 14:41:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 54ms (Views: 43.3ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:41:47 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasd", "password"=>"[FILTERED]", "email"=>"asdfasd", "firstName"=>"asdfasd", "lastName"=>"asdfasd", "birthday"=>"asdfasd", "gender"=>"asdfasd", "pronouns"=>"asdfasd"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sb4dInzpn1IQsKLigUULrg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 384ms (ActiveRecord: 15.3ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 14:52:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 59ms (Views: 48.6ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:53:08 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasd", "password"=>"[FILTERED]", "email"=>"email@emailio.com", "firstName"=>"asdfasd", "lastName"=>"asdfasd", "birthday"=>"1/1/1993", "gender"=>"asdfasd", "pronouns"=>"asdfasd"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "t3qYws7aU3xPPOez-jwSTA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email@emailio.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 401ms (ActiveRecord: 13.4ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: First name can't be blank, Last name can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 14:56:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 49ms (Views: 39.4ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 14:57:16 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlkfj", "password"=>"[FILTERED]", "email"=>"as;lkdjf", "firstName"=>"adsf;lkj", "lastName"=>"a;sldkjf", "birthday"=>"as;dlkfj", "gender"=>"as;dlkjf", "pronouns"=>"as;dlkfj"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlkfj"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pz2loM8EJuGrTlzdQhdH3g"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "as;lkdjf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 377ms (ActiveRecord: 17.3ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 15:04:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 529ms (Views: 518.0ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 15:04:25 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"adsfasdf", "password"=>"[FILTERED]", "email"=>"asdasdf", "firstName"=>"asdf", "lastName"=>"asdfasdf", "birthday"=>"asdasdf", "gender"=>"asdasdf", "pronouns"=>"asdfasdf"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "adsfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bmipYvy1gowBA8T1BahxNA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 364ms (ActiveRecord: 12.2ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 15:05:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 63ms (Views: 56.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:05:09 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 15:05:25 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]", "email"=>"asdfasdf", "firstName"=>"asdfasdf", "lastName"=>"adsfasdf", "birthday"=>"asdfasdf", "gender"=>"asdfasdf", "pronouns"=>"asdfasdf"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "erL4ksQkV4o9I6_3V8EuPg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 377ms (ActiveRecord: 5.2ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/users" for ::1 at 2020-03-03 15:09:24 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"username", "password"=>"[FILTERED]", "email"=>"email@email.com", "firstName"=>"user", "lastName"=>"user", "birthday"=>"1/1/1993", "gender"=>"male", "pronouns"=>"he"}}
+Unpermitted parameters: :firstName, :lastName
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nuK4dZvBN8uK_aq1ieACFw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 365ms (ActiveRecord: 2.0ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: First name can't be blank, Last name can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 15:17:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 507ms (Views: 502.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 15:17:46 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]", "email"=>"asdfasdf", "first_name"=>"asdfasdf", "last_name"=>"asdfasdf", "birthday"=>"asdfasdf", "gender"=>"sdfasdf", "pronouns"=>"asdfasdf"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "XSJkfpd3UGqiBXLW5uGP9w"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 338ms (ActiveRecord: 3.6ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 15:19:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 50ms (Views: 38.5ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 15:20:17 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"adsfasdf", "password"=>"[FILTERED]", "email"=>"asdadsf", "first_name"=>"asdasdf", "last_name"=>"asdasdf", "birthday"=>"1/1/1992", "gender"=>"asdfasdf", "pronouns"=>"asdfasdf"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "adsfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yFZyH1e1-SZ_Ue01lzObGA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdadsf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Create (9.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "first_name", "last_name", "birthday", "gender", "pronouns", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["username", "adsfasdf"], ["email", "asdadsf"], ["first_name", "asdasdf"], ["last_name", "asdasdf"], ["birthday", "1992-01-01"], ["gender", "asdfasdf"], ["pronouns", "asdfasdf"], ["password_digest", "$2a$12$IF1NozDTNjUNwLNhaakSCOBrohAhMloBORYCjCEPX7lt6s.GEWIpC"], ["session_token", "yFZyH1e1-SZ_Ue01lzObGA"], ["created_at", "2020-03-03 23:20:18.344320"], ["updated_at", "2020-03-03 23:20:18.344320"]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "adsfasdf"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "yFZyH1e1-SZ_Ue01lzObGA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "asdadsf"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "adsfasdf"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "asdadsf"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["updated_at", "2020-03-03 23:20:18.369883"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/create.json.jbuilder (1.9ms)
+Completed 200 OK in 394ms (Views: 10.6ms | ActiveRecord: 26.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:21:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+Completed 200 OK in 534ms (Views: 527.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 15:21:41 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"qwerqwer", "password"=>"[FILTERED]", "email"=>"qewrqewr", "first_name"=>"qwerqwer", "last_name"=>"qwerqwer", "birthday"=>"qwerqwer", "gender"=>"qwerqewr", "pronouns"=>"qwerqer"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "qwerqwer"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HRbDj27QvDGqTtRLaXqaJg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "qewrqewr"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 336ms (ActiveRecord: 3.3ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 15:24:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting ')'
+        format: { with: URI::MailTo::EMAIL_...
+        ^~~~~~
+/Users/hayden/Desktop/febacook/febacook/app/models/user.rb:14: syntax error, unexpected ')', expecting keyword_end
+    )
+    ^:
+  app/models/user.rb:13:in `'
+  app/controllers/application_controller.rb:5:in `current_user'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2492609079812973761_70307434336080'
+
+Started POST "/__better_errors/9ae0dbb724381a04/variables" for ::1 at 2020-03-03 15:24:30 -0800
+Started GET "/" for ::1 at 2020-03-03 15:24:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+Completed 200 OK in 75ms (Views: 58.4ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:29:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+Completed 200 OK in 537ms (Views: 533.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:30:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:30:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+Completed 200 OK in 55ms (Views: 52.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:31:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+Completed 200 OK in 494ms (Views: 491.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:46:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+Completed 200 OK in 519ms (Views: 513.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:48:10 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:48:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+Completed 200 OK in 65ms (Views: 61.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:48:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+Completed 200 OK in 52ms (Views: 46.3ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 15:48:30 -0800
+
+NameError - uninitialized constant Api::SessionsController:
+
+Started GET "/" for ::1 at 2020-03-03 15:49:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+Completed 200 OK in 78ms (Views: 60.3ms | ActiveRecord: 15.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 15:49:46 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "adsfasdf"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "TnV8FPbQqeCiq-lG2xathg"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "asdadsf"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:40
+Completed 422 Unprocessable Entity in 13ms (ActiveRecord: 2.8ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/controllers/application_controller.rb:19:in `logout!'
+  app/controllers/api/sessions_controller.rb:17:in `destroy'
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (83.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "febacook_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (82.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "febacook_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (226.6ms)[0m  [1m[35mCREATE DATABASE "febacook_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (188.2ms)[0m  [1m[35mCREATE DATABASE "febacook_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (1.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "birthday" date NOT NULL, "gender" character varying NOT NULL, "pronouns" character varying NOT NULL, "bio" text, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (32.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200303013446)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-03 23:51:55.725100"], ["updated_at", "2020-03-03 23:51:55.725100"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "birthday" date NOT NULL, "gender" character varying NOT NULL, "pronouns" character varying NOT NULL, "bio" text, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200303013446)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-03 23:51:55.881916"], ["updated_at", "2020-03-03 23:51:55.881916"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-03 23:51:55.891126"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user1"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IZdiGnaxqDhjZAVxVEsy_w"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "first_name", "last_name", "birthday", "gender", "pronouns", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["username", "user1"], ["email", "user1@email.com"], ["first_name", "user1"], ["last_name", "user1"], ["birthday", "1993-09-13"], ["gender", "male"], ["pronouns", "he/him/his"], ["password_digest", "$2a$12$FKNjWvB7ePkN7lQAnFT7Yuk6zh.TLK4FuS.WtOOt2Ff8ZraDKLFVe"], ["session_token", "IZdiGnaxqDhjZAVxVEsy_w"], ["created_at", "2020-03-03 23:51:56.368595"], ["updated_at", "2020-03-03 23:51:56.368595"]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "user1"], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "IZdiGnaxqDhjZAVxVEsy_w"], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user1@email.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KwuXTSNrSKXHdlIaa-os3Q"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "first_name", "last_name", "birthday", "gender", "pronouns", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["username", "user2"], ["email", "user2@email.com"], ["first_name", "user2"], ["last_name", "user2"], ["birthday", "1993-09-13"], ["gender", "male"], ["pronouns", "he/him/his"], ["password_digest", "$2a$12$VqKXdKdlQhBhQ1yYBw2h9.stIrejhdIxPjslAiYdYrcdtvOx9uwhu"], ["session_token", "KwuXTSNrSKXHdlIaa-os3Q"], ["created_at", "2020-03-03 23:51:56.807313"], ["updated_at", "2020-03-03 23:51:56.807313"]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "user2"], ["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "KwuXTSNrSKXHdlIaa-os3Q"], ["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user2@email.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-03-03 15:52:41 -0800
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hayden/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 2187ms (Views: 2175.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:54:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 740ms (Views: 733.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:54:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:56:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:57:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 512ms (Views: 509.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:58:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 513ms (Views: 508.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:59:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aat2tbVtlXnd_J3d25-gqw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 571ms (Views: 567.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 15:59:54 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"hayden", "password"=>"[FILTERED]", "email"=>"h@email.com", "first_name"=>"hayden", "last_name"=>"linder", "birthday"=>"4/1/1993", "gender"=>"male", "pronouns"=>"he"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hayden"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zzoHKksYojbemd0D2tC7RA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "first_name", "last_name", "birthday", "gender", "pronouns", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["username", "hayden"], ["email", "h@email.com"], ["first_name", "hayden"], ["last_name", "linder"], ["birthday", "1993-01-04"], ["gender", "male"], ["pronouns", "he"], ["password_digest", "$2a$12$kb3uLSfKhrz0AyPmjneS5uOJRVyB4nKzLiaQXVb3R99lmjS1Nq5Ya"], ["session_token", "zzoHKksYojbemd0D2tC7RA"], ["created_at", "2020-03-03 23:59:54.684823"], ["updated_at", "2020-03-03 23:59:54.684823"]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "zzoHKksYojbemd0D2tC7RA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "t1wVILtjMFCuHNjWeLbsSA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "t1wVILtjMFCuHNjWeLbsSA"], ["updated_at", "2020-03-03 23:59:54.707391"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/create.json.jbuilder (1.8ms)
+Completed 200 OK in 394ms (Views: 10.9ms | ActiveRecord: 25.3ms)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2020-03-03 16:02:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "t1wVILtjMFCuHNjWeLbsSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "t1wVILtjMFCuHNjWeLbsSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+Completed 200 OK in 514ms (Views: 509.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 16:02:50 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "t1wVILtjMFCuHNjWeLbsSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "vnRYBELDsorfOT0vj-xSVg"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "vnRYBELDsorfOT0vj-xSVg"], ["updated_at", "2020-03-04 00:02:50.667482"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+No template found for Api::SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 154ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:03:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 52ms (Views: 45.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:04:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:04:11 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 80ms (Views: 75.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:07:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 518ms (Views: 515.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:07:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 44ms (Views: 40.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:16:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 37ms (Views: 32.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:17:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 909ms (Views: 903.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:17:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 39ms (Views: 34.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:19:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 489ms (Views: 484.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:19:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 39ms (Views: 33.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:19:37 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:19:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:20:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 499ms (Views: 495.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:20:34 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:20:36 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:20:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:20:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:20:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 71ms (Views: 65.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:21:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 133ms (Views: 121.4ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:21:11 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"user1"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:23:29 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"user1@email.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:23:36 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"user1@email.com"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:23:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 41ms (Views: 36.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:23:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 69ms (Views: 61.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:23:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 95ms (Views: 90.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:24:08 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"user1@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:28:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 49ms (Views: 38.0ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:28:30 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 72169ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:29:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:30:09 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 13093ms (Views: 0.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:30:46 -0800
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hayden/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 1533ms (Views: 1521.0ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:31:01 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+Completed 422 Unprocessable Entity in 5ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:31:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 69ms (Views: 58.7ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:31:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:32:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 42ms (Views: 37.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:32:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 43ms (Views: 38.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:32:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:32:11 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "lmRVNJUY7DtxfzNaP9eJZg"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "lmRVNJUY7DtxfzNaP9eJZg"], ["updated_at", "2020-03-04 00:32:11.771903"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 19.6ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/sessions/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/hayden/Desktop/febacook/febacook/app/views"
+:
+  app/controllers/api/sessions_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 16:32:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:34:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:34:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 56ms (Views: 49.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:34:17 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "f20jVONVqiQl2QuVgFIE6Q"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "f20jVONVqiQl2QuVgFIE6Q"], ["updated_at", "2020-03-04 00:34:17.656164"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/sessions/create.json.jbuilder (2.0ms)
+Completed 200 OK in 364ms (Views: 15.4ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:34:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "f20jVONVqiQl2QuVgFIE6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "f20jVONVqiQl2QuVgFIE6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+Completed 200 OK in 62ms (Views: 57.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 16:34:41 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "f20jVONVqiQl2QuVgFIE6Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "K2cD1L6yucUAhznSt4lF8Q"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "K2cD1L6yucUAhznSt4lF8Q"], ["updated_at", "2020-03-04 00:34:41.103890"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/sessions/destroy.json.jbuilder (0.5ms)
+Completed 200 OK in 39ms (Views: 15.9ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:37:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 533ms (Views: 530.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:37:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:38:05 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "JG0URCejDahe_d4hljRCLQ"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JG0URCejDahe_d4hljRCLQ"], ["updated_at", "2020-03-04 00:38:06.329811"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/sessions/create.json.jbuilder (3.7ms)
+Completed 200 OK in 366ms (Views: 14.4ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:40:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JG0URCejDahe_d4hljRCLQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JG0URCejDahe_d4hljRCLQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+Completed 200 OK in 572ms (Views: 568.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 16:40:18 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JG0URCejDahe_d4hljRCLQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "q5z_1Iu_X5OsPlIFNrl7mw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "q5z_1Iu_X5OsPlIFNrl7mw"], ["updated_at", "2020-03-04 00:40:18.677033"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/sessions/destroy.json.jbuilder (0.5ms)
+Completed 200 OK in 42ms (Views: 14.6ms | ActiveRecord: 12.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 16:40:31 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms)
+
+
+
+NoMethodError - undefined method `reset_session_token!' for nil:NilClass:
+  app/controllers/application_controller.rb:19:in `logout!'
+  app/controllers/api/sessions_controller.rb:17:in `destroy'
+
+Started GET "/" for ::1 at 2020-03-03 16:41:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:41:30 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ZjxSd_yUgjmURzf3lHgwjw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ZjxSd_yUgjmURzf3lHgwjw"], ["updated_at", "2020-03-04 00:41:30.362091"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/sessions/create.json.jbuilder (1.8ms)
+Completed 200 OK in 359ms (Views: 15.0ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:41:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ZjxSd_yUgjmURzf3lHgwjw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ZjxSd_yUgjmURzf3lHgwjw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+Completed 200 OK in 493ms (Views: 487.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 16:42:09 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ZjxSd_yUgjmURzf3lHgwjw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ovNyfPipaiphaLBoZWM_Xw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ovNyfPipaiphaLBoZWM_Xw"], ["updated_at", "2020-03-04 00:42:09.587078"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/sessions/destroy.json.jbuilder (0.5ms)
+Completed 200 OK in 43ms (Views: 15.9ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:45:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 495ms (Views: 491.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:46:09 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "skeo7mhcu_jECCi5dVNrWA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "skeo7mhcu_jECCi5dVNrWA"], ["updated_at", "2020-03-04 00:46:10.100114"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/sessions/create.json.jbuilder (2.3ms)
+Completed 200 OK in 367ms (Views: 15.4ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:47:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "skeo7mhcu_jECCi5dVNrWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "skeo7mhcu_jECCi5dVNrWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+Completed 200 OK in 524ms (Views: 520.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 16:47:36 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "skeo7mhcu_jECCi5dVNrWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "HdBuWxCg4JrjCzEZUR6rRg"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HdBuWxCg4JrjCzEZUR6rRg"], ["updated_at", "2020-03-04 00:47:36.233690"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/sessions/destroy.json.jbuilder (0.4ms)
+Completed 200 OK in 40ms (Views: 11.3ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:50:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 497ms (Views: 492.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:50:42 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Fte3N0oZrqCxv1JQQR3q1w"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Fte3N0oZrqCxv1JQQR3q1w"], ["updated_at", "2020-03-04 00:50:42.554810"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/sessions/create.json.jbuilder (2.9ms)
+Completed 200 OK in 365ms (Views: 16.7ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 16:53:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Fte3N0oZrqCxv1JQQR3q1w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Fte3N0oZrqCxv1JQQR3q1w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+Completed 200 OK in 518ms (Views: 513.1ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 16:53:30 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Fte3N0oZrqCxv1JQQR3q1w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "qut5ZxP8pEi3oWrUCfPU_w"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "qut5ZxP8pEi3oWrUCfPU_w"], ["updated_at", "2020-03-04 00:53:30.514581"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/sessions/destroy.json.jbuilder (0.4ms)
+Completed 200 OK in 42ms (Views: 14.2ms | ActiveRecord: 11.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 16:53:45 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "8i6yPsMp_sBlMj-XrPFKAw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8i6yPsMp_sBlMj-XrPFKAw"], ["updated_at", "2020-03-04 00:53:46.069800"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/sessions/create.json.jbuilder (2.5ms)
+Completed 200 OK in 366ms (Views: 17.3ms | ActiveRecord: 11.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 16:55:04 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8i6yPsMp_sBlMj-XrPFKAw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "caWU8vPyeKjuA-l6CDWhkQ"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "caWU8vPyeKjuA-l6CDWhkQ"], ["updated_at", "2020-03-04 00:55:04.734693"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/sessions/destroy.json.jbuilder (0.3ms)
+Completed 200 OK in 36ms (Views: 9.9ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 16:55:25 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdfasdf", "password"=>"[FILTERED]", "email"=>"sdfasdfasdf", "first_name"=>"asdfasdf", "last_name"=>"asdfasdf", "birthday"=>"asdfasdfaf", "gender"=>"asdfasdf", "pronouns"=>"asdfasdf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WgWUkenHUB4ZKbvlRvSHjg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sdfasdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 368ms (ActiveRecord: 2.1ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 16:56:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 537ms (Views: 532.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 16:57:17 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]", "email"=>"asdfasdf", "first_name"=>"asdfasdf", "last_name"=>"asdfasdf", "birthday"=>"asdfasdf", "gender"=>"asdfasdf", "pronouns"=>"asdfasdf"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pDDkS6kmMyuhgTv9Qq6rQg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 337ms (ActiveRecord: 3.3ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:10:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 523ms (Views: 518.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:11:14 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfadfs", "password"=>"[FILTERED]", "email"=>"asdfasdf", "first_name"=>"asdfasdf", "last_name"=>"asdfasdf", "birthday"=>"2020-03-01", "gender"=>"asdfadf", "pronouns"=>"sdfasdf"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfadfs"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y2hyrluP5h4B7wKX9bO0YQ"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 342ms (ActiveRecord: 3.3ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:20:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected '}', expecting =>
+...: { URI::MailTo::EMAIL_REGEXP }
+...                              ^:
+  app/models/user.rb:13:in `'
+  app/controllers/application_controller.rb:5:in `current_user'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1113552945112826451_70134826943660'
+
+Started POST "/__better_errors/c3fb5e24ba7900ae/variables" for ::1 at 2020-03-03 17:20:18 -0800
+Started GET "/" for ::1 at 2020-03-03 17:20:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - Either :with or :without must be supplied (but not both):
+  app/models/user.rb:10:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:5:in `current_user'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1113552945112826451_70134797814680'
+
+Started POST "/__better_errors/35745fe63101b1ff/variables" for ::1 at 2020-03-03 17:20:44 -0800
+Started GET "/" for ::1 at 2020-03-03 17:20:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - Either :with or :without must be supplied (but not both):
+  app/models/user.rb:10:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:5:in `current_user'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1113552945112826451_70134835847400'
+
+Started POST "/__better_errors/54aae1745b52c9cc/variables" for ::1 at 2020-03-03 17:20:52 -0800
+Started GET "/" for ::1 at 2020-03-03 17:20:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - Either :with or :without must be supplied (but not both):
+  app/models/user.rb:10:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:5:in `current_user'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1113552945112826451_70134827161140'
+
+Started POST "/__better_errors/0fac56c61a5ef9a4/variables" for ::1 at 2020-03-03 17:20:53 -0800
+Started GET "/" for ::1 at 2020-03-03 17:20:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 69ms (Views: 56.9ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:21:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 646ms (Views: 639.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:21:44 -0800
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hayden/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 2023ms (Views: 2004.6ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:21:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:22:18 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"adsf", "password"=>"[FILTERED]", "email"=>"asdf", "first_name"=>"asdf", "last_name"=>"asdf", "birthday"=>"", "gender"=>"asdf", "pronouns"=>"asdf"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "adsf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MB-y2qagIWIPI_gqziM87w"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 385ms (ActiveRecord: 12.7ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, Birthday can't be blank:
+  app/models/user.rb:40:in `reset_session_token!'
+  app/models/user.rb:45:in `ensure_session_token'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:26:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ')', expecting keyword_end
+...ecureRandom.urlsafe_base64(16))
+...                              ^:
+  app/models/user.rb:45:in `'
+  app/controllers/application_controller.rb:5:in `current_user'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1812166714133043206_70185949726440'
+
+Started POST "/__better_errors/a102489374ba0030/variables" for ::1 at 2020-03-03 17:26:24 -0800
+Started GET "/" for ::1 at 2020-03-03 17:26:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 554ms (Views: 543.0ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:26:52 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]", "email"=>"asdfasdf", "first_name"=>"asdasdf", "last_name"=>"asdfasdf", "birthday"=>"", "gender"=>"asdfasdf", "pronouns"=>"asdfqdsf"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "09JbPjdcNj4km7xj5FsUEA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 360ms (ActiveRecord: 11.4ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, Birthday can't be blank:
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:28:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 526ms (Views: 521.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:28:26 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdfasdf", "password"=>"[FILTERED]", "email"=>"asdfasdf", "first_name"=>"asdfasdf", "last_name"=>"asdfasdf", "birthday"=>"", "gender"=>"asdfadsf", "pronouns"=>"asdfasdf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ybY86_G6-9cXqi3R0SD0-g"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 354ms (ActiveRecord: 1.9ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, Birthday can't be blank:
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:29:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 590ms (Views: 585.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:30:16 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdasdf", "password"=>"[FILTERED]", "email"=>"asdfasdf", "first_name"=>"asdfasdf", "last_name"=>"asdfasdf", "birthday"=>"", "gender"=>"asddsf", "pronouns"=>"asdfadfs"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NSQdxcaYGr2DYEXpm_QWwQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 331ms (ActiveRecord: 2.1ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email is invalid, Birthday can't be blank:
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:30:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 48ms (Views: 42.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:30:57 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"", "birthday"=>"", "gender"=>"", "pronouns"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6bjsHB63lCEjkm4MKfwG0A"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 354ms (ActiveRecord: 2.1ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Username can't be blank, Email can't be blank, Email is invalid, First name can't be blank, Last name can't be blank, Birthday can't be blank, Gender can't be blank, Pronouns can't be blank, Password is too short (minimum is 6 characters):
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:32:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:32:23 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"", "birthday"=>"", "gender"=>"", "pronouns"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-sK4xh7LMN-PfOP-Szgxcw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 418  in 375ms (Views: 0.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:32:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:32:56 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"", "birthday"=>"", "gender"=>"", "pronouns"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "jzMTHLiuf7H56V_vpxpXfg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 418  in 381ms (Views: 0.3ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 17:35:04 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "8dY3vS1N4z3Ei9aCIwDuiw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8dY3vS1N4z3Ei9aCIwDuiw"], ["updated_at", "2020-03-04 01:35:04.610078"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/sessions/create.json.jbuilder (1.9ms)
+Completed 200 OK in 380ms (Views: 15.3ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:35:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8dY3vS1N4z3Ei9aCIwDuiw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8dY3vS1N4z3Ei9aCIwDuiw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+Completed 200 OK in 63ms (Views: 58.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 17:35:16 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8dY3vS1N4z3Ei9aCIwDuiw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "zDZkzVFPkBVAP47QvJNneA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "zDZkzVFPkBVAP47QvJNneA"], ["updated_at", "2020-03-04 01:35:16.144295"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/sessions/destroy.json.jbuilder (0.4ms)
+Completed 200 OK in 27ms (Views: 11.0ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/session" for ::1 at 2020-03-03 17:35:37 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"h@email.com"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "4V818R32qYd135tnStvMKw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "4V818R32qYd135tnStvMKw"], ["updated_at", "2020-03-04 01:35:38.258927"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/create.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/sessions/create.json.jbuilder (1.8ms)
+Completed 200 OK in 370ms (Views: 14.4ms | ActiveRecord: 12.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-03-03 17:35:43 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4V818R32qYd135tnStvMKw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "hayden"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "w3Y_CJZgmocC0MratGh2cQ"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "h@email.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "w3Y_CJZgmocC0MratGh2cQ"], ["updated_at", "2020-03-04 01:35:43.695903"], ["id", 3]]
+  ↳ app/models/user.rb:40
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/sessions/destroy.json.jbuilder
+  Rendered api/sessions/destroy.json.jbuilder (0.5ms)
+Completed 200 OK in 38ms (Views: 10.8ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:36:20 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"", "birthday"=>"", "gender"=>"", "pronouns"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yFvTg703e1Kn29n1AxpXyQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 366ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:40:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 52ms (Views: 45.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:40:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 46ms (Views: 41.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:40:53 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"", "birthday"=>"", "gender"=>"", "pronouns"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "V0tH55C2sFgpZPsSSKwDWg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 374ms (Views: 0.4ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:45:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 507ms (Views: 503.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:45:56 -0800
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:37:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:46:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:46:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:46:10 -0800
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:37:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:46:37 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"ad", "last_name"=>"asdf"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-x_61XV2tEiM9ajp0xBffw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 38ms (Views: 0.8ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:46:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:46:45 -0800
+Processing by Api::UsersController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:37:in `user_params'
+  app/controllers/api/users_controller.rb:5:in `create'
+
+Started GET "/" for ::1 at 2020-03-03 17:47:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 512ms (Views: 509.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:47:40 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"", "birthday"=>"", "gender"=>"", "pronouns"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "edNJyMVa7I6N4HduANcEpg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 360ms (Views: 0.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:48:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 528ms (Views: 522.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:48:28 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"", "birthday"=>"", "gender"=>"", "pronouns"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LL0Zaio7SFVyfU8FlsFcBA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 390ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:49:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 519ms (Views: 514.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 17:50:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 538ms (Views: 534.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/users" for ::1 at 2020-03-03 17:50:43 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"", "birthday"=>"", "gender"=>"", "pronouns"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "d6hu53MvHYIp0s_LJMiAwg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 349ms (Views: 0.4ms | ActiveRecord: 2.3ms)
+
+

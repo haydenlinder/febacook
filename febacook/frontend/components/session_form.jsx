@@ -1,21 +1,45 @@
 import React from 'react';
-import { createUser, createSession } from '../actions/session_actions'
+import { createSession } from '../actions/session_actions';
 import { connect } from 'react-redux';
 
 class SessionForm extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            password: "", email: ""
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    render() {
-        return (
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.createSession(this.state)
+    }
+
+    render(){
+        return(
             <form>
-                <div> 
-                    Connect with friends and the world around you on Febacook.
-                </div>
-                <div> Sign Up </div>
-                <div> It's quick and easy. </div>
-                
+                Email
+                < input
+                    type = "text"
+                    value = { this.state.email }
+                    onChange = {
+                        (e) => this.setState({ email: e.target.value })
+                    }
+                />
+                < br />
+
+                Password
+                < input
+                    type = "text"
+                    value = { this.state.password }
+                    onChange = {
+                        (e) => this.setState({ password: e.target.value })
+                    }
+                />
+
+                <button onClick={this.handleSubmit}>Log In</button>
+
             </form>
         )
     }
@@ -24,8 +48,7 @@ class SessionForm extends React.Component {
 const msp = state => ({})
 
 const mdp = dispatch => ({
-    createUser: user => dispatch(createUser(user)),
-    createSession: credentials => dispatch(createSession(credentials))
+    createSession: (credentials) => dispatch(createSession(credentials))
 })
 
 const SessionFormContainer = connect(msp, mdp)(SessionForm);
