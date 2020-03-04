@@ -4,7 +4,10 @@ import Feed from './feed';
 import NewUserFormContainer from './new_user_form';
 
 const Home = ({ currentUser }) => {
-    return currentUser ? <Feed currentUser={currentUser}/> : <NewUserFormContainer /> 
+    console.log("home rerender")
+    return(
+        currentUser ? <Feed currentUser={currentUser}/> : <NewUserFormContainer /> 
+    )
 }
 
 const msp = state => ({

@@ -17,110 +17,126 @@ class NewUserForm extends React.Component {
         e.preventDefault();
         if (e.target.id === "new") {
             this.props.createUser(this.state)
-            .then(() => window.location.reload());
         } else {
             this.props.createSession({ 
                 email: "user1@email.com", password: "password"
-            }).then(() => window.location.reload());
+            });
         }
         
     }
 
     render () {
         return (
-            <div>
+            <div className="logged-out-home">
 
-                <div>
-                    Connect with friends and the world around you on Febacook.
+
+                <div className="greeting">
+                    <div className="connect">
+                        Connect with friends and the world around you on Febacook.
+                    </div>
+                    <div className="signup"> Sign Up </div>
+                    <div className="easy"> It's quick and easy. </div>
+                    <button id="demo" onClick={this.handleSubmit}> Try it out </button>
+
                 </div>
-                <br/>
-                <div> Sign Up </div>
-                <div> It's quick and easy. </div>
-                <button id="demo" onClick={this.handleSubmit}> Try it out </button>
-                <br/>
-                <form>
+
+                <form className="user-form">
+                    <div className="input">
+                        First Name
+                        <div className="errors">
+                            {this.props.errors.first_name}
+                        </div>
+                        <input 
+                            type="text" 
+                            value={this.state.first_name}
+                            onChange={
+                                (e) => this.setState({ first_name: e.target.value })
+                            }
+                            />
+                    </div>
+
+            
+                    <div className="input">
+
+                        Last Name <br /> {this.props.errors.last_name} 
+                        <input 
+                            type="text" 
+                            value={this.state.last_name}
+                            onChange={
+                                (e) => this.setState({ last_name: e.target.value })
+                            }
+                        />
+                    </div>
+
+                    <div className="input">
+                        Email <br /> {this.props.errors.email} 
+                        <input 
+                            type="text" 
+                            value={this.state.email}
+                            onChange={
+                                (e) => this.setState({ email: e.target.value })
+                            }
+                        />
+                    </div>
+
                     
-                    First Name <br/> {this.props.errors.first_name} <br/>
-                    <input 
-                        type="text" 
-                        value={this.state.first_name}
-                        onChange={
-                            (e) => this.setState({ first_name: e.target.value })
-                        }
+                    <div className="input">
+                        Password <br /> {this.props.errors.password} 
+                        <input 
+                            type="text" 
+                            value={this.state.password}
+                            onChange={
+                                (e) => this.setState({ password: e.target.value })
+                            }
                         />
-                    <br/>
+                    </div>
 
-                    Last Name <br /> {this.props.errors.last_name} <br/>
-                    <input 
-                        type="text" 
-                        value={this.state.last_name}
-                        onChange={
-                            (e) => this.setState({ last_name: e.target.value })
-                        }
+                    <div className="input">
+                        Username <br /> {this.props.errors.username} 
+                        <input 
+                            type="text" 
+                            value={this.state.username}
+                            onChange={
+                                (e) => this.setState({ username: e.target.value })
+                            }
                         />
-                    <br/>
-
-                    Email <br /> {this.props.errors.email} <br/>
-                    <input 
-                        type="text" 
-                        value={this.state.email}
-                        onChange={
-                            (e) => this.setState({ email: e.target.value })
-                        }
-                        />
-                    <br/>
+                    </div>
                     
-                    Password <br /> {this.props.errors.password} <br/>
-                    <input 
-                        type="text" 
-                        value={this.state.password}
-                        onChange={
-                            (e) => this.setState({ password: e.target.value })
-                        }
+                    <div className="input">
+                        Birthday <br /> {this.props.errors.birthday} 
+                        <input 
+                            type="date" 
+                            value={this.state.birthday}
+                            onChange={
+                                (e) => this.setState({ birthday: e.target.value })
+                            }
                         />
-                    <br/>
+                    </div>
+
                     
-                    Username <br /> {this.props.errors.username} <br/>
-                    <input 
-                        type="text" 
-                        value={this.state.username}
-                        onChange={
-                            (e) => this.setState({ username: e.target.value })
-                        }
+                    <div className="input">
+                        Gender <br /> {this.props.errors.gender} 
+                        <input 
+                            type="text" 
+                            value={this.state.gender}
+                            onChange={
+                                (e) => this.setState({ gender: e.target.value })
+                            }
                         />
-                    <br/>
-
-                    Birthday <br /> {this.props.errors.birthday} <br/>
-                    <input 
-                        type="date" 
-                        value={this.state.birthday}
-                        onChange={
-                            (e) => this.setState({ birthday: e.target.value })
-                        }
+                    </div>
+                    
+                    <div className="input">
+                        Pronouns <br /> {this.props.errors.pronouns} 
+                        <input 
+                            type="text" 
+                            value={this.state.pronouns}
+                            onChange={
+                                (e) => this.setState({ pronouns: e.target.value })
+                            }
                         />
-                    <br/>
+                    </div>
 
-                    Gender <br /> {this.props.errors.gender} <br/>
-                    <input 
-                        type="text" 
-                        value={this.state.gender}
-                        onChange={
-                            (e) => this.setState({ gender: e.target.value })
-                        }
-                        />
-                    <br/>
-
-                    Pronouns <br /> {this.props.errors.pronouns} <br/>
-                    <input 
-                        type="text" 
-                        value={this.state.pronouns}
-                        onChange={
-                            (e) => this.setState({ pronouns: e.target.value })
-                        }
-                    />
-                    <br/>
-
-                    <button id={"new"} onClick={this.handleSubmit}>Sign Up</button>
+                    <button id="new" onClick={this.handleSubmit}>Sign Up</button>
 
                 </form>
 
@@ -129,10 +145,9 @@ class NewUserForm extends React.Component {
     }
 }
 
-const msp = (state, ownProps) => ({
+const msp = (state) => ({
     errors: state.errors.session,
-    state: state,
-    ownProps: ownProps
+    state: state
 })
 
 const mdp = dispatch => ({

@@ -19,48 +19,50 @@ class SessionForm extends React.Component {
 
     render(){
         return(
-            <div class="logged-out-header clearfix">
-                <Link className="logo" to="/"> febacook </Link>
-        
-                <form class="session-form">
+            <div className="logged-out-header">
+                    <Link className="logo" to="/"> febacook </Link>
+            
+                    <form className="session-form">
 
-                    <div class="email"> Email 
-                        < input
-                            type = "text"
-                            value = { this.state.email }
-                            onChange = {
-                                (e) => this.setState({ 
-                                    email: e.target.value 
-                                })
-                            }
-                        />
-                    </div>
+                        <div className="email"> 
+                            <div>Email</div> 
+                            < input
+                                type = "text"
+                                value = { this.state.email }
+                                onChange = {
+                                    (e) => this.setState({ 
+                                        email: e.target.value 
+                                    })
+                                }
+                            />
+                        </div>
 
-                    <div class="password"> Password 
-                        < input
-                            type = "text"
-                            value = { this.state.password }
-                            onChange = {
-                                (e) => this.setState({ 
-                                    password: e.target.value 
-                                })
-                            }
-                        />
-                    </div>
+                        <div className="password"> 
+                            <div>Password</div> 
+                            < input
+                                type = "text"
+                                value = { this.state.password }
+                                onChange = {
+                                    (e) => this.setState({ 
+                                        password: e.target.value 
+                                    })
+                                }
+                            />
+                        </div>
 
-                    
-                    <div class="login-errors">
-                        {this.props.errors}
-                    </div> 
-                    
-                    <button 
-                        class="login"
-                        onClick={this.handleSubmit}
-                    >
-                        Log In
-                    </button>
+                        
+                        <div className="login-errors">
+                            {this.props.errors}
+                        </div> 
+                        
+                        <button 
+                            className="login"
+                            onClick={this.handleSubmit}
+                        >
+                            Log In
+                        </button>
 
-                </form>
+                    </form>
             </div>
         )
     }
