@@ -66,7 +66,7 @@ class NewUserForm extends React.Component {
                         </div>
 
                         <div className="input name">
-                            First Name
+                        
                             <div className="errors">
                                 {this.props.errors.first_name}
                             </div>
@@ -79,7 +79,7 @@ class NewUserForm extends React.Component {
                                 }
                             />
                         
-                            Last Name <br /> {this.props.errors.last_name} 
+                            {this.props.errors.last_name} 
                             <input 
                                 type="text" 
                                 placeholder="Last name"
@@ -91,7 +91,7 @@ class NewUserForm extends React.Component {
                         </div>
 
                         <div className="input">
-                            Email <br /> {this.props.errors.email} 
+                            {this.props.errors.email} 
                             <input 
                                 type="text"
                                 placeholder="Email" 
@@ -104,7 +104,7 @@ class NewUserForm extends React.Component {
 
                         
                         <div className="input">
-                            Password <br /> {this.props.errors.password} 
+                            {this.props.errors.password} 
                             <input 
                                 type="password"
                                 placeholder="Password" 
@@ -116,7 +116,7 @@ class NewUserForm extends React.Component {
                         </div>
 
                         <div className="input">
-                            Username <br /> {this.props.errors.username} 
+                            {this.props.errors.username} 
                             <input 
                                 type="text" 
                                 placeholder="Username"
@@ -170,13 +170,25 @@ class NewUserForm extends React.Component {
                                     }
                                 />
                             </label>
+                            <div className="input">
+                                {this.props.errors.username}
+                                <input
+                                    type="text"
+                                    placeholder="Gender"
+                                    value={this.state.gender}
+                                    onChange={
+                                        (e) => this.setState({ gender: e.target.value })
+                                    }
+                                />
+                            </div>
 
                         </div>
                         
                         <div className="input">
-                            Pronouns <br /> {this.props.errors.pronouns} 
+                            {this.props.errors.pronouns} 
                             <input 
                                 type="text" 
+                                placeholder="Pronouns"
                                 value={this.state.pronouns}
                                 onChange={
                                     (e) => this.setState({ pronouns: e.target.value })
