@@ -156,6 +156,11 @@ html {
     background-color: rgb(65, 95, 156);
 }
 
+.logged-out-home-container {
+    background-color: rgb(241, 246, 252);
+    height: 571px;
+}
+
 .logged-out-home {
     display: flex;
     justify-content: space-between;
@@ -164,15 +169,78 @@ html {
 }
 
 .greeting .connect {
-    font-size: 25px;
-    font-weight: 600;    
+    letter-spacing: .5px;
     margin-top: 60px;
-    width: 400px;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.greeting .connect .title {
+    line-height: 35px;
+    font-weight: 600;   
+    font-size: 27px; 
+    margin-bottom: 30px;
+}
+
+.greeting li {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+
+}
+
+b {
+    font-weight: bold;
+    display: inline;
+    margin-right: 5px;
+}
+
+.greeting li .sprite-container {
+    height: 48px;
+    width: 48px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.greeting li .sprite-container .sprite {
+    background: url("sprite.png");
+    line-height: 200px;
+}
+
+.greeting li .sprite-container .one {
+    background-position: -9px -6px;
+}
+.greeting li .sprite-container .two {
+    background-position: -9px -85px;
+}
+.greeting li .sprite-container .three {
+    background-position: -9px -166px;
 }
 
 
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-form .name {
+    display: flex;
+    justify-content: space-between;
+}
+
 .logged-out-home .user-form {
     width: 400px;
+}
+
+.logged-out-home .user-form .name {
+    height: 25px;
 }
 
 
