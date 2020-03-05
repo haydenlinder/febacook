@@ -262,6 +262,9 @@ b {
     margin-right: 20px;
     font-weight: 300;
 }
+
+//// demo button
+
 .logged-out-home .user-form .message .line2 .demo {
     width: 70px;
     height: 25px;
@@ -279,11 +282,7 @@ b {
     cursor: pointer;
 }
 
-.logged-out-home .user-form .name {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 
 ///// form inputs
 
@@ -299,17 +298,38 @@ b {
 }
 
 
+.logged-out-home .user-form select {
+    height: 30px;
+    padding: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+    width: 400px;
+    font-size: 12px;
+}
+
+///// name
+
+.logged-out-home .user-form .name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logged-out-home .user-form .name input {
     width: 175px;
 }
+
+//// birthday
 
 .logged-out-home .user-form .birthday-container {
     margin-top: 20px;
     line-height: unset;
 }
 .logged-out-home .user-form .birthday-container input{
-    margin: unset
+    margin: unset;
+    width: 385px;
 }
+////// gender
 
 .logged-out-home .user-form .gender-input-container {
     display: flex;
@@ -319,12 +339,15 @@ b {
 }
 
 .logged-out-home .user-form .gender-input-container input{
-    width: 50px;
+    width: 15px;
+    margin: 5px;
 }
 
-.input {
-    position: relative;
+.logged-out-home .user-form .gender-input-container .title {
+    margin-right: 10px;
+    font-weight: 420;
 }
+
 
 ////// form input errors
 
@@ -333,13 +356,17 @@ b {
     align-items: center;
 }
 
+.input {
+    position: relative;
+}
+
 .errors {
     background-color: red;
     display: block;
     position: absolute;
     width: fit-content;
-    padding: 5px;
-    top: 18px;
+    padding: 3px;
+    top: 10px;
     right: 420px;
     z-index: 1;
     color: white;
@@ -349,4 +376,41 @@ b {
 
 .no-errors {
     display: none;
+}
+
+
+//// user form button
+
+.button-container {
+    position: relative;
+
+}
+.sign-up-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    width: 200px;
+    background: linear-gradient(#67ae55, #578843);
+    border: 1px solid;
+    border-top-color: rgb(59, 110, 34);
+    border-right-color: rgb(59, 110, 34);
+    border-bottom-color: rgb(44, 81, 21);
+    border-left-color: rgb(59, 110, 34);
+    padding: 5px;
+    text-align: center;
+    color: white;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px #a4e388;
+    position: absolute;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5)}
+
+.sign-up-button:active{
+    background-color: honeydew;
+    top: 2px;
+}
+
+.sign-up-button:hover {
+    cursor: pointer;
 }

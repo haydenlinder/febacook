@@ -202,7 +202,7 @@ class NewUserForm extends React.Component {
                                     onClick={
                                         (e) => this.setState({ gender: e.target.value })
                                     }
-                                /><div>Female</div>
+                                /><div className="title">Female</div>
                     
 
                     
@@ -213,7 +213,7 @@ class NewUserForm extends React.Component {
                                     onClick={
                                         (e) => this.setState({ gender: e.target.value })
                                     }
-                                /><div>Male</div>
+                                /><div className="title">Male</div>
                     
 
                             
@@ -224,43 +224,52 @@ class NewUserForm extends React.Component {
                                     onClick={
                                         (e) => this.setState({ gender: e.target.value })
                                     }
-                                /><div>Custom</div>
-                            </div>
+                            /><div className="title">Custom</div>
+                        </div>
 
-                        <div className="input">
-                            <div className={this.state.errors.gender ? "errors" : "no-errors"}>
-                                {this.state.errors.gender}
+                        <div className="custom-gender-container">
+
+                            <div className="input">
+                                <div className={this.state.errors.gender ? "errors" : "no-errors"}>
+                                    {this.state.errors.gender}
+                                </div>
+                                <input
+                                    type="text"
+                                    placeholder="Gender"
+                                    value={this.state.gender}
+                                    onChange={
+                                        (e) => this.setState({ gender: e.target.value })
+                                    }
+                                />
                             </div>
-                            <input
-                                type="text"
-                                placeholder="Gender"
-                                value={this.state.gender}
-                                onChange={
-                                    (e) => this.setState({ gender: e.target.value })
-                                }
-                            />
+                            
+                            <div className="input">
+                                <div className={this.state.errors.pronouns ? "errors" : "no-errors"}>
+                                    {this.state.errors.pronouns} 
+                                </div>
+                                <select 
+                                    type="text" 
+                                    value={this.state.pronouns}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        let nextState = Object.assign(this.state.errors, { pronouns: null })
+                                        this.setState({ errors: nextState })
+                                    }}
+                                    onChange={
+                                        (e) => this.setState({ pronouns: e.target.value })
+                                    }
+                                >
+                                    <option value="she/her/hers">She: "Wish her a happy birthday!"</option>
+                                    <option value="he/him/his">He: "Wish him a happy birthday!"</option>
+                                    <option value="they/them/theirs">They: "Wish them a happy birthday!"</option>
+
+                                </select>
+                            </div>
                         </div>
                         
-                        <div className="input">
-                            <div className={this.state.errors.pronouns ? "errors" : "no-errors"}>
-                                {this.state.errors.pronouns} 
-                            </div>
-                            <input 
-                                type="text" 
-                                placeholder="Pronouns"
-                                value={this.state.pronouns}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    let nextState = Object.assign(this.state.errors, { pronouns: null })
-                                    this.setState({ errors: nextState })
-                                }}
-                                onChange={
-                                    (e) => this.setState({ pronouns: e.target.value })
-                                }
-                            />
+                        <div className="button-container">
+                            <div id="new" className="sign-up-button" onClick={this.handleSubmit}>Sign Up</div>
                         </div>
-
-                        <button id="new" onClick={this.handleSubmit}>Sign Up</button>
 
                     </form>
                 </div>
