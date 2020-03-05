@@ -8,7 +8,8 @@ class NewUserForm extends React.Component {
         this.state = { 
             username: "", password: "", email: "", 
             first_name: "", last_name: "",
-            birthday: "", gender: "", pronouns: "" 
+            birthday: "", gender: "", pronouns: "", 
+            errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -17,6 +18,7 @@ class NewUserForm extends React.Component {
         e.preventDefault();
         if (e.target.id === "new") {
             this.props.createUser(this.state)
+            .fail(() => this.setState({errors: this.props.errors}));
         } else {
             this.props.createSession({ 
                 email: "user1@email.com", password: "password"
@@ -70,25 +72,32 @@ class NewUserForm extends React.Component {
 
                         <div className="input name">
                         
-                            <div className="errors">
-                                {this.props.errors.first_name}
+                            <div className={`${(this.state.errors.first_name || this.state.errors.last_name) ? "errors" : "no-errors"}`}>
+                                First and last name required
                             </div>
                             <input
                                 type="text" 
                                 placeholder="First name"
                                 value={this.state.first_name}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    let nextState = Object.assign(this.state.errors, { first_name: null, last_name: null })
+                                    this.setState({ errors: nextState })
+                                }}                                
                                 onChange={
-                                    (e) => this.setState({ first_name: e.target.value })
+                                    (e) => this.setState({ first_name: e.target.value})
                                 }
                             />
                         
-                            <div className="errors">
-                                {this.props.errors.last_name} 
-                            </div>
                             <input 
                                 type="text" 
                                 placeholder="Last name"
                                 value={this.state.last_name}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    let nextState = Object.assign(this.state.errors, { first_name: null, last_name: null })
+                                    this.setState({ errors: nextState })
+                                }}
                                 onChange={
                                     (e) => this.setState({ last_name: e.target.value })
                                 }
@@ -96,13 +105,18 @@ class NewUserForm extends React.Component {
                         </div>
 
                         <div className="input">
-                            <div className="errors">
-                                {this.props.errors.email} 
+                            <div className={this.state.errors.email ? "errors" : "no-errors"}>
+                                {this.state.errors.email ? this.state.errors.email[0] : ""} 
                             </div>
                             <input 
                                 type="text"
                                 placeholder="Email" 
                                 value={this.state.email}
+                                onClick={(e) => { 
+                                    e.preventDefault();
+                                    let nextState = Object.assign(this.state.errors, {email: null})
+                                    this.setState({ errors: nextState }) 
+                                }}
                                 onChange={
                                     (e) => this.setState({ email: e.target.value })
                                 }
@@ -111,13 +125,18 @@ class NewUserForm extends React.Component {
 
                         
                         <div className="input">
-                            <div className="errors">
-                                {this.props.errors.password} 
+                            <div className={this.state.errors.password ? "errors" : "no-errors"}>
+                                {this.state.errors.password} 
                             </div>
                             <input 
                                 type="password"
                                 placeholder="Password" 
                                 value={this.state.password}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    let nextState = Object.assign(this.state.errors, { password: null })
+                                    this.setState({ errors: nextState })
+                                }}
                                 onChange={
                                     (e) => this.setState({ password: e.target.value })
                                 }
@@ -125,39 +144,56 @@ class NewUserForm extends React.Component {
                         </div>
 
                         <div className="input">
-                            <div className="errors">
-                                {this.props.errors.username} 
+                            <div className={this.state.errors.username ? "errors" : "no-errors"}>
+                                {this.state.errors.username} 
                             </div>
                             <input 
                                 type="text" 
                                 placeholder="Username"
                                 value={this.state.username}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    let nextState = Object.assign(this.state.errors, { username: null })
+                                    this.setState({ errors: nextState })
+                                }}
                                 onChange={
                                     (e) => this.setState({ username: e.target.value })
                                 }
                             />
                         </div>
-                        
-                        <div className="input">
-                            Birthday
-                            <div className="errors">
-                                {this.props.errors.birthday} 
+
+                            <div className="input">
+                                <div className="birthday-container">
+                                <div>
+                                    Birthday
+                                </div>
+                                <div className={this.state.errors.birthday ? "errors" : "no-errors"}>
+                                    {this.state.errors.birthday} 
+                                </div>
+                                <input 
+                                    type="date" 
+                                    placeholder="1/1/1993"
+                                    value={this.state.birthday}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        let nextState = Object.assign(this.state.errors, { birthday: null })
+                                        this.setState({ errors: nextState })
+                                    }}
+                                    onChange={
+                                        (e) => this.setState({ birthday: e.target.value })
+                                    }
+                                />
+                                </div>
                             </div>
-                            <input 
-                                type="date" 
-                                placeholder="1/1/1993"
-                                value={this.state.birthday}
-                                onChange={
-                                    (e) => this.setState({ birthday: e.target.value })
-                                }
-                            />
-                        </div>
                         Gender
-                        <div className="gender-input-container">
-                                 
-                            <div className="errors">
-                                {this.props.errors.gender} 
-                            </div>
+
+                        <div
+                        className="gender-input-container"
+                        onClick={(e) => {
+                            let nextState = Object.assign(this.state.errors, { gender: null })
+                            this.setState({ errors: nextState })
+                        }}
+                        > 
                             
                                 <input 
                                     type="radio"
@@ -192,8 +228,8 @@ class NewUserForm extends React.Component {
                             </div>
 
                         <div className="input">
-                            <div className="errors">
-                                {this.props.errors.gender}
+                            <div className={this.state.errors.gender ? "errors" : "no-errors"}>
+                                {this.state.errors.gender}
                             </div>
                             <input
                                 type="text"
@@ -206,13 +242,18 @@ class NewUserForm extends React.Component {
                         </div>
                         
                         <div className="input">
-                            <div className="errors">
-                                {this.props.errors.pronouns} 
+                            <div className={this.state.errors.pronouns ? "errors" : "no-errors"}>
+                                {this.state.errors.pronouns} 
                             </div>
                             <input 
                                 type="text" 
                                 placeholder="Pronouns"
                                 value={this.state.pronouns}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    let nextState = Object.assign(this.state.errors, { pronouns: null })
+                                    this.setState({ errors: nextState })
+                                }}
                                 onChange={
                                     (e) => this.setState({ pronouns: e.target.value })
                                 }

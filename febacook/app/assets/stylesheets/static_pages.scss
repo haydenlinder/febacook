@@ -245,7 +245,7 @@ b {
     width: 400px;
 }
 
-//// messages
+//// form messages
 
 .logged-out-home .user-form .message .signup {
     font-size: 34px;
@@ -260,6 +260,7 @@ b {
 
 .logged-out-home .user-form .message .line2 .easy {
     margin-right: 20px;
+    font-weight: 300;
 }
 .logged-out-home .user-form .message .line2 .demo {
     width: 70px;
@@ -280,22 +281,34 @@ b {
 
 .logged-out-home .user-form .name {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 }
 
-///// inputs
+///// form inputs
 
 .logged-out-home .user-form input {
-    height: 40px;
+    height: 25px;
     width: 400px;
+    padding: 5px;
+    padding-left: 10px;
     border: 1px solid rgb(173, 205, 214);
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 20px;
 }
 
+
 .logged-out-home .user-form .name input {
-    width: 180px;
+    width: 175px;
+}
+
+.logged-out-home .user-form .birthday-container {
+    margin-top: 20px;
+    line-height: unset;
+}
+.logged-out-home .user-form .birthday-container input{
+    margin: unset
 }
 
 .logged-out-home .user-form .gender-input-container {
@@ -309,3 +322,31 @@ b {
     width: 50px;
 }
 
+.input {
+    position: relative;
+}
+
+////// form input errors
+
+.logged-out-home .user-form .input {
+    display: flex;
+    align-items: center;
+}
+
+.errors {
+    background-color: red;
+    display: block;
+    position: absolute;
+    width: fit-content;
+    padding: 5px;
+    top: 18px;
+    right: 420px;
+    z-index: 1;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.no-errors {
+    display: none;
+}

@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
                     <Link className="logo" to="/"> febacook </Link>
             
                     <form className="session-form">
-
+                        
                         <div className="email"> 
                             <div>Email</div> 
                             < input
