@@ -85,8 +85,11 @@ table {
 }
 
 
-//////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 
+//////logged-out-header
 
 html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
@@ -143,33 +146,43 @@ html {
 
 .session-form input, .session-form .login {
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .session-form input {
-    height: 21px;
+    height: 20px;
+    width: 140px;
     border: 1px solid darkblue;
 }
 
 
-.login:hover {
+.session-form .login:hover {
     background-color: rgb(65, 95, 156);
+    cursor: pointer;
 }
 
+////////////logged-out-home
+
+
 .logged-out-home-container {
-    background-color: rgb(241, 246, 252);
+    background-color: rgb(239, 242, 245);
     height: 571px;
 }
 
 .logged-out-home {
+    color: rgb(51, 49, 49);
+    line-height: 35px;
     display: flex;
     justify-content: space-between;
     margin-left: 180px;
     margin-right: 180px;
 }
 
-.greeting .connect {
+.logged-out-home .greeting {
     letter-spacing: .5px;
+}
+
+.logged-out-home .greeting .connect {
     margin-top: 60px;
     width: 460px;
     display: flex;
@@ -177,14 +190,13 @@ html {
     justify-content: space-between;
 }
 
-.greeting .connect .title {
-    line-height: 35px;
+.logged-out-home .greeting .connect .title {
     font-weight: 600;   
     font-size: 27px; 
     margin-bottom: 30px;
 }
 
-.greeting li {
+.logged-out-home .greeting li {
     font-size: 15px;
     font-weight: 400;
     margin-top: 15px;
@@ -200,52 +212,91 @@ b {
     margin-right: 5px;
 }
 
-.greeting li .sprite-container {
+.logged-out-home .greeting li .sprite-container {
     height: 48px;
     width: 48px;
     overflow: hidden;
     margin-right: 20px;
 }
 
-.greeting li .sprite-container .sprite {
+.logged-out-home .greeting li .sprite-container .sprite {
     background: url("sprite.png");
     line-height: 200px;
 }
 
-.greeting li .sprite-container .one {
+.logged-out-home .greeting li .sprite-container .one {
     background-position: -9px -6px;
 }
-.greeting li .sprite-container .two {
+.logged-out-home .greeting li .sprite-container .two {
     background-position: -9px -85px;
 }
-.greeting li .sprite-container .three {
+.logged-out-home .greeting li .sprite-container .three {
     background-position: -9px -166px;
 }
 
+/////////////logged out home user form
 
-
-.user-form {
+.logged-out-home .user-form {
+    margin-top: 20px;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.user-form .name {
-    display: flex;
-    justify-content: space-between;
-}
-
-.logged-out-home .user-form {
     width: 400px;
 }
 
+//// messages
 
-
-.logged-out-home .user-form input {
-    height: 30px;
+.logged-out-home .user-form .message .signup {
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: .5px;
 }
 
+.logged-out-home .user-form .message .line2 {
+    display: flex;
+    align-items: center;
+}
 
+.logged-out-home .user-form .message .line2 .easy {
+    margin-right: 20px;
+}
+.logged-out-home .user-form .message .line2 .demo {
+    width: 70px;
+    height: 25px;
+    border-radius: 2px;
+    color: inherit;
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    background-color: rgb(78, 116, 192);
+    border: 1px solid rgb(46, 66, 119);
+}
+
+.logged-out-home .user-form .message .line2 .demo:hover {
+    background-color: rgb(37, 65, 129);
+    cursor: pointer;
+}
+
+.logged-out-home .user-form .name {
+    display: flex;
+    justify-content: space-around;
+}
+
+///// inputs
+
+.logged-out-home .user-form input {
+    height: 40px;
+    width: 400px;
+    border: 1px solid rgb(173, 205, 214);
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.logged-out-home .user-form .name input {
+    width: 180px;
+}
 
 
 

@@ -59,10 +59,13 @@ class NewUserForm extends React.Component {
                     </div>
 
                     <form className="user-form">
+
                         <div className="message">
                             <div className="signup"> Sign Up </div>
-                            <div className="easy"> It's quick and easy. </div>
-                            <button id="demo" onClick={this.handleSubmit}> Try it out </button>
+                            <div className="line2">
+                                <div className="easy"> It's quick and easy. </div>
+                                <button id="demo" className="demo" onClick={this.handleSubmit}> Try it out </button>
+                            </div>
                         </div>
 
                         <div className="input name">
@@ -138,50 +141,54 @@ class NewUserForm extends React.Component {
                                 }
                             />
                         </div>
-
-                        <div className="input">
-                            Gender {this.props.errors.gender} 
-                            <label>Female
-                                <input 
-                                    type="radio"
-                                    value="female"
-                                    onClick={
-                                        (e) => this.setState({ gender: e.target.value })
-                                    }
-                                />
-                            </label>
-
-                            <label>Male
-                                <input 
-                                    type="radio"
-                                    value="male"
-                                    onClick={
-                                        (e) => this.setState({ gender: e.target.value })
-                                    }
-                                />
-                            </label>
-
-                            <label>Custom
-                                <input 
-                                    type="radio"
-                                    value=""
-                                    onClick={
-                                        (e) => this.setState({ gender: e.target.value })
-                                    }
-                                />
-                            </label>
+                        <div className="gender-input-container">
                             <div className="input">
-                                {this.props.errors.username}
-                                <input
-                                    type="text"
-                                    placeholder="Gender"
-                                    value={this.state.gender}
-                                    onChange={
-                                        (e) => this.setState({ gender: e.target.value })
-                                    }
-                                />
-                            </div>
+                                Gender {this.props.errors.gender} 
+                                <label>Female
+                                    <input 
+                                        type="radio"
+                                        name="gender"
+                                        value="female"
+                                        onClick={
+                                            (e) => this.setState({ gender: e.target.value })
+                                        }
+                                    />
+                                </label>
 
+                                <label>Male
+                                    <input 
+                                        type="radio"
+                                        name="gender"
+                                        value="male"
+                                        onClick={
+                                            (e) => this.setState({ gender: e.target.value })
+                                        }
+                                    />
+                                </label>
+
+                                <label>Custom
+                                    <input 
+                                        type="radio"
+                                        name="gender"
+                                        value=""
+                                        onClick={
+                                            (e) => this.setState({ gender: e.target.value })
+                                        }
+                                    />
+                                </label>
+                                <div className="input">
+                                    {this.props.errors.username}
+                                    <input
+                                        type="text"
+                                        placeholder="Gender"
+                                        value={this.state.gender}
+                                        onChange={
+                                            (e) => this.setState({ gender: e.target.value })
+                                        }
+                                    />
+                                </div>
+
+                            </div>
                         </div>
                         
                         <div className="input">
