@@ -298,5 +298,14 @@ b {
     width: 180px;
 }
 
+.logged-out-home .user-form .gender-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
 
+.logged-out-home .user-form .gender-input-container input{
+    width: 50px;
+}
 

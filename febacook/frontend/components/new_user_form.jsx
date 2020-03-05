@@ -82,7 +82,9 @@ class NewUserForm extends React.Component {
                                 }
                             />
                         
-                            {this.props.errors.last_name} 
+                            <div className="errors">
+                                {this.props.errors.last_name} 
+                            </div>
                             <input 
                                 type="text" 
                                 placeholder="Last name"
@@ -94,7 +96,9 @@ class NewUserForm extends React.Component {
                         </div>
 
                         <div className="input">
-                            {this.props.errors.email} 
+                            <div className="errors">
+                                {this.props.errors.email} 
+                            </div>
                             <input 
                                 type="text"
                                 placeholder="Email" 
@@ -107,7 +111,9 @@ class NewUserForm extends React.Component {
 
                         
                         <div className="input">
-                            {this.props.errors.password} 
+                            <div className="errors">
+                                {this.props.errors.password} 
+                            </div>
                             <input 
                                 type="password"
                                 placeholder="Password" 
@@ -119,7 +125,9 @@ class NewUserForm extends React.Component {
                         </div>
 
                         <div className="input">
-                            {this.props.errors.username} 
+                            <div className="errors">
+                                {this.props.errors.username} 
+                            </div>
                             <input 
                                 type="text" 
                                 placeholder="Username"
@@ -131,7 +139,10 @@ class NewUserForm extends React.Component {
                         </div>
                         
                         <div className="input">
-                            Birthday <br /> {this.props.errors.birthday} 
+                            Birthday
+                            <div className="errors">
+                                {this.props.errors.birthday} 
+                            </div>
                             <input 
                                 type="date" 
                                 placeholder="1/1/1993"
@@ -141,58 +152,63 @@ class NewUserForm extends React.Component {
                                 }
                             />
                         </div>
+                        Gender
                         <div className="gender-input-container">
-                            <div className="input">
-                                Gender {this.props.errors.gender} 
-                                <label>Female
-                                    <input 
-                                        type="radio"
-                                        name="gender"
-                                        value="female"
-                                        onClick={
-                                            (e) => this.setState({ gender: e.target.value })
-                                        }
-                                    />
-                                </label>
-
-                                <label>Male
-                                    <input 
-                                        type="radio"
-                                        name="gender"
-                                        value="male"
-                                        onClick={
-                                            (e) => this.setState({ gender: e.target.value })
-                                        }
-                                    />
-                                </label>
-
-                                <label>Custom
-                                    <input 
-                                        type="radio"
-                                        name="gender"
-                                        value=""
-                                        onClick={
-                                            (e) => this.setState({ gender: e.target.value })
-                                        }
-                                    />
-                                </label>
-                                <div className="input">
-                                    {this.props.errors.username}
-                                    <input
-                                        type="text"
-                                        placeholder="Gender"
-                                        value={this.state.gender}
-                                        onChange={
-                                            (e) => this.setState({ gender: e.target.value })
-                                        }
-                                    />
-                                </div>
-
+                                 
+                            <div className="errors">
+                                {this.props.errors.gender} 
                             </div>
+                            
+                                <input 
+                                    type="radio"
+                                    name="gender"
+                                    value="female"
+                                    onClick={
+                                        (e) => this.setState({ gender: e.target.value })
+                                    }
+                                /><div>Female</div>
+                    
+
+                    
+                                <input 
+                                    type="radio"
+                                    name="gender"
+                                    value="male"
+                                    onClick={
+                                        (e) => this.setState({ gender: e.target.value })
+                                    }
+                                /><div>Male</div>
+                    
+
+                            
+                                <input 
+                                    type="radio"
+                                    name="gender"
+                                    value=""
+                                    onClick={
+                                        (e) => this.setState({ gender: e.target.value })
+                                    }
+                                /><div>Custom</div>
+                            </div>
+
+                        <div className="input">
+                            <div className="errors">
+                                {this.props.errors.gender}
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Gender"
+                                value={this.state.gender}
+                                onChange={
+                                    (e) => this.setState({ gender: e.target.value })
+                                }
+                            />
                         </div>
                         
                         <div className="input">
-                            {this.props.errors.pronouns} 
+                            <div className="errors">
+                                {this.props.errors.pronouns} 
+                            </div>
                             <input 
                                 type="text" 
                                 placeholder="Pronouns"
