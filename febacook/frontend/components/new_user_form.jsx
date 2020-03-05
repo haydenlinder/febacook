@@ -32,7 +32,7 @@ class NewUserForm extends React.Component {
                     <div className="greeting">
                         <ul className="connect">
                             <div className="title">
-                                <b>Connect with friends</b> and the 
+                                Connect with friends and the <br/> 
                                 world around you on Febacook.
                             </div>
                             <li>
