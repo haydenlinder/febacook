@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import LoggedInHome from './logged_in_home';
-import LoggedOutHomeContainer from './logged_out_home_container';
+import LoggedOutHome from './logged_out_home';
 
 const Home = ({ currentUser }) => {
     return(
-        currentUser ? <LoggedInHome currentUser={currentUser}/> : <LoggedOutHomeContainer /> 
+        currentUser ? <LoggedInHome currentUser={currentUser}/> : <LoggedOutHome /> 
     )
 }
 
