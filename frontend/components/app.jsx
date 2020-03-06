@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import HeaderContainer from './header';
 
 const App = () => (
-    <div>
+    <div className="app-container">
         <HeaderContainer /> 
         <Switch >
             <Route path="/" component={HomeContainer}/>

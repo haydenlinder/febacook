@@ -89,7 +89,12 @@ table {
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
 
-//////logged-out-header
+
+////////////////   app
+
+
+
+//////   logged-out-header
 
 html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
@@ -102,7 +107,7 @@ html {
     color: white;
     display: flex;
     justify-content: space-between;
-    min-width: fit-content;
+    min-width: 1220px;
 }
 
 .logo {
