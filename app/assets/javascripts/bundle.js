@@ -325,7 +325,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var Home = function Home(_ref) {
   var currentUser = _ref.currentUser;
-  console.log("home rerender");
   return currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_in_home__WEBPACK_IMPORTED_MODULE_2__["default"], {
     currentUser: currentUser
   }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_out_home_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
