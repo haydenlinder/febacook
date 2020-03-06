@@ -7,14 +7,18 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            password: "", email: ""
+            user: {
+                password: "", email: ""
+            },
+            errors: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createSession(this.state)
+        this.props.createSession(this.state.user)
+        .fail(() => this.setState( {errors: this.props.errors} ))
     }
 
     render(){
@@ -28,27 +32,35 @@ class SessionForm extends React.Component {
                             <div>Email</div> 
                             < input
                                 type = "text"
-                                value = { this.state.email }
+                                value = { this.state.user.email }
+                                onClick={(e) => {
+                                    this.setState({ errors: null })
+                                }}  
                                 onChange = {
-                                    (e) => this.setState({ 
-                                        email: e.target.value 
-                                    })
+                                    (e) => this.setState({user: {
+                                        email: e.target.value,
+                                        password: this.state.user.password
+                                    }})
                                 }
                             />
                         </div>
                         <div className="input">
-                        <div className={this.props.errors ? "errors" : "no-errors"}>
-                            {this.props.errors}
+                        <div className={this.state.errors ? "errors" : "no-errors"}>
+                            {this.state.errors}
                         </div> 
                             <div className="password"> 
                                 <div>Password</div> 
                                 < input
                                     type = "text"
-                                    value = { this.state.password }
+                                    value = { this.state.user.password }
+                                    onClick={(e) => {
+                                        this.setState({ errors: null })
+                                    }}  
                                     onChange = {
-                                        (e) => this.setState({ 
-                                            password: e.target.value 
-                                        })
+                                        (e) => this.setState({user: { 
+                                            password: e.target.value,
+                                            email: this.state.user.email 
+                                        }})
                                     }
                                 />
                             </div>

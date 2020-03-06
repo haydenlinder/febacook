@@ -861,8 +861,11 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SessionForm).call(this, props));
     _this.state = {
-      password: "",
-      email: ""
+      user: {
+        password: "",
+        email: ""
+      },
+      errors: null
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -871,13 +874,19 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   _createClass(SessionForm, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
-      this.props.createSession(this.state);
+      this.props.createSession(this.state.user).fail(function () {
+        return _this2.setState({
+          errors: _this2.props.errors
+        });
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-out-header"
@@ -890,24 +899,40 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         className: "email"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.email,
+        value: this.state.user.email,
+        onClick: function onClick(e) {
+          _this3.setState({
+            errors: null
+          });
+        },
         onChange: function onChange(e) {
-          return _this2.setState({
-            email: e.target.value
+          return _this3.setState({
+            user: {
+              email: e.target.value,
+              password: _this3.state.user.password
+            }
           });
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.props.errors ? "errors" : "no-errors"
-      }, this.props.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: this.state.errors ? "errors" : "no-errors"
+      }, this.state.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "password"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.password,
+        value: this.state.user.password,
+        onClick: function onClick(e) {
+          _this3.setState({
+            errors: null
+          });
+        },
         onChange: function onChange(e) {
-          return _this2.setState({
-            password: e.target.value
+          return _this3.setState({
+            user: {
+              password: e.target.value,
+              email: _this3.state.user.email
+            }
           });
         }
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
