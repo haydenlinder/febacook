@@ -38,7 +38,7 @@ body {
 	line-height: 1;
 }
 
-ol, ul {
+ol, ul, li {
 	list-style: none;
 }
 
@@ -93,7 +93,6 @@ table {
 ////////////////   app
 
 .app-container{
-    // max-width: 1000px;
 }
 
 //////   logged-out-header
@@ -103,7 +102,7 @@ html {
     -webkit-font-smoothing: subpixel-antialiased
 }
 
-.logged-out-header {
+.header{
     border-bottom: 1px solid rgb(26, 57, 117);
     background-image: linear-gradient(rgb(65, 95, 156), rgb(35, 71, 145));
     color: white;
@@ -112,7 +111,7 @@ html {
     min-width: 1220px;
 }
 
-.logo {
+.logged-out-header .logo {
     font-weight: 625;
     font-size: 40px;
     margin-top: 25px;
@@ -413,3 +412,72 @@ b {
     margin-top: 80px;
     margin-bottom: 50px;
 }
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
+//    logged in header
+////////////////////////////////////////////////////////////////////////////
+
+.logged-in-header {
+    max-height: 42px;
+    border-bottom: 1px solid rgb(26, 57, 117);
+    background-image: linear-gradient(rgb(65, 95, 156), rgb(35, 71, 145));
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.logged-in-header .nav {
+    display: flex;
+    margin-right: 180px;
+    margin-left: 180px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logged-in-header .nav > div, .logged-in-header .nav > input {
+    margin: 10px;
+}
+
+.logged-in-header .nav .logo a {
+    text-decoration: unset;
+    color: white;
+}
+
+.logged-in-header .nav .input-container {
+    position: relative;
+}
+
+.logged-in-header .nav input {
+    width: 400px;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+.logged-in-header .nav .search-button {
+    background-color: lightgrey;
+    color: grey;
+    position: absolute;
+    display: inline;
+    z-index: 1;
+    left: 380px;
+    height: 20px;
+    width: 40px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.logged-in-header .nav .link {
+    width: fit-content;
+    min-width: 100px;
+    border-right: 1px solid darkblue;
+    text-align: center;
+}
+
+// .logged-in-header .nav

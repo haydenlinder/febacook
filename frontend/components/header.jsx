@@ -2,11 +2,12 @@ import React from 'react';
 import { deleteSession } from '../actions/session_actions'
 import { connect } from 'react-redux';
 import LoggedOutHeaderContainer from './logged_out_header_container';
+import LoggedInHeaderContainer from './logged_in_header_container';
 
 
 const Header = ({ currentUser, deleteSession }) => {
     return currentUser ? 
-        <button onClick={deleteSession}>Sign Out</button> 
+        <LoggedInHeaderContainer />
         : <LoggedOutHeaderContainer />
 }
 
