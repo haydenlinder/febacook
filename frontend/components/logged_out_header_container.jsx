@@ -3,7 +3,7 @@ import { createSession } from '../actions/session_actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
-class SessionForm extends React.Component {
+class LoggedOutHeader extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -87,6 +87,6 @@ const mdp = dispatch => ({
     createSession: (credentials) => dispatch(createSession(credentials))
 })
 
-const SessionFormContainer = connect(msp, mdp)(SessionForm);
+const LoggedOutHeaderContainer = connect(msp, mdp)(LoggedOutHeader);
 
-export default SessionFormContainer;
+export default LoggedOutHeaderContainer;

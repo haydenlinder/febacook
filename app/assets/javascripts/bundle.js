@@ -292,7 +292,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _session_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session_form */ "./frontend/components/session_form.jsx");
+/* harmony import */ var _logged_out_header_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logged_out_header_container */ "./frontend/components/logged_out_header_container.jsx");
 
 
 
@@ -303,7 +303,7 @@ var Header = function Header(_ref) {
       deleteSession = _ref.deleteSession;
   return currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: deleteSession
-  }, "Sign Out") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_form__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+  }, "Sign Out") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_out_header_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
 };
 
 var msp = function msp(state) {
@@ -360,6 +360,156 @@ var msp = function msp(state) {
 
 var HomeContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp)(Home);
 /* harmony default export */ __webpack_exports__["default"] = (HomeContainer);
+
+/***/ }),
+
+/***/ "./frontend/components/logged_out_header_container.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/logged_out_header_container.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
+  _inherits(LoggedOutHeader, _React$Component);
+
+  function LoggedOutHeader(props) {
+    var _this;
+
+    _classCallCheck(this, LoggedOutHeader);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LoggedOutHeader).call(this, props));
+    _this.state = {
+      user: {
+        password: "",
+        email: ""
+      },
+      errors: null
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(LoggedOutHeader, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.props.createSession(this.state.user).fail(function () {
+        return _this2.setState({
+          errors: _this2.props.errors
+        });
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        className: "logo",
+        to: "/"
+      }, " febacook "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "session-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "email"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.user.email,
+        onClick: function onClick(e) {
+          _this3.setState({
+            errors: null
+          });
+        },
+        onChange: function onChange(e) {
+          return _this3.setState({
+            user: {
+              email: e.target.value,
+              password: _this3.state.user.password
+            }
+          });
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: this.state.errors ? "errors" : "no-errors"
+      }, this.state.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "password"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: this.state.user.password,
+        onClick: function onClick(e) {
+          _this3.setState({
+            errors: null
+          });
+        },
+        onChange: function onChange(e) {
+          return _this3.setState({
+            user: {
+              password: e.target.value,
+              email: _this3.state.user.email
+            }
+          });
+        }
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "login",
+        onClick: this.handleSubmit
+      }, "Log In")));
+    }
+  }]);
+
+  return LoggedOutHeader;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+var msp = function msp(state) {
+  return {
+    errors: state.errors.session.login
+  };
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    createSession: function createSession(credentials) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["createSession"])(credentials));
+    }
+  };
+};
+
+var LoggedOutHeaderContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(LoggedOutHeader);
+/* harmony default export */ __webpack_exports__["default"] = (LoggedOutHeaderContainer);
 
 /***/ }),
 
@@ -811,156 +961,6 @@ var Root = function Root(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
-
-/***/ }),
-
-/***/ "./frontend/components/session_form.jsx":
-/*!**********************************************!*\
-  !*** ./frontend/components/session_form.jsx ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.jsx");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-var SessionForm = /*#__PURE__*/function (_React$Component) {
-  _inherits(SessionForm, _React$Component);
-
-  function SessionForm(props) {
-    var _this;
-
-    _classCallCheck(this, SessionForm);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SessionForm).call(this, props));
-    _this.state = {
-      user: {
-        password: "",
-        email: ""
-      },
-      errors: null
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(SessionForm, [{
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      var _this2 = this;
-
-      e.preventDefault();
-      this.props.createSession(this.state.user).fail(function () {
-        return _this2.setState({
-          errors: _this2.props.errors
-        });
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this3 = this;
-
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "logged-out-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        className: "logo",
-        to: "/"
-      }, " febacook "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "session-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "email"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.user.email,
-        onClick: function onClick(e) {
-          _this3.setState({
-            errors: null
-          });
-        },
-        onChange: function onChange(e) {
-          return _this3.setState({
-            user: {
-              email: e.target.value,
-              password: _this3.state.user.password
-            }
-          });
-        }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.state.errors ? "errors" : "no-errors"
-      }, this.state.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "password"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.user.password,
-        onClick: function onClick(e) {
-          _this3.setState({
-            errors: null
-          });
-        },
-        onChange: function onChange(e) {
-          return _this3.setState({
-            user: {
-              password: e.target.value,
-              email: _this3.state.user.email
-            }
-          });
-        }
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "login",
-        onClick: this.handleSubmit
-      }, "Log In")));
-    }
-  }]);
-
-  return SessionForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-var msp = function msp(state) {
-  return {
-    errors: state.errors.session.login
-  };
-};
-
-var mdp = function mdp(dispatch) {
-  return {
-    createSession: function createSession(credentials) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["createSession"])(credentials));
-    }
-  };
-};
-
-var SessionFormContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(SessionForm);
-/* harmony default export */ __webpack_exports__["default"] = (SessionFormContainer);
 
 /***/ }),
 
