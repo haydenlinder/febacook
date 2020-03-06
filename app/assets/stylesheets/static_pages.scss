@@ -126,23 +126,20 @@ html {
     margin-right: 180px;
 }
 
-.session-form::before {
-    content: "";
-}
-
-.session-form::after {
-    content: "";
-}
-
 .login {
-    width: 55px;
+    width: fit-content;
     height: 25px;
     border-radius: 2px;
-    color: inherit;
+    color: white;
     font-weight: 600;
     font-size: 12px;
     background-color: rgb(78, 116, 192);
     border: 1px solid rgb(46, 66, 119)
+}
+
+.session-form .login:hover {
+    background-color: rgb(65, 95, 156);
+    cursor: pointer;
 }
 
 .session-form input, .session-form .login {
@@ -157,10 +154,7 @@ html {
 }
 
 
-.session-form .login:hover {
-    background-color: rgb(65, 95, 156);
-    cursor: pointer;
-}
+
 
 //////////////////////////////  logged-out-home
 
