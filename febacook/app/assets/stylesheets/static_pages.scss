@@ -348,6 +348,10 @@ b {
     font-weight: 420;
 }
 
+.logged-out-home .user-form .custom-gender-false {
+    display: none;
+}
+
 
 ////// form input errors
 
@@ -366,6 +370,8 @@ b {
     position: absolute;
     width: fit-content;
     padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
     top: 10px;
     right: 420px;
     z-index: 1;
