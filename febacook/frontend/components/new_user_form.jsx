@@ -308,6 +308,8 @@ class NewUserForm extends React.Component {
                             <div id="new" className="sign-up-button" onClick={this.handleSubmit}>Sign Up</div>
                         </div>
 
+                    <div className="line"></div>
+
                     </form>
                 </div>
             </div>

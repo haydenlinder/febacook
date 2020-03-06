@@ -166,7 +166,7 @@ html {
 
 .logged-out-home-container {
     background-color: rgb(239, 242, 245);
-    height: 571px;
+    min-height: fit-content;
 }
 
 .logged-out-home {
@@ -389,8 +389,8 @@ b {
 
 .button-container {
     position: relative;
-
 }
+
 .sign-up-button {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -419,4 +419,11 @@ b {
 
 .sign-up-button:hover {
     cursor: pointer;
+}
+
+.line {
+    width: 400px;
+    border-bottom: 1px solid grey;
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
