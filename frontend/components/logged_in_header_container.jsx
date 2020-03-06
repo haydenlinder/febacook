@@ -31,35 +31,43 @@ class LoggedInHeader extends React.Component {
                     </div>
 
                    
+                    <div className="links-container">
 
-                    <div className="profile link">
-                        <Link to={`/${this.props.currentUser.username}`}>
-                            {this.props.currentUser.firstName}
-                        </Link>
-                        <div className="profile-photo">
-                            img
-                        </div>
-                    </div>
-
-                    <div className=".find-friends link">
-                        <Link to="/users">Find Friends</Link>
-                    </div>
-
-                    <div className="create link">
-                        Create
-                    </div>
-
-                    <div className="notifications-container">
-                        <div className="friend-icon notification">
-                            88
+                        <div className="profile link">
+                            <Link to={`/${this.props.currentUser.username}`}>
+                                {this.props.currentUser.firstName}
+                            </Link>
+                            <div className="profile-photo">
+                                img
+                            </div>
                         </div>
 
-                        <div className="message-icon notification">
-                            msg
+                        <div className="home link">
+                            <Link to="/users">Home</Link>
                         </div>
 
-                        <div className="bell-icon notification">
-                            A
+                        <div className="find-friends link">
+                            <Link to="/users">Find Friends</Link>
+                        </div>
+
+                        <div className="create link">
+                            Create
+                        </div>
+
+                        <div className="link">
+                            <div className="notifications-container">
+                                <div className="friend-icon notification">
+                                    88
+                                </div>
+
+                                <div className="message-icon notification">
+                                    msg
+                                </div>
+
+                                <div className="bell-icon notification">
+                                    A
+                                </div>
+                            </div>
                         </div>
                     </div>
 
