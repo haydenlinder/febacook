@@ -69,7 +69,7 @@ class NewUserForm extends React.Component {
                             <div className="signup"> Sign Up </div>
                             <div className="line2">
                                 <div className="easy"> It's quick and easy. </div>
-                                <button id="demo" className="demo" onClick={this.handleSubmit}> Try it out </button>
+                                <button id="demo" className="demo login" onClick={this.handleSubmit}> Try it out </button>
                             </div>
                         </div>
 

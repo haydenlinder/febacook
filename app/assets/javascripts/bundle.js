@@ -484,7 +484,7 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
         className: "easy"
       }, " It's quick and easy. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "demo",
-        className: "demo",
+        className: "demo login",
         onClick: this.handleSubmit
       }, " Try it out "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input name"
