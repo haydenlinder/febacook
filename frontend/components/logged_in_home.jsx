@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Feed = (props) => {
+const LoggedInHome = (props) => {
     return( <h1>{props.currentUser.firstName}'s Feed</h1> )
 }
 
-export default Feed;
+export default LoggedInHome;

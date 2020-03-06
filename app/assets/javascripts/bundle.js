@@ -258,27 +258,6 @@ var App = function App() {
 
 /***/ }),
 
-/***/ "./frontend/components/feed.jsx":
-/*!**************************************!*\
-  !*** ./frontend/components/feed.jsx ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var Feed = function Feed(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.currentUser.firstName, "'s Feed");
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Feed);
-
-/***/ }),
-
 /***/ "./frontend/components/header.jsx":
 /*!****************************************!*\
   !*** ./frontend/components/header.jsx ***!
@@ -337,8 +316,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _feed__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./feed */ "./frontend/components/feed.jsx");
-/* harmony import */ var _new_user_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./new_user_form */ "./frontend/components/new_user_form.jsx");
+/* harmony import */ var _logged_in_home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./logged_in_home */ "./frontend/components/logged_in_home.jsx");
+/* harmony import */ var _logged_out_home_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logged_out_home_container */ "./frontend/components/logged_out_home_container.jsx");
 
 
 
@@ -347,9 +326,9 @@ __webpack_require__.r(__webpack_exports__);
 var Home = function Home(_ref) {
   var currentUser = _ref.currentUser;
   console.log("home rerender");
-  return currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_feed__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_in_home__WEBPACK_IMPORTED_MODULE_2__["default"], {
     currentUser: currentUser
-  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_new_user_form__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_out_home_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
 };
 
 var msp = function msp(state) {
@@ -360,6 +339,66 @@ var msp = function msp(state) {
 
 var HomeContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp)(Home);
 /* harmony default export */ __webpack_exports__["default"] = (HomeContainer);
+
+/***/ }),
+
+/***/ "./frontend/components/logged_in_home.jsx":
+/*!************************************************!*\
+  !*** ./frontend/components/logged_in_home.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var LoggedInHome = function LoggedInHome(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, props.currentUser.firstName, "'s Feed");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LoggedInHome);
+
+/***/ }),
+
+/***/ "./frontend/components/logged_out_greeting.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/logged_out_greeting.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var LoggedOutGreeting = function LoggedOutGreeting() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "greeting"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "connect"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "title"
+  }, "Connect with friends and the ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "world around you on Febacook."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sprite-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sprite one"
+  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "See photos and updates"), " from friends in News Feed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sprite-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sprite two"
+  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Share what's new"), " in your life on your Timeline."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sprite-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sprite three"
+  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Make connections"), " around the world.")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LoggedOutGreeting);
 
 /***/ }),
 
@@ -513,10 +552,10 @@ var LoggedOutHeaderContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["
 
 /***/ }),
 
-/***/ "./frontend/components/new_user_form.jsx":
-/*!***********************************************!*\
-  !*** ./frontend/components/new_user_form.jsx ***!
-  \***********************************************/
+/***/ "./frontend/components/logged_out_home_container.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/logged_out_home_container.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -526,6 +565,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _logged_out_greeting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./logged_out_greeting */ "./frontend/components/logged_out_greeting.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -548,15 +588,16 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var NewUserForm = /*#__PURE__*/function (_React$Component) {
-  _inherits(NewUserForm, _React$Component);
 
-  function NewUserForm(props) {
+var LoggedOutHome = /*#__PURE__*/function (_React$Component) {
+  _inherits(LoggedOutHome, _React$Component);
+
+  function LoggedOutHome(props) {
     var _this;
 
-    _classCallCheck(this, NewUserForm);
+    _classCallCheck(this, LoggedOutHome);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(NewUserForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LoggedOutHome).call(this, props));
     _this.state = {
       user: {
         username: "",
@@ -575,7 +616,7 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  _createClass(NewUserForm, [{
+  _createClass(LoggedOutHome, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
       var _this2 = this;
@@ -604,25 +645,7 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
         className: "logged-out-home-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-out-home"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "greeting"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "connect"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "title"
-      }, "Connect with friends and the ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "world around you on Febacook."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sprite-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sprite one"
-      }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "See photos and updates"), " from friends in News Feed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sprite-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sprite two"
-      }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Share what's new"), " in your life on your Timeline."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sprite-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sprite three"
-      }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Make connections"), " around the world."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_out_greeting__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "user-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "message"
@@ -908,7 +931,7 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return NewUserForm;
+  return LoggedOutHome;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 var msp = function msp(state) {
@@ -929,8 +952,8 @@ var mdp = function mdp(dispatch) {
   };
 };
 
-var NewUserFormContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(NewUserForm);
-/* harmony default export */ __webpack_exports__["default"] = (NewUserFormContainer);
+var LoggedOutHomeContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(LoggedOutHome);
+/* harmony default export */ __webpack_exports__["default"] = (LoggedOutHomeContainer);
 
 /***/ }),
 

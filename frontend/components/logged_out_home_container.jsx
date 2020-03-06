@@ -1,8 +1,9 @@
 import React from 'react';
 import { createUser, createSession } from '../actions/session_actions';
 import { connect } from 'react-redux';
+import LoggedOutGreeting from './logged_out_greeting';
 
-class NewUserForm extends React.Component {
+class LoggedOutHome extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -34,34 +35,8 @@ class NewUserForm extends React.Component {
         return (
             <div className="logged-out-home-container">
                 <div className="logged-out-home">
-                    <div className="greeting">
-                        <ul className="connect">
-                            <div className="title">
-                                Connect with friends and the <br/> 
-                                world around you on Febacook.
-                            </div>
-                            <li>
-                               <div className="sprite-container">
-                                   <div className="sprite one">sprite</div>
-                               </div> 
-                                <b>See photos and updates</b> from friends in News Feed.
 
-                            </li>
-                            <li>
-                                <div className="sprite-container">
-                                    <div className="sprite two">sprite</div>
-                                </div> 
-                                <b>Share what's new</b> in your life on your Timeline.
-                            </li>
-                            <li>
-                                <div className="sprite-container">
-                                    <div className="sprite three">sprite</div>
-                                </div> 
-                                <b>Make connections</b> around the world.
-                            </li>
-                        </ul>
-
-                    </div>
+                    <LoggedOutGreeting />
 
                     <form className="user-form">
 
@@ -327,6 +302,6 @@ const mdp = dispatch => ({
     createSession: credentials => dispatch(createSession(credentials))
 })
 
-const NewUserFormContainer = connect(msp, mdp)(NewUserForm);
+const LoggedOutHomeContainer = connect(msp, mdp)(LoggedOutHome);
 
-export default NewUserFormContainer;
+export default LoggedOutHomeContainer;

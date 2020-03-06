@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Feed from './feed';
-import NewUserFormContainer from './new_user_form';
+import LoggedInHome from './logged_in_home';
+import LoggedOutHomeContainer from './logged_out_home_container';
 
 const Home = ({ currentUser }) => {
     console.log("home rerender")
     return(
-        currentUser ? <Feed currentUser={currentUser}/> : <NewUserFormContainer /> 
+        currentUser ? <LoggedInHome currentUser={currentUser}/> : <LoggedOutHomeContainer /> 
     )
 }
 
