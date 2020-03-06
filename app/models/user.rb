@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
     attr_reader :password
 
     before_validation :ensure_session_token
@@ -21,6 +22,12 @@ class User < ApplicationRecord
         :password, 
         length: { minimum: 6, allow_nil: true }
     )
+
+    validate do
+        if self.birthday && self.birthday > Date.today
+            self.errors.add(:birthday, "can't be in the future")
+        end
+    end
 
     def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)

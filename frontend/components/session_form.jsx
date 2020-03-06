@@ -36,24 +36,23 @@ class SessionForm extends React.Component {
                                 }
                             />
                         </div>
-
-                        <div className="password"> 
-                            <div>Password</div> 
-                            < input
-                                type = "text"
-                                value = { this.state.password }
-                                onChange = {
-                                    (e) => this.setState({ 
-                                        password: e.target.value 
-                                    })
-                                }
-                            />
-                        </div>
-
-                        
-                        <div className="login-errors">
+                        <div className="input">
+                        <div className={this.props.errors ? "errors" : "no-errors"}>
                             {this.props.errors}
                         </div> 
+                            <div className="password"> 
+                                <div>Password</div> 
+                                < input
+                                    type = "text"
+                                    value = { this.state.password }
+                                    onChange = {
+                                        (e) => this.setState({ 
+                                            password: e.target.value 
+                                        })
+                                    }
+                                />
+                            </div>
+                        </div>
                         
                         <button 
                             className="login"

@@ -897,6 +897,10 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
           });
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: this.props.errors ? "errors" : "no-errors"
+      }, this.props.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "password"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -906,9 +910,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
             password: e.target.value
           });
         }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-errors"
-      }, this.props.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login",
         onClick: this.handleSubmit
       }, "Log In")));
