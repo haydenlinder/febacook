@@ -449,34 +449,36 @@ b {
     margin-left: 10px;
 }
 
+.logged-in-header .left-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logged-in-header .nav .logo {
-    height: 25px;
-    width: 25px;
+    height: 24px;
+    width: 24px;
     overflow: hidden;
-    background: image_url("fb_favicon.jpg");
-    background-size: 25px 25px;
+    background: image_url("fb_logo.png") white;
+    background-size: 150%;
+    background-position: -4px -4px;
     border-radius: 2px;
 }
 
-.logged-in-header .nav .logo a {
-    text-decoration: unset;
-    color: white;
-    line-height: 10;
-
-
-}
 
 .logged-in-header .nav .input-container {
     position: relative;
 }
 
 .logged-in-header .nav input {
-    width: 400px;
-    height: 22px;
+    width: 420px;
+    height: 26px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 2px;
-    border: none;
+    border-radius: 3px;
+    border: 1px solid rgb(31, 67, 139);
+    margin-left: 10px;
+    box-sizing: border-box;
 }
 
 .logged-in-header .nav .search-button {
@@ -486,11 +488,12 @@ b {
     position: absolute;
     display: inline;
     z-index: 1;
-    left: 380px;
+    left: 391px;
+    top: 1px;
     height: 24px;
-    width: 40px;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+    width: 38px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .logged-in-header .nav .search-button:hover {
@@ -512,6 +515,10 @@ b {
     text-align: center;
     padding-right: 10px;
     padding-left: 10px;
+}
+
+.logged-in-header .nav .find-friends {
+    min-width: 70px;
 }
 
 .logged-in-header .profile {

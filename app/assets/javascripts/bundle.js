@@ -406,6 +406,8 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "left-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logo"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-container"
@@ -414,7 +416,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         placeholder: "I'm a text box"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-button"
-      }, "o-")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "o-"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "links-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile link"

@@ -21,12 +21,14 @@ class LoggedInHeader extends React.Component {
             <div className="logged-in-header">
                 <div className="nav">
 
-                    <div className="logo">
-                    </div>
+                    <div className="left-nav">
+                        <div className="logo">
+                        </div>
 
-                    <div className="input-container">
-                        <input type="text" placeholder="I'm a text box"/>
-                        <div className="search-button">o-</div>
+                        <div className="input-container">
+                            <input type="text" placeholder="I'm a text box"/>
+                            <div className="search-button">o-</div>
+                        </div>
                     </div>
 
                    
