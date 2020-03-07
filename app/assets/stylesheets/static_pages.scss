@@ -422,7 +422,7 @@ b {
 ////////////////////////////////////////////////////////////////////////////
 
 .logged-in-header {
-    max-height: 42px;
+    height: 42px;
     border-bottom: 1px solid rgb(26, 57, 117);
     background-image: linear-gradient(rgb(65, 95, 156), rgb(35, 71, 145));
     color: white;
@@ -437,10 +437,11 @@ b {
 
 .logged-in-header .nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-right: 180px;
     margin-left: 180px;
-    justify-content: space-between;
-    align-items: center;
+    min-width: 800px;
 }
 
 .logged-in-header .nav > div {
@@ -448,9 +449,21 @@ b {
     margin-left: 10px;
 }
 
+.logged-in-header .nav .logo {
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
+    background: image_url("fb_favicon.jpg");
+    background-size: 25px 25px;
+    border-radius: 2px;
+}
+
 .logged-in-header .nav .logo a {
     text-decoration: unset;
     color: white;
+    line-height: 10;
+
+
 }
 
 .logged-in-header .nav .input-container {
@@ -489,6 +502,8 @@ b {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .logged-in-header .nav .link {
@@ -509,9 +524,6 @@ b {
     justify-content: space-between;
 }
 
-// .logged-in-header .find-friends {
-
-// }
 
 
 

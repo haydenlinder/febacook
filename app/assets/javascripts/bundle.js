@@ -407,9 +407,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/"
-      }, "f")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",

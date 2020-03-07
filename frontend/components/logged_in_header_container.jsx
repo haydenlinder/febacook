@@ -22,7 +22,6 @@ class LoggedInHeader extends React.Component {
                 <div className="nav">
 
                     <div className="logo">
-                        <Link to="/">f</Link>
                     </div>
 
                     <div className="input-container">
