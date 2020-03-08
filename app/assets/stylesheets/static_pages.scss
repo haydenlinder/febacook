@@ -92,6 +92,11 @@ table {
 
 ////////////////   app
 
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
 
 //////   logged-out-header
 
@@ -115,6 +120,7 @@ html {
     margin-top: 25px;
     margin-bottom: 20px;
     margin-left: 180px;
+    margin-right: 260px;
     text-decoration: none;
     color: inherit;
 }

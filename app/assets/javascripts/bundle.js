@@ -245,9 +245,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var toggleDropdowns = function toggleDropdowns(e) {
+  var unselect = function unselect(target) {
+    target.classList.remove("selected");
+    target.classList.add("unselected");
+  };
+
+  var select = function select(target) {
+    target.classList.remove("unselected");
+    target.classList.add("selected");
+  };
+
+  var toggleOffTarget = function toggleOffTarget(e) {
+    var selected = document.getElementsByClassName("selected");
+    var pending = false;
+
+    if (e.target.classList.contains("unselected")) {
+      pending = true;
+    }
+
+    for (var i = 0; i < selected.length; i++) {
+      unselect(selected[i]);
+    }
+
+    if (pending) select(e.target);
+  };
+
+  toggleOffTarget(e);
+};
+
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "app-container"
+    className: "app-container",
+    onClick: toggleDropdowns
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
     component: _home__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -406,17 +436,6 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       this.props.location.pathname === "/" ? window.location.reload(false) : this.props.history.push("/");
     }
   }, {
-    key: "toggleDropdown",
-    value: function toggleDropdown(e) {
-      if (e.target.classList.contains("unselected")) {
-        e.target.classList.remove("unselected");
-        e.target.classList.add("selected");
-      } else {
-        e.target.classList.remove("selected");
-        e.target.classList.add("unselected");
-      }
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
@@ -464,22 +483,17 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notifications-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "friend-icon sprite unselected",
-        onClick: this.toggleDropdown
+        className: "friend-icon sprite unselected"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Friend requests"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "message-icon sprite unselected",
-        onClick: this.toggleDropdown
+        className: "message-icon sprite unselected"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Messages"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bell-icon sprite unselected",
-        onClick: this.toggleDropdown
+        className: "bell-icon sprite unselected"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Notifications")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "git-icon sprite unselected",
-        onClick: this.toggleDropdown
+        className: "git-icon sprite unselected"
       }, "G"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "arrow-icon sprite unselected",
-        onClick: this.toggleDropdown
+        className: "arrow-icon sprite unselected"
       }, "V", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick(e) {
           return _this3.handleSignout(e);

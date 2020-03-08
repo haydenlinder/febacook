@@ -21,19 +21,15 @@ class LoggedInHeader extends React.Component {
         window.location.reload(false) : this.props.history.push("/")
     }
 
-    toggleDropdown(e) {
-        if (e.target.classList.contains("unselected")) {
-            e.target.classList.remove("unselected");
-            e.target.classList.add("selected")
-        } else {
-            e.target.classList.remove("selected");
-            e.target.classList.add("unselected")
-        }
-    }
+
+
+
 
     render(){
         return(
-            <div className="logged-in-header">
+            <div 
+                className="logged-in-header"
+                >
                 <div className="nav">
 
                     <div className="left-nav">
@@ -97,7 +93,6 @@ class LoggedInHeader extends React.Component {
                         <div className="notifications-container">
                             <div 
                                 className="friend-icon sprite unselected"
-                                onClick={this.toggleDropdown}
                             >
                                 <ul>
                                     <li>
@@ -108,7 +103,6 @@ class LoggedInHeader extends React.Component {
 
                             <div 
                                 className="message-icon sprite unselected"
-                                onClick={this.toggleDropdown}
                                 >
                                 <ul>
                                     <li>
@@ -119,7 +113,6 @@ class LoggedInHeader extends React.Component {
 
                             <div 
                                 className="bell-icon sprite unselected"
-                                onClick={this.toggleDropdown}
                             >
                                 <ul>
                                     <li>
@@ -134,7 +127,6 @@ class LoggedInHeader extends React.Component {
 
                     <div 
                         className="git-icon sprite unselected"
-                        onClick={this.toggleDropdown}
                         >
 
                         G
@@ -142,7 +134,6 @@ class LoggedInHeader extends React.Component {
 
                     <div 
                         className="arrow-icon sprite unselected"
-                        onClick={this.toggleDropdown}
                         >
                         V
                         <ul>
