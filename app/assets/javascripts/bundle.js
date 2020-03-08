@@ -420,11 +420,11 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "links-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/".concat(this.props.currentUser.username)
-      }, this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-photo"
-      }, "img")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "img"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/".concat(this.props.currentUser.username)
+      }, this.props.currentUser.firstName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/users"

@@ -35,12 +35,12 @@ class LoggedInHeader extends React.Component {
                     <div className="links-container">
 
                         <div className="profile link">
-                            <Link to={`/${this.props.currentUser.username}`}>
-                                {this.props.currentUser.firstName}
-                            </Link>
                             <div className="profile-photo">
                                 img
                             </div>
+                            <Link to={`/${this.props.currentUser.username}`}>
+                                {this.props.currentUser.firstName}
+                            </Link>
                         </div>
 
                         <div className="home link">

@@ -441,7 +441,6 @@ b {
     justify-content: space-between;
     margin-right: 180px;
     margin-left: 180px;
-    min-width: 800px;
 }
 
 .logged-in-header .nav > div {
@@ -460,24 +459,25 @@ b {
     width: 24px;
     overflow: hidden;
     background: image_url("fb_logo.png") white;
-    background-size: 150%;
-    background-position: -4px -4px;
+    background-size: 155%;
+    background-position: -3px -5px;
     border-radius: 2px;
 }
 
 
 .logged-in-header .nav .input-container {
     position: relative;
+    margin-right: 82px
 }
 
 .logged-in-header .nav input {
-    width: 420px;
+    width: 448px;
     height: 26px;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 3px;
     border: 1px solid rgb(31, 67, 139);
-    margin-left: 10px;
+    margin-left: 6px;
     box-sizing: border-box;
 }
 
@@ -488,12 +488,12 @@ b {
     position: absolute;
     display: inline;
     z-index: 1;
-    left: 391px;
+    left: 415px;
     top: 1px;
     height: 24px;
     width: 38px;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 
 .logged-in-header .nav .search-button:hover {
@@ -518,7 +518,7 @@ b {
 }
 
 .logged-in-header .nav .find-friends {
-    min-width: 70px;
+    min-width: 80px;
 }
 
 .logged-in-header .profile {
