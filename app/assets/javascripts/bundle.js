@@ -365,9 +365,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -382,24 +382,35 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
   _inherits(LoggedInHeader, _React$Component);
 
   function LoggedInHeader(props) {
+    var _this;
+
     _classCallCheck(this, LoggedInHeader);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(LoggedInHeader).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LoggedInHeader).call(this, props));
+    _this.goHome = _this.goHome.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(LoggedInHeader, [{
     key: "handleSignout",
     value: function handleSignout(e) {
-      var _this = this;
+      var _this2 = this;
 
       this.props.deleteSession().then(function () {
-        return _this.props.history.push("/");
+        return _this2.props.history.push("/");
+      });
+    }
+  }, {
+    key: "goHome",
+    value: function goHome(e) {
+      this.props.location.pathname === "/" ? window.location.reload(true) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
+        to: "/"
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-in-header"
@@ -408,7 +419,8 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "logo"
+        className: "logo",
+        onClick: this.goHome
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -425,8 +437,8 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "profile-photo"
       }, "img"), this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/users",
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.goHome,
         className: "home link"
       }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
@@ -456,7 +468,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "arrow-icon sprite dropdown"
       }, "V", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick(e) {
-          return _this2.handleSignout(e);
+          return _this3.handleSignout(e);
         }
       }, "Sign Out"))));
     }

@@ -463,6 +463,10 @@ b {
     border-radius: 2px;
 }
 
+.logged-in-header .logo:hover {
+    cursor: pointer;
+}
+
 
 .logged-in-header .nav .input-container {
     position: relative;
@@ -531,6 +535,7 @@ b {
 
 .logged-in-header .link:hover {
     background-color: #385898;
+    cursor: pointer;
 }
 
 

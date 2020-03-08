@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 
 import { deleteSession } from '../actions/session_actions'
 
@@ -8,12 +8,17 @@ import { deleteSession } from '../actions/session_actions'
 class LoggedInHeader extends React.Component {
     constructor(props){
         super(props)
-
+        this.goHome = this.goHome.bind(this)
     }
 
     handleSignout(e) {
         this.props.deleteSession()
         .then(() => this.props.history.push("/"))
+    }
+
+    goHome(e) {
+        this.props.location.pathname === "/" ? 
+        window.location.reload(true) : <Redirect to="/" />
     }
 
     render(){
@@ -22,7 +27,10 @@ class LoggedInHeader extends React.Component {
                 <div className="nav">
 
                     <div className="left-nav">
-                        <div className="logo">
+                        <div 
+                            className="logo"
+                            onClick={this.goHome}
+                        >
                         </div>
 
                         <div className="input-container">
@@ -49,12 +57,12 @@ class LoggedInHeader extends React.Component {
 
                         <div className="middle-nav-right-border"></div>
 
-                        <Link 
-                            to="/users"
+                        <div 
+                            onClick={this.goHome}
                             className="home link"
                         >
                             Home
-                        </Link>
+                        </div>
 
                         <div className="middle-nav-right-border"></div>
                         
