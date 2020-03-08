@@ -510,7 +510,8 @@ b {
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 550;
+    letter-spacing: .1px;
     min-width: fit-content;
 }
 
@@ -556,6 +557,18 @@ b {
 .logged-in-header .nav .find-friends {
     min-width: fit-content;
 }
+///////////////// sprites
+
+.logged-in-header .sprite {
+    width: 25px;
+    height: 20px;
+    overflow: hidden;
+    opacity: 0.6;
+}
+
+.logged-in-header .sprite:hover {
+    opacity: 1;
+}
 
 /////////////// notifications-container
 
@@ -565,8 +578,29 @@ b {
     align-items: center;
 }
 
-.logged-in-header .notifications-container .message-icon {
-    padding: 5px;
+.notifications-container .sprite {
+    background-size: 450%;
+    line-height: 50px;
+}
+
+.notifications-container .friend-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-position: -9px;
+}
+
+.notifications-container .message-icon {
+    background-position: -43px;
+}
+
+.notifications-container .bell-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-position: -78px;
+}
+
+.logged-in-header .middle-nav .sprite {
+    background-image: image_url("exposure.jpeg")
 }
 
 

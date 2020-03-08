@@ -18,7 +18,7 @@ class LoggedInHeader extends React.Component {
 
     goHome(e) {
         this.props.location.pathname === "/" ? 
-        window.location.reload(true) : <Redirect to="/" />
+        window.location.reload(false) : this.props.history.push("/")
     }
 
     render(){
@@ -97,8 +97,9 @@ class LoggedInHeader extends React.Component {
                                 A
                             </div>
                         </div>
+                        
+                        <div className="middle-nav-right-border"></div>
                     </div>
-                    <div className="middle-nav-right-border"></div>
 
                     <div className="git-icon sprite">
                         G

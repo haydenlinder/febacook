@@ -403,9 +403,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "goHome",
     value: function goHome(e) {
-      this.props.location.pathname === "/" ? window.location.reload(true) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Redirect"], {
-        to: "/"
-      });
+      this.props.location.pathname === "/" ? window.location.reload(false) : this.props.history.push("/");
     }
   }, {
     key: "render",
@@ -460,9 +458,9 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "message-icon sprite"
       }, "msg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bell-icon sprite"
-      }, "A"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "A")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "git-icon sprite"
       }, "G"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "arrow-icon sprite dropdown"
