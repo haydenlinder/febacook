@@ -562,7 +562,6 @@ b {
 .logged-in-header .sprite {
     width: 25px;
     height: 20px;
-    overflow: hidden;
     opacity: 0.6;
 }
 
@@ -579,8 +578,9 @@ b {
 }
 
 .notifications-container .sprite {
-    background-size: 450%;
+    background-size: 470%;
     line-height: 50px;
+    border-radius: 5px;
 }
 
 .notifications-container .friend-icon {
@@ -590,18 +590,42 @@ b {
 }
 
 .notifications-container .message-icon {
-    background-position: -43px;
+    background-position: -46px;
 }
 
 .notifications-container .bell-icon {
     margin-left: 10px;
     margin-right: 10px;
-    background-position: -78px;
+    background-position: -82px;
 }
 
 .logged-in-header .middle-nav .sprite {
     background-image: image_url("exposure.jpeg")
 }
+
+
+
+////////////// dropdown 
+
+.sprite {
+    position: relative;
+}
+
+.unselected > ul {
+    display: none;
+}
+
+.selected > ul {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: -200px;
+    color: black;
+    background-color: yellow;
+    width: 400px;
+}
+
+
 
 
 

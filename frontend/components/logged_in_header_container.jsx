@@ -21,6 +21,16 @@ class LoggedInHeader extends React.Component {
         window.location.reload(false) : this.props.history.push("/")
     }
 
+    toggleDropdown(e) {
+        if (e.target.classList.contains("unselected")) {
+            e.target.classList.remove("unselected");
+            e.target.classList.add("selected")
+        } else {
+            e.target.classList.remove("selected");
+            e.target.classList.add("unselected")
+        }
+    }
+
     render(){
         return(
             <div className="logged-in-header">
@@ -85,29 +95,61 @@ class LoggedInHeader extends React.Component {
                         <div className="middle-nav-right-border"></div>
 
                         <div className="notifications-container">
-                            <div className="friend-icon sprite">
-                                88
+                            <div 
+                                className="friend-icon sprite unselected"
+                                onClick={this.toggleDropdown}
+                            >
+                                <ul>
+                                    <li>
+                                        Friend requests
+                                    </li>
+                                </ul>
                             </div>
 
-                            <div className="message-icon sprite">
-                                msg
+                            <div 
+                                className="message-icon sprite unselected"
+                                onClick={this.toggleDropdown}
+                                >
+                                <ul>
+                                    <li>
+                                        Messages
+                                    </li>
+                                </ul>
                             </div>
 
-                            <div className="bell-icon sprite">
-                                A
+                            <div 
+                                className="bell-icon sprite unselected"
+                                onClick={this.toggleDropdown}
+                            >
+                                <ul>
+                                    <li>
+                                        Notifications
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        
+
                         <div className="middle-nav-right-border"></div>
                     </div>
 
-                    <div className="git-icon sprite">
+                    <div 
+                        className="git-icon sprite unselected"
+                        onClick={this.toggleDropdown}
+                        >
+
                         G
                     </div>
 
-                    <div className="arrow-icon sprite dropdown">
+                    <div 
+                        className="arrow-icon sprite unselected"
+                        onClick={this.toggleDropdown}
+                        >
                         V
-                        <li onClick={(e) => this.handleSignout(e)}>Sign Out</li> 
+                        <ul>
+                            <li onClick={(e) => this.handleSignout(e)}>
+                                Sign Out
+                            </li> 
+                        </ul>
                     </div>
 
                 </div>

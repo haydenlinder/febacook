@@ -406,6 +406,17 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       this.props.location.pathname === "/" ? window.location.reload(false) : this.props.history.push("/");
     }
   }, {
+    key: "toggleDropdown",
+    value: function toggleDropdown(e) {
+      if (e.target.classList.contains("unselected")) {
+        e.target.classList.remove("unselected");
+        e.target.classList.add("selected");
+      } else {
+        e.target.classList.remove("selected");
+        e.target.classList.add("unselected");
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
@@ -453,22 +464,27 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notifications-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "friend-icon sprite"
-      }, "88"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "message-icon sprite"
-      }, "msg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bell-icon sprite"
-      }, "A")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "friend-icon sprite unselected",
+        onClick: this.toggleDropdown
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Friend requests"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "message-icon sprite unselected",
+        onClick: this.toggleDropdown
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Messages"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bell-icon sprite unselected",
+        onClick: this.toggleDropdown
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Notifications")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "git-icon sprite"
+        className: "git-icon sprite unselected",
+        onClick: this.toggleDropdown
       }, "G"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "arrow-icon sprite dropdown"
-      }, "V", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "arrow-icon sprite unselected",
+        onClick: this.toggleDropdown
+      }, "V", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick(e) {
           return _this3.handleSignout(e);
         }
-      }, "Sign Out"))));
+      }, "Sign Out")))));
     }
   }]);
 
