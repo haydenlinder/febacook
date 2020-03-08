@@ -32,51 +32,71 @@ class LoggedInHeader extends React.Component {
                     </div>
 
                    
-                    <div className="links-container">
+                    <div className="middle-nav">
+                        
+                        <Link 
+                            to={`/${this.props.currentUser.username}`}
+                            className="profile link"
+                        >
 
-                        <div className="profile link">
                             <div className="profile-photo">
                                 img
                             </div>
-                            <Link to={`/${this.props.currentUser.username}`}>
-                                {this.props.currentUser.firstName}
-                            </Link>
-                        </div>
 
-                        <div className="home link">
-                            <Link to="/users">Home</Link>
-                        </div>
+                            {this.props.currentUser.firstName}
 
-                        <div className="find-friends link">
-                            <Link to="/users">Find Friends</Link>
-                        </div>
+                        </Link>
 
-                        <div className="create link">
+                        <div className="middle-nav-right-border"></div>
+
+                        <Link 
+                            to="/users"
+                            className="home link"
+                        >
+                            Home
+                        </Link>
+
+                        <div className="middle-nav-right-border"></div>
+                        
+                        <Link 
+                            to="/users"
+                            className="find-friends link"
+                        >
+                            Find Friends
+                        </Link>
+
+                        <div className="middle-nav-right-border"></div>
+
+                        <Link 
+                            to="/"
+                            className="create link"
+                        >
                             Create
-                        </div>
+                        </Link>
 
-                        <div className="link">
-                            <div className="notifications-container">
-                                <div className="friend-icon notification">
-                                    88
-                                </div>
+                        <div className="middle-nav-right-border"></div>
 
-                                <div className="message-icon notification">
-                                    msg
-                                </div>
+                        <div className="notifications-container">
+                            <div className="friend-icon sprite">
+                                88
+                            </div>
 
-                                <div className="bell-icon notification">
-                                    A
-                                </div>
+                            <div className="message-icon sprite">
+                                msg
+                            </div>
+
+                            <div className="bell-icon sprite">
+                                A
                             </div>
                         </div>
                     </div>
+                    <div className="middle-nav-right-border"></div>
 
-                    <div className="git-icon notification">
+                    <div className="git-icon sprite">
                         G
                     </div>
 
-                    <div className="arrow-icon notification dropdown">
+                    <div className="arrow-icon sprite dropdown">
                         V
                         <li onClick={(e) => this.handleSignout(e)}>Sign Out</li> 
                     </div>

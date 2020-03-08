@@ -417,37 +417,43 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-button"
       }, "o-"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "links-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/".concat(this.props.currentUser.username),
         className: "profile link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-photo"
-      }, "img"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/".concat(this.props.currentUser.username)
-      }, this.props.currentUser.firstName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "img"), this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-nav-right-border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/users",
         className: "home link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/users"
-      }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-nav-right-border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/users",
         className: "find-friends link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/users"
-      }, "Find Friends")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Find Friends"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-nav-right-border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        to: "/",
         className: "create link"
       }, "Create"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-nav-right-border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notifications-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "friend-icon notification"
+        className: "friend-icon sprite"
       }, "88"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "message-icon notification"
+        className: "message-icon sprite"
       }, "msg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bell-icon notification"
-      }, "A")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "git-icon notification"
+        className: "bell-icon sprite"
+      }, "A"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-nav-right-border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "git-icon sprite"
       }, "G"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "arrow-icon notification dropdown"
+        className: "arrow-icon sprite dropdown"
       }, "V", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick(e) {
           return _this2.handleSignout(e);
