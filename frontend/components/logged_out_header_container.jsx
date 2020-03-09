@@ -1,5 +1,5 @@
 import React from 'react';
-import { createSession } from '../actions/session_actions';
+import { createSession, clearSessionErrors } from '../actions/session_actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
@@ -9,14 +9,14 @@ class LoggedOutHeader extends React.Component {
         this.state = {
             user: {
                 password: "", email: ""
-            },
-            errors: null
+            }
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.clearSessionErrors("login");
         this.props.createSession(this.state.user)
         .fail(() => this.setState( {errors: this.props.errors} ))
     }
@@ -27,34 +27,35 @@ class LoggedOutHeader extends React.Component {
                     <Link className="logo" to="/"> febacook </Link>
             
                     <form className="session-form">
-                        
-                        <div className="email"> 
-                            <div>Email</div> 
-                            < input
-                                type = "text"
-                                value = { this.state.user.email }
-                                onClick={(e) => {
-                                    this.setState({ errors: null })
-                                }}  
-                                onChange = {
-                                    (e) => this.setState({user: {
-                                        email: e.target.value,
-                                        password: this.state.user.password
-                                    }})
-                                }
-                            />
-                        </div>
                         <div className="input">
-                        <div className={this.state.errors ? "errors" : "no-errors"}>
-                            {this.state.errors}
-                        </div> 
+                            <div className={this.props.errors ? "errors" : "no-errors"}>
+                                {this.props.errors}
+                            </div> 
+                            <div className="email"> 
+                                <div>Email</div> 
+                                < input
+                                    type = "text"
+                                    value = { this.state.user.email }
+                                    onClick={(e) => {
+                                        this.props.clearSessionErrors("login")
+                                    }}  
+                                    onChange = {
+                                        (e) => this.setState({user: {
+                                            email: e.target.value,
+                                            password: this.state.user.password
+                                        }})
+                                    }
+                                />
+                            </div>
+                        </div>
+
                             <div className="password"> 
                                 <div>Password</div> 
                                 < input
                                     type = "text"
                                     value = { this.state.user.password }
                                     onClick={(e) => {
-                                        this.setState({ errors: null })
+                                        this.props.clearSessionErrors("login")
                                     }}  
                                     onChange = {
                                         (e) => this.setState({user: { 
@@ -64,7 +65,6 @@ class LoggedOutHeader extends React.Component {
                                     }
                                 />
                             </div>
-                        </div>
                         
                         <button 
                             className="login"
@@ -84,7 +84,8 @@ const msp = state => ({
 })
 
 const mdp = dispatch => ({
-    createSession: (credentials) => dispatch(createSession(credentials))
+    createSession: (credentials) => dispatch(createSession(credentials)),
+    clearSessionErrors: (errors) => dispatch(clearSessionErrors(errors))
 })
 
 const LoggedOutHeaderContainer = connect(msp, mdp)(LoggedOutHeader);

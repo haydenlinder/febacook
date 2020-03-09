@@ -3,10 +3,15 @@ import { $createSession, $createUser, $deleteSession } from "../util/session_api
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_NULL_SESSION = "RECEIVE_NULL_SESSION";
+export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS"
 
 const receiveCurrentUser = user => ({
     type: RECEIVE_CURRENT_USER,
     user
+})
+
+const receiveNullSession = () => ({
+    type: RECEIVE_NULL_SESSION
 })
 
 const receiveSessionErrors = errors => ({
@@ -14,9 +19,11 @@ const receiveSessionErrors = errors => ({
     errors
 })
 
-const receiveNullSession = () => ({
-    type: RECEIVE_NULL_SESSION
+export const clearSessionErrors = (errors) => ({
+    type: CLEAR_SESSION_ERRORS,
+    errors
 })
+
 
 export const createSession = credentials => dispatch => (
     $createSession(credentials)

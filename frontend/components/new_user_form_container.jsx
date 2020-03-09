@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { createUser, createSession } from '../actions/session_actions';
+import { createUser, createSession, clearSessionErrors } from '../actions/session_actions';
 
 class NewUserForm extends React.Component {
     constructor(props) {
@@ -20,6 +20,7 @@ class NewUserForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.clearSessionErrors();
         if (e.target.id === "new") {
             this.props.createUser(this.state.user)
                 .fail(() => this.setState({ errors: this.props.errors }));
@@ -291,7 +292,8 @@ const msp = (state) => ({
 
 const mdp = dispatch => ({
     createUser: user => dispatch(createUser(user)),
-    createSession: credentials => dispatch(createSession(credentials))
+    createSession: credentials => dispatch(createSession(credentials)),
+    clearSessionErrors: (errors) => dispatch(clearSessionErrors(errors))
 })
 
 const NewUserFormContainer = connect(msp, mdp)(NewUserForm);

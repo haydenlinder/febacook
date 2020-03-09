@@ -90,7 +90,7 @@
 /*!**********************************************!*\
   !*** ./frontend/actions/session_actions.jsx ***!
   \**********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS, RECEIVE_NULL_SESSION, createSession, createUser, deleteSession */
+/*! exports provided: RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS, RECEIVE_NULL_SESSION, CLEAR_SESSION_ERRORS, clearSessionErrors, createSession, createUser, deleteSession */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,6 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CURRENT_USER", function() { return RECEIVE_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SESSION_ERRORS", function() { return RECEIVE_SESSION_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NULL_SESSION", function() { return RECEIVE_NULL_SESSION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SESSION_ERRORS", function() { return CLEAR_SESSION_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearSessionErrors", function() { return clearSessionErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSession", function() { return createSession; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createUser", function() { return createUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteSession", function() { return deleteSession; });
@@ -106,11 +108,18 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 var RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 var RECEIVE_NULL_SESSION = "RECEIVE_NULL_SESSION";
+var CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
 var receiveCurrentUser = function receiveCurrentUser(user) {
   return {
     type: RECEIVE_CURRENT_USER,
     user: user
+  };
+};
+
+var receiveNullSession = function receiveNullSession() {
+  return {
+    type: RECEIVE_NULL_SESSION
   };
 };
 
@@ -121,12 +130,12 @@ var receiveSessionErrors = function receiveSessionErrors(errors) {
   };
 };
 
-var receiveNullSession = function receiveNullSession() {
+var clearSessionErrors = function clearSessionErrors(errors) {
   return {
-    type: RECEIVE_NULL_SESSION
+    type: CLEAR_SESSION_ERRORS,
+    errors: errors
   };
 };
-
 var createSession = function createSession(credentials) {
   return function (dispatch) {
     return Object(_util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["$createSession"])(credentials).then(function (payload) {
@@ -634,8 +643,7 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
       user: {
         password: "",
         email: ""
-      },
-      errors: null
+      }
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -647,6 +655,7 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
+      this.props.clearSessionErrors("login");
       this.props.createSession(this.state.user).fail(function () {
         return _this2.setState({
           errors: _this2.props.errors
@@ -666,14 +675,16 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
       }, " febacook "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "session-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: this.props.errors ? "errors" : "no-errors"
+      }, this.props.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "email"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.user.email,
         onClick: function onClick(e) {
-          _this3.setState({
-            errors: null
-          });
+          _this3.props.clearSessionErrors("login");
         },
         onChange: function onChange(e) {
           return _this3.setState({
@@ -683,19 +694,13 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
             }
           });
         }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.state.errors ? "errors" : "no-errors"
-      }, this.state.errors), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "password"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.user.password,
         onClick: function onClick(e) {
-          _this3.setState({
-            errors: null
-          });
+          _this3.props.clearSessionErrors("login");
         },
         onChange: function onChange(e) {
           return _this3.setState({
@@ -705,7 +710,7 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
             }
           });
         }
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login",
         onClick: this.handleSubmit
       }, "Log In")));
@@ -725,6 +730,9 @@ var mdp = function mdp(dispatch) {
   return {
     createSession: function createSession(credentials) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["createSession"])(credentials));
+    },
+    clearSessionErrors: function clearSessionErrors(errors) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearSessionErrors"])(errors));
     }
   };
 };
@@ -831,6 +839,7 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
+      this.props.clearSessionErrors();
 
       if (e.target.id === "new") {
         this.props.createUser(this.state.user).fail(function () {
@@ -1152,6 +1161,9 @@ var mdp = function mdp(dispatch) {
     },
     createSession: function createSession(credentials) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["createSession"])(credentials));
+    },
+    clearSessionErrors: function clearSessionErrors(errors) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearSessionErrors"])(errors));
     }
   };
 };
@@ -1325,12 +1337,19 @@ __webpack_require__.r(__webpack_exports__);
 var sessionErrorsReducer = function sessionErrorsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
   var nextState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
-      return action.errors;
+      nextState = Object.assign(nextState, action.errors);
+      return nextState;
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_SESSION_ERRORS"]:
+      for (var i = 0; i < action.errors.length; i++) {
+        nextState[action.errors[i]] = null;
+      }
+
+      return {};
 
     default:
       return state;
