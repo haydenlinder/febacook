@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/**
- * Eric Meyer's CSS Reset + Nicolas Gallagher's Clearfix
- * https://github.com/reefat/css-reset
- */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,15 +52,6 @@ table {
 	border-spacing: 0;
 }
 
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 .clearfix:before,
 .clearfix:after {
 	content: " "; /* 1 */
@@ -76,10 +62,6 @@ table {
 	clear: both;
 }
 
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
 .clearfix {
 	*zoom: 1;
 }
@@ -449,7 +431,9 @@ b {
     min-width: 1000px;
 }
 
-//////////////  left nav
+
+//////////////////////////////////  left nav
+
 
 .logged-in-header .left-nav {
     display: flex;
@@ -470,7 +454,6 @@ b {
 .logged-in-header .logo:hover {
     cursor: pointer;
 }
-
 
 .logged-in-header .nav .input-container {
     position: relative;
@@ -501,14 +484,22 @@ b {
     width: 38px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
+    background-image: image_url("search_icon.png");
+    background-size: 115%;
+    background-position: center;
+
 }
 
 .logged-in-header .nav .search-button:hover {
     cursor: pointer;
     background-color: rgb(236, 236, 236);
+    background-image: image_url("hover_search.png");
 }
 
-///////////// middle-nav
+
+////////////////////////////////////// middle-nav
+
+
 .logged-in-header .middle-nav {
     display: flex;
     justify-content: space-between;
@@ -561,21 +552,12 @@ b {
 .logged-in-header .nav .find-friends {
     min-width: fit-content;
 }
-///////////////// sprites
-
-.logged-in-header .sprite {
-    width: 25px;
-    height: 20px;
-    opacity: 0.6;
-}
-
-.logged-in-header .sprite.unselected:hover {
-    opacity: 1;
-}
 
 
 
-/////////////// notifications-container
+//////////////////////// notifications-container
+
+
 
 .logged-in-header .notifications-container {
     display: flex;
@@ -583,11 +565,6 @@ b {
     align-items: center;
 }
 
-.notifications-container .sprite {
-    background-size: 470%;
-    line-height: 50px;
-    border-radius: 5px;
-}
 
 .notifications-container .friend-icon {
     margin-left: 10px;
@@ -605,21 +582,61 @@ b {
     background-position: -82px;
 }
 
+
+
+
+///////////////////////////////////// sprites 
+
+
+
 .logged-in-header .middle-nav .sprite {
-    background-image: image_url("exposure.jpeg")
+    width: 25px;
+    height: 25px;
+    background-size: 470%;
+    border-radius: 5px;
+    background-repeat: no-repeat;
 }
 
-
-
-////////////// dropdown 
-
-.sprite {
-    position: relative;
+.logged-in-header .middle-nav .sprite {
+    background-image: image_url("notification_sprite.png")
 }
 
-.sprite.selected {
-    opacity: 1;
+.logged-in-header .info-icon, .logged-in-header .arrow-icon {
+    background-image: image_url("right_sprites.png");
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: 300%;
+    border-radius: 5px;
 }
+
+.logged-in-header .info-icon {
+    background-position: -9.5px;
+}
+
+.logged-in-header .arrow-icon {
+    background-position: -45px;
+}
+
+// hover
+
+.logged-in-header .middle-nav .friend-icon.unselected:hover {
+    background-image: image_url("hover_friend.png");
+}
+
+.logged-in-header .middle-nav .message-icon.unselected:hover {
+    background-image: image_url("hover_message.png");
+}
+
+.logged-in-header .middle-nav .bell-icon.unselected:hover {
+    background-image: image_url("hover_bell.png");
+}
+
+.logged-in-header .info-icon:hover, .logged-in-header .arrow-icon:hover {
+    background-image: image_url("hover_right.png");
+}
+
+// selected
 
 .sprite.friend-icon.selected {
     background-image: image_url("selected_friend.png");
@@ -632,6 +649,21 @@ b {
 .sprite.bell-icon.selected {
     background-image: image_url("selected_bell.png");
 }
+
+
+.logged-in-header .info-icon.selected {
+    background-image: image_url("selected_info.png")
+}
+
+.logged-in-header .arrow-icon.selected {
+    background-image: image_url("selected_arrow.png")
+}
+
+.sprite {
+    position: relative;
+}
+
+
 
 .unselected > ul {
     display: none;

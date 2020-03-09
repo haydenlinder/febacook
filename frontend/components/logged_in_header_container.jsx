@@ -41,7 +41,7 @@ class LoggedInHeader extends React.Component {
 
                         <div className="input-container">
                             <input type="text" placeholder="I'm a text box"/>
-                            <div className="search-button">o-</div>
+                            <div className="search-button"></div>
                         </div>
                     </div>
 
@@ -126,16 +126,13 @@ class LoggedInHeader extends React.Component {
                     </div>
 
                     <div 
-                        className="git-icon sprite unselected"
-                        >
-
-                        G
+                        className="info-icon sprite unselected"
+                    >
                     </div>
 
                     <div 
                         className="arrow-icon sprite unselected"
-                        >
-                        V
+                    >
                         <ul>
                             <li onClick={(e) => this.handleSignout(e)}>
                                 Sign Out

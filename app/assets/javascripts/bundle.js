@@ -456,7 +456,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         placeholder: "I'm a text box"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-button"
-      }, "o-"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/".concat(this.props.currentUser.username),
@@ -491,10 +491,10 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Notifications")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "git-icon sprite unselected"
-      }, "G"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-icon sprite unselected"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "arrow-icon sprite unselected"
-      }, "V", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick(e) {
           return _this3.handleSignout(e);
         }
