@@ -716,16 +716,23 @@ b {
 .selected > ul {
     display: flex;
     position: absolute;
-    top: 30px;
+    top: 34px;
     left: -200px;
     color: black;
     background-color: white;
+    border: 1px solid lightgrey;
     width: 400px;
     z-index: 1;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+.selected > ul > li {
+    width: 400px;
 }
 
 .selected > ul > li:hover {
     cursor: pointer;
+    display: flex;
 }
 
 
