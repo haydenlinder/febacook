@@ -93,8 +93,6 @@ table {
 ////////////////   app
 
 .app-container {
-    display: flex;
-    flex-direction: column;
     width: fit-content;
 }
 
@@ -571,9 +569,11 @@ b {
     opacity: 0.6;
 }
 
-.logged-in-header .sprite:hover {
+.logged-in-header .sprite.unselected:hover {
     opacity: 1;
 }
+
+
 
 /////////////// notifications-container
 
@@ -615,6 +615,22 @@ b {
 
 .sprite {
     position: relative;
+}
+
+.sprite.selected {
+    opacity: 1;
+}
+
+.sprite.friend-icon.selected {
+    background-image: image_url("selected_friend.png");
+}
+
+.sprite.message-icon.selected {
+    background-image: image_url("selected_message.png");
+}
+
+.sprite.bell-icon.selected {
+    background-image: image_url("selected_bell.png");
 }
 
 .unselected > ul {
