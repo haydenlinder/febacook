@@ -5,7 +5,7 @@ import LoggedOutHome from './logged_out_home';
 
 const Home = ({ currentUser }) => {
     return(
-        currentUser ? <LoggedInHome currentUser={currentUser}/> : <LoggedOutHome /> 
+        currentUser ? <LoggedInHome /> : <LoggedOutHome /> 
     )
 }
 

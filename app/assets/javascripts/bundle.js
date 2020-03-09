@@ -372,9 +372,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Home = function Home(_ref) {
   var currentUser = _ref.currentUser;
-  return currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_in_home__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    currentUser: currentUser
-  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_out_home__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+  return currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_in_home__WEBPACK_IMPORTED_MODULE_2__["default"], null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_logged_out_home__WEBPACK_IMPORTED_MODULE_3__["default"], null);
 };
 
 var msp = function msp(state) {
@@ -1204,7 +1202,35 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "profile-header-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover-photo"
-      })), "profile");
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-cover-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "camera-icon"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text"
+      }, "Update Cover Photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-photo-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-photo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update"
+      }, "Update")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "name"
+      }, "Hayden"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit-profile"
+      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "activity-log-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "activity-log"
+      }, "Activity Log"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "activity-log-dropdown unselected"
+      }, "...")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "profile-nav-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Timeline"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Friends"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Archive"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "More"))));
     }
   }]);
 
