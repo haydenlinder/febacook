@@ -377,11 +377,11 @@ b {
     color: white;
     border-radius: 5px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .session-form .errors {
-    left: -135px;
+    left: -142px;
     top: 5px;
     padding: 10px;
     padding-top: 15px;
@@ -433,6 +433,7 @@ b {
 
 .sign-up-button:hover {
     cursor: pointer;
+    background: linear-gradient(#7ec96b, #6ca157);
 }
 
 .line {
@@ -736,7 +737,30 @@ b {
 }
 
 
+/////////////////////////////////////////////////
+// profile
+/////////////////////////////////////////////////
 
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgrey;
+    margin-right: 330px;
+    margin-left: 195px;
+}
+
+//////////// header
+
+.profile .profile-header-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container .cover-photo {
+    height: 315px;
+    background-color: yellow;
+}
 
 
 

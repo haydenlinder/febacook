@@ -1,7 +1,9 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import ProfileContainer from './profile_container';
 
-const LoggedInHome = (props) => {
-    return( <h1>{props.currentUser.firstName}'s Feed</h1> )
-}
+const LoggedInHome = (props) => (
+    <Route path="/:username" component={ProfileContainer} />
+)
 
 export default LoggedInHome;

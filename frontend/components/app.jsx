@@ -3,8 +3,6 @@ import HomeContainer from './home';
 import { Route, Switch } from 'react-router-dom'
 import HeaderContainer from './header';
 
-
-
 const toggleDropdowns = (e) => {
 
     const unselect = (target) => {
