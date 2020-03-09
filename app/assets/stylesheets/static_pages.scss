@@ -377,11 +377,17 @@ b {
     color: white;
     border-radius: 5px;
     text-align: center;
-    font-size: 20px;
+    font-size: 12px;
 }
 
 .session-form .errors {
-    left: -152px;
+    left: -135px;
+    top: 5px;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+
 }
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { createSession, clearSessionErrors } from '../actions/session_actions';
+import { createSession, clearAllSessionErrors } from '../actions/session_actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
@@ -16,7 +16,7 @@ class LoggedOutHeader extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.clearSessionErrors("login");
+        this.props.clearAllSessionErrors();
         this.props.createSession(this.state.user)
         .fail(() => this.setState( {errors: this.props.errors} ))
     }
@@ -37,7 +37,7 @@ class LoggedOutHeader extends React.Component {
                                     type = "text"
                                     value = { this.state.user.email }
                                     onClick={(e) => {
-                                        this.props.clearSessionErrors("login")
+                                        this.props.clearAllSessionErrors()
                                     }}  
                                     onChange = {
                                         (e) => this.setState({user: {
@@ -55,7 +55,7 @@ class LoggedOutHeader extends React.Component {
                                     type = "text"
                                     value = { this.state.user.password }
                                     onClick={(e) => {
-                                        this.props.clearSessionErrors("login")
+                                        this.props.clearAllSessionErrors()
                                     }}  
                                     onChange = {
                                         (e) => this.setState({user: { 
@@ -85,7 +85,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     createSession: (credentials) => dispatch(createSession(credentials)),
-    clearSessionErrors: (errors) => dispatch(clearSessionErrors(errors))
+    clearAllSessionErrors: (errors) => dispatch(clearAllSessionErrors(errors))
 })
 
 const LoggedOutHeaderContainer = connect(msp, mdp)(LoggedOutHeader);

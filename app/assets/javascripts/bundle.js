@@ -90,7 +90,7 @@
 /*!**********************************************!*\
   !*** ./frontend/actions/session_actions.jsx ***!
   \**********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS, RECEIVE_NULL_SESSION, CLEAR_SESSION_ERRORS, clearSessionErrors, createSession, createUser, deleteSession */
+/*! exports provided: RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS, RECEIVE_NULL_SESSION, CLEAR_SESSION_ERRORS, CLEAR_ALL_SESSION_ERRORS, clearSessionErrors, clearAllSessionErrors, createSession, createUser, deleteSession */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99,7 +99,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SESSION_ERRORS", function() { return RECEIVE_SESSION_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_NULL_SESSION", function() { return RECEIVE_NULL_SESSION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SESSION_ERRORS", function() { return CLEAR_SESSION_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_ALL_SESSION_ERRORS", function() { return CLEAR_ALL_SESSION_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearSessionErrors", function() { return clearSessionErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearAllSessionErrors", function() { return clearAllSessionErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSession", function() { return createSession; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createUser", function() { return createUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteSession", function() { return deleteSession; });
@@ -109,6 +111,7 @@ var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 var RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 var RECEIVE_NULL_SESSION = "RECEIVE_NULL_SESSION";
 var CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
+var CLEAR_ALL_SESSION_ERRORS = "CLEAR_ALL_SESSION_ERRORS";
 
 var receiveCurrentUser = function receiveCurrentUser(user) {
   return {
@@ -134,6 +137,11 @@ var clearSessionErrors = function clearSessionErrors(errors) {
   return {
     type: CLEAR_SESSION_ERRORS,
     errors: errors
+  };
+};
+var clearAllSessionErrors = function clearAllSessionErrors() {
+  return {
+    type: CLEAR_ALL_SESSION_ERRORS
   };
 };
 var createSession = function createSession(credentials) {
@@ -655,7 +663,7 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      this.props.clearSessionErrors("login");
+      this.props.clearAllSessionErrors();
       this.props.createSession(this.state.user).fail(function () {
         return _this2.setState({
           errors: _this2.props.errors
@@ -684,7 +692,7 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: this.state.user.email,
         onClick: function onClick(e) {
-          _this3.props.clearSessionErrors("login");
+          _this3.props.clearAllSessionErrors();
         },
         onChange: function onChange(e) {
           return _this3.setState({
@@ -700,7 +708,7 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
         type: "text",
         value: this.state.user.password,
         onClick: function onClick(e) {
-          _this3.props.clearSessionErrors("login");
+          _this3.props.clearAllSessionErrors();
         },
         onChange: function onChange(e) {
           return _this3.setState({
@@ -731,8 +739,8 @@ var mdp = function mdp(dispatch) {
     createSession: function createSession(credentials) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["createSession"])(credentials));
     },
-    clearSessionErrors: function clearSessionErrors(errors) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearSessionErrors"])(errors));
+    clearAllSessionErrors: function clearAllSessionErrors(errors) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearAllSessionErrors"])(errors));
     }
   };
 };
@@ -786,6 +794,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -826,10 +842,10 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
         gender: "",
         pronouns: ""
       },
-      errors: {},
       customGender: "custom-gender-false"
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.clearErrors = _this.clearErrors.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -839,7 +855,7 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      this.props.clearSessionErrors();
+      this.props.clearAllSessionErrors();
 
       if (e.target.id === "new") {
         this.props.createUser(this.state.user).fail(function () {
@@ -853,6 +869,11 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
           password: "password"
         });
       }
+    }
+  }, {
+    key: "clearErrors",
+    value: function clearErrors(errors) {
+      this.props.clearSessionErrors(["login"].concat(_toConsumableArray(errors)));
     }
   }, {
     key: "render",
@@ -876,21 +897,13 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
       }, " Try it out "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "".concat(this.state.errors.first_name || this.state.errors.last_name ? "errors" : "no-errors")
+        className: "".concat(this.props.errors.first_name || this.props.errors.last_name ? "errors" : "no-errors")
       }, "First and last name required"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "First name",
         value: this.state.user.first_name,
         onClick: function onClick(e) {
-          e.preventDefault();
-          var nextState = Object.assign(_this3.state.errors, {
-            first_name: null,
-            last_name: null
-          });
-
-          _this3.setState({
-            errors: nextState
-          });
+          _this3.clearErrors(["first_name", "last_name"]);
         },
         onChange: function onChange(e) {
           var nextState = Object.assign(_this3.state.user, {
@@ -904,15 +917,7 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
         placeholder: "Last name",
         value: this.state.user.last_name,
         onClick: function onClick(e) {
-          e.preventDefault();
-          var nextState = Object.assign(_this3.state.errors, {
-            first_name: null,
-            last_name: null
-          });
-
-          _this3.setState({
-            errors: nextState
-          });
+          _this3.clearErrors(["first_name", "last_name"]);
         },
         onChange: function onChange(e) {
           var nextState = Object.assign(_this3.state.user, {
@@ -924,20 +929,13 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.state.errors.email ? "errors" : "no-errors"
-      }, this.state.errors.email ? this.state.errors.email[0] : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: this.props.errors.email ? "errors" : "no-errors"
+      }, this.props.errors.email ? "Email " + this.props.errors.email[0] : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Email",
         value: this.state.user.email,
         onClick: function onClick(e) {
-          e.preventDefault();
-          var nextState = Object.assign(_this3.state.errors, {
-            email: null
-          });
-
-          _this3.setState({
-            errors: nextState
-          });
+          _this3.clearErrors(["email"]);
         },
         onChange: function onChange(e) {
           var nextState = Object.assign(_this3.state.user, {
@@ -949,20 +947,13 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.state.errors.password ? "errors" : "no-errors"
-      }, this.state.errors.password), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: this.props.errors.password ? "errors" : "no-errors"
+      }, "Password ", this.props.errors.password), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         placeholder: "Password",
         value: this.state.user.password,
         onClick: function onClick(e) {
-          e.preventDefault();
-          var nextState = Object.assign(_this3.state.errors, {
-            password: null
-          });
-
-          _this3.setState({
-            errors: nextState
-          });
+          _this3.clearErrors(["password"]);
         },
         onChange: function onChange(e) {
           var nextState = Object.assign(_this3.state.user, {
@@ -974,20 +965,13 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.state.errors.username ? "errors" : "no-errors"
-      }, this.state.errors.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: this.props.errors.username ? "errors" : "no-errors"
+      }, "Username ", this.props.errors.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         placeholder: "Username",
         value: this.state.user.username,
         onClick: function onClick(e) {
-          e.preventDefault();
-          var nextState = Object.assign(_this3.state.errors, {
-            username: null
-          });
-
-          _this3.setState({
-            errors: nextState
-          });
+          return _this3.clearErrors(["username"]);
         },
         onChange: function onChange(e) {
           var nextState = Object.assign(_this3.state.user, {
@@ -1001,19 +985,13 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "birthday-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Birthday"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.state.errors.birthday ? "errors" : "no-errors"
-      }, this.state.errors.birthday), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: this.props.errors.birthday ? "errors" : "no-errors"
+      }, "Birthday ", this.props.errors.birthday), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "date",
         placeholder: "1/1/1993",
         value: this.state.user.birthday,
         onClick: function onClick(e) {
-          var nextState = Object.assign(_this3.state.errors, {
-            birthday: null
-          });
-
-          _this3.setState({
-            errors: nextState
-          });
+          return _this3.clearErrors(["birthday"]);
         },
         onChange: function onChange(e) {
           var nextState = Object.assign(_this3.state.user, {
@@ -1025,17 +1003,11 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
       }))), "Gender", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-input-container input",
         onClick: function onClick(e) {
-          var nextState = Object.assign(_this3.state.errors, {
-            gender: null
-          });
-
-          _this3.setState({
-            errors: nextState
-          });
+          return _this3.clearErrors(["gender"]);
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: this.state.errors.gender ? "errors" : "no-errors"
-      }, "Please select"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: this.props.errors.gender ? "errors" : "no-errors"
+      }, "Please select gender"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "gender",
         value: "female",
@@ -1090,18 +1062,13 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
         className: this.state.customGender
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: this.props.errors.pronouns ? "errors" : "no-errors"
+      }, "Please select pronoun"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         type: "text",
         value: this.state.user.pronouns,
         onClick: function onClick(e) {
-          e.preventDefault();
-          var nextState = Object.assign(_this3.state.errors, {
-            pronouns: null
-          });
-
-          _this3.setState({
-            errors: nextState
-          });
+          return _this3.clearErrors(["pronouns"]);
         },
         onChange: function onChange(e) {
           var nextState = Object.assign(_this3.state.user, {
@@ -1126,6 +1093,9 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
         type: "text",
         placeholder: "Gender (optional)",
         value: this.state.user.gender === "none " ? "" : this.state.user.gender,
+        onClick: function onClick(e) {
+          return _this3.clearErrors(["gender"]);
+        },
         onChange: function onChange(e) {
           var nextState = Object.assign(_this3.state.user, {
             gender: e.target.value
@@ -1164,6 +1134,9 @@ var mdp = function mdp(dispatch) {
     },
     clearSessionErrors: function clearSessionErrors(errors) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearSessionErrors"])(errors));
+    },
+    clearAllSessionErrors: function clearAllSessionErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearAllSessionErrors"])());
     }
   };
 };
@@ -1346,9 +1319,12 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_SESSION_ERRORS"]:
       for (var i = 0; i < action.errors.length; i++) {
-        nextState[action.errors[i]] = null;
+        delete nextState[action.errors[i]];
       }
 
+      return nextState;
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_ALL_SESSION_ERRORS"]:
       return {};
 
     default:

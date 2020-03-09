@@ -1,4 +1,8 @@
-import { RECEIVE_SESSION_ERRORS, CLEAR_SESSION_ERRORS } from "../actions/session_actions";
+import { 
+    RECEIVE_SESSION_ERRORS, 
+    CLEAR_SESSION_ERRORS, 
+    CLEAR_ALL_SESSION_ERRORS 
+} from "../actions/session_actions";
 
 const sessionErrorsReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
@@ -8,9 +12,11 @@ const sessionErrorsReducer = (state = {}, action) => {
             return nextState;
         case CLEAR_SESSION_ERRORS:
             for (let i = 0; i < action.errors.length; i++) {
-                nextState[action.errors[i]] = null
+                delete nextState[action.errors[i]]
             }
-            return {}
+            return nextState;
+        case CLEAR_ALL_SESSION_ERRORS:
+            return {};
         default:
             return state;
     } 
