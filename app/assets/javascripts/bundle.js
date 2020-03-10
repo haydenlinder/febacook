@@ -1220,16 +1220,16 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "middle"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
-      }, "Hayden"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.currentUser.firstName, " ", this.props.currentUser.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "edit-profile"
+        className: "edit-profile button button-border"
       }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "activity-log-container"
+        className: "activity-log-container button-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "activity-log"
+        className: "activity-log button"
       }, "Activity Log"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "activity-log-dropdown unselected"
+        className: "activity-log-dropdown button unselected"
       }, "...")))));
     }
   }]);
@@ -1238,7 +1238,9 @@ var Profile = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 var msp = function msp(state) {
-  return {};
+  return {
+    currentUser: state.entities.users[state.session.id]
+  };
 };
 
 var mdp = function mdp(dispatch) {

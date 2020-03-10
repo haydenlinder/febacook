@@ -57,30 +57,30 @@ class Profile extends React.Component{
                     </ul>
 
                 </div>
-                <div className="middle">
+                    <div className="middle">
 
-                    <div className="name">
-                        Hayden
+                        <div className="name"> 
+                            {this.props.currentUser.firstName} {this.props.currentUser.lastName} 
                         </div>
 
-                    <div className="middle-right">
+                        <div className="middle-right">
 
-                        <div className="edit-profile">
-                            Edit Profile
+                            <div className="edit-profile button button-border">
+                                Edit Profile
                             </div>
 
-                        <div className="activity-log-container">
-                            <div className="activity-log">
-                                Activity Log
+                            <div className="activity-log-container button-border">
+                                <div className="activity-log button">
+                                    Activity Log
                                 </div>
-                            <div className="activity-log-dropdown unselected">
-                                ...
+                                <div className="activity-log-dropdown button unselected">
+                                    ...
                                 </div>
+                            </div>
+
                         </div>
 
                     </div>
-
-                </div>
 
             </div>
         )
@@ -89,7 +89,7 @@ class Profile extends React.Component{
 }
 
 const msp = state => ({
-    
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mdp = dispatch => ({
