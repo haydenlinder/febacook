@@ -207,13 +207,10 @@ var receiveUsers = function receiveUsers(users) {
     type: RECEIVE_USERS,
     users: users
   };
-};
+}; // const removeUser = userId => ({
+//     type: REMOVE_USER
+// })
 
-var removeUser = function removeUser(userId) {
-  return {
-    type: REMOVE_USER
-  };
-};
 
 var fetchUsers = function fetchUsers() {
   return function (dispatch) {
@@ -222,9 +219,9 @@ var fetchUsers = function fetchUsers() {
     });
   };
 };
-var fetchUser = function fetchUser(userId) {
+var fetchUser = function fetchUser(username) {
   return function (dispatch) {
-    return Object(_util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["$fetchUser"])(userId).then(function (payload) {
+    return Object(_util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["$fetchUser"])(username).then(function (payload) {
       return dispatch(receiveUser(payload));
     }, function (payload) {
       return dispatch(receiveUserErrors(payload.responseJSON));
@@ -1163,6 +1160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1184,18 +1182,39 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Profile = /*#__PURE__*/function (_React$Component) {
   _inherits(Profile, _React$Component);
 
   function Profile(props) {
+    var _this;
+
     _classCallCheck(this, Profile);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props));
+    _this.state = {
+      user: null
+    };
+    return _this;
   }
 
   _createClass(Profile, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      debugger;
+      var that = this;
+      this.props.fetchUser(that.props.username).then(function (res) {
+        debugger;
+        that.setState({
+          user: res.user
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      if (!this.state.user) return null;
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1220,11 +1239,11 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "middle"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
-      }, this.props.currentUser.firstName, " ", this.props.currentUser.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.user.firstName, " ", this.state.user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit-profile button button-border"
-      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-container button-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log button"
@@ -1243,14 +1262,19 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   return Profile;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-var msp = function msp(state) {
+var msp = function msp(state, ownProps) {
   return {
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    username: ownProps.match.params.username
   };
 };
 
 var mdp = function mdp(dispatch) {
-  return {};
+  return {
+    fetchUser: function fetchUser(username) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUser"])(username));
+    }
+  };
 };
 
 var ProfileContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp, mdp)(Profile);
@@ -1646,9 +1670,9 @@ var $fetchUsers = function $fetchUsers() {
     method: "GET"
   });
 };
-var $fetchUser = function $fetchUser(userId) {
+var $fetchUser = function $fetchUser(username) {
   return $.ajax({
-    url: "/api/users/".concat(userId),
+    url: "/api/users/".concat(username),
     method: "GET"
   });
 };

@@ -21,7 +21,7 @@ class Api::UsersController < ApplicationController
     end
     
     def show
-        @user = User.find_by(id: params[:id])
+        @user = User.find_by(username: params[:username])
         unless @user
             render json: @user.errors.full_messages, status: 404
         end

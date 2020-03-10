@@ -15,9 +15,9 @@ const receiveUsers = users => ({
     users
 })
 
-const removeUser = userId => ({
-    type: REMOVE_USER
-})
+// const removeUser = userId => ({
+//     type: REMOVE_USER
+// })
 
 export const fetchUsers = () => dispatch => (
     $fetchUsers()
@@ -26,8 +26,8 @@ export const fetchUsers = () => dispatch => (
     )
 )
 
-export const fetchUser = userId => dispatch => (
-    $fetchUser(userId)
+export const fetchUser = username => dispatch => (
+    $fetchUser(username)
     .then(
         payload => dispatch(receiveUser(payload)),
         payload => dispatch(receiveUserErrors(payload.responseJSON))

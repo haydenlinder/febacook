@@ -1,14 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchUser } from '../actions/user_actions'
 
 class Profile extends React.Component{
 
     constructor(props) {
         super(props)
+        this.state = {
+            user: null
+        }
     }
 
     
+    componentDidMount() {
+        debugger
+
+        let that = this
+
+        this.props.fetchUser(that.props.username)
+        .then((res) => {
+            debugger
+            that.setState({user: res.user})
+        })
+    }
+
     render() {
+        if (!this.state.user) return null;
+        debugger
         return(
             <div className="profile-container">
 
@@ -61,13 +79,13 @@ class Profile extends React.Component{
                 <div className="middle">
 
                     <div className="name"> 
-                        {this.props.currentUser.firstName} {this.props.currentUser.lastName} 
+                        {this.state.user.firstName} {this.state.user.lastName} 
                     </div>
 
                     <div className="middle-right">
 
                         <div className="edit-profile button button-border">
-                            Edit Profile
+                            {this.state.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend"}
                         </div>
 
                         <div className="activity-log-container button-border">
@@ -98,12 +116,14 @@ class Profile extends React.Component{
 
 }
 
-const msp = state => ({
-    currentUser: state.entities.users[state.session.id]
+const msp = (state, ownProps) => ({
+    currentUser: state.entities.users[state.session.id],
+    username: ownProps.match.params.username,
+
 })
 
 const mdp = dispatch => ({
-
+    fetchUser: (username) => dispatch(fetchUser(username))
 })
 
 const ProfileContainer = connect(msp, mdp)(Profile)
