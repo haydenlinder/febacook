@@ -35,32 +35,6 @@ class Profile extends React.Component{
 
                     </div>
 
-
-                    <div className="middle">
-
-                        <div className="name"> 
-                            Hayden 
-                        </div>
-
-                        <div className="middle-right">
-
-                            <div className="edit-profile">
-                                Edit Profile
-                            </div>
-
-                            <div className="activity-log-container">
-                                <div className="activity-log">
-                                    Activity Log
-                                </div>
-                                <div className="activity-log-dropdown unselected">
-                                    ...
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
                     <ul className="profile-nav-container">
                         <li>
                             Timeline
@@ -81,6 +55,30 @@ class Profile extends React.Component{
                             More
                         </li>
                     </ul>
+
+                </div>
+                <div className="middle">
+
+                    <div className="name">
+                        Hayden
+                        </div>
+
+                    <div className="middle-right">
+
+                        <div className="edit-profile">
+                            Edit Profile
+                            </div>
+
+                        <div className="activity-log-container">
+                            <div className="activity-log">
+                                Activity Log
+                                </div>
+                            <div className="activity-log-dropdown unselected">
+                                ...
+                                </div>
+                        </div>
+
+                    </div>
 
                 </div>
 

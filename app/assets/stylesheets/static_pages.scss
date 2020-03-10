@@ -743,16 +743,19 @@ b {
 .profile-container {
     display: flex;
     flex-direction: column;
-    background-color: lightgrey;
     margin-right: 325px;
     margin-left: 195px;
+    min-width: 600px;
+
 }
 
 ///////////////////////// header
 
-.profile .profile-header-container {
+.profile-container .profile-header-container {
     display: flex;
     flex-direction: column;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
 }
 
 
@@ -841,9 +844,11 @@ b {
 .profile-container .middle {
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    top: 220px;
+    position: relative;
+    top: -70px;
     align-items: baseline;
+    margin-left: 200px;
+    margin-right: 20px;
 }
 
 .profile-container .middle .name {
@@ -858,6 +863,12 @@ b {
     justify-content: space-around;
 }
 
+.profile-container .middle .edit-profile,
+.profile-container .middle .activity-log,
+.profile-container .middle .activity-log-dropdown{
+    background-color: lightgrey;
+}
+
 .middle-right .activity-log-container {
     display: flex;
     margin-left: 20px;
@@ -869,7 +880,19 @@ b {
 
 .profile-nav-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    margin-left: 220px;
+}
+
+.profile-nav-container li {
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 
