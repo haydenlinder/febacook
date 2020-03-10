@@ -57,30 +57,40 @@ class Profile extends React.Component{
                     </ul>
 
                 </div>
-                    <div className="middle">
 
-                        <div className="name"> 
-                            {this.props.currentUser.firstName} {this.props.currentUser.lastName} 
+                <div className="middle">
+
+                    <div className="name"> 
+                        {this.props.currentUser.firstName} {this.props.currentUser.lastName} 
+                    </div>
+
+                    <div className="middle-right">
+
+                        <div className="edit-profile button button-border">
+                            Edit Profile
                         </div>
 
-                        <div className="middle-right">
-
-                            <div className="edit-profile button button-border">
-                                Edit Profile
-                            </div>
-
-                            <div className="activity-log-container button-border">
-                                <div className="activity-log button">
+                        <div className="activity-log-container button-border">
+                            <div className="activity-log button">
+                                <div className="icon">
+                                    ._ <br/>
+                                    ._ <br />
+                                    ._ <br />
+                                </div>
+                                <div className="text">
                                     Activity Log
                                 </div>
-                                <div className="activity-log-dropdown button unselected">
-                                    ...
-                                </div>
                             </div>
-
+                            <div className="activity-log-dropdown button unselected">
+                                ...
+                            </div>
                         </div>
 
                     </div>
+
+                </div>
+
+                <div className="middle-background"></div>
 
             </div>
         )

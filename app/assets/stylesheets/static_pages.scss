@@ -746,7 +746,6 @@ b {
     margin-right: 325px;
     margin-left: 195px;
     min-width: 800px;
-
 }
 
 ///////////////////////// header
@@ -763,8 +762,8 @@ b {
 
 
 .profile-container .cover-photo {
-    height: 300px;
-    background-color: lightblue;
+    height: 315px;
+    background-color: white;
 }
 
 .profile-container .cover-photo:hover {
@@ -802,7 +801,8 @@ b {
     display: none
 }
 
-.cover-photo:hover + .update-cover-container, .update-cover-container:hover {
+.cover-photo:hover + .update-cover-container, 
+.update-cover-container:hover {
     background-color: black;
     border: 1px solid white;
     box-shadow: 0px 0px 5px 0px black;
@@ -830,12 +830,32 @@ b {
     border-radius: 100%;
     border: 4px solid white;
     display: flex;
-    align-items: center;
+    align-items: flex-end;;
     justify-content: center;
     top: 211px;
     left: 220px;
     box-sizing: border-box;
     box-shadow: 0px 0px 1px 1px grey;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.profile-photo-container .update {
+    display: none;
+    color: white;
+    background-color: black;
+    opacity: 0.7;
+    height: 80px;
+    width: 200px;
+    text-align: center;
+}
+
+.profile-container .profile-photo-container:hover {
+    cursor: pointer;
+}
+
+.profile-container .profile-photo-container:hover .update {
+    display: block;
 }
 
 
@@ -845,11 +865,31 @@ b {
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: -95px;
+    top: -138px;
     align-items: baseline;
-    margin-left: 200px;
-    margin-right: 20px;
     box-sizing: border-box;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+    margin-left: 200px;
+    background: transparent;
+    z-index: 1;
+}
+
+.profile-container .middle-background {
+    position: relative;
+    top: -227px;
+    background-image: linear-gradient(white, rgb(0, 0, 0));
+    padding: 45px;
+    opacity: 0.5;
+}
+
+.middle-background:hover {
+    cursor: pointer;
+}
+
+.middle:hover {
+    cursor: pointer;
 }
 
 .profile-container .middle .name {
@@ -863,7 +903,6 @@ b {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .middle-right .activity-log-container {
@@ -872,15 +911,45 @@ b {
 }
 
 .profile-container .middle-right .button-border {
-    background-color: lightgrey;
+    background-color: white;
     border: 1px solid grey;
     border-radius: 2px;
 }
 
 .profile-container .middle-right .button {
-    padding: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(66, 66, 66);
 }
 
+.profile-container .middle-right .button:hover {
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+}
+
+.middle-right .activity-log {
+    display: flex;
+}
+
+.activity-log .icon {
+    line-height: 4px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    padding-right: 5px;
+    position: relative;
+    top: -5px
+}
+
+.activity-log-dropdown {
+    line-height: 5px;
+    top: -3px;
+    letter-spacing: 1px;
+    border-left: 1px solid grey;
+}
 
 
 

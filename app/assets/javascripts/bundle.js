@@ -1228,9 +1228,15 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "activity-log-container button-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log button"
-      }, "Activity Log"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "icon"
+      }, "._ ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "._ ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "._ ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text"
+      }, "Activity Log")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-dropdown button unselected"
-      }, "...")))));
+      }, "...")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "middle-background"
+      }));
     }
   }]);
 
