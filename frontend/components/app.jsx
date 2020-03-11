@@ -2,6 +2,7 @@ import React from 'react';
 import HomeContainer from './home';
 import { Route, Switch } from 'react-router-dom'
 import HeaderContainer from './header';
+import ProfileContainer from './profile_container';
 
 const toggleDropdowns = (e) => {
 
@@ -30,7 +31,6 @@ const toggleDropdowns = (e) => {
 
     toggleOffTarget(e);
 }
-
 
 const App = () => (
     <div 

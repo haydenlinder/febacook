@@ -1,9 +1,11 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import ProfileContainer from './profile_container';
 
 const LoggedInHome = (props) => (
-    <Route path="/:username" component={ProfileContainer} />
+    <Switch>
+        <Route path="/:username" component={ProfileContainer} />
+    </Switch>
 )
 
 export default LoggedInHome;

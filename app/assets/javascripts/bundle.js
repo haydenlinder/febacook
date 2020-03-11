@@ -254,6 +254,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ "./frontend/components/home.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header */ "./frontend/components/header.jsx");
+/* harmony import */ var _profile_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./profile_container */ "./frontend/components/profile_container.jsx");
+
 
 
 
@@ -554,10 +556,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var LoggedInHome = function LoggedInHome(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/:username",
     component: _profile_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-  });
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LoggedInHome);
@@ -1201,10 +1203,19 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   _createClass(Profile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       var that = this;
       this.props.fetchUser(that.props.username).then(function (res) {
-        debugger;
+        that.setState({
+          user: res.user
+        });
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var that = this; // debugger
+
+      if (prevProps.location.pathname !== this.props.match.url) this.props.fetchUser(that.props.username).then(function (res) {
         that.setState({
           user: res.user
         });
@@ -1214,7 +1225,6 @@ var Profile = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       if (!this.state.user) return null;
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

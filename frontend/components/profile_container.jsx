@@ -11,22 +11,26 @@ class Profile extends React.Component{
         }
     }
 
-    
     componentDidMount() {
-        debugger
-
         let that = this
-
         this.props.fetchUser(that.props.username)
         .then((res) => {
-            debugger
             that.setState({user: res.user})
+        })
+    }
+
+    componentDidUpdate(prevProps) {
+        let that = this
+        // debugger
+        if (prevProps.location.pathname !== this.props.match.url)
+        this.props.fetchUser(that.props.username)
+        .then((res) => {
+            that.setState({ user: res.user })
         })
     }
 
     render() {
         if (!this.state.user) return null;
-        debugger
         return(
             <div className="profile-container">
 
@@ -118,8 +122,7 @@ class Profile extends React.Component{
 
 const msp = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    username: ownProps.match.params.username,
-
+    username: ownProps.match.params.username
 })
 
 const mdp = dispatch => ({
