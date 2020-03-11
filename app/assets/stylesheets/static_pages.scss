@@ -74,7 +74,9 @@ table {
 
 ////////////////   app
 
-
+.app-container {
+    background-color: rgb(234, 237, 241);
+}
 
 //////   logged-out-header
 
@@ -125,7 +127,7 @@ html {
     border: 1px solid rgb(46, 66, 119)
 }
 
-.login:hover {
+button.login:hover {
     background-color: rgb(65, 95, 156);
     cursor: pointer;
 }
@@ -905,6 +907,44 @@ b {
     align-items: center;
 }
 
+.profile-container .edit-profile {
+    position: relative;
+}
+
+.profile-container .edit-profile.unselected > ul {
+    display: none;
+}
+
+.profile-container .edit-profile.selected > ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: grey;
+    top: -100px; 
+    left: -410px;   
+    width: 650px;
+    border-radius: 2px;
+}
+
+.profile-container .edit-profile .label {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: lightgrey;
+    border-bottom: 1px solid grey;
+    align-items: center;
+}
+
+.profile-container .edit-profile .label:hover {
+    cursor: default;
+}
+
+.profile-container .edit-profile input {
+    height: 100px;
+    text-align: center;
+}
+
 .middle-right .activity-log-container {
     display: flex;
     margin-left: 20px;
@@ -931,6 +971,10 @@ b {
     cursor: pointer;
 }
 
+.profile-container .middle-right .button:active {
+    background-color: rgb(224, 224, 224);
+}
+
 .middle-right .activity-log {
     display: flex;
 }
@@ -948,7 +992,7 @@ b {
     line-height: 5px;
     top: -3px;
     letter-spacing: 1px;
-    border-left: 1px solid grey;
+    border-left: 1px solid rgb(224, 224, 224);
 }
 
 
@@ -957,11 +1001,11 @@ b {
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
 	background: #ffffff;
     border: 1px solid #a3a3a3;
-    left: 520px;
-    top: 95px;
+    left: 960px;
+    top: 360px;
     max-width: fit-content;
 }
 
@@ -1006,9 +1050,10 @@ b {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 30px;
-    margin-left: 220px;
+    padding-right: 30px;
+    padding-left: 220px;
     font-size: 14px;
+    background-color: white;
 }
 
 .profile-nav-container li {
@@ -1021,5 +1066,30 @@ b {
 }
 
 
+
+/////////////////////////// main
+
+
+.profile-container .profile-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    top: -150px;
+}
+
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+.profile-right {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
 
 

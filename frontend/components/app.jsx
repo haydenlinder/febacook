@@ -16,9 +16,16 @@ const toggleDropdowns = (e) => {
         target.classList.add("selected");
     }
 
+    const isDropdownChild = (target) => {
+        if (!target.parentElement) return false
+        if (target.parentElement.classList.contains("selected")) return true
+        return isDropdownChild(target.parentElement)
+    }
+
     const toggleOffTarget = (e) => {
         let selected = document.getElementsByClassName("selected");
         let pending = false
+        if (isDropdownChild(e.target)) return 
         if (e.target.classList.contains("unselected")) {
             pending = true
         }

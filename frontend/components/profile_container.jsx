@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from '../actions/user_actions'
+import { fetchUser, updateUser } from '../actions/user_actions'
 
 class Profile extends React.Component{
 
@@ -88,8 +88,45 @@ class Profile extends React.Component{
 
                     <div className="middle-right">
 
-                        <div className="edit-profile button button-border">
+                        <div className="edit-profile button button-border unselected">
                             {this.state.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend"}
+                            <ul className="edit-user-form">
+
+                                <div className="label">
+                                    Edit Profile
+                                </div>
+                                <div className="label">
+                                    Edit Bio
+                                    <button
+                                        onClick={
+                                            (e) => {
+                                                e.persist();
+                                                this.props.updateUser.bind(this)(this.state.user)
+                                                .then(() => {
+                                                    const selectedParent = (target) => {
+                                                        if (target.parentElement.classList.contains("selected")) {
+                                                            return target.parentElement
+                                                        }
+                                                        return selectedParent(target.parentElement)
+                                                    }
+                                                    selectedParent(e.target).classList.add("unselected")
+                                                    selectedParent(e.target).classList.remove("selected")
+                                                })
+                                            }
+                                        }
+                                        className="login">
+                                        save
+                                    </button>
+                                </div>
+                                <input 
+                                    cols="30" rows="10"
+                                    onChange={(e) => {
+                                        let nextState = Object.assign(this.state.user, { bio: e.target.value })
+                                        this.setState(nextState)
+                                    }}
+                                    value={this.state.user.bio || ""}
+                                />
+                            </ul>
                         </div>
 
                         <div className="activity-log-container button-border">
@@ -119,6 +156,25 @@ class Profile extends React.Component{
 
                 <div className="middle-background"></div>
 
+
+                <div className="profile-main">
+
+                    <div className="profile-left">
+                        <div className="intro">
+                            <div className="title">
+                                Intro
+                            </div>
+                            <div className="bio">
+                                {this.state.user.bio}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="profile-right">
+                        profile right
+                    </div>
+                    
+                </div>
             </div>
         )
     }
@@ -131,7 +187,8 @@ const msp = (state, ownProps) => ({
 })
 
 const mdp = dispatch => ({
-    fetchUser: (username) => dispatch(fetchUser(username))
+    fetchUser: (username) => dispatch(fetchUser(username)),
+    updateUser: (user) => dispatch(updateUser(user))
 })
 
 const ProfileContainer = connect(msp, mdp)(Profile)

@@ -230,7 +230,7 @@ var fetchUser = function fetchUser(username) {
 };
 var updateUser = function updateUser(user) {
   return function (dispatch) {
-    return $updateUser(user).then(function (payload) {
+    return Object(_util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["$updateUser"])(user).then(function (payload) {
       return dispatch(receiveUser(payload));
     }, function (payload) {
       return dispatch(receiveUserErrors(payload.responseJSON));
@@ -272,9 +272,16 @@ var toggleDropdowns = function toggleDropdowns(e) {
     target.classList.add("selected");
   };
 
+  var isDropdownChild = function isDropdownChild(target) {
+    if (!target.parentElement) return false;
+    if (target.parentElement.classList.contains("selected")) return true;
+    return isDropdownChild(target.parentElement);
+  };
+
   var toggleOffTarget = function toggleOffTarget(e) {
     var selected = document.getElementsByClassName("selected");
     var pending = false;
+    if (isDropdownChild(e.target)) return;
 
     if (e.target.classList.contains("unselected")) {
       pending = true;
@@ -1224,6 +1231,8 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       if (!this.state.user) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
@@ -1252,8 +1261,43 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       }, this.state.user.firstName, " ", this.state.user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "edit-profile button button-border"
-      }, this.state.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit-profile button button-border unselected"
+      }, this.state.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "edit-user-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "label"
+      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "label"
+      }, "Edit Bio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick(e) {
+          e.persist();
+
+          _this2.props.updateUser.bind(_this2)(_this2.state.user).then(function () {
+            var selectedParent = function selectedParent(target) {
+              if (target.parentElement.classList.contains("selected")) {
+                return target.parentElement;
+              }
+
+              return selectedParent(target.parentElement);
+            };
+
+            selectedParent(e.target).classList.add("unselected");
+            selectedParent(e.target).classList.remove("selected");
+          });
+        },
+        className: "login"
+      }, "save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        cols: "30",
+        rows: "10",
+        onChange: function onChange(e) {
+          var nextState = Object.assign(_this2.state.user, {
+            bio: e.target.value
+          });
+
+          _this2.setState(nextState);
+        },
+        value: this.state.user.bio || ""
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-container button-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log button"
@@ -1267,7 +1311,19 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "list"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Settings")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-background"
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "intro"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "title"
+      }, "Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bio"
+      }, this.state.user.bio))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-right"
+      }, "profile right")));
     }
   }]);
 
@@ -1285,6 +1341,9 @@ var mdp = function mdp(dispatch) {
   return {
     fetchUser: function fetchUser(username) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUser"])(username));
+    },
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["updateUser"])(user));
     }
   };
 };
