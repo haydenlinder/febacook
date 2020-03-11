@@ -726,7 +726,7 @@ b {
 }
 
 .selected > ul > li {
-    width: 400px;
+    // width: 400px;
 }
 
 .selected > ul > li:hover {
@@ -953,6 +953,51 @@ b {
 
 
 
+.activity-log-dropdown.selected > ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+	background: #ffffff;
+    border: 1px solid #a3a3a3;
+    left: 520px;
+    top: 95px;
+    max-width: fit-content;
+}
+
+.activity-log-dropdown.selected > ul:after,
+.activity-log-dropdown.selected > ul:before {
+    bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.activity-log-dropdown.selected > ul:after {
+    border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #ffffff;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.activity-log-dropdown.selected > ul:before {
+    border-color: rgba(163, 163, 163, 0);
+	border-bottom-color: #a3a3a3;
+	border-width: 11px;
+	margin-left: -11px;
+}
+
+
+.activity-log-dropdown li {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    max-width: fit-content;
+}
 
 
 ////////// nav 

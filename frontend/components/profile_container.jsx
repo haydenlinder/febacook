@@ -105,6 +105,11 @@ class Profile extends React.Component{
                             </div>
                             <div className="activity-log-dropdown button unselected">
                                 ...
+                                <ul className="list">
+                                    <li>
+                                        Settings
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 

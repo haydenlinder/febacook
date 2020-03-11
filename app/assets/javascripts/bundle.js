@@ -1263,7 +1263,9 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "text"
       }, "Activity Log")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-dropdown button unselected"
-      }, "...")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "...", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "list"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Settings")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-background"
       }));
     }
