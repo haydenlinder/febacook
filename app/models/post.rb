@@ -14,7 +14,7 @@ class Post < ApplicationRecord
 
     vaidate do 
         if self.photos.length < 1 && !self.body
-            self.errors.add(body: "This post is blank. Please add a body or photo.")
+            self.errors.add(body: "Post must have a body or photo attachment.")
         end
     end
 end

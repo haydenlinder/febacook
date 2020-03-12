@@ -2,6 +2,14 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_many :authored_posts,
+        foreign_key: :author_id,
+        class_name: :Post 
+
+    has_many :received_posts,
+        foreign_key: :recipient_id,
+        class_name: :Post
+
     before_validation :ensure_session_token
 
     validates(

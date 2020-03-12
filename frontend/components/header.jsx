@@ -13,7 +13,7 @@ const Header = ({ currentUser, deleteSession }) => {
 
 
 const msp = state => ({
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.username]
 })
 
 const mdp = dispatch => ({

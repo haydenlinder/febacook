@@ -450,7 +450,7 @@ var Header = function Header(_ref) {
 
 var msp = function msp(state) {
   return {
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.username]
   };
 };
 
@@ -493,7 +493,7 @@ var Home = function Home(_ref) {
 
 var msp = function msp(state) {
   return {
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.username]
   };
 };
 
@@ -1666,11 +1666,11 @@ var sessionReducer = function sessionReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      nextState.id = action.user.id;
+      nextState.username = action.user.username;
       return nextState;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_NULL_SESSION"]:
-      nextState.id = null;
+      nextState.username = null;
       return nextState;
 
     default:
