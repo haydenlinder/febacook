@@ -642,7 +642,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
 
 var msp = function msp(state) {
   return {
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.username]
   };
 };
 
@@ -1320,7 +1320,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   _createClass(Profile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchUser(this.props.user.username);
+      this.props.fetchUser(this.props.username);
     }
   }, {
     key: "componentDidUpdate",
@@ -1424,7 +1424,9 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "button-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "event-icon"
-      }), "Life Event"))))));
+      }), "Life Event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "body"
+      })))));
     }
   }]);
 
@@ -1515,13 +1517,13 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.currentUser) {
     var _window = window,
         currentUser = _window.currentUser;
-    var id = currentUser.id;
+    var username = currentUser.username;
     var preloadedState = {
       entities: {
-        users: _defineProperty({}, id, currentUser)
+        users: _defineProperty({}, username, currentUser)
       },
       session: {
-        id: id
+        username: username
       }
     };
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState);
@@ -1530,6 +1532,7 @@ document.addEventListener("DOMContentLoaded", function () {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   }
 
+  window.state = store.getState();
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);

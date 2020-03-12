@@ -9,20 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let store;
     if (window.currentUser) {
         const { currentUser } = window;
-        const { id } = currentUser;
+        const { username } = currentUser;
         const preloadedState = {
             entities: {
                 users: {
-                    [id]: currentUser
+                    [username]: currentUser
                 }
             },
-            session: { id: id }
+            session: { username: username }
         };
         store = configureStore(preloadedState);
         delete window.currentUser;
     } else {
         store = configureStore();
     }
-
+    window.state = store.getState();
     ReactDOM.render( <Root store={store}/>, root )
 })

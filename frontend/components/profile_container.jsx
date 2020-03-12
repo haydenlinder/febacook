@@ -10,7 +10,7 @@ class Profile extends React.Component{
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.user.username)
+        this.props.fetchUser(this.props.username)
     }
 
     componentDidUpdate(prevProps) {
@@ -170,6 +170,10 @@ class Profile extends React.Component{
                                     Life Event
                                 </li>
                             </ul>
+
+                            <textarea className="body">
+
+                            </textarea>
 
                         </div>
 
