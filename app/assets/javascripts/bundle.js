@@ -207,10 +207,14 @@ var receiveUsers = function receiveUsers(users) {
     type: RECEIVE_USERS,
     users: users
   };
-}; // const removeUser = userId => ({
-//     type: REMOVE_USER
-// })
+};
 
+var receiveUserErrors = function receiveUserErrors(errors) {
+  return {
+    type: RECEIVE_USER_ERRORS,
+    errors: errors
+  };
+};
 
 var fetchUsers = function fetchUsers() {
   return function (dispatch) {
@@ -1281,7 +1285,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.jsx");
 /* harmony import */ var _edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit_user_form_container */ "./frontend/components/edit_user_form_container.jsx");
-/* harmony import */ var _util_user_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/user_api_util */ "./frontend/util/user_api_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1305,7 +1308,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
 var Profile = /*#__PURE__*/function (_React$Component) {
   _inherits(Profile, _React$Component);
 
@@ -1318,14 +1320,13 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   _createClass(Profile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var that = this;
-      this.props.fetchUser(that.props.username);
+      this.props.fetchUser(this.props.user.username);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var that = this;
-      if (prevProps.location.pathname !== this.props.match.url) this.props.fetchUser(that.props.user.username).then(function (res) {
+      if (prevProps.location.pathname !== this.props.match.url) this.props.fetchUser(that.props.username).then(function (res) {
         that.setState({
           user: res.user
         });
@@ -1434,7 +1435,7 @@ var user;
 
 var msp = function msp(state, ownProps) {
   return {
-    currentUser: state.entities.users[state.session.id],
+    currentUser: state.entities.users[state.session.username],
     username: ownProps.match.params.username,
     user: state.entities.users[ownProps.match.params.username]
   };

@@ -15,9 +15,10 @@ const receiveUsers = users => ({
     users
 })
 
-// const removeUser = userId => ({
-//     type: REMOVE_USER
-// })
+const receiveUserErrors = errors => ({
+    type: RECEIVE_USER_ERRORS,
+    errors
+})
 
 export const fetchUsers = () => dispatch => (
     $fetchUsers()

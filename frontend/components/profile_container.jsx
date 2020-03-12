@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser, updateUser } from '../actions/user_actions'
 import EditUserFormContainer from './edit_user_form_container';
-import { $fetchUser } from '../util/user_api_util';
 
 class Profile extends React.Component{
 
@@ -11,14 +10,13 @@ class Profile extends React.Component{
     }
 
     componentDidMount() {
-        let that = this
-        this.props.fetchUser(that.props.username)
+        this.props.fetchUser(this.props.user.username)
     }
 
     componentDidUpdate(prevProps) {
         let that = this
         if (prevProps.location.pathname !== this.props.match.url)
-        this.props.fetchUser(that.props.user.username)
+        this.props.fetchUser(that.props.username)
         .then((res) => {
             that.setState({ user: res.user })
         })
@@ -189,7 +187,7 @@ let user;
 
 
 const msp = (state, ownProps) => ({
-    currentUser: state.entities.users[state.session.id],
+    currentUser: state.entities.users[state.session.username],
     username: ownProps.match.params.username,
     user: state.entities.users[ownProps.match.params.username]
 })
