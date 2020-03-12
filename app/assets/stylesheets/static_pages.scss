@@ -75,7 +75,7 @@ table {
 ////////////////   app
 
 .app-container {
-    background-color: rgb(234, 237, 241);
+    background-color: rgb(225, 228, 231);
 }
 
 //////   logged-out-header
@@ -826,7 +826,6 @@ b {
 
 .profile-container .profile-photo-container {
     position: absolute;
-    background-color: brown;
     height: 160px;
     width: 160px;
     border-radius: 100%;
@@ -840,6 +839,8 @@ b {
     box-shadow: 0px 0px 1px 1px grey;
     z-index: 1;
     overflow: hidden;
+    background-image: image_url("default_photo.png");
+    background-size: 100%
 }
 
 .profile-photo-container .update {
@@ -934,6 +935,7 @@ b {
     background-color: lightgrey;
     border-bottom: 1px solid grey;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .profile-container .edit-profile .label:hover {
@@ -951,7 +953,7 @@ b {
 }
 
 .profile-container .middle-right .button-border {
-    background-color: white;
+    background-color: rgb(244, 245, 246);
     border: 1px solid grey;
     border-radius: 2px;
 }
@@ -967,7 +969,7 @@ b {
 }
 
 .profile-container .middle-right .button:hover {
-    background-color: rgb(240, 240, 240);
+    background-color:  rgb(222, 225, 230);
     cursor: pointer;
 }
 
@@ -1075,21 +1077,142 @@ b {
     align-items: flex-start;
     justify-content: space-between;
     position: relative;
-    top: -150px;
+    top: -170px;
 }
+
+///////// left
 
 .profile-left {
     display: flex;
     flex-direction: column;
     border: 1px solid lightgrey;
     border-radius: 3px;
+    background-color: white;
 }
+
+.profile-left .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+
+.profile-left .intro .title {
+    font-size: 16px;  
+    display: flex; 
+    align-items: center;
+}
+
+.profile-left .intro .title .icon {
+    height: 25px;
+    width: 25px;
+    background-image: image_url("intro_icon.png");
+    background-size: 109%;
+    margin-right: 10px;
+}
+
+.profile-left .bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.profile-left .bio {
+    font-size: 12px;
+}
+
+.profile-left .bio-container .bio-button {
+    padding-right: 125px;
+    padding-left: 125px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    font-size: 12px;
+    color: rgb(66, 66, 66);
+    font-weight: 600;
+    background-color: rgb(244, 245, 246);
+    margin-top: 10px;
+}
+
+.profile-left .bio-container .bio-button:hover {
+    background-color: rgb(222, 225, 230);
+    cursor: pointer;
+}
+
+
+////////// right
+
 
 .profile-right {
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
 }
 
+.profile-right .post-form-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.post-form-container .post-form-header {
+    display: flex;
+    justify-content: left;
+    padding-right: 70px;
+    background-color: rgb(244, 245, 246);
+    align-items: center;
+}
+
+.post-form-header li {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    color: rgb(61, 95, 168);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.post-form-header .border {
+    border-right: 1px solid lightgrey;
+    height: 15px;
+}
+
+.post-form-header .post-icon {
+    height: 15px;
+    width: 15px;
+    background-image: image_url("create_post.png");
+    background-size: 115%;
+    margin-right: 5px;
+}
+
+.post-form-header .photo-icon {
+    height: 15px;
+    width: 15px;
+    background-image: image_url("photo.png");
+    background-size: 110%;
+    margin-right: 5px;
+}
+
+.post-form-header .video-icon {
+    height: 15px;
+    width: 15px;
+    background-image: image_url("video.png");
+    background-size: 110%;
+    margin-right: 5px;
+}
+
+.post-form-header .event-icon {
+    height: 15px;
+    width: 15px;
+    background-image: image_url("event.png");
+    background-size: 100%;
+    margin-right: 5px;
+}
 

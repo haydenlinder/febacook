@@ -6,14 +6,14 @@ const usersReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            nextState[action.user.id] = action.user;
+            nextState[action.user.username] = action.user;
             return nextState
         case RECEIVE_USERS:
             return action.users;
         case RECEIVE_USER:
-            nextState[action.user.id] = action.user;
+            nextState[action.user.username] = action.user;
         case REMOVE_USER:
-            delete nextState[action.id];
+            delete nextState[action.username];
             return nextState;
         default:
             return state;

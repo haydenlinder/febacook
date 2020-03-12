@@ -311,6 +311,116 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./frontend/components/edit_user_form_container.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/edit_user_form_container.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var EditUserForm = /*#__PURE__*/function (_React$Component) {
+  _inherits(EditUserForm, _React$Component);
+
+  function EditUserForm(props) {
+    var _this;
+
+    _classCallCheck(this, EditUserForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditUserForm).call(this, props));
+    _this.state = _this.props.user;
+    return _this;
+  }
+
+  _createClass(EditUserForm, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "edit-user-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "label"
+      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "label"
+      }, "Edit Bio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick(e) {
+          e.persist();
+
+          _this2.props.updateUser.bind(_this2)(_this2.state).then(function () {
+            var selectedParent = function selectedParent(target) {
+              if (target.parentElement.classList.contains("selected")) {
+                return target.parentElement;
+              }
+
+              return selectedParent(target.parentElement);
+            };
+
+            selectedParent(e.target).classList.add("unselected");
+            selectedParent(e.target).classList.remove("selected");
+          });
+        },
+        className: "login"
+      }, "save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        cols: "30",
+        rows: "10",
+        onChange: function onChange(e) {
+          _this2.setState({
+            bio: e.target.value
+          });
+        },
+        value: this.state.bio || ""
+      }));
+    }
+  }]);
+
+  return EditUserForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+var msp = function msp(state, ownProps) {
+  return {};
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["updateUser"])(user));
+    }
+  };
+};
+
+var EditUserFormContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(EditUserForm);
+/* harmony default export */ __webpack_exports__["default"] = (EditUserFormContainer);
+
+/***/ }),
+
 /***/ "./frontend/components/header.jsx":
 /*!****************************************!*\
   !*** ./frontend/components/header.jsx ***!
@@ -1170,6 +1280,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.jsx");
+/* harmony import */ var _edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit_user_form_container */ "./frontend/components/edit_user_form_container.jsx");
+/* harmony import */ var _util_user_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/user_api_util */ "./frontend/util/user_api_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1192,37 +1304,28 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var Profile = /*#__PURE__*/function (_React$Component) {
   _inherits(Profile, _React$Component);
 
   function Profile(props) {
-    var _this;
-
     _classCallCheck(this, Profile);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props));
-    _this.state = {
-      user: null
-    };
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props));
   }
 
   _createClass(Profile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var that = this;
-      this.props.fetchUser(that.props.username).then(function (res) {
-        that.setState({
-          user: res.user
-        });
-      });
+      this.props.fetchUser(that.props.username);
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      var that = this; // debugger
-
-      if (prevProps.location.pathname !== this.props.match.url) this.props.fetchUser(that.props.username).then(function (res) {
+      var that = this;
+      if (prevProps.location.pathname !== this.props.match.url) this.props.fetchUser(that.props.user.username).then(function (res) {
         that.setState({
           user: res.user
         });
@@ -1231,9 +1334,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      if (!this.state.user) return null;
+      if (!this.props.user) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1258,46 +1359,13 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "middle"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
-      }, this.state.user.firstName, " ", this.state.user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.user.firstName, " ", this.props.user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit-profile button button-border unselected"
-      }, this.state.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "edit-user-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "label"
-      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "label"
-      }, "Edit Bio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick(e) {
-          e.persist();
-
-          _this2.props.updateUser.bind(_this2)(_this2.state.user).then(function () {
-            var selectedParent = function selectedParent(target) {
-              if (target.parentElement.classList.contains("selected")) {
-                return target.parentElement;
-              }
-
-              return selectedParent(target.parentElement);
-            };
-
-            selectedParent(e.target).classList.add("unselected");
-            selectedParent(e.target).classList.remove("selected");
-          });
-        },
-        className: "login"
-      }, "save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        cols: "30",
-        rows: "10",
-        onChange: function onChange(e) {
-          var nextState = Object.assign(_this2.state.user, {
-            bio: e.target.value
-          });
-
-          _this2.setState(nextState);
-        },
-        value: this.state.user.bio || ""
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        user: this.props.user
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-container button-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log button"
@@ -1319,21 +1387,56 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "intro"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "title"
-      }, "Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "icon"
+      }), "Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bio"
-      }, this.state.user.bio))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.user.bio), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bio-button"
+      }, "Edit Bio")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-right"
-      }, "profile right")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "post-form-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "button-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-icon"
+      }), "Create Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "button-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-icon"
+      }), "Photo/Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "button-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "video-icon"
+      }), "Live Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "button-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "event-icon"
+      }), "Life Event"))))));
     }
   }]);
 
   return Profile;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
+var user;
+
 var msp = function msp(state, ownProps) {
   return {
     currentUser: state.entities.users[state.session.id],
-    username: ownProps.match.params.username
+    username: ownProps.match.params.username,
+    user: state.entities.users[ownProps.match.params.username]
   };
 };
 
@@ -1630,17 +1733,17 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      nextState[action.user.id] = action.user;
+      nextState[action.user.username] = action.user;
       return nextState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USERS"]:
       return action.users;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
-      nextState[action.user.id] = action.user;
+      nextState[action.user.username] = action.user;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_USER"]:
-      delete nextState[action.id];
+      delete nextState[action.username];
       return nextState;
 
     default:

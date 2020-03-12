@@ -1,36 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser, updateUser } from '../actions/user_actions'
+import EditUserFormContainer from './edit_user_form_container';
+import { $fetchUser } from '../util/user_api_util';
 
 class Profile extends React.Component{
 
     constructor(props) {
         super(props)
-        this.state = {
-            user: null
-        }
     }
 
     componentDidMount() {
         let that = this
         this.props.fetchUser(that.props.username)
-        .then((res) => {
-            that.setState({user: res.user})
-        })
     }
 
     componentDidUpdate(prevProps) {
         let that = this
-        // debugger
         if (prevProps.location.pathname !== this.props.match.url)
-        this.props.fetchUser(that.props.username)
+        this.props.fetchUser(that.props.user.username)
         .then((res) => {
             that.setState({ user: res.user })
         })
     }
 
     render() {
-        if (!this.state.user) return null;
+        if (!this.props.user) return null;
         return(
             <div className="profile-container">
 
@@ -83,50 +78,15 @@ class Profile extends React.Component{
                 <div className="middle">
 
                     <div className="name"> 
-                        {this.state.user.firstName} {this.state.user.lastName} 
+                        {this.props.user.firstName} {this.props.user.lastName} 
                     </div>
 
                     <div className="middle-right">
 
                         <div className="edit-profile button button-border unselected">
-                            {this.state.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend"}
-                            <ul className="edit-user-form">
+                            {this.props.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend"}
 
-                                <div className="label">
-                                    Edit Profile
-                                </div>
-                                <div className="label">
-                                    Edit Bio
-                                    <button
-                                        onClick={
-                                            (e) => {
-                                                e.persist();
-                                                this.props.updateUser.bind(this)(this.state.user)
-                                                .then(() => {
-                                                    const selectedParent = (target) => {
-                                                        if (target.parentElement.classList.contains("selected")) {
-                                                            return target.parentElement
-                                                        }
-                                                        return selectedParent(target.parentElement)
-                                                    }
-                                                    selectedParent(e.target).classList.add("unselected")
-                                                    selectedParent(e.target).classList.remove("selected")
-                                                })
-                                            }
-                                        }
-                                        className="login">
-                                        save
-                                    </button>
-                                </div>
-                                <input 
-                                    cols="30" rows="10"
-                                    onChange={(e) => {
-                                        let nextState = Object.assign(this.state.user, { bio: e.target.value })
-                                        this.setState(nextState)
-                                    }}
-                                    value={this.state.user.bio || ""}
-                                />
-                            </ul>
+                            <EditUserFormContainer user={this.props.user} />
                         </div>
 
                         <div className="activity-log-container button-border">
@@ -162,18 +122,61 @@ class Profile extends React.Component{
                     <div className="profile-left">
                         <div className="intro">
                             <div className="title">
+                                <div className="icon">
+
+                                </div>
                                 Intro
                             </div>
-                            <div className="bio">
-                                {this.state.user.bio}
+                            <div className="bio-container">
+
+                                <div className="bio">
+                                    {this.props.user.bio}
+                                </div>
+
+                                <div className="bio-button">
+                                    Edit Bio
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="profile-right">
-                        profile right
+
+                        <div className="post-form-container">
+                            <ul className="post-form-header">
+                                <li className="button-container">
+                                    <div className="post-icon">
+                                        
+                                    </div>
+                                    Create Post
+                                </li>
+                                <div className="border"></div>
+                                <li className="button-container">
+                                    <div className="photo-icon">
+
+                                    </div>
+                                    Photo/Video
+                                </li>
+                                <div className="border"></div>
+                                <li className="button-container">
+                                    <div className="video-icon">
+
+                                    </div>
+                                    Live Video
+                                </li>
+                                <div className="border"></div>
+                                <li className="button-container">
+                                    <div className="event-icon">
+
+                                    </div>
+                                    Life Event
+                                </li>
+                            </ul>
+
+                        </div>
+
                     </div>
-                    
+
                 </div>
             </div>
         )
@@ -181,9 +184,14 @@ class Profile extends React.Component{
 
 }
 
+let user;
+
+
+
 const msp = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    username: ownProps.match.params.username
+    username: ownProps.match.params.username,
+    user: state.entities.users[ownProps.match.params.username]
 })
 
 const mdp = dispatch => ({
