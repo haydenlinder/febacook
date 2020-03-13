@@ -11,7 +11,7 @@ A user-chosen url handle allows for easy sharing of profiles, but requires some 
 
 * For instance, the keys in the frontend's `users` slice of state are usernames (url handles) that point to user objects:
 
-``` 
+``` jsx
 users: {
     user1: {
         username: user1
@@ -24,9 +24,9 @@ users: {
 }
 ```
 
-* Likewise, associated objects must also reference usernames:
+* Consequently, associated objects must also reference usernames when sent up from the backend:
 
-```
+``` ruby
 json.extract! post, 
     :body, :photos, :created_at, :updated_at, :author_id, :recipient_id
 
