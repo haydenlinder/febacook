@@ -5,14 +5,16 @@ export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 export const REMOVE_USER = "REMOVE_USER";
 
-const receiveUser = user => ({
+const receiveUser =  ({ user, posts }) => ({
     type: RECEIVE_USER,
-    user
+    user,
+    posts
 })
 
-const receiveUsers = users => ({
+const receiveUsers = ({users, posts}) => ({
     type: RECEIVE_USERS,
-    users
+    users,
+    posts
 })
 
 const receiveUserErrors = errors => ({
@@ -30,7 +32,7 @@ export const fetchUsers = () => dispatch => (
 export const fetchUser = username => dispatch => (
     $fetchUser(username)
     .then(
-        payload => dispatch(receiveUser(payload)),
+        payload => dispatch(receiveUsers(payload)),
         payload => dispatch(receiveUserErrors(payload.responseJSON))
     )
 )

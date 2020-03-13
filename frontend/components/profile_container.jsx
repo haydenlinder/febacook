@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser, updateUser } from '../actions/user_actions'
 import EditUserFormContainer from './edit_user_form_container';
+import PostFormContainer from './post_form_container';
+import PostIndex from './posts_index';
 
 class Profile extends React.Component{
 
@@ -139,44 +141,18 @@ class Profile extends React.Component{
                     </div>
 
                     <div className="profile-right">
-
-                        <div className="post-form-container">
-                            <ul className="post-form-header">
-                                <li className="button-container">
-                                    <div className="post-icon">
-                                        
-                                    </div>
-                                    Create Post
-                                </li>
-                                <div className="border"></div>
-                                <li className="button-container">
-                                    <div className="photo-icon">
-
-                                    </div>
-                                    Photo/Video
-                                </li>
-                                <div className="border"></div>
-                                <li className="button-container">
-                                    <div className="video-icon">
-
-                                    </div>
-                                    Live Video
-                                </li>
-                                <div className="border"></div>
-                                <li className="button-container">
-                                    <div className="event-icon">
-
-                                    </div>
-                                    Life Event
-                                </li>
-                            </ul>
-
-                            <textarea className="body">
-
-                            </textarea>
-
+                        <PostFormContainer 
+                            recipientId={this.props.user.id} 
+                            authorId={this.props.currentUser.id}
+                        />
+                        <div className="posts">
+                            Posts
                         </div>
-
+                        <PostIndex 
+                            posts={this.props.posts}
+                            users={this.props.users}
+                            type={"profile"}
+                            />
                     </div>
 
                 </div>
@@ -193,7 +169,9 @@ let user;
 const msp = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.username],
     username: ownProps.match.params.username,
-    user: state.entities.users[ownProps.match.params.username]
+    users: state.entities.users,
+    user: state.entities.users[ownProps.match.params.username],
+    posts: state.entities.posts
 })
 
 const mdp = dispatch => ({

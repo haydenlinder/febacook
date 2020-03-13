@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-    window.state = store.getState();
+    
     ReactDOM.render( <Root store={store}/>, root )
 })

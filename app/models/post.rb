@@ -12,9 +12,10 @@ class Post < ApplicationRecord
     has_many_attached :photos
 
 
-    vaidate do 
-        if self.photos.length < 1 && !self.body
-            self.errors.add(body: "Post must have a body or photo attachment.")
+    validate do 
+        if self.photos.length < 1 && self.body.length < 1
+            self.errors.add(:body, "Post must have a body or photo attachment.")
         end
     end
+
 end

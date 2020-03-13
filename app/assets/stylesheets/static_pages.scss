@@ -1154,6 +1154,7 @@ b {
 .profile-right .post-form-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 1px solid lightgrey;
     border-radius: 3px;
     background-color: white;
@@ -1162,9 +1163,10 @@ b {
 .post-form-container .post-form-header {
     display: flex;
     justify-content: left;
-    padding-right: 70px;
+    padding-right: 90px;
     background-color: rgb(244, 245, 246);
     align-items: center;
+    border-radius: 3px;
 }
 
 .post-form-header li {
@@ -1216,3 +1218,41 @@ b {
     margin-right: 5px;
 }
 
+.post-form-container .body {
+    resize: none;
+    height: 60px;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 17px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.profile-container .login {
+    padding-right: 230px;
+    padding-left: 230px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+
+.profile-right .posts {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: rgb(88, 88, 88);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.profile-right .post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    background-color: white;
+    margin-bottom: 10px;
+}

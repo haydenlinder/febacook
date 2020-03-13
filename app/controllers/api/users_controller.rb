@@ -21,10 +21,16 @@ class Api::UsersController < ApplicationController
     end
     
     def show
-        @user = User.find_by(username: params[:username])
+        @user = 
+            User.includes(received_posts: [:author, :recipient])
+            .find_by(username: params[:username])
+
         unless @user
-            render json: @user.errors.full_messages, status: 404
+            render json: @user.errors, status: 404
         end
+        @users = @user.received_posts.map { |post| post.author }
+        @users.push(@user) 
+        render :show
     end
 
     def index

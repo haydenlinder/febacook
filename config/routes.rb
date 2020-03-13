@@ -6,14 +6,11 @@ Rails.application.routes.draw do
     get 'posts/update'
     get 'posts/destroy'
   end
-  get 'posts/create'
-  get 'posts/show'
-  get 'posts/update'
-  get 'posts/destroy'
   root to: 'static_pages#root'
 
   namespace :api, defaults: {format: :json} do 
     resources :users, only: [:create, :update, :index]
+    resources :posts, only: [:create, :show, :udpate, :destroy, :index]
     get 'users/:username', to: 'users#show', as: 'username'
     resource :session
   end

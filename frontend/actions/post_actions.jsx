@@ -16,7 +16,7 @@ const receivePostErrors = errors => ({
     errors
 })
 
-const receivePosts = posts => ({
+export const receivePosts = (posts) => ({
     type: RECEIVE_POSTS,
     posts
 })
