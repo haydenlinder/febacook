@@ -696,7 +696,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "profile link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-photo"
-      }, "img"), this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.goHome,

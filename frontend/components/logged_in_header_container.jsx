@@ -54,7 +54,6 @@ class LoggedInHeader extends React.Component {
                         >
 
                             <div className="profile-photo">
-                                img
                             </div>
 
                             {this.props.currentUser.firstName}

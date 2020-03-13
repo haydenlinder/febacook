@@ -588,7 +588,8 @@ b {
 
 .logged-in-header .profile .profile-photo {
     margin-right: 5px;
-    background-color: red;
+    background-image: image_url("default_photo.png");
+    background-size: 100%;
     border-radius: 24px;
     height: 24px;
     width: 24px;
@@ -1102,6 +1103,11 @@ b {
     padding: 15px;
 }
 
+.profile-nav-container li:hover {
+    background-color: rgb(222, 225, 230);
+    cursor: pointer;
+}
+
 .profile-nav-container :first-child {
     border-left: 1px solid lightgrey;
 }
@@ -1156,11 +1162,16 @@ b {
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
+    
 }
 
 .profile-left .bio {
     font-size: 12px;
-}
+    max-width: 295px;
+    display: flex;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+ }
 
 .profile-left .bio-container .bio-button {
     padding-right: 125px;
@@ -1188,6 +1199,7 @@ b {
 .profile-right {
     display: flex;
     flex-direction: column;
+    max-width: 515px;
 }
 
 .profile-right .post-form-container {
@@ -1294,10 +1306,14 @@ b {
     border-radius: 3px;
     background-color: white;
     margin-bottom: 10px;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    // max-width: 515px;
 }
 
 .profile-right .not-photo {
     margin: 10px;
+   
 }
 
 .profile-right .post-header {
