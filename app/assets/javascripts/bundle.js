@@ -1530,6 +1530,10 @@ var PostIndex = function PostIndex(_ref) {
   var postList = list.map(function (post) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
       className: "post-container"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "not-photo"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      className: "post-header"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "link"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1540,9 +1544,13 @@ var PostIndex = function PostIndex(_ref) {
       to: "/".concat(post.recipientName)
     }, users[post.recipientName].firstName, " ", users[post.recipientName].lastName)) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
-    }, "created ", post.createdAt), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    }, post.createdAt), post.createdAt !== post.updatedAt ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
-    }, "updated ", post.updatedAt), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, post.body));
+    }, "Updated ", post.updatedAt) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "post-footer"
+    }, post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "post-footer"
+    }));
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "post-list"

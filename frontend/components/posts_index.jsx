@@ -6,27 +6,40 @@ const PostIndex = ({posts, users, type}) => {
     let postList = list.map((post) => 
         <ul className="post-container">
 
-            <li className="link">
-                <Link to={`/${post.authorName}`}>{users[post.authorName].firstName} {users[post.authorName].lastName}</Link>
-            </li>
+            <div className="not-photo">
 
-            {(type === "feed") ? 
-            <li className="link">
-                <Link to={`/${post.recipientName}`}>{users[post.recipientName].firstName} {users[post.recipientName].lastName}</Link>
-            </li> : null
-            }
+                <ul className="post-header">
+
+                    <li className="link">
+                        <Link to={`/${post.authorName}`}>{users[post.authorName].firstName} {users[post.authorName].lastName}</Link>
+                    </li>
+
+                    {(type === "feed") ? 
+                    <li className="link">
+                        <Link to={`/${post.recipientName}`}>{users[post.recipientName].firstName} {users[post.recipientName].lastName}</Link>
+                    </li> : null
+                    }
 
 
-            <li className="timestamp">
-                created {post.createdAt}
-            </li>
+                    <li className="timestamp">
+                        {post.createdAt}
+                    </li>
+                    {post.createdAt !== post.updatedAt ? 
+                    <li className="timestamp">
+                        Updated {post.updatedAt}
+                    </li> : null
+                    }
 
-            <li className="timestamp">
-                updated {post.updatedAt}
-            </li>
+                </ul>
 
-            <li>
-                {post.body}
+
+                <li className="post-footer">
+                    {post.body}
+                </li>
+            </div>
+
+            <li className="post-footer">
+
             </li>
 
         </ul>   
