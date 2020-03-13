@@ -87,7 +87,7 @@ html {
 
 .header{
     border-bottom: 1px solid rgb(26, 57, 117);
-    background-image: linear-gradient(rgb(65, 95, 156), rgb(35, 71, 145));
+    background-image: linear-gradient(rgb(60, 92, 156), rgb(35, 71, 145));
     color: white;
     display: flex;
     justify-content: space-between;
@@ -454,7 +454,7 @@ b {
 .logged-in-header {
     height: 42px;
     border-bottom: 1px solid rgb(26, 57, 117);
-    background-image: linear-gradient(rgb(65, 95, 156), rgb(52, 102, 160));
+    background-image: linear-gradient(rgb(75, 108, 197), rgb(52, 102, 160));
     color: white;
     display: flex;
     justify-content: center;
@@ -642,6 +642,10 @@ b {
     background-repeat: no-repeat;
 }
 
+.logged-in-header .sprite:hover {
+    cursor: pointer;
+}
+
 .logged-in-header .middle-nav .sprite {
     background-image: image_url("notification_sprite.png")
 }
@@ -716,9 +720,10 @@ b {
 
 .selected > ul {
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: 34px;
-    left: -200px;
+    left: -188px;
     color: black;
     background-color: white;
     border: 1px solid lightgrey;
@@ -727,13 +732,45 @@ b {
     box-shadow: 0px 0px 5px 0px black;
 }
 
-.selected > ul > li {
-    // width: 400px;
+
+.logged-in-header .selected > ul {
+	position: relative;
+	background: white;
+	border: 1px solid #a8a8a8;
 }
 
-.selected > ul > li:hover {
+
+.logged-in-header .selected > ul:after, .logged-in-header .selected > ul:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.logged-in-header .selected > ul:after {
+	border-color: rgba(213, 213, 213, 0);
+	border-bottom-color: white;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.logged-in-header .selected > ul:before {
+	border-color: rgba(168, 168, 168, 0);
+	border-bottom-color: #a8a8a8;
+	border-width: 11px;
+	margin-left: -11px;
+}
+
+.logged-in-header .selected > ul > li {
+    padding: 10px;
+    // display: flex;
+}
+
+.logged-in-header .selected > ul > li:hover {
     cursor: pointer;
-    display: flex;
 }
 
 
@@ -928,6 +965,8 @@ b {
     border-radius: 2px;
 }
 
+
+
 .profile-container .edit-profile .label {
     display: flex;
     justify-content: space-between;
@@ -1003,11 +1042,11 @@ b {
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
 	background: #ffffff;
     border: 1px solid #a3a3a3;
-    left: 960px;
-    top: 360px;
+    left: 568px;
+    top: 95px;
     max-width: fit-content;
 }
 
@@ -1231,7 +1270,7 @@ b {
     box-sizing: border-box;
 }
 
-.profile-container .login {
+.post-form-container .login {
     padding-right: 230px;
     padding-left: 230px;
     margin-bottom: 10px;

@@ -14,7 +14,8 @@ const postsReducer = (state = {}, action) => {
             delete nextState[action.postId]
             return nextState;
         case RECEIVE_USER:
-            return action.posts
+            if (action.posts) return action.posts
+            return state;
         case RECEIVE_USERS:
             if (action.posts) return action.posts
             return {}

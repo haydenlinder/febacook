@@ -86,7 +86,10 @@ class Profile extends React.Component{
                         <div className="edit-profile button button-border unselected">
                             {this.props.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend"}
 
-                            <EditUserFormContainer user={this.props.user} />
+                            {this.props.user.id === this.props.currentUser.id ? 
+                            
+                            <EditUserFormContainer user={this.props.user} /> : null
+                            }
                         </div>
 
                         <div className="activity-log-container button-border">

@@ -1658,9 +1658,9 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "middle-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit-profile button button-border unselected"
-      }, this.props.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, this.props.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend", this.props.user.id === this.props.currentUser.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         user: this.props.user
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-container button-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log button"
@@ -1895,7 +1895,8 @@ var postsReducer = function postsReducer() {
       return nextState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
-      return action.posts;
+      if (action.posts) return action.posts;
+      return state;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USERS"]:
       if (action.posts) return action.posts;
