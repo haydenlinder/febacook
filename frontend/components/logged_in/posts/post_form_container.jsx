@@ -71,6 +71,7 @@ class PostForm extends React.Component {
                 <textarea 
                     value={this.state.body}
                     className="body"
+                    placeholder="What's on your mind?"
                     onChange={(e) => this.setState({body: e.target.value})}
                 >
                     

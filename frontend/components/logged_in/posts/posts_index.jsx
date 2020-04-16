@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { convertDateTime } from '../../../util/date_util';
 
 const PostIndex = ({posts, users, type}) => {
     let list = Object.values(posts).reverse();
@@ -22,11 +23,11 @@ const PostIndex = ({posts, users, type}) => {
 
 
                     <li className="timestamp">
-                        {post.createdAt}
+                        {convertDateTime(post.createdAt)}
                     </li>
                     {post.createdAt !== post.updatedAt ? 
                     <li className="timestamp">
-                        Updated {post.updatedAt}
+                        Updated {convertDateTime(post.updatedAt)}
                     </li> : null
                     }
 

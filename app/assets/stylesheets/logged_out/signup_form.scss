@@ -1,0 +1,222 @@
+.logged-out-home .user-form {
+    margin-top: 20px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+}
+
+//// form messages
+
+.logged-out-home .user-form .message .signup {
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+
+.logged-out-home .user-form .message .line2 {
+    display: flex;
+    align-items: center;
+}
+
+.logged-out-home .user-form .message .line2 .easy {
+    margin-right: 20px;
+    font-weight: 300;
+}
+
+
+///// form inputs
+
+.logged-out-home .user-form input {
+    height: 25px;
+    width: 400px;
+    padding: 5px;
+    padding-left: 10px;
+    border: 1px solid rgb(173, 205, 214);
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+.logged-out-home .user-form select {
+    height: 30px;
+    padding: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+    width: 400px;
+    font-size: 12px;
+}
+
+///// name
+
+.logged-out-home .user-form .name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logged-out-home .user-form .name input {
+    width: 175px;
+}
+
+//// birthday
+
+.logged-out-home .user-form .birthday-container {
+    margin-top: 20px;
+    line-height: unset;
+}
+.logged-out-home .user-form .birthday-container input{
+    margin: unset;
+    width: 385px;
+}
+////// gender
+
+.logged-out-home .user-form .gender-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.logged-out-home .user-form .gender-input-container input{
+    width: 15px;
+    margin: 5px;
+}
+
+.logged-out-home .user-form .gender-input-container .title {
+    margin-right: 10px;
+    font-weight: 420;
+}
+
+.logged-out-home .user-form .custom-gender-false {
+    display: none;
+}
+
+
+////// form input errors
+
+.logged-out-home .user-form .input {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    position: relative;
+}
+
+
+.errors {
+	position: relative;
+	// background: #88b7d5;
+	// border: 4px solid #c2e1f5;
+}
+.errors:after, .errors:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.errors:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: rgb(189, 75, 75);
+	border-width: 10px;
+	margin-top: -10px;
+}
+.errors:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: rgb(160, 62, 62);
+	border-width: 1px;
+	margin-top: -16px;
+}
+
+
+
+
+.errors {
+    background-color: rgb(189, 75, 75);
+    border: 1px solid rgb(160, 62, 62);
+    display: block;
+    position: absolute;
+    width: fit-content;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    right: 410px;
+    z-index: 1;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.session-form .errors {
+    left: -142px;
+    top: 5px;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+
+}
+
+
+.no-errors {
+    display: none;
+}
+
+
+//// user form button
+
+.button-container {
+    position: relative;
+}
+
+.sign-up-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 30px;
+    width: 200px;
+    background: linear-gradient(#67ae55, #578843);
+    border: 1px solid;
+    border-top-color: rgb(59, 110, 34);
+    border-right-color: rgb(59, 110, 34);
+    border-bottom-color: rgb(44, 81, 21);
+    border-left-color: rgb(59, 110, 34);
+    padding: 5px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px #a4e388;
+    position: absolute;
+    text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    line-height: 27px;
+}
+    
+.sign-up-button:active{
+    background-color: honeydew;
+    top: 2px;
+}
+
+.sign-up-button:hover {
+    cursor: pointer;
+    background: linear-gradient(#7ec96b, #6ca157);
+}
+
+.line {
+    width: 400px;
+    border-bottom: 1px solid grey;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+
+

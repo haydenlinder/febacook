@@ -1,0 +1,86 @@
+.profile-right .post-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.post-form-container .post-form-header {
+    display: flex;
+    justify-content: left;
+    padding-right: 89px;
+    background-color: rgb(244, 245, 246);
+    align-items: center;
+    border-radius: 3px;
+}
+
+.post-form-header li {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    color: rgb(61, 95, 168);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.post-form-header .border {
+    border-right: 1px solid lightgrey;
+    height: 15px;
+}
+
+.post-form-header .post-icon {
+    height: 15px;
+    width: 15px;
+    background-image: image_url("create_post.png");
+    background-size: 115%;
+    margin-right: 5px;
+}
+
+.post-form-header .photo-icon {
+    height: 15px;
+    width: 15px;
+    background-image: image_url("photo.png");
+    background-size: 110%;
+    margin-right: 5px;
+}
+
+.post-form-header .video-icon {
+    height: 15px;
+    width: 15px;
+    background-image: image_url("video.png");
+    background-size: 110%;
+    margin-right: 5px;
+}
+
+.post-form-header .event-icon {
+    height: 15px;
+    width: 15px;
+    background-image: image_url("event.png");
+    background-size: 100%;
+    margin-right: 5px;
+}
+
+.post-form-container .body {
+    resize: none;
+    height: 60px;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 17px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.post-form-container .login {
+    padding-right: 230px;
+    padding-left: 230px;
+    margin-bottom: 10px;
+    outline: none;
+}

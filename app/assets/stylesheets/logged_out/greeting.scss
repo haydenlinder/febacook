@@ -1,0 +1,56 @@
+
+.logged-out-home .greeting {
+    letter-spacing: .5px;
+}
+
+.logged-out-home .greeting .connect {
+    margin-top: 60px;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logged-out-home .greeting .connect .title {
+    font-weight: 600;   
+    font-size: 27px; 
+    margin-bottom: 30px;
+}
+
+.logged-out-home .greeting li {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+
+}
+
+b {
+    font-weight: bold;
+    display: inline;
+    margin-right: 5px;
+}
+
+.logged-out-home .greeting li .sprite-container {
+    height: 48px;
+    width: 48px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.logged-out-home .greeting li .sprite-container .sprite {
+    background: image_url("logged_out_home_greeting_sprite.png");
+    line-height: 200px;
+}
+
+.logged-out-home .greeting li .sprite-container .one {
+    background-position: -9px -6px;
+}
+.logged-out-home .greeting li .sprite-container .two {
+    background-position: -9px -85px;
+}
+.logged-out-home .greeting li .sprite-container .three {
+    background-position: -9px -166px;
+}

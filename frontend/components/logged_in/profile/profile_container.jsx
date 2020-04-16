@@ -144,8 +144,9 @@ class Profile extends React.Component{
                                     {this.props.user.bio}
                                 </div>
 
-                                <div className="bio-button">
-                                    Edit Bio
+                                <div 
+                                    className="bio-button">
+                                    Edit Bio 
                                 </div>
                             </div>
                         </div>

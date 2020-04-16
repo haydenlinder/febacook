@@ -1,0 +1,14 @@
+#root {
+    background-color: rgb(225, 228, 231);
+}
+
+.modal-true {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+

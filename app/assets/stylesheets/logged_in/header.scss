@@ -1,0 +1,321 @@
+.logged-in-header {
+    height: 42px;
+    border-bottom: 1px solid rgb(26, 57, 117);
+    background-image: linear-gradient(rgb(75, 108, 197), rgb(52, 102, 160));
+    color: white;
+    display: flex;
+    justify-content: center;
+    min-width: 1220px;
+}
+
+.logged-in-header a {
+    text-decoration: none;
+    color: white
+}
+
+//////// nav
+
+.logged-in-header .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 195px;
+    margin-left: 180px;
+    min-width: 1000px;
+}
+
+
+//////////////////////////////////  left nav
+
+
+.logged-in-header .left-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logged-in-header .nav .logo {
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    background: image_url("fb_logo.png") white;
+    background-size: 155%;
+    background-position: -3px -5px;
+    border-radius: 2px;
+}
+
+.logged-in-header .logo:hover {
+    cursor: pointer;
+}
+
+.logged-in-header .nav .input-container {
+    position: relative;
+}
+
+.logged-in-header .nav input {
+    width: 448px;
+    min-width: 50px;
+    height: 26px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    border: 1px solid rgb(31, 67, 139);
+    margin-left: 6px;
+    box-sizing: border-box;
+}
+
+.logged-in-header .nav .search-button {
+    background-color: rgb(246, 245, 245);
+    color: grey;
+    font-size: 14px;
+    position: absolute;
+    display: inline;
+    left: 415px;
+    top: 1px;
+    height: 24px;
+    width: 38px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-image: image_url("search_icon.png");
+    background-size: 115%;
+    background-position: center;
+}
+
+.logged-in-header .nav .search-button:hover {
+    cursor: pointer;
+    background-color: rgb(236, 236, 236);
+    background-image: image_url("hover_search.png");
+}
+
+
+////////////////////////////////////// middle-nav
+
+
+.logged-in-header .middle-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 550;
+    letter-spacing: .1px;
+    min-width: fit-content;
+}
+
+.logged-in-header .nav .middle-nav-right-border {
+    border-right: 1px solid #385898;
+    height: 20px;
+}
+
+
+////////////// links
+
+
+.logged-in-header .link {
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    box-sizing: border-box;
+    max-height: 26px;
+    border-radius: 2px;
+}
+
+.logged-in-header .link:hover {
+    background-color: #385898;
+    cursor: pointer;
+}
+
+
+.logged-in-header .link {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logged-in-header .profile .profile-photo {
+    margin-right: 5px;
+    background-image: image_url("default_photo.png");
+    background-size: 100%;
+    border-radius: 24px;
+    height: 24px;
+    width: 24px;
+}
+
+.logged-in-header .nav .find-friends {
+    min-width: fit-content;
+}
+
+
+
+//////////////////////// notifications-container
+
+
+
+.logged-in-header .notifications-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.notifications-container .friend-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-position: -9px;
+}
+
+.notifications-container .message-icon {
+    background-position: -46px;
+}
+
+.notifications-container .bell-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-position: -82px;
+}
+
+
+
+
+///////////////////////////////////// sprites 
+
+
+
+.logged-in-header .middle-nav .sprite {
+    width: 25px;
+    height: 25px;
+    background-size: 470%;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+}
+
+.logged-in-header .sprite:hover {
+    cursor: pointer;
+}
+
+.logged-in-header .middle-nav .sprite {
+    background-image: image_url("notification_sprite.png")
+}
+
+.logged-in-header .info-icon, .logged-in-header .arrow-icon {
+    background-image: image_url("right_sprites.png");
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: 300%;
+    border-radius: 5px;
+}
+
+.logged-in-header .info-icon {
+    background-position: -9.5px;
+}
+
+.logged-in-header .arrow-icon {
+    background-position: -45px;
+}
+
+// hover
+
+.logged-in-header .middle-nav .friend-icon.unselected:hover {
+    background-image: image_url("hover_friend.png");
+}
+
+.logged-in-header .middle-nav .message-icon.unselected:hover {
+    background-image: image_url("hover_message.png");
+}
+
+.logged-in-header .middle-nav .bell-icon.unselected:hover {
+    background-image: image_url("hover_bell.png");
+}
+
+.logged-in-header .info-icon:hover, .logged-in-header .arrow-icon:hover {
+    background-image: image_url("hover_right.png");
+}
+
+// selected
+
+.sprite.friend-icon.selected {
+    background-image: image_url("selected_friend.png");
+}
+
+.sprite.message-icon.selected {
+    background-image: image_url("selected_message.png");
+}
+
+.sprite.bell-icon.selected {
+    background-image: image_url("selected_bell.png");
+}
+
+
+.logged-in-header .info-icon.selected {
+    background-image: image_url("selected_info.png")
+}
+
+.logged-in-header .arrow-icon.selected {
+    background-image: image_url("selected_arrow.png")
+}
+
+.sprite {
+    position: relative;
+}
+
+
+
+.unselected > ul {
+    display: none;
+}
+
+.selected > ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 34px;
+    left: -188px;
+    color: black;
+    background-color: white;
+    border: 1px solid lightgrey;
+    width: 400px;
+    z-index: 3;
+    box-shadow: 0px 0px 5px 0px black;
+}
+
+
+.logged-in-header .selected > ul {
+	position: relative;
+	background: white;
+	border: 1px solid #a8a8a8;
+}
+
+
+.logged-in-header .selected > ul:after, .logged-in-header .selected > ul:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.logged-in-header .selected > ul:after {
+	border-color: rgba(213, 213, 213, 0);
+	border-bottom-color: white;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.logged-in-header .selected > ul:before {
+	border-color: rgba(168, 168, 168, 0);
+	border-bottom-color: #a8a8a8;
+	border-width: 11px;
+	margin-left: -11px;
+}
+
+.logged-in-header .selected > ul > li {
+    padding: 10px;
+    // display: flex;
+}
+
+.logged-in-header .selected > ul > li:hover {
+    cursor: pointer;
+}

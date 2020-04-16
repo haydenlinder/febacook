@@ -743,6 +743,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       }), "Life Event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         value: this.state.body,
         className: "body",
+        placeholder: "What's on your mind?",
         onChange: function onChange(e) {
           return _this3.setState({
             body: e.target.value
@@ -792,6 +793,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _util_date_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../util/date_util */ "./frontend/util/date_util.js");
+
 
 
 
@@ -817,9 +820,9 @@ var PostIndex = function PostIndex(_ref) {
       to: "/".concat(post.recipientName)
     }, users[post.recipientName].firstName, " ", users[post.recipientName].lastName)) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
-    }, post.createdAt), post.createdAt !== post.updatedAt ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    }, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.createdAt)), post.createdAt !== post.updatedAt ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
-    }, "Updated ", post.updatedAt) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    }, "Updated ", Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.updatedAt)) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "post-footer"
     }, post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "post-footer"
@@ -2091,6 +2094,48 @@ var configureStore = function configureStore(preloadedState) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/date_util.js":
+/*!************************************!*\
+  !*** ./frontend/util/date_util.js ***!
+  \************************************/
+/*! exports provided: convertDateTime */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertDateTime", function() { return convertDateTime; });
+var convertDate = function convertDate(time) {
+  var date = new Date(time);
+  return date.toDateString();
+};
+
+var convertTime = function convertTime(time) {
+  var date = new Date(time);
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  minutes = minutes < 10 ? "0".concat(minutes) : minutes;
+  var timeString;
+
+  if (hours === 0) {
+    timeString = " 12:".concat(minutes, "am ");
+  } else if (hours === 12) {
+    timeString = " ".concat(hours, ":").concat(minutes, "pm");
+  } else if (hours > 12) {
+    hours = hours % 12;
+    timeString = " ".concat(hours, ":").concat(minutes, "pm");
+  } else {
+    timeString = " ".concat(hours, ":").concat(minutes, "am");
+  }
+
+  return timeString;
+};
+
+var convertDateTime = function convertDateTime(time) {
+  return "".concat(convertDate(time), " at ").concat(convertTime(time));
+};
 
 /***/ }),
 

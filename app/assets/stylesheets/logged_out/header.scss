@@ -1,0 +1,57 @@
+.header{
+    border-bottom: 1px solid rgb(26, 57, 117);
+    background-image: linear-gradient(rgb(60, 92, 156), rgb(35, 71, 145));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    min-width: 1220px;
+}
+
+.logged-out-header .logo {
+    font-weight: 625;
+    font-size: 40px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 180px;
+    margin-right: 260px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.session-form {
+    min-width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 12px;
+    margin-bottom: 25px;
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+.login {
+    width: fit-content;
+    height: 25px;
+    border-radius: 2px;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    background-color: rgb(78, 116, 192);
+    border: 1px solid rgb(46, 66, 119)
+}
+
+button.login:hover {
+    background-color: rgb(65, 95, 156);
+    cursor: pointer;
+}
+
+.session-form input, .session-form .login {
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+
+.session-form input {
+    height: 20px;
+    width: 140px;
+    border: 1px solid darkblue;
+}
