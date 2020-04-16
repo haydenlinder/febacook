@@ -356,54 +356,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ "./frontend/components/home.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header */ "./frontend/components/header.jsx");
-/* harmony import */ var _profile_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./profile_container */ "./frontend/components/profile_container.jsx");
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/ui_util */ "./frontend/util/ui_util.js");
 
 
 
 
 
-
-var toggleDropdowns = function toggleDropdowns(e) {
-  var unselect = function unselect(target) {
-    target.classList.remove("selected");
-    target.classList.add("unselected");
-  };
-
-  var select = function select(target) {
-    target.classList.remove("unselected");
-    target.classList.add("selected");
-  };
-
-  var isDropdownChild = function isDropdownChild(target) {
-    if (!target.parentElement) return false;
-    if (target.parentElement.classList.contains("selected")) return true;
-    return isDropdownChild(target.parentElement);
-  };
-
-  var toggleOffTarget = function toggleOffTarget(e) {
-    var selected = document.getElementsByClassName("selected");
-    var pending = false;
-    if (isDropdownChild(e.target)) return;
-
-    if (e.target.classList.contains("unselected")) {
-      pending = true;
-    }
-
-    for (var i = 0; i < selected.length; i++) {
-      unselect(selected[i]);
-    }
-
-    if (pending) select(e.target);
-  };
-
-  toggleOffTarget(e);
-};
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app-container",
-    onClick: toggleDropdowns
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    onClick: _util_ui_util__WEBPACK_IMPORTED_MODULE_4__["toggleDropdowns"]
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "modal-false",
+    onClick: _util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModalBackground"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
     component: _home__WEBPACK_IMPORTED_MODULE_1__["default"]
   })));
@@ -426,6 +393,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/ui_util */ "./frontend/util/ui_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -436,13 +404,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -458,10 +427,20 @@ var EditUserForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(EditUserForm).call(this, props));
     _this.state = _this.props.user;
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(EditUserForm, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.persist();
+      this.props.updateUser(this.state).then(function () {
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeAncestorModal"])(e);
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModalBackground"])();
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -473,22 +452,7 @@ var EditUserForm = /*#__PURE__*/function (_React$Component) {
       }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "label"
       }, "Edit Bio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick(e) {
-          e.persist();
-
-          _this2.props.updateUser.bind(_this2)(_this2.state).then(function () {
-            var selectedParent = function selectedParent(target) {
-              if (target.parentElement.classList.contains("selected")) {
-                return target.parentElement;
-              }
-
-              return selectedParent(target.parentElement);
-            };
-
-            selectedParent(e.target).classList.add("unselected");
-            selectedParent(e.target).classList.remove("selected");
-          });
-        },
+        onClick: this.handleSubmit,
         className: "login"
       }, "save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         cols: "30",
@@ -1577,6 +1541,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit_user_form_container */ "./frontend/components/edit_user_form_container.jsx");
 /* harmony import */ var _post_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post_form_container */ "./frontend/components/post_form_container.jsx");
 /* harmony import */ var _posts_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./posts_index */ "./frontend/components/posts_index.jsx");
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/ui_util */ "./frontend/util/ui_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1594,6 +1559,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1656,11 +1622,14 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "name"
       }, this.props.user.firstName, " ", this.props.user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.user.id === this.props.currentUser.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: _util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModalBackground"],
         className: "edit-profile button button-border unselected"
-      }, this.props.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend", this.props.user.id === this.props.currentUser.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, "Edit Profile", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         user: this.props.user
-      }) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit-profile button button-border unselected"
+      }, "Add Friend"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-container button-border"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log button"
@@ -2213,6 +2182,85 @@ var $createUser = function $createUser(user) {
       user: user
     }
   });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/ui_util.js":
+/*!**********************************!*\
+  !*** ./frontend/util/ui_util.js ***!
+  \**********************************/
+/*! exports provided: closeAncestorModal, closeModalBackground, openModalBackground, toggleDropdowns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeAncestorModal", function() { return closeAncestorModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModalBackground", function() { return closeModalBackground; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openModalBackground", function() { return openModalBackground; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleDropdowns", function() { return toggleDropdowns; });
+var closeAncestorModal = function closeAncestorModal(e) {
+  var selectedParent = function selectedParent(target) {
+    if (target.parentElement.classList.contains("selected")) {
+      return target.parentElement;
+    }
+
+    return selectedParent(target.parentElement);
+  };
+
+  selectedParent(e.target).classList.add("unselected");
+  selectedParent(e.target).classList.remove("selected");
+};
+var closeModalBackground = function closeModalBackground() {
+  var modals = document.getElementsByClassName("modal-true");
+
+  for (var i = 0; i < modals.length; i++) {
+    modals[i].classList.add("modal-false");
+    modals[i].classList.remove("modal-true");
+  }
+};
+var openModalBackground = function openModalBackground() {
+  var modals = document.getElementsByClassName("modal-false");
+
+  for (var i = 0; i < modals.length; i++) {
+    modals[i].classList.add("modal-true");
+    modals[i].classList.remove("modal-false");
+  }
+};
+var toggleDropdowns = function toggleDropdowns(e) {
+  var unselect = function unselect(target) {
+    target.classList.remove("selected");
+    target.classList.add("unselected");
+  };
+
+  var select = function select(target) {
+    target.classList.remove("unselected");
+    target.classList.add("selected");
+  };
+
+  var isDropdownChild = function isDropdownChild(target) {
+    if (!target.parentElement) return false;
+    if (target.parentElement.classList.contains("selected")) return true;
+    return isDropdownChild(target.parentElement);
+  };
+
+  var toggleOffTarget = function toggleOffTarget(e) {
+    var selected = document.getElementsByClassName("selected");
+    var pending = false;
+    if (isDropdownChild(e.target)) return;
+
+    if (e.target.classList.contains("unselected")) {
+      pending = true;
+    }
+
+    for (var i = 0; i < selected.length; i++) {
+      unselect(selected[i]);
+    }
+
+    if (pending) select(e.target);
+  };
+
+  toggleOffTarget(e);
 };
 
 /***/ }),

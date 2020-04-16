@@ -4,6 +4,7 @@ import ProfileContainer from './profile_container';
 
 const LoggedInHome = (props) => (
     <Switch>
+        
         <Route path="/:username" component={ProfileContainer} />
     </Switch>
 )

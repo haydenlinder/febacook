@@ -1,11 +1,26 @@
 import React from 'react'
 import { updateUser } from '../actions/user_actions';
 import { connect } from 'react-redux';
+import { closeAncestorModal, closeModalBackground } from '../util/ui_util';
 
 class EditUserForm extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = this.props.user
+        super(props);
+
+        this.state = this.props.user;
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(e) {
+        e.persist();
+        this.props.updateUser(this.state)
+        .then( 
+            () => {
+                closeAncestorModal(e);
+                closeModalBackground();
+            }
+        );
     }
 
     render(){
@@ -20,22 +35,7 @@ class EditUserForm extends React.Component {
                 <div className="label">
                     Edit Bio
                     <button
-                        onClick={
-                            (e) => {
-                                e.persist();
-                                this.props.updateUser.bind(this)(this.state)
-                                    .then(() => {
-                                        const selectedParent = (target) => {
-                                            if (target.parentElement.classList.contains("selected")) {
-                                                return target.parentElement
-                                            }
-                                            return selectedParent(target.parentElement)
-                                        }
-                                        selectedParent(e.target).classList.add("unselected")
-                                        selectedParent(e.target).classList.remove("selected")
-                                    })
-                            }
-                        }
+                        onClick={this.handleSubmit}
                         className="login">
                         save
                     </button>

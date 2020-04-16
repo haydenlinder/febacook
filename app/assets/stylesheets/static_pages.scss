@@ -74,8 +74,19 @@ table {
 
 ////////////////   app
 
-.app-container {
+#root {
     background-color: rgb(225, 228, 231);
+}
+
+///////////////  modal
+
+.modal-true {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
 }
 
 //////   logged-out-header
@@ -523,7 +534,7 @@ b {
     font-size: 14px;
     position: absolute;
     display: inline;
-    z-index: 1;
+    // z-index: 1;
     left: 415px;
     top: 1px;
     height: 24px;
@@ -729,7 +740,7 @@ b {
     background-color: white;
     border: 1px solid lightgrey;
     width: 400px;
-    z-index: 1;
+    z-index: 3;
     box-shadow: 0px 0px 5px 0px black;
 }
 
@@ -964,8 +975,8 @@ b {
     left: -410px;   
     width: 650px;
     border-radius: 2px;
+    z-index: 1;
 }
-
 
 
 .profile-container .edit-profile .label {

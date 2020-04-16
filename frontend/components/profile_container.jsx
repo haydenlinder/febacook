@@ -4,6 +4,7 @@ import { fetchUser, updateUser } from '../actions/user_actions'
 import EditUserFormContainer from './edit_user_form_container';
 import PostFormContainer from './post_form_container';
 import PostIndex from './posts_index';
+import { openModalBackground } from '../util/ui_util';
 
 class Profile extends React.Component{
 
@@ -83,14 +84,21 @@ class Profile extends React.Component{
 
                     <div className="middle-right">
 
-                        <div className="edit-profile button button-border unselected">
-                            {this.props.user.id === this.props.currentUser.id ? "Edit Profile" : "Add Friend"}
+                        {this.props.user.id === this.props.currentUser.id ? 
 
-                            {this.props.user.id === this.props.currentUser.id ? 
-                            
-                            <EditUserFormContainer user={this.props.user} /> : null
-                            }
-                        </div>
+                            <div 
+                                onClick={openModalBackground}
+                                className="edit-profile button button-border unselected"
+                            >
+                                Edit Profile 
+                                <EditUserFormContainer user={this.props.user} />
+                            </div>
+                            :
+                            <div className="edit-profile button button-border unselected">
+                                Add Friend
+                            </div>
+
+                        }           
 
                         <div className="activity-log-container button-border">
                             <div className="activity-log button">
