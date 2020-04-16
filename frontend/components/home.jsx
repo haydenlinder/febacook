@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import LoggedInHome from './logged_in_home';
-import LoggedOutHome from './logged_out_home';
+import LoggedInHome from './logged_in/logged_in_home';
+import LoggedOutHome from './logged_out/logged_out_home';
 
-const Home = ({ currentUser }) => {
+let Home = ({ currentUser }) => {
     return(
         currentUser ? <LoggedInHome /> : <LoggedOutHome /> 
     )
@@ -13,6 +13,6 @@ const msp = state => ({
     currentUser: state.entities.users[state.session.username]
 })
 
-const HomeContainer = connect(msp)(Home);
+Home = connect(msp)(Home);
 
-export default HomeContainer;
+export default Home;

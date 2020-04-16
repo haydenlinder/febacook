@@ -1,7 +1,7 @@
 import React from 'react'
-import { updateUser } from '../actions/user_actions';
+import { updateUser } from '../../../actions/user_actions';
 import { connect } from 'react-redux';
-import { closeAncestorModal, closeModalBackground } from '../util/ui_util';
+import { closeAncestorModal, closeModalBackground } from '../../../util/ui_util';
 
 class EditUserForm extends React.Component {
     constructor(props) {

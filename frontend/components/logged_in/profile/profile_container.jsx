@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUser, updateUser } from '../actions/user_actions'
+import { fetchUser, updateUser } from '../../../actions/user_actions'
 import EditUserFormContainer from './edit_user_form_container';
-import PostFormContainer from './post_form_container';
-import PostIndex from './posts_index';
-import { openModalBackground } from '../util/ui_util';
+import PostFormContainer from '../posts/post_form_container';
+import PostIndex from '../posts/posts_index';
+import { openModalBackground } from '../../../util/ui_util';
 
 class Profile extends React.Component{
 

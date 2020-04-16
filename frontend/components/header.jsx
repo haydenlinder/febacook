@@ -1,11 +1,11 @@
 import React from 'react';
 import { deleteSession } from '../actions/session_actions'
 import { connect } from 'react-redux';
-import LoggedOutHeaderContainer from './logged_out_header_container';
-import LoggedInHeaderContainer from './logged_in_header_container';
+import LoggedOutHeaderContainer from './logged_out/logged_out_header_container';
+import LoggedInHeaderContainer from './logged_in/header/logged_in_header_container';
 
 
-const Header = ({ currentUser, deleteSession }) => {
+let Header = ({ currentUser, deleteSession }) => {
     return currentUser ? 
         <LoggedInHeaderContainer />
         : <LoggedOutHeaderContainer />
@@ -20,6 +20,6 @@ const mdp = dispatch => ({
     deleteSession: () => dispatch(deleteSession())
 })
 
-const HeaderContainer = connect(msp, mdp)(Header)
+Header = connect(msp, mdp)(Header)
 
-export default HeaderContainer;
+export default Header;

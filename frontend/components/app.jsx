@@ -1,7 +1,7 @@
 import React from 'react';
-import HomeContainer from './home';
+import Home from './home';
 import { Route, Switch } from 'react-router-dom';
-import HeaderContainer from './header';
+import Header from './header';
 import { closeModalBackground, toggleDropdowns } from '../util/ui_util';
 
 
@@ -14,9 +14,9 @@ const App = () => (
             className="modal-false"
             onClick={closeModalBackground}
         ></div>
-        <HeaderContainer /> 
+        <Header /> 
         <Switch >
-            <Route path="/" component={HomeContainer}/>
+            <Route path="/" component={Home}/>
         </Switch>
     </div>
 )

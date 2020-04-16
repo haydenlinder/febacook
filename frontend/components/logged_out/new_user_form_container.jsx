@@ -6,7 +6,7 @@ import {
     createSession, 
     clearSessionErrors,
     clearAllSessionErrors
-} from '../actions/session_actions';
+} from '../../actions/session_actions';
 
 class NewUserForm extends React.Component {
     constructor(props) {

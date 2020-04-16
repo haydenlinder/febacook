@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 
-import { deleteSession } from '../actions/session_actions'
+import { deleteSession } from '../../../actions/session_actions'
 
 
 class LoggedInHeader extends React.Component {
