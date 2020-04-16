@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './home';
 import { Route, Switch } from 'react-router-dom';
 import Header from './header';
-import { closeModalBackground, toggleDropdowns } from '../util/ui_util';
+import { closeModal, toggleDropdowns } from '../util/ui_util';
 
 
 const App = () => (
@@ -11,8 +11,12 @@ const App = () => (
         onClick={toggleDropdowns}
     >
         <div
-            className="modal-false"
-            onClick={closeModalBackground}
+            id="background-modal"
+            className="modal-hide"
+            onClick={() => {
+                closeModal('background-modal');
+                closeModal('edit-profile-modal')
+            }}
         ></div>
         <Header /> 
         <Switch >

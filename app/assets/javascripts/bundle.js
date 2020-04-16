@@ -368,8 +368,12 @@ var App = function App() {
     className: "app-container",
     onClick: _util_ui_util__WEBPACK_IMPORTED_MODULE_4__["toggleDropdowns"]
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modal-false",
-    onClick: _util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModalBackground"]
+    id: "background-modal",
+    className: "modal-hide",
+    onClick: function onClick() {
+      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('background-modal');
+      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('edit-profile-modal');
+    }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
     component: _home__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -626,7 +630,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _profile_profile_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile/profile_container */ "./frontend/components/logged_in/profile/profile_container.jsx");
+/* harmony import */ var _profile_profile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./profile/profile */ "./frontend/components/logged_in/profile/profile.jsx");
 
 
 
@@ -634,7 +638,7 @@ __webpack_require__.r(__webpack_exports__);
 var LoggedInHome = function LoggedInHome(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/:username",
-    component: _profile_profile_container__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _profile_profile__WEBPACK_IMPORTED_MODULE_2__["default"]
   }));
 };
 
@@ -837,10 +841,10 @@ var PostIndex = function PostIndex(_ref) {
 
 /***/ }),
 
-/***/ "./frontend/components/logged_in/profile/edit_user_form_container.jsx":
-/*!****************************************************************************!*\
-  !*** ./frontend/components/logged_in/profile/edit_user_form_container.jsx ***!
-  \****************************************************************************/
+/***/ "./frontend/components/logged_in/profile/edit_profile.jsx":
+/*!****************************************************************!*\
+  !*** ./frontend/components/logged_in/profile/edit_profile.jsx ***!
+  \****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -874,27 +878,27 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var EditUserForm = /*#__PURE__*/function (_React$Component) {
-  _inherits(EditUserForm, _React$Component);
+var EditProfile = /*#__PURE__*/function (_React$Component) {
+  _inherits(EditProfile, _React$Component);
 
-  function EditUserForm(props) {
+  function EditProfile(props) {
     var _this;
 
-    _classCallCheck(this, EditUserForm);
+    _classCallCheck(this, EditProfile);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditUserForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditProfile).call(this, props));
     _this.state = _this.props.user;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
-  _createClass(EditUserForm, [{
+  _createClass(EditProfile, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.persist();
       this.props.updateUser(this.state).then(function () {
-        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeAncestorModal"])(e);
-        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModalBackground"])();
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('edit-profile-modal');
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('background-modal');
       });
     }
   }, {
@@ -903,7 +907,8 @@ var EditUserForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "edit-user-form"
+        id: "edit-profile-modal",
+        className: "edit-user-form modal-hide"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "label"
       }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -924,7 +929,7 @@ var EditUserForm = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return EditUserForm;
+  return EditProfile;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 var msp = function msp(state, ownProps) {
@@ -939,15 +944,15 @@ var mdp = function mdp(dispatch) {
   };
 };
 
-var EditUserFormContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(EditUserForm);
-/* harmony default export */ __webpack_exports__["default"] = (EditUserFormContainer);
+EditProfile = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(EditProfile);
+/* harmony default export */ __webpack_exports__["default"] = (EditProfile);
 
 /***/ }),
 
-/***/ "./frontend/components/logged_in/profile/profile_container.jsx":
-/*!*********************************************************************!*\
-  !*** ./frontend/components/logged_in/profile/profile_container.jsx ***!
-  \*********************************************************************/
+/***/ "./frontend/components/logged_in/profile/profile.jsx":
+/*!***********************************************************!*\
+  !*** ./frontend/components/logged_in/profile/profile.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -957,7 +962,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/user_actions */ "./frontend/actions/user_actions.jsx");
-/* harmony import */ var _edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit_user_form_container */ "./frontend/components/logged_in/profile/edit_user_form_container.jsx");
+/* harmony import */ var _edit_profile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit_profile */ "./frontend/components/logged_in/profile/edit_profile.jsx");
 /* harmony import */ var _posts_post_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../posts/post_form_container */ "./frontend/components/logged_in/posts/post_form_container.jsx");
 /* harmony import */ var _posts_posts_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../posts/posts_index */ "./frontend/components/logged_in/posts/posts_index.jsx");
 /* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../util/ui_util */ "./frontend/util/ui_util.js");
@@ -1017,7 +1022,9 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       if (!this.props.user) return null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_profile__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        user: this.props.user
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-header-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover-photo"
@@ -1042,11 +1049,12 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       }, this.props.user.firstName, " ", this.props.user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-right"
       }, this.props.user.id === this.props.currentUser.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: _util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModalBackground"],
-        className: "edit-profile button button-border unselected"
-      }, "Edit Profile", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_user_form_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        user: this.props.user
-      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: " button button-border",
+        onClick: function onClick() {
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('edit-profile-modal');
+        }
+      }, "Edit Profile") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit-profile button button-border unselected"
       }, "Add Friend"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-container button-border"
@@ -1077,6 +1085,10 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bio"
       }, this.props.user.bio), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: function onClick() {
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('edit-profile-modal');
+        },
         className: "bio-button"
       }, "Edit Bio")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-right"
@@ -1119,8 +1131,8 @@ var mdp = function mdp(dispatch) {
   };
 };
 
-var ProfileContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp, mdp)(Profile);
-/* harmony default export */ __webpack_exports__["default"] = (ProfileContainer);
+Profile = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp, mdp)(Profile);
+/* harmony default export */ __webpack_exports__["default"] = (Profile);
 
 /***/ }),
 
@@ -2235,14 +2247,14 @@ var $createUser = function $createUser(user) {
 /*!**********************************!*\
   !*** ./frontend/util/ui_util.js ***!
   \**********************************/
-/*! exports provided: closeAncestorModal, closeModalBackground, openModalBackground, toggleDropdowns */
+/*! exports provided: closeAncestorModal, closeModal, openModal, toggleDropdowns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeAncestorModal", function() { return closeAncestorModal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModalBackground", function() { return closeModalBackground; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openModalBackground", function() { return openModalBackground; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openModal", function() { return openModal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleDropdowns", function() { return toggleDropdowns; });
 var closeAncestorModal = function closeAncestorModal(e) {
   var selectedParent = function selectedParent(target) {
@@ -2250,27 +2262,22 @@ var closeAncestorModal = function closeAncestorModal(e) {
       return target.parentElement;
     }
 
+    ;
     return selectedParent(target.parentElement);
   };
 
   selectedParent(e.target).classList.add("unselected");
   selectedParent(e.target).classList.remove("selected");
 };
-var closeModalBackground = function closeModalBackground() {
-  var modals = document.getElementsByClassName("modal-true");
-
-  for (var i = 0; i < modals.length; i++) {
-    modals[i].classList.add("modal-false");
-    modals[i].classList.remove("modal-true");
-  }
+var closeModal = function closeModal(id) {
+  var modal = document.getElementById(id);
+  modal.classList.add("modal-hide");
+  modal.classList.remove("modal-show");
 };
-var openModalBackground = function openModalBackground() {
-  var modals = document.getElementsByClassName("modal-false");
-
-  for (var i = 0; i < modals.length; i++) {
-    modals[i].classList.add("modal-true");
-    modals[i].classList.remove("modal-false");
-  }
+var openModal = function openModal(id) {
+  var modal = document.getElementById(id);
+  modal.classList.add("modal-show");
+  modal.classList.remove("modal-hide");
 };
 var toggleDropdowns = function toggleDropdowns(e) {
   var unselect = function unselect(target) {

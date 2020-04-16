@@ -2,29 +2,23 @@ export const closeAncestorModal = e => {
     const selectedParent = (target) => {
         if (target.parentElement.classList.contains("selected")) {
             return target.parentElement
-        }
+        };
         return selectedParent(target.parentElement)
-    }
+    };
     selectedParent(e.target).classList.add("unselected");
     selectedParent(e.target).classList.remove("selected");
-}
+};
 
-export const closeModalBackground = () => {
-    let modals = document.getElementsByClassName("modal-true");
-    for (let i = 0; i < modals.length; i++) {
-        modals[i].classList.add("modal-false");
-        modals[i].classList.remove("modal-true");
-        
-    }
-}
+export const closeModal = id => {
+    let modal = document.getElementById(id);
+    modal.classList.add("modal-hide");
+    modal.classList.remove("modal-show");
+};
 
-export const openModalBackground = () => {
-    let modals = document.getElementsByClassName("modal-false");
-    for (let i = 0; i < modals.length; i++) {
-        modals[i].classList.add("modal-true");
-        modals[i].classList.remove("modal-false");
-        
-    }
+export const openModal = id => {
+    let modal = document.getElementById(id);
+    modal.classList.add("modal-show");
+    modal.classList.remove("modal-hide");
 }
 
 export const toggleDropdowns = (e) => {

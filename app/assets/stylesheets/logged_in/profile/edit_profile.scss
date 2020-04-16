@@ -1,0 +1,35 @@
+#edit-profile-modal.modal-hide {
+    display: none;
+}
+
+#edit-profile-modal.modal-show {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: grey;
+    top: 200px; 
+    left: 300px;   
+    width: 650px;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+#edit-profile-modal .label {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: lightgrey;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#edit-profile-modal .label:hover {
+    cursor: default;
+}
+
+#edit-profile-modal input {
+    height: 100px;
+    text-align: center;
+}
