@@ -27,37 +27,30 @@ class Profile extends React.Component{
 
     render() {
         if (!this.props.user) return null;
+        const ownProfile = this.props.user.id === this.props.currentUser.id;
         return(
             <div className="profile-container">
-                
                 <EditProfile user={this.props.user} />
-
                 <div className="profile-header-container">
                     <div className="cover-photo">
-                        
                     </div>
                     <div className="update-cover-container">
                         <div className="camera-icon">
-                            
                         </div>
                         <div className="text"> 
                             Update Cover Photo
                         </div>
                     </div>
-
                     <div className="profile-photo-container">
                         <div className="profile-photo">
-
                         </div>
                         <div className="update">
                             Update
                         </div>
-
                     </div>
-
                     <ul className="profile-nav-container">
-                        <li>
-                            Timeline
+                        <li className="timeline">
+                            Timeline <span className="arrow">▼</span>
                         </li>
                         <li>
                             About
@@ -68,26 +61,23 @@ class Profile extends React.Component{
                         <li>
                             Photos
                         </li>
+                        { ownProfile ?
+                        <li className="archive">
+                            <span className="lock-icon"></span>  Archive
+                        </li> 
+                        : 
+                        null }
                         <li>
-                            Archive
-                        </li>
-                        <li>
-                            More
+                            More <span className="arrow">▼</span>
                         </li>
                     </ul>
-
                 </div>
-
                 <div className="middle">
-
                     <div className="name"> 
                         {this.props.user.firstName} {this.props.user.lastName} 
                     </div>
-
                     <div className="middle-right">
-
-                        {this.props.user.id === this.props.currentUser.id ? 
-
+                        {ownProfile ? 
                             <div 
                                 className=" button button-border"
                                 onClick={() => {
@@ -96,15 +86,12 @@ class Profile extends React.Component{
                                 }}
                             >
                                 Edit Profile 
-                                
                             </div>
                             :
                             <div className="edit-profile button button-border unselected">
                                 Add Friend
                             </div>
-
                         }           
-
                         <div className="activity-log-container button-border">
                             <div className="activity-log button">
                                 <div className="icon">
@@ -125,30 +112,22 @@ class Profile extends React.Component{
                                 </ul>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
                 <div className="middle-background"></div>
-
-
                 <div className="profile-main">
-
                     <div className="profile-left">
                         <div className="intro">
                             <div className="title">
                                 <div className="icon">
-
                                 </div>
                                 Intro
                             </div>
                             <div className="bio-container">
-
                                 <div className="bio">
                                     {this.props.user.bio}
                                 </div>
-
+                                {ownProfile ?
                                 <div 
                                     onClick={() => {
                                         openModal('background-modal');
@@ -156,11 +135,10 @@ class Profile extends React.Component{
                                     }}
                                     className="bio-button">
                                     Edit Bio 
-                                </div>
+                                </div> : null}
                             </div>
                         </div>
                     </div>
-
                     <div className="profile-right">
                         <PostFormContainer 
                             recipientId={this.props.user.id} 
@@ -172,20 +150,14 @@ class Profile extends React.Component{
                         <PostIndex 
                             posts={this.props.posts}
                             users={this.props.users}
-                            type={"profile"}
+                            type={ownProfile ? "ownProfile" : "profile"}
                             />
                     </div>
-
                 </div>
             </div>
         )
     }
-
 }
-
-let user;
-
-
 
 const msp = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.username],

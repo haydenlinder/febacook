@@ -10,7 +10,8 @@ class Post < ApplicationRecord
         class_name: :User 
 
     has_many_attached :photos
-
+    # has_many :photos
+    # accepts_nested_attributes_for :photos
 
     validate do 
         if self.photos.length < 1 && self.body.length < 1

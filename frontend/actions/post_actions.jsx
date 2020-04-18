@@ -42,8 +42,8 @@ export const fetchPost = postId => dispatch => (
     )
 )
 
-export const updatePost = postId => dispatch => (
-    $updatePost(postId)
+export const updatePost = post => dispatch => (
+    $updatePost(post)
     .then(
         payload => dispatch(receivePost(payload)),
         payload => dispatch(receivePostErrors(payload.responseJSON))

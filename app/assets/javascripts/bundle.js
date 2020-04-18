@@ -157,9 +157,9 @@ var fetchPost = function fetchPost(postId) {
     });
   };
 };
-var updatePost = function updatePost(postId) {
+var updatePost = function updatePost(post) {
   return function (dispatch) {
-    return Object(_util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["$updatePost"])(postId).then(function (payload) {
+    return Object(_util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["$updatePost"])(post).then(function (payload) {
       return dispatch(receivePost(payload));
     }, function (payload) {
       return dispatch(receivePostErrors(payload.responseJSON));
@@ -373,6 +373,7 @@ var App = function App() {
     onClick: function onClick() {
       Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('background-modal');
       Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('edit-profile-modal');
+      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('post-form-modal');
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
@@ -659,7 +660,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/post_actions */ "./frontend/actions/post_actions.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../util/ui_util */ "./frontend/util/ui_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -681,6 +689,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var PostForm = /*#__PURE__*/function (_React$Component) {
   _inherits(PostForm, _React$Component);
 
@@ -692,7 +701,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PostForm).call(this, props));
     _this.state = {
       body: "",
-      photos: [],
+      photos: {},
       author_id: _this.props.authorId,
       recipient_id: _this.props.recipientId
     };
@@ -706,20 +715,86 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      var that = this;
-      this.props.createPost(this.state).then(function () {
-        return _this2.setState({
+      var _this$state = this.state,
+          body = _this$state.body,
+          author_id = _this$state.author_id,
+          recipient_id = _this$state.recipient_id;
+      var photos = Object.values(this.state.photos); // const photos = this.state.photos
+
+      var formData = new FormData();
+      formData.append('post[body]', body);
+      formData.append('post[author_id]', author_id);
+      formData.append('post[recipient_id]', recipient_id);
+
+      for (var i = 0; i < photos.length; i++) {
+        formData.append('post[photos][]', photos[i]);
+      }
+
+      this.props.createPost(formData).then(function () {
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('post-form-modal');
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('background-modal');
+
+        _this2.setState({
           body: ""
         });
       });
     }
   }, {
-    key: "render",
-    value: function render() {
+    key: "handleFile",
+    value: function handleFile(e) {
       var _this3 = this;
 
+      var file = e.currentTarget.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function (event) {
+        var newPhoto = _defineProperty({}, event.target.result, file);
+
+        _this3.setState({
+          photos: _objectSpread({}, _this3.state.photos, {}, newPhoto)
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+
+      ;
+    }
+  }, {
+    key: "removePhoto",
+    value: function removePhoto(src) {
+      delete this.state.photos[src];
+      this.setState(this.state);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      var preview = Object.keys(this.state.photos).map(function (src) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "preview-item"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "preview",
+          src: src
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "preview-cover"
+        }, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: function onClick() {
+            return _this4.removePhoto(src);
+          },
+          className: "remove-photo"
+        }, "x"));
+      });
+      var empty = !this.state.body && !Object.values(this.state.photos).length;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-form-container"
+        onClick: function onClick() {
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])('post-form-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])('background-modal');
+        },
+        id: "post-form-modal",
+        className: "post-form-container modal-hide"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "post-form-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -730,9 +805,20 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         className: "border"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "button-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "file",
         className: "photo-icon"
-      }), "Photo/Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "file"
+      }, "Photo/Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "file",
+        name: "file",
+        className: "file-input",
+        type: "file",
+        onChange: function onChange(e) {
+          return _this4.handleFile(e);
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "border"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "button-container"
@@ -749,13 +835,13 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         className: "body",
         placeholder: "What's on your mind?",
         onChange: function onChange(e) {
-          return _this3.setState({
+          return _this4.setState({
             body: e.target.value
           });
         }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
-        className: "login"
+        className: "login ".concat(empty ? 'disabled' : 'able')
       }, "Post"));
     }
   }]);
@@ -814,21 +900,26 @@ var PostIndex = function PostIndex(_ref) {
       className: "not-photo"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
       className: "post-header"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       className: "link"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/".concat(post.authorName)
-    }, users[post.authorName].firstName, " ", users[post.authorName].lastName)), type === "feed" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      className: "link"
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    }, users[post.authorName].firstName, " ", users[post.authorName].lastName), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "right-arrow"
+    }, " \u25B6 "), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
       to: "/".concat(post.recipientName)
-    }, users[post.recipientName].firstName, " ", users[post.recipientName].lastName)) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    }, users[post.recipientName].firstName, " ", users[post.recipientName].lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
     }, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.createdAt)), post.createdAt !== post.updatedAt ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
     }, "Updated ", Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.updatedAt)) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "post-footer"
-    }, post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    }, post.body), post.photoUrls.map(function (url) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "post-photo",
+        src: url
+      });
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "post-footer"
     }));
   });
@@ -1020,6 +1111,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       if (!this.props.user) return null;
+      var ownProfile = this.props.user.id === this.props.currentUser.id;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_profile__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1042,13 +1134,23 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "update"
       }, "Update")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "profile-nav-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Timeline"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Friends"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Photos"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Archive"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "More"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "timeline"
+      }, "Timeline ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "arrow"
+      }, "\u25BC")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Friends"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Photos"), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "archive"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "lock-icon"
+      }), "  Archive") : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "More ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "arrow"
+      }, "\u25BC")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name"
       }, this.props.user.firstName, " ", this.props.user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-right"
-      }, this.props.user.id === this.props.currentUser.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: " button button-border",
         onClick: function onClick() {
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
@@ -1084,13 +1186,13 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "bio-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bio"
-      }, this.props.user.bio), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.user.bio), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick() {
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('edit-profile-modal');
         },
         className: "bio-button"
-      }, "Edit Bio")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Edit Bio") : null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         recipientId: this.props.user.id,
@@ -1100,15 +1202,13 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       }, "Posts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_posts_index__WEBPACK_IMPORTED_MODULE_5__["default"], {
         posts: this.props.posts,
         users: this.props.users,
-        type: "profile"
+        type: ownProfile ? "ownProfile" : "profile"
       }))));
     }
   }]);
 
   return Profile;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-var user;
 
 var msp = function msp(state, ownProps) {
   return {
@@ -2169,9 +2269,9 @@ var $createPost = function $createPost(post) {
   return $.ajax({
     url: "api/posts",
     method: "POST",
-    data: {
-      post: post
-    }
+    data: post,
+    contentType: false,
+    processData: false
   });
 };
 var $fetchPost = function $fetchPost(postId) {
@@ -2188,7 +2288,7 @@ var $fetchPosts = function $fetchPosts(path) {
 };
 var $updatePost = function $updatePost(post) {
   return $.ajax({
-    url: "api/posts/".concat(postId),
+    url: "api/posts/".concat(post.id),
     method: "PATCH",
     data: {
       post: post

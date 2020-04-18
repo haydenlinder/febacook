@@ -16,6 +16,7 @@ const App = () => (
             onClick={() => {
                 closeModal('background-modal');
                 closeModal('edit-profile-modal')
+                closeModal('post-form-modal')
             }}
         ></div>
         <Header /> 

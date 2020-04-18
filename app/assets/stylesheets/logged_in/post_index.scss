@@ -16,12 +16,28 @@
     margin-bottom: 10px;
     overflow-wrap: anywhere;
     hyphens: auto;
+    overflow: hidden;
     // max-width: 515px;
 }
 
+.post-container a {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(77, 98, 167);
+    text-decoration: none;
+}
+
+.post-container a:hover {
+    text-decoration: underline;
+}
+
+.post-container .right-arrow {
+    color: grey;
+    font-size: 10px;
+}
+
 .profile-right .not-photo {
-    margin: 10px;
-   
+    margin: 10px;  
 }
 
 .profile-right .post-header {
@@ -31,10 +47,12 @@
     margin-bottom: 10px;
 }
 
-
-
 .post-header .timestamp {
     font-size: 12px;
     color: grey;
     margin-top: 5px;
+}
+
+.post-photo {
+    border: 1px solid lightgrey;
 }

@@ -2,7 +2,9 @@ export const $createPost = post => (
     $.ajax({
         url: `api/posts`,
         method: `POST`,
-        data: { post: post }
+        data: post,
+        contentType: false,
+        processData: false
     })
 )
 
@@ -22,7 +24,7 @@ export const $fetchPosts = path => (
 
 export const $updatePost = post => (
     $.ajax({
-        url: `api/posts/${postId}`,
+        url: `api/posts/${post.id}`,
         method: `PATCH`,
         data: { post: post }
     })
