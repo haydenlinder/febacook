@@ -32,7 +32,7 @@ class PostForm extends React.Component {
         .then(() => {
             closeModal('post-form-modal');
             closeModal('background-modal')
-            this.setState({ body: ""});
+            this.setState({ body: "", photos: {} });
         });
     };
 

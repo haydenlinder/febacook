@@ -7,14 +7,19 @@ class EditProfile extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = this.props.user;
+        this.state = {
+            bio: this.props.user.bio
+        }
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.persist();
-        this.props.updateUser(this.state)
+        let formData = new FormData();
+        formData.append('user[bio]', this.state.bio)
+        formData.append('user[id]', this.props.user.id)
+        this.props.updateUser(formData)
         .then( 
             () => {
                 closeModal('edit-profile-modal');

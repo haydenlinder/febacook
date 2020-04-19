@@ -40,7 +40,7 @@ class LoggedInHeader extends React.Component {
                         </div>
 
                         <div className="input-container">
-                            <input type="text" placeholder="I'm a text box"/>
+                            <input type="text" placeholder="Search"/>
                             <div className="search-button"></div>
                         </div>
                     </div>
@@ -53,8 +53,8 @@ class LoggedInHeader extends React.Component {
                             className="profile link"
                         >
 
-                            <div className="profile-photo">
-                            </div>
+                            <img src={this.props.currentUser.profilePhotoUrl} className="profile-photo">
+                            </img>
 
                             {this.props.currentUser.firstName}
 

@@ -5,11 +5,17 @@ import EditProfile from './edit_profile';
 import PostFormContainer from '../posts/post_form_container';
 import PostIndex from '../posts/posts_index';
 import { openModal } from '../../../util/ui_util';
+import UpdatePhoto from './update_photo';
 
 class Profile extends React.Component{
 
     constructor(props) {
         super(props)
+
+        this.state = {
+            profile: '',
+            type: 'profile'
+        }
     }
 
     componentDidMount() {
@@ -30,23 +36,57 @@ class Profile extends React.Component{
         const ownProfile = this.props.user.id === this.props.currentUser.id;
         return(
             <div className="profile-container">
-                <EditProfile user={this.props.user} />
+                <EditProfile 
+                    user={this.props.user} 
+                    updateUser={this.props.updateUser}
+                    />
+                <UpdatePhoto 
+                    type={this.state.type}
+                    user={this.props.user}
+                    updateUser={this.props.updateUser}
+                />
                 <div className="profile-header-container">
                     <div className="cover-photo">
+                        <img className="cover-photo-picture" src={this.props.user.coverPhotoUrl} alt=""/>
                     </div>
-                    <div className="update-cover-container">
+                    {ownProfile ?
+                    <div 
+                        className="update-cover-container"
+                        onClick={() => {
+                            this.setState({type: 'cover'})
+                            openModal('update-photo-modal')
+                            openModal('background-modal')
+                        }}
+                    >
                         <div className="camera-icon">
                         </div>
                         <div className="text"> 
                             Update Cover Photo
                         </div>
                     </div>
+                    :
+                    null
+                    }
                     <div className="profile-photo-container">
-                        <div className="profile-photo">
+                        <img src={this.props.user.profilePhotoUrl} className="profile-photo">
+                        </img>
+                        {ownProfile ?
+                        <div 
+                            className="update"
+                            onClick={() => {
+                                this.setState({ type: 'profile' })
+                                openModal('update-photo-modal')
+                                openModal('background-modal')
+                            }}
+                        >
+                            <div class="other-camera"></div>
+                            <div>
+                                Update
+                            </div>
                         </div>
-                        <div className="update">
-                            Update
-                        </div>
+                        :
+                        null
+                        }
                     </div>
                     <ul className="profile-nav-container">
                         <li className="timeline">

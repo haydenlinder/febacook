@@ -374,6 +374,7 @@ var App = function App() {
       Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('background-modal');
       Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('edit-profile-modal');
       Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('post-form-modal');
+      Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('update-photo-modal');
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
@@ -548,7 +549,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "input-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        placeholder: "I'm a text box"
+        placeholder: "Search"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-button"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -556,7 +557,8 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/".concat(this.props.currentUser.username),
         className: "profile link"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.currentUser.profilePhotoUrl,
         className: "profile-photo"
       }), this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
@@ -735,7 +737,8 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('background-modal');
 
         _this2.setState({
-          body: ""
+          body: "",
+          photos: {}
         });
       });
     }
@@ -989,7 +992,9 @@ var EditProfile = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, EditProfile);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(EditProfile).call(this, props));
-    _this.state = _this.props.user;
+    _this.state = {
+      bio: _this.props.user.bio
+    };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -998,7 +1003,10 @@ var EditProfile = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.persist();
-      this.props.updateUser(this.state).then(function () {
+      var formData = new FormData();
+      formData.append('user[bio]', this.state.bio);
+      formData.append('user[id]', this.props.user.id);
+      this.props.updateUser(formData).then(function () {
         Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('edit-profile-modal');
         Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('background-modal');
       });
@@ -1068,6 +1076,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _posts_post_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../posts/post_form_container */ "./frontend/components/logged_in/posts/post_form_container.jsx");
 /* harmony import */ var _posts_posts_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../posts/posts_index */ "./frontend/components/logged_in/posts/posts_index.jsx");
 /* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../util/ui_util */ "./frontend/util/ui_util.js");
+/* harmony import */ var _update_photo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./update_photo */ "./frontend/components/logged_in/profile/update_photo.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1094,13 +1103,21 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Profile = /*#__PURE__*/function (_React$Component) {
   _inherits(Profile, _React$Component);
 
   function Profile(props) {
+    var _this;
+
     _classCallCheck(this, Profile);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Profile).call(this, props));
+    _this.state = {
+      profile: '',
+      type: 'profile'
+    };
+    return _this;
   }
 
   _createClass(Profile, [{
@@ -1121,29 +1138,59 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       if (!this.props.user) return null;
       var ownProfile = this.props.user.id === this.props.currentUser.id;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_profile__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        user: this.props.user
+        user: this.props.user,
+        updateUser: this.props.updateUser
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_update_photo__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        type: this.state.type,
+        user: this.props.user,
+        updateUser: this.props.updateUser
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-header-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover-photo"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update-cover-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "cover-photo-picture",
+        src: this.props.user.coverPhotoUrl,
+        alt: ""
+      })), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update-cover-container",
+        onClick: function onClick() {
+          _this2.setState({
+            type: 'cover'
+          });
+
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('update-photo-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "camera-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text"
-      }, "Update Cover Photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Update Cover Photo")) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-photo-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.user.profilePhotoUrl,
         className: "profile-photo"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "update"
-      }, "Update")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "update",
+        onClick: function onClick() {
+          _this2.setState({
+            type: 'profile'
+          });
+
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('update-photo-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "other-camera"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Update")) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "profile-nav-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "timeline"
@@ -1244,6 +1291,142 @@ var mdp = function mdp(dispatch) {
 
 Profile = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp, mdp)(Profile);
 /* harmony default export */ __webpack_exports__["default"] = (Profile);
+
+/***/ }),
+
+/***/ "./frontend/components/logged_in/profile/update_photo.jsx":
+/*!****************************************************************!*\
+  !*** ./frontend/components/logged_in/profile/update_photo.jsx ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../util/ui_util */ "./frontend/util/ui_util.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var UpdatePhoto = /*#__PURE__*/function (_React$Component) {
+  _inherits(UpdatePhoto, _React$Component);
+
+  function UpdatePhoto(props) {
+    var _this;
+
+    _classCallCheck(this, UpdatePhoto);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(UpdatePhoto).call(this, props));
+    _this.state = {
+      photo: {}
+    };
+    return _this;
+  }
+
+  _createClass(UpdatePhoto, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      var photo = Object.values(this.state.photo)[0]; // const photos = this.state.photos
+
+      var formData = new FormData();
+      formData.append("user[".concat(this.props.type, "_photo]"), photo);
+      formData.append('user[id]', this.props.user.id);
+      this.props.updateUser(formData).then(function () {
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_1__["closeModal"])('update-photo-modal');
+        Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_1__["closeModal"])('background-modal');
+
+        _this2.setState({
+          photo: {}
+        });
+      });
+    }
+  }, {
+    key: "handleFile",
+    value: function handleFile(e) {
+      var _this3 = this;
+
+      var file = e.currentTarget.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function (event) {
+        var newPhoto = _defineProperty({}, event.target.result, file);
+
+        _this3.setState({
+          photo: newPhoto
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+
+      ;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this4 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "update-photo-modal",
+        className: "edit-user-form modal-hide"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-modal-inner"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "label"
+      }, "Choose Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "update-photo",
+        className: "update-photo-add"
+      }, "+", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        name: "update-photo",
+        id: "update-photo",
+        onChange: function onChange(e) {
+          return _this4.handleFile(e);
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "preview-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: Object.keys(this.state.photo)[0],
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "login",
+        onClick: function onClick(e) {
+          return _this4.handleSubmit(e);
+        }
+      }, "Update")));
+    }
+  }]);
+
+  return UpdatePhoto;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (UpdatePhoto);
 
 /***/ }),
 
@@ -2452,13 +2635,13 @@ var $fetchUser = function $fetchUser(username) {
     method: "GET"
   });
 };
-var $updateUser = function $updateUser(user) {
+var $updateUser = function $updateUser(formData) {
   return $.ajax({
-    url: "/api/users/".concat(user.id),
+    url: "/api/users/".concat(formData.get('user[id]')),
     method: "PATCH",
-    data: {
-      user: user
-    }
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 

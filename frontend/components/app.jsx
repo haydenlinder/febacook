@@ -17,6 +17,7 @@ const App = () => (
                 closeModal('background-modal');
                 closeModal('edit-profile-modal')
                 closeModal('post-form-modal')
+                closeModal('update-photo-modal')
             }}
         ></div>
         <Header /> 

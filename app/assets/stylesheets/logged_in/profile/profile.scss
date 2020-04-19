@@ -12,7 +12,9 @@
 .profile-container .profile-header-container {
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
     border-radius: 3px;
     position: relative;
 }
@@ -24,8 +26,12 @@
 .profile-container .cover-photo {
     height: 315px;
     background-color: white;
+    overflow: hidden;
 }
 
+.cover-photo-picture {
+    width: 100%;
+}
 .profile-container .cover-photo:hover {
     cursor: pointer;
 }
@@ -101,14 +107,32 @@
     background-size: 100%
 }
 
+.profile-photo {
+    width: 110%;
+}
+
 .profile-photo-container .update {
+    position: absolute;
     display: none;
     color: white;
     background-color: black;
     opacity: 0.7;
-    height: 80px;
+    height: 60px;
     width: 200px;
-    text-align: center;
+    padding-top: 20px;
+}
+
+.other-camera {
+    height: 25px;
+    width: 25px;
+    background-size: 120%;
+    background-position: center;
+    background-image: image_url("other_camera.png");
+}
+
+.profile-photo-container .update:hover{
+    opacity: 0.8;
+
 }
 
 .profile-container .profile-photo-container:hover {
@@ -116,10 +140,10 @@
 }
 
 .profile-container .profile-photo-container:hover .update {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-
 ///////// middle
 
 .profile-container .middle {
@@ -142,7 +166,7 @@
     top: -227px;
     background-image: linear-gradient(white, rgb(0, 0, 0));
     padding: 45px;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .middle-background:hover {
