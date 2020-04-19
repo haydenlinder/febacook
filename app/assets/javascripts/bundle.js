@@ -913,8 +913,10 @@ var PostIndex = function PostIndex(_ref) {
     }, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.createdAt)), post.createdAt !== post.updatedAt ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
     }, "Updated ", Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.updatedAt)) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      className: "post-footer"
-    }, post.body), post.photoUrls.map(function (url) {
+      className: "post-body"
+    }, post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "photos"
+    }, post.photoUrls.map(function (url) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "post-photo",
         src: url
@@ -922,7 +924,16 @@ var PostIndex = function PostIndex(_ref) {
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "post-footer"
     }));
-  });
+  }); // setTimeout(() => {
+  //     let photos = document.getElementsByClassName('post-photo');
+  //     for (let i = 0; i < photos.length; i++) {
+  //         let width = photos[i].offsetWidth;
+  //         let height = photos[i].offsetHeight;
+  //         let ratio = width/height;
+  //         photos[i].style.width = "100%";
+  //     };
+  // }, 100)
+
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "post-list"
   }, postList);

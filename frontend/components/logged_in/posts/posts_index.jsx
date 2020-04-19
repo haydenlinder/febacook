@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { convertDateTime } from '../../../util/date_util';
 
 const PostIndex = ({posts, users, type}) => {
+
     let list = Object.values(posts).reverse();
     let postList = list.map((post) => 
         <ul className="post-container">
@@ -22,16 +23,27 @@ const PostIndex = ({posts, users, type}) => {
                     </li> : null
                     }
                 </ul>
-                <li className="post-footer">
+                <li className="post-body">
                     {post.body}
                 </li>
+            </div>
+            <div className="photos">
                 {post.photoUrls.map(url => <img className="post-photo" src={url}></img>)}
             </div>
             <li className="post-footer">
             </li>
         </ul>   
     )
-
+    
+    // setTimeout(() => {
+    //     let photos = document.getElementsByClassName('post-photo');
+    //     for (let i = 0; i < photos.length; i++) {
+    //         let width = photos[i].offsetWidth;
+    //         let height = photos[i].offsetHeight;
+    //         let ratio = width/height;
+    //         photos[i].style.width = "100%";
+    //     };
+    // }, 100)
     return (
         <ul className="post-list">
             {postList}

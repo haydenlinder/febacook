@@ -55,4 +55,11 @@
 
 .post-photo {
     border: 1px solid lightgrey;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.post-photo:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }

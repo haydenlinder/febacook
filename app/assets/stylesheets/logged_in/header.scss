@@ -1,11 +1,12 @@
 .logged-in-header {
-    height: 42px;
+    min-height: 45px;
     border-bottom: 1px solid rgb(26, 57, 117);
     background-image: linear-gradient(rgb(75, 108, 197), rgb(52, 102, 160));
     color: white;
     display: flex;
     justify-content: center;
-    min-width: 1220px;
+    width: 100%;
+    min-width: 1000px;
 }
 
 .logged-in-header a {
@@ -22,6 +23,7 @@
     margin-right: 195px;
     margin-left: 180px;
     min-width: 1000px;
+    height: 100%;
 }
 
 

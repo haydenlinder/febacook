@@ -4,7 +4,11 @@
 
 .app-container {
     height: 100vh;
+    width: 100vw;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #background-modal.modal-hide {
