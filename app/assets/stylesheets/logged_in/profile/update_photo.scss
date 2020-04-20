@@ -22,6 +22,7 @@
     margin-right: 180px;
 }
 
+
     #update-photo {
         opacity: 0;
         position: absolute;
@@ -39,9 +40,25 @@
         background-color: lightgrey;
         opacity: 0.8;
         display: block;
+        margin: 10px;
     }
 
     .update-photo-add:hover {
         opacity: 1;
         cursor: pointer;
     }
+
+    .photo-modal-inner .preview-container {
+        height: 300px;
+        display: flex;
+        margin: 10px;
+    }
+
+    .photo-modal-inner .preview-container .preview-image{
+        height: 100%;
+    }
+
+    .photo-modal-inner .login {
+        margin: 10px;
+    }
+    

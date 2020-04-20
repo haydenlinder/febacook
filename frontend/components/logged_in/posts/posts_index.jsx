@@ -35,15 +35,13 @@ const PostIndex = ({posts, users, type}) => {
             </div>
             <li className="post-footer">
                 <div className="post-footer-button">
-                    <span className="like-icon"></span> Like
+                    <span className="like icon">☺</span> Like
                 </div>
-                <div className="post-footer-button-border"></div>
                 <div className="post-footer-button">
-                    <span className="comment-icon"></span>Comment
+                    <span className="comment icon">⑊</span>Comment
                 </div>
-                <div className="post-footer-button-border"></div>
                 <div className="post-footer-button">
-                    <span className="share-icon"></span>Share
+                    <span className="share icon">➦</span>Share
                 </div>
             </li>
         </ul>   

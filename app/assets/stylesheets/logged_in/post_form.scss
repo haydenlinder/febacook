@@ -98,6 +98,9 @@ label:hover {
     height: 40px;
     border-radius: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .post-form-container .body {
@@ -109,7 +112,6 @@ label:hover {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 17px;
-    padding-bottom: 50px;
     border-bottom: 1px solid lightgrey;
     outline: none;
     box-sizing: border-box;

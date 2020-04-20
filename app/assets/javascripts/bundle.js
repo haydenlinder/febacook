@@ -942,20 +942,16 @@ var PostIndex = function PostIndex(_ref) {
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "post-footer-button"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "like-icon"
-    }), " Like"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "post-footer-button-border"
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "like icon"
+    }, "\u263A"), " Like"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "post-footer-button"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "comment-icon"
-    }), "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "post-footer-button-border"
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "comment icon"
+    }, "\u244A"), "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "post-footer-button"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "share-icon"
-    }), "Share")));
+      className: "share icon"
+    }, "\u27A6"), "Share")));
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "post-list"
@@ -1412,11 +1408,19 @@ var UpdatePhoto = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
+      var empty = !Object.values(this.state.photo).length;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "update-photo-modal",
-        className: "edit-user-form modal-hide"
+        className: "edit-user-form modal-hide",
+        onClick: function onClick(e) {
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_1__["closeModal"])('update-photo-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_1__["closeModal"])('background-modal');
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photo-modal-inner"
+        className: "photo-modal-inner",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "label"
       }, "Choose Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -1432,9 +1436,10 @@ var UpdatePhoto = /*#__PURE__*/function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "preview-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "preview-image",
         src: Object.keys(this.state.photo)[0],
         alt: ""
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), empty ? null : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login",
         onClick: function onClick(e) {
           return _this4.handleSubmit(e);

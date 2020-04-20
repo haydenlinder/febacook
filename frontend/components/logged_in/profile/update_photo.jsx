@@ -37,10 +37,19 @@ class UpdatePhoto extends React.Component {
     };
 
     render() {
+        let empty = !Object.values(this.state.photo).length
         return (
 
-            <div id="update-photo-modal" className="edit-user-form modal-hide">
-                <div className="photo-modal-inner">
+            <div id="update-photo-modal" 
+                className="edit-user-form modal-hide"
+                onClick={e => {
+                    closeModal('update-photo-modal')
+                    closeModal('background-modal')
+                }}    
+            >
+                <div className="photo-modal-inner"
+                    onClick={e => e.stopPropagation()}
+                >
                     <div className="label">
                         Choose Photo
                     </div>
@@ -54,12 +63,16 @@ class UpdatePhoto extends React.Component {
                         />
                     </label>
                     <div className="preview-container">
-                        <img src={Object.keys(this.state.photo)[0]} alt=""/>
+                        <img className="preview-image" src={Object.keys(this.state.photo)[0]} alt=""/>
                     </div>
+                    {empty ?
+                    null
+                    :
                     <button 
                         className="login"
                         onClick={(e) => this.handleSubmit(e)}
                     >Update</button>
+                    }
                 </div>
             </div>
         )
