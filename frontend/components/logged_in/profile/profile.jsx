@@ -191,8 +191,7 @@ class Profile extends React.Component{
                         <PostIndex 
                             posts={this.props.posts}
                             users={this.props.users}
-                            type={ownProfile ? "ownProfile" : "profile"}
-                            />
+                        />
                     </div>
                 </div>
             </div>

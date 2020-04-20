@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { convertDateTime } from '../../../util/date_util';
 
-const PostIndex = ({posts, users, type}) => {
+const PostIndex = ({posts, users}) => {
 
     let list = Object.values(posts).reverse();
     let postList = list.map((post) => 
@@ -12,7 +12,12 @@ const PostIndex = ({posts, users, type}) => {
                     <span className="link">
                         <Link to={`/${post.authorName}`}>
                             {users[post.authorName].firstName} {users[post.authorName].lastName}
-                        </Link> <span className="right-arrow"> ▶ </span> <Link to={`/${post.recipientName}`}>{users[post.recipientName].firstName} {users[post.recipientName].lastName}</Link>
+                        </Link>  
+                        {post.authorName !== post.recipientName ?
+                        <span> <span className="right-arrow">▶</span> <Link to={`/${post.recipientName}`}>{users[post.recipientName].firstName} {users[post.recipientName].lastName}</Link></span>
+                        :
+                        null
+                        }
                     </span>
                     <li className="timestamp">
                         {convertDateTime(post.createdAt)}

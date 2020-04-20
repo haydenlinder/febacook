@@ -34,9 +34,10 @@ class Api::UsersController < ApplicationController
     end
 
     def index
-        @users = User.all
+        @users = 
+        User.includes(authored_posts: [:author, :recipient]).all
         render :index
-    end
+    end 
 
     private
     def user_params

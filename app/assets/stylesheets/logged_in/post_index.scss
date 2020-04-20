@@ -1,4 +1,4 @@
-.profile-right .posts {
+.posts {
     margin-top: 15px;
     margin-bottom: 15px;
     color: rgb(88, 88, 88);
@@ -6,7 +6,7 @@
     font-size: 12px;
 }
 
-.profile-right .post-container {
+.post-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
     overflow-wrap: anywhere;
     hyphens: auto;
     overflow: hidden;
-    // max-width: 515px;
+    max-width: 515px;
 }
 
 .post-avitar-container.post {
@@ -41,11 +41,11 @@
     font-size: 10px;
 }
 
-.profile-right .not-photo {
+.not-photo {
     margin: 10px;  
 }
 
-.profile-right .post-header {
+.post-header {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
