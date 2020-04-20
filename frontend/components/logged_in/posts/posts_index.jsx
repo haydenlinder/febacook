@@ -23,6 +23,9 @@ const PostIndex = ({posts, users, type}) => {
                     </li> : null
                     }
                 </ul>
+                <div className="post-avitar-container post">
+                    <img className="profile-photo" src={users[post.authorName].profilePhotoUrl} alt="" />
+                </div>
                 <li className="post-body">
                     {post.body}
                 </li>
@@ -31,19 +34,21 @@ const PostIndex = ({posts, users, type}) => {
                 {post.photoUrls.map(url => <img className="post-photo" src={url}></img>)}
             </div>
             <li className="post-footer">
+                <div className="post-footer-button">
+                    <span className="like-icon"></span> Like
+                </div>
+                <div className="post-footer-button-border"></div>
+                <div className="post-footer-button">
+                    <span className="comment-icon"></span>Comment
+                </div>
+                <div className="post-footer-button-border"></div>
+                <div className="post-footer-button">
+                    <span className="share-icon"></span>Share
+                </div>
             </li>
         </ul>   
     )
     
-    // setTimeout(() => {
-    //     let photos = document.getElementsByClassName('post-photo');
-    //     for (let i = 0; i < photos.length; i++) {
-    //         let width = photos[i].offsetWidth;
-    //         let height = photos[i].offsetHeight;
-    //         let ratio = width/height;
-    //         photos[i].style.width = "100%";
-    //     };
-    // }, 100)
     return (
         <ul className="post-list">
             {postList}

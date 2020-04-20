@@ -125,7 +125,7 @@ class Profile extends React.Component{
                                     openModal('edit-profile-modal');
                                 }}
                             >
-                                Edit Profile 
+                                ✎ Edit Profile 
                             </div>
                             :
                             <div className="edit-profile button button-border unselected">
@@ -183,6 +183,7 @@ class Profile extends React.Component{
                         <PostFormContainer 
                             recipientId={this.props.user.id} 
                             authorId={this.props.currentUser.id}
+                            currentUser={this.props.currentUser}
                         />
                         <div className="posts">
                             Posts

@@ -5,6 +5,7 @@
     border: 1px solid lightgrey;
     border-radius: 3px;
     background-color: white;
+    position: relative;
 }
 
 #post-form-modal.modal-show {
@@ -17,7 +18,9 @@
     padding-right: 89px;
     background-color: rgb(244, 245, 246);
     align-items: center;
-    border-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom: 1px solid lightgrey;
 }
 
 .post-form-header .button-container {
@@ -87,15 +90,27 @@ label:hover {
     margin-right: 5px;
 }
 
+.post-avitar-container {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
 .post-form-container .body {
     resize: none;
     height: 60px;
     border: none;
-    width: 100%;
+    width: 95%;
     font-size: 20px;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 17px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid lightgrey;
     outline: none;
     box-sizing: border-box;
 }
@@ -155,6 +170,10 @@ label:hover {
 
 .preview {
     height: 100%;
+}
+
+.post-form-footer {
+    height: 20px;
 }
 
 .post-form-container .login {

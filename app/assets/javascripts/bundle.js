@@ -721,8 +721,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
           body = _this$state.body,
           author_id = _this$state.author_id,
           recipient_id = _this$state.recipient_id;
-      var photos = Object.values(this.state.photos); // const photos = this.state.photos
-
+      var photos = Object.values(this.state.photos);
       var formData = new FormData();
       formData.append('post[body]', body);
       formData.append('post[author_id]', author_id);
@@ -833,7 +832,13 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         className: "button-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "event-icon"
-      }), "Life Event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      }), "Life Event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-avitar-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-photo",
+        src: this.props.currentUser.profilePhotoUrl,
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         value: this.state.body,
         className: "body",
         placeholder: "What's on your mind?",
@@ -842,7 +847,9 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
             body: e.target.value
           });
         }
-      }), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-form-footer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
         className: "login ".concat(empty ? 'disabled' : 'able')
       }, "Post"));
@@ -915,7 +922,13 @@ var PostIndex = function PostIndex(_ref) {
       className: "timestamp"
     }, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.createdAt)), post.createdAt !== post.updatedAt ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
-    }, "Updated ", Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.updatedAt)) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    }, "Updated ", Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.updatedAt)) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "post-avitar-container post"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "profile-photo",
+      src: users[post.authorName].profilePhotoUrl,
+      alt: ""
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "post-body"
     }, post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "photos"
@@ -926,17 +939,24 @@ var PostIndex = function PostIndex(_ref) {
       });
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "post-footer"
-    }));
-  }); // setTimeout(() => {
-  //     let photos = document.getElementsByClassName('post-photo');
-  //     for (let i = 0; i < photos.length; i++) {
-  //         let width = photos[i].offsetWidth;
-  //         let height = photos[i].offsetHeight;
-  //         let ratio = width/height;
-  //         photos[i].style.width = "100%";
-  //     };
-  // }, 100)
-
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "post-footer-button"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "like-icon"
+    }), " Like"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "post-footer-button-border"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "post-footer-button"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "comment-icon"
+    }), "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "post-footer-button-border"
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "post-footer-button"
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "share-icon"
+    }), "Share")));
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "post-list"
   }, postList);
@@ -1214,7 +1234,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('edit-profile-modal');
         }
-      }, "Edit Profile") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "\u270E Edit Profile") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit-profile button button-border unselected"
       }, "Add Friend"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "activity-log-container button-border"
@@ -1254,7 +1274,8 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "profile-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         recipientId: this.props.user.id,
-        authorId: this.props.currentUser.id
+        authorId: this.props.currentUser.id,
+        currentUser: this.props.currentUser
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "posts"
       }, "Posts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_posts_index__WEBPACK_IMPORTED_MODULE_5__["default"], {

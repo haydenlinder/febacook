@@ -20,7 +20,6 @@ class PostForm extends React.Component {
         e.preventDefault();
         const { body, author_id, recipient_id } = this.state;
         const photos = Object.values(this.state.photos);
-        // const photos = this.state.photos
         const formData = new FormData();
         formData.append('post[body]', body);
         formData.append('post[author_id]', author_id);
@@ -109,6 +108,10 @@ class PostForm extends React.Component {
                         Life Event
                     </li>
                 </ul>
+                <div className="post-avitar-container">
+                    <img className="profile-photo" src={this.props.currentUser.profilePhotoUrl} alt=""/>
+                </div>
+
                 <textarea 
                     value={this.state.body}
                     className="body"
@@ -117,6 +120,7 @@ class PostForm extends React.Component {
                 >  
                 </textarea>
                 {preview}
+                <div className="post-form-footer"></div>
                 <button 
                     onClick={this.handleSubmit}
                     className={`login ${empty ? 'disabled' : 'able'}`}
