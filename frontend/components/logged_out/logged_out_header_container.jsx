@@ -24,6 +24,9 @@ class LoggedOutHeader extends React.Component {
     render(){
         return(
             <div className="logged-out-header header">
+                <div className="logged-out-nav">
+
+                
                     <Link className="logo" to="/"> febacook </Link>
             
                     <form className="session-form">
@@ -74,6 +77,7 @@ class LoggedOutHeader extends React.Component {
                         </button>
 
                     </form>
+                </div>
             </div>
         )
     }

@@ -1679,6 +1679,8 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-out-header header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "logged-out-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         className: "logo",
         to: "/"
@@ -1723,7 +1725,7 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login",
         onClick: this.handleSubmit
-      }, "Log In")));
+      }, "Log In"))));
     }
   }]);
 
@@ -2699,8 +2701,11 @@ var closeAncestorModal = function closeAncestorModal(e) {
 };
 var closeModal = function closeModal(id) {
   var modal = document.getElementById(id);
-  modal.classList.add("modal-hide");
-  modal.classList.remove("modal-show");
+
+  if (modal) {
+    modal.classList.add("modal-hide");
+    modal.classList.remove("modal-show");
+  }
 };
 var openModal = function openModal(id) {
   var modal = document.getElementById(id);

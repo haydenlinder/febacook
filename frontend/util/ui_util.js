@@ -11,8 +11,10 @@ export const closeAncestorModal = e => {
 
 export const closeModal = id => {
     let modal = document.getElementById(id);
-    modal.classList.add("modal-hide");
-    modal.classList.remove("modal-show");
+    if (modal) {
+        modal.classList.add("modal-hide");
+        modal.classList.remove("modal-show");
+    }
 };
 
 export const openModal = id => {

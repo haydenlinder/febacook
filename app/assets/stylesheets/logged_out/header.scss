@@ -3,8 +3,16 @@
     background-image: linear-gradient(rgb(60, 92, 156), rgb(35, 71, 145));
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     min-width: 1220px;
+    width: 100%;
+}
+
+.logged-out-nav {
+    min-width: 1000px;
+    display: flex;
+    justify-content: center;;
+    max-width: 1200px;
 }
 
 .logged-out-header .logo {

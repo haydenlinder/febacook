@@ -1,14 +1,17 @@
 .logged-out-home-container {
     background-color: rgb(239, 242, 245);
-    min-height: fit-content;
-    min-width: fit-content;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .logged-out-home {
     color: rgb(51, 49, 49);
     line-height: 35px;
     display: flex;
-    justify-content: space-between;
-    margin-left: 180px;
-    margin-right: 180px;
+    justify-content: space-around;
+    width: 1200px;
+    max-height: 600px;
 }
+
