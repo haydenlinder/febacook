@@ -954,7 +954,7 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
           return _this4.handleFile(e);
         }
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post photo-container"
+        className: "post-form photo-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "profile-photo not-resized",
         src: this.props.currentUser.profilePhotoUrl,
@@ -1043,7 +1043,7 @@ var PostIndex = function PostIndex(_ref) {
     }, Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.createdAt)), post.createdAt !== post.updatedAt ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: "timestamp"
     }, "Updated ", Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.updatedAt)) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "post-avitar-container post"
+      className: "photo-container post-show"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       className: "profile-photo not-resized",
       src: users[post.authorName].profilePhotoUrl,

@@ -94,7 +94,7 @@ class PostForm extends React.Component {
                         />
                     </li>
                 </ul>
-                <div className="post photo-container">
+                <div className="post-form photo-container">
                     <img className="profile-photo not-resized" src={this.props.currentUser.profilePhotoUrl} alt=""/>
                 </div>
 
