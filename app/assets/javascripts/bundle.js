@@ -1664,13 +1664,25 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
+      // e.preventDefault();
+      // this.props.clearAllSessionErrors();
+      // this.props.createSession(this.state.user)
+      // .fail(() => this.setState( {errors: this.props.errors} ))
       e.preventDefault();
       this.props.clearAllSessionErrors();
-      this.props.createSession(this.state.user).fail(function () {
-        return _this2.setState({
-          errors: _this2.props.errors
+
+      if (e.target.id === "login") {
+        this.props.createSession(this.state.user).fail(function () {
+          return _this2.setState({
+            errors: _this2.props.errors
+          });
         });
-      });
+      } else {
+        this.props.createSession({
+          email: "user1@email.com",
+          password: "password"
+        });
+      }
     }
   }, {
     key: "render",
@@ -1723,9 +1735,14 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
           });
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "login",
         className: "login",
         onClick: this.handleSubmit
-      }, "Log In"))));
+      }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "header-demo",
+        className: "login",
+        onClick: this.handleSubmit
+      }, " Demo "))));
     }
   }]);
 

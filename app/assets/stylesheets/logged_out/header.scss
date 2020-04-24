@@ -11,6 +11,7 @@
 .logged-out-nav {
     min-width: 1000px;
     display: flex;
+    // align-items: baseline;
     justify-content: center;;
     max-width: 1200px;
 }
@@ -19,7 +20,7 @@
     font-weight: 625;
     font-size: 40px;
     margin-top: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     margin-left: 180px;
     margin-right: 260px;
     text-decoration: none;

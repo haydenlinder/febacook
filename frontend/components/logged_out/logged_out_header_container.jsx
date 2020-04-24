@@ -15,10 +15,21 @@ class LoggedOutHeader extends React.Component {
     }
 
     handleSubmit(e) {
+        // e.preventDefault();
+        // this.props.clearAllSessionErrors();
+        // this.props.createSession(this.state.user)
+        // .fail(() => this.setState( {errors: this.props.errors} ))
+
         e.preventDefault();
         this.props.clearAllSessionErrors();
-        this.props.createSession(this.state.user)
-        .fail(() => this.setState( {errors: this.props.errors} ))
+        if (e.target.id === "login") {
+            this.props.createSession(this.state.user)
+            .fail(() => this.setState({ errors: this.props.errors }));
+        } else {
+            this.props.createSession({
+                email: "user1@email.com", password: "password"
+            });
+        }
     }
 
     render(){
@@ -70,11 +81,14 @@ class LoggedOutHeader extends React.Component {
                             </div>
                         
                         <button 
+                            id="login"
                             className="login"
                             onClick={this.handleSubmit}
                         >
                             Log In
                         </button>
+                        <button id="header-demo" className="login" onClick={this.handleSubmit}> Demo </button>
+
 
                     </form>
                 </div>
