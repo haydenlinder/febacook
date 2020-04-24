@@ -29,7 +29,7 @@ const PostIndex = ({posts, users}) => {
                     }
                 </ul>
                 <div className="post-avitar-container post">
-                    <img className="profile-photo" src={users[post.authorName].profilePhotoUrl} alt="" />
+                    <img className="profile-photo not-resized" src={users[post.authorName].profilePhotoUrl} alt="" />
                 </div>
                 <li className="post-body">
                     {post.body}

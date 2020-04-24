@@ -372,6 +372,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+setInterval(function () {
+  var pics = document.getElementsByClassName('not-resized');
+
+  for (var i = 0; i < pics.length; i++) {
+    var width = pics[i].offsetWidth;
+    var height = pics[i].offsetHeight;
+    var wTh = width / height;
+
+    if (height < width) {
+      var parentHeight = pics[i].parentElement.offsetHeight;
+      pics[i].style.height = '100%';
+      pics[i].style.width = wTh * parentHeight + 'px';
+    } else {
+      var parentWidth = pics[i].parentElement.offsetHeight;
+      pics[i].style.width = '100%';
+      pics[i].style.height = parentWidth / wTh + 'px';
+    }
+
+    pics[i].classList.remove('not-resized');
+  }
+}, 200);
 
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -567,10 +588,12 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/".concat(this.props.currentUser.username),
         className: "profile link"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "header-link photo-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.currentUser.profilePhotoUrl,
-        className: "profile-photo"
-      }), this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-photo not-resized"
+      })), this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav-right-border"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.goHome,
@@ -930,22 +953,10 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         onChange: function onChange(e) {
           return _this4.handleFile(e);
         }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "border"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "button-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "video-icon"
-      }), "Live Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "border"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "button-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "event-icon"
-      }), "Life Event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "post-avitar-container"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post photo-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "profile-photo",
+        className: "profile-photo not-resized",
         src: this.props.currentUser.profilePhotoUrl,
         alt: ""
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
@@ -1034,7 +1045,7 @@ var PostIndex = function PostIndex(_ref) {
     }, "Updated ", Object(_util_date_util__WEBPACK_IMPORTED_MODULE_2__["convertDateTime"])(post.updatedAt)) : null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "post-avitar-container post"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      className: "profile-photo",
+      className: "profile-photo not-resized",
       src: users[post.authorName].profilePhotoUrl,
       alt: ""
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1299,10 +1310,10 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text"
       }, "Update Cover Photo")) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-photo-container"
+        className: "profile photo-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.user.profilePhotoUrl,
-        className: "profile-photo"
+        className: "profile-photo not-resized"
       }), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "update",
         onClick: function onClick() {

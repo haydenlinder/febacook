@@ -13,6 +13,7 @@
 }
 
 .post-form-container .post-form-header {
+    width: 420px;
     display: flex;
     justify-content: left;
     padding-right: 89px;
@@ -53,6 +54,7 @@ label:hover {
     cursor: pointer;
 }
 
+
 .post-form-header .border {
     border-right: 1px solid lightgrey;
     height: 15px;
@@ -74,33 +76,12 @@ label:hover {
     margin-right: 5px;
 }
 
-.post-form-header .video-icon {
-    height: 15px;
-    width: 15px;
-    background-image: image_url("video.png");
-    background-size: 110%;
-    margin-right: 5px;
-}
-
-.post-form-header .event-icon {
-    height: 15px;
-    width: 15px;
-    background-image: image_url("event.png");
-    background-size: 100%;
-    margin-right: 5px;
-}
-
-.post-avitar-container {
+.post.photo-container {
     position: absolute;
     top: 40px;
     left: 10px;
     width: 40px;
     height: 40px;
-    border-radius: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .post-form-container .body {

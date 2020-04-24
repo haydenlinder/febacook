@@ -88,31 +88,23 @@
 
 ////////// profile photo
 
-.profile-container .profile-photo-container {
+.profile.photo-container {
     position: absolute;
     height: 160px;
     width: 160px;
-    border-radius: 100%;
     border: 4px solid white;
-    display: flex;
-    align-items: flex-end;;
-    justify-content: center;
     top: 180px;
     left: 15px;
     box-sizing: border-box;
     box-shadow: 0px 0px 1px 1px grey;
     z-index: 1;
-    overflow: hidden;
     background-image: image_url("default_photo.png");
     background-size: 100%
 }
 
-.profile-photo {
-    width: 110%;
-}
-
-.profile-photo-container .update {
+.profile.photo-container .update {
     position: absolute;
+    top: 75px;
     display: none;
     color: white;
     background-color: black;
@@ -130,16 +122,16 @@
     background-image: image_url("other_camera.png");
 }
 
-.profile-photo-container .update:hover{
+.profile.photo-container .update:hover{
     opacity: 0.8;
 
 }
 
-.profile-container .profile-photo-container:hover {
+.profile-container .profile.photo-container:hover {
     cursor: pointer;
 }
 
-.profile-container .profile-photo-container:hover .update {
+.profile-container .profile.photo-container:hover .update {
     display: flex;
     flex-direction: column;
     align-items: center;

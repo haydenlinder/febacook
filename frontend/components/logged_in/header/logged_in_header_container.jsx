@@ -21,17 +21,12 @@ class LoggedInHeader extends React.Component {
         window.location.reload(false) : this.props.history.push("/")
     }
 
-
-
-
-
     render(){
         return(
             <div 
                 className="logged-in-header"
                 >
                 <div className="nav">
-
                     <div className="left-nav">
                         <div 
                             className="logo"
@@ -44,51 +39,39 @@ class LoggedInHeader extends React.Component {
                             <div className="search-button"></div>
                         </div>
                     </div>
-
-                   
                     <div className="middle-nav">
-                        
                         <Link 
                             to={`/${this.props.currentUser.username}`}
                             className="profile link"
                         >
-
-                            <img src={this.props.currentUser.profilePhotoUrl} className="profile-photo">
-                            </img>
+                            <div className="header-link photo-container">
+                                <img src={this.props.currentUser.profilePhotoUrl} className="profile-photo not-resized"/>
+                            </div>
 
                             {this.props.currentUser.firstName}
-
                         </Link>
-
                         <div className="middle-nav-right-border"></div>
-
                         <div 
                             onClick={this.goHome}
                             className="home link"
                         >
                             Home
                         </div>
-
                         <div className="middle-nav-right-border"></div>
-                        
                         <Link 
                             to="/users"
                             className="find-friends link"
                         >
                             Find Friends
                         </Link>
-
                         <div className="middle-nav-right-border"></div>
-
                         <Link 
                             to="/"
                             className="create link"
                         >
                             Create
                         </Link>
-
                         <div className="middle-nav-right-border"></div>
-
                         <div className="notifications-container">
                             <div 
                                 className="friend-icon sprite unselected"
@@ -99,7 +82,6 @@ class LoggedInHeader extends React.Component {
                                     </li>
                                 </ul>
                             </div>
-
                             <div 
                                 className="message-icon sprite unselected"
                                 >
@@ -109,7 +91,6 @@ class LoggedInHeader extends React.Component {
                                     </li>
                                 </ul>
                             </div>
-
                             <div 
                                 className="bell-icon sprite unselected"
                             >
@@ -120,15 +101,12 @@ class LoggedInHeader extends React.Component {
                                 </ul>
                             </div>
                         </div>
-
                         <div className="middle-nav-right-border"></div>
                     </div>
-
                     <div 
                         className="info-icon sprite unselected"
                     >
                     </div>
-
                     <div 
                         className="arrow-icon sprite unselected"
                     >
@@ -138,7 +116,6 @@ class LoggedInHeader extends React.Component {
                             </li> 
                         </ul>
                     </div>
-
                 </div>
             </div>
         )

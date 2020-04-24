@@ -67,8 +67,8 @@ class Profile extends React.Component{
                     :
                     null
                     }
-                    <div className="profile-photo-container">
-                        <img src={this.props.user.profilePhotoUrl} className="profile-photo">
+                    <div className="profile photo-container">
+                        <img src={this.props.user.profilePhotoUrl} className="profile-photo not-resized">
                         </img>
                         {ownProfile ?
                         <div 

@@ -93,23 +93,9 @@ class PostForm extends React.Component {
                             onChange={(e) => this.handleFile(e)}
                         />
                     </li>
-                    <div className="border"></div>
-                    <li className="button-container">
-                        <div className="video-icon">
-
-                        </div>
-                        Live Video
-                    </li>
-                    <div className="border"></div>
-                    <li className="button-container">
-                        <div className="event-icon">
-
-                        </div>
-                        Life Event
-                    </li>
                 </ul>
-                <div className="post-avitar-container">
-                    <img className="profile-photo" src={this.props.currentUser.profilePhotoUrl} alt=""/>
+                <div className="post photo-container">
+                    <img className="profile-photo not-resized" src={this.props.currentUser.profilePhotoUrl} alt=""/>
                 </div>
 
                 <textarea 
