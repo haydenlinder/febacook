@@ -8,15 +8,27 @@
 
 
 user1 = User.create({
-    username: "user1", first_name: "user1", last_name: "user1", 
-    birthday: "13/9/1993", gender: "male", pronouns: "he/him/his", 
-    email: "user1@email.com", password: "password"
+    username: "lisasimpson", first_name: "Lisa", last_name: "Simpson", 
+    birthday: "9/5/1981", gender: "female", pronouns: "she/her/hers", 
+    email: "lisa@email.com", password: "password"
 })
 
 user2 = User.create({
-    username: "user2", first_name: "user2", last_name: "user2", 
-    birthday: "13/9/1993", gender: "male", pronouns: "he/him/his", 
-    email: "user2@email.com", password: "password"
+    username: "michaelscott", first_name: "Michael" , last_name: "Scott", 
+    birthday: "16/3/1964", gender: "male", pronouns: "he/him/his", 
+    email: "mscott@dundermifflin.com", password: "password"
+})
+
+user3 = User.create({
+    username: "successkid", first_name: "Success", last_name: "Kid", 
+    birthday: "23/9/2006", gender: "male", pronouns: "he/him/his", 
+    email: "kid@email.com", password: "password"
+})
+
+user4 = User.create({
+    username: "grumpycat", first_name: "Grumpy", last_name: "Cat", 
+    birthday: "4/4/2012", gender: "female", pronouns: "she/her/hers", 
+    email: "grumpycat@email.com", password: "password"
 })
 
 

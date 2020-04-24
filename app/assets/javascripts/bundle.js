@@ -1678,8 +1678,9 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
           });
         });
       } else {
+        var emails = ['lisa@email.com', 'mscott@dundermifflin.com', 'kid@email.com', 'grumpycat@email.com'];
         this.props.createSession({
-          email: "user1@email.com",
+          email: emails[Math.floor(4 * Math.random())],
           password: "password"
         });
       }
@@ -1721,7 +1722,7 @@ var LoggedOutHeader = /*#__PURE__*/function (_React$Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "password"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
+        type: "password",
         value: this.state.user.password,
         onClick: function onClick(e) {
           _this3.props.clearAllSessionErrors();

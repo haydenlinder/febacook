@@ -26,8 +26,14 @@ class LoggedOutHeader extends React.Component {
             this.props.createSession(this.state.user)
             .fail(() => this.setState({ errors: this.props.errors }));
         } else {
+            let emails = [
+                'lisa@email.com',
+                'mscott@dundermifflin.com',
+                'kid@email.com',
+                'grumpycat@email.com'
+            ]
             this.props.createSession({
-                email: "user1@email.com", password: "password"
+                email: emails[Math.floor(4*Math.random())], password: "password"
             });
         }
     }
@@ -66,7 +72,7 @@ class LoggedOutHeader extends React.Component {
                             <div className="password"> 
                                 <div>Password</div> 
                                 < input
-                                    type = "text"
+                                    type = "password"
                                     value = { this.state.user.password }
                                     onClick={(e) => {
                                         this.props.clearAllSessionErrors()
