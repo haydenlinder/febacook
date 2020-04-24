@@ -27,11 +27,17 @@
     height: 315px;
     background-color: white;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .cover-photo-picture {
-    width: 100%;
+    // width: 100%;
+    position: absolute;
 }
+
 .profile-container .cover-photo:hover {
     cursor: pointer;
 }
