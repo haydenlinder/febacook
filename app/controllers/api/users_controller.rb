@@ -35,7 +35,8 @@ class Api::UsersController < ApplicationController
 
     def index
         @users = 
-        User.includes(authored_posts: [:author, :recipient]).all
+        User.includes(authored_posts: [:author, :recipient])
+        .all
         render :index
     end 
 
