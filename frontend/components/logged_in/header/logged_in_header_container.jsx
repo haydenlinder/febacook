@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 
 import { deleteSession } from '../../../actions/session_actions'
+import ProfilePhoto from '../profile/profile_photo';
 
 
 class LoggedInHeader extends React.Component {
@@ -45,7 +46,7 @@ class LoggedInHeader extends React.Component {
                             className="profile link"
                         >
                             <div className="header-link photo-container">
-                                <img src={this.props.currentUser.profilePhotoUrl} className="profile-photo not-resized"/>
+                                <ProfilePhoto url={this.props.currentUser.profilePhotoUrl} />
                             </div>
 
                             {this.props.currentUser.firstName}

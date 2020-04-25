@@ -6,6 +6,7 @@ import PostFormContainer from '../posts/post_form_container';
 import PostIndex from '../posts/posts_index';
 import { openModal } from '../../../util/ui_util';
 import UpdatePhoto from './update_photo';
+import ProfilePhoto from './profile_photo';
 
 class Profile extends React.Component{
 
@@ -68,8 +69,7 @@ class Profile extends React.Component{
                     null
                     }
                     <div className="profile photo-container">
-                        <img src={this.props.user.profilePhotoUrl} className="profile-photo not-resized">
-                        </img>
+                        <ProfilePhoto url={this.props.user.profilePhotoUrl} />
                         {ownProfile ?
                         <div 
                             className="update"

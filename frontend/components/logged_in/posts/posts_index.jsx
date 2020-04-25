@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { convertDateTime } from '../../../util/date_util';
+import ProfilePhoto from '../profile/profile_photo';
 
 const PostIndex = ({posts, users}) => {
 
@@ -29,7 +30,7 @@ const PostIndex = ({posts, users}) => {
                     }
                 </ul>
                 <div className="photo-container post-show">
-                    <img className="profile-photo not-resized" src={users[post.authorName].profilePhotoUrl} alt="" />
+                    <ProfilePhoto url={users[post.authorName].profilePhotoUrl} />
                 </div>
                 <li className="post-body">
                     {post.body}

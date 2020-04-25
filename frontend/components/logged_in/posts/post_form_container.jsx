@@ -2,6 +2,7 @@ import React from 'react';
 import { createPost } from '../../../actions/post_actions'
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../../util/ui_util';
+import ProfilePhoto from '../profile/profile_photo';
 
 class PostForm extends React.Component {
     constructor(props) {
@@ -95,7 +96,7 @@ class PostForm extends React.Component {
                     </li>
                 </ul>
                 <div className="post-form photo-container">
-                    <img className="profile-photo not-resized" src={this.props.currentUser.profilePhotoUrl} alt=""/>
+                    <ProfilePhoto url={this.props.currentUser.profilePhotoUrl} />
                 </div>
 
                 <textarea 
