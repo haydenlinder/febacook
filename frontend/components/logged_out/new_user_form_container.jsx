@@ -30,8 +30,14 @@ class NewUserForm extends React.Component {
             this.props.createUser(this.state.user)
             .fail(() => this.setState({ errors: this.props.errors }));
         } else {
+            let emails = [
+                'lisa@email.com',
+                'mscott@dundermifflin.com',
+                'kid@email.com',
+                'grumpycat@email.com'
+            ]
             this.props.createSession({
-                email: "user1@email.com", password: "password"
+                email: emails[Math.floor(4 * Math.random())], password: "password"
             });
         }
 

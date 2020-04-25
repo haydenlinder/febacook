@@ -1993,8 +1993,9 @@ var NewUserForm = /*#__PURE__*/function (_React$Component) {
           });
         });
       } else {
+        var emails = ['lisa@email.com', 'mscott@dundermifflin.com', 'kid@email.com', 'grumpycat@email.com'];
         this.props.createSession({
-          email: "user1@email.com",
+          email: emails[Math.floor(4 * Math.random())],
           password: "password"
         });
       }
