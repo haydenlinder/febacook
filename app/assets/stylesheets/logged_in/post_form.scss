@@ -6,6 +6,7 @@
     border-radius: 3px;
     background-color: white;
     position: relative;
+    width: 100%;
 }
 
 #post-form-modal.modal-show {
@@ -13,10 +14,10 @@
 }
 
 .post-form-container .post-form-header {
-    width: 420px;
+    width: 100%;
     display: flex;
     justify-content: left;
-    padding-right: 89px;
+    // padding-right: 89px;
     background-color: rgb(244, 245, 246);
     align-items: center;
     border-top-right-radius: 3px;

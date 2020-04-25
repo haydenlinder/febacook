@@ -6,6 +6,14 @@
     font-size: 12px;
 }
 
+.post-list {
+    width: 500px;
+}
+
+.profile-right .post-list {
+    width: 520px;
+}
+
 .post-container {
     position: relative;
     display: flex;
@@ -18,7 +26,7 @@
     overflow-wrap: anywhere;
     hyphens: auto;
     overflow: hidden;
-    max-width: 515px;
+    width: 100%;
 }
 
 .post-show.photo-container {
