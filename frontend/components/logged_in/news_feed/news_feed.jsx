@@ -21,6 +21,7 @@ class NewsFeed extends React.Component {
                     currentUser={this.props.currentUser}
                 />
                 <PostIndex 
+                    currentUser={this.props.currentUser}
                     posts={this.props.posts}
                     users={this.props.users}
                 />

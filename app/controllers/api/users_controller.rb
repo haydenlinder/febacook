@@ -22,7 +22,7 @@ class Api::UsersController < ApplicationController
     
     def show
         @user = 
-            User.includes(received_posts: [:author, :recipient])
+            User.includes(received_posts: [:author, :recipient, :likers])
             .find_by(username: params[:username])
 
         unless @user

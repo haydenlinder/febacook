@@ -2,8 +2,14 @@ import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { convertDateTime } from '../../../util/date_util';
 import ProfilePhoto from '../profile/profile_photo';
+import { createLike, deleteLike } from '../../../actions/like_actions';
+import { connect } from 'react-redux';
 
-const PostIndex = ({posts, users}) => {
+const PostIndex = ({posts, users, currentUser, createLike, deleteLike}) => {
+
+    const handleLike = postId => {
+        createLike({ liker_id: currentUser.id, post_id: postId })
+    }
 
     let list = Object.values(posts).reverse();
     let postList = list.map((post) => 
@@ -40,15 +46,15 @@ const PostIndex = ({posts, users}) => {
                 {post.photoUrls.map(url => <img className="post-photo" src={url}></img>)}
             </div>
             <li className="post-footer">
-                <div className="post-footer-button">
+                <div onClick={e => handleLike(post.id)} className="post-footer-button">
                     <span className="like icon">☺</span> Like
                 </div>
                 <div className="post-footer-button">
                     <span className="comment icon">⑊</span>Comment
                 </div>
-                <div className="post-footer-button">
+                {/* <div className="post-footer-button">
                     <span className="share icon">➦</span>Share
-                </div>
+                </div> */}
             </li>
         </ul>   
     )
@@ -60,4 +66,9 @@ const PostIndex = ({posts, users}) => {
     )
 }
 
-export default PostIndex;
+const mdp = dispatch => ({
+    createLike: like => dispatch(createLike(like)),
+    deleteLike: id => dispatch(deleteLike(id))
+})
+
+export default connect(null, mdp)(PostIndex);

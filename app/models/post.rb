@@ -9,9 +9,13 @@ class Post < ApplicationRecord
         foreign_key: :recipient_id,
         class_name: :User 
 
+    has_many :likes
+    
+    has_many :likers,
+        through: :likes,
+        source: :liker
+
     has_many_attached :photos
-    # has_many :photos
-    # accepts_nested_attributes_for :photos
 
     validate do 
         if self.photos.length < 1 && self.body.length < 1

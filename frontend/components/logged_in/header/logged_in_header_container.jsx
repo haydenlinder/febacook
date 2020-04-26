@@ -131,11 +131,11 @@ class LoggedInHeader extends React.Component {
                         className="info-icon sprite unselected"
                     >
                         <ul className="git-dropdown">
-                                <a href="https://github.com/haydenlinder/febacook">
-                            <li className="git-icon">
+                            <a href="https://github.com/haydenlinder/febacook">
+                                <li className="git-icon">
 
-                            </li>
-                                </a>
+                                </li>
+                            </a>
                         </ul>
                     </div>
                     <div 

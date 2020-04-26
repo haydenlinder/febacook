@@ -10,6 +10,10 @@ class User < ApplicationRecord
         foreign_key: :recipient_id,
         class_name: :Post
 
+    has_many :likes,
+        foreign_key: :liker_id,
+        class_name: :Like
+
     has_one_attached :profile_photo
     has_one_attached :cover_photo
 

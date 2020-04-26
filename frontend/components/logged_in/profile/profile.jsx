@@ -196,6 +196,7 @@ class Profile extends React.Component{
                             Posts
                         </div>
                         <PostIndex 
+                            currentUser={this.props.currentUser}
                             posts={this.props.posts}
                             users={this.props.users}
                         />
