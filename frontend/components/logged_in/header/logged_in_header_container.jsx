@@ -34,7 +34,7 @@ class LoggedInHeader extends React.Component {
         let params = new URLSearchParams();
         params.set('nameFragment', this.state.search);
         let qString = params.toString();
-        this.props.history.push(`/users/?${qString}`);
+        this.props.history.push(`/users/search/?${qString}`);
     }
 
     render(){
@@ -131,9 +131,11 @@ class LoggedInHeader extends React.Component {
                         className="info-icon sprite unselected"
                     >
                         <ul className="git-dropdown">
+                                <a href="https://github.com/haydenlinder/febacook">
                             <li className="git-icon">
-                                
+
                             </li>
+                                </a>
                         </ul>
                     </div>
                     <div 

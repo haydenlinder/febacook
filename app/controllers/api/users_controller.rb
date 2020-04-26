@@ -34,9 +34,10 @@ class Api::UsersController < ApplicationController
     end
 
     def index
+        nameFragment = params[:nameFragment]
         @users = 
-        User.includes(authored_posts: [:author, :recipient])
-        .all
+        User.where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', "%#{nameFragment}%", "%#{nameFragment}%")        
+        # .includes(authored_posts: [:author, :recipient])
         render :index
     end 
 

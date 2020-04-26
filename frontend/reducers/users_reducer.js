@@ -9,9 +9,11 @@ const usersReducer = (state = {}, action) => {
             nextState[action.user.username] = action.user;
             return nextState
         case RECEIVE_USERS:
-            let users = Object.values(action.users)
-            for (let i = 0; i < users.length; i++) {
-                nextState[users[i].username] = users[i]
+            if (action.users) {
+                let users = Object.values(action.users)
+                for (let i = 0; i < users.length; i++) {
+                    nextState[users[i].username] = users[i]
+                }
             }
             return nextState;
         case RECEIVE_USER:

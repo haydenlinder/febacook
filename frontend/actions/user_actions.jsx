@@ -1,4 +1,4 @@
-import { $fetchUsers, $fetchUser, $updateUser } from "../util/user_api_util";
+import { $fetchUsers, $fetchUser, $updateUser, $fetchUsersByNameFragment } from "../util/user_api_util";
 
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USERS = "RECEIVE_USERS";
@@ -25,7 +25,17 @@ const receiveUserErrors = errors => ({
 export const fetchUsers = () => dispatch => (
     $fetchUsers()
     .then(
-        payload => dispatch(receiveUsers(payload))
+        payload => dispatch(receiveUsers(payload)),
+        payload => dispatch(receiveUserErrors(payload.responseJSON))
+
+    )
+)
+
+export const fetchUsersByNameFragment = nameFragment => dispatch => (
+    $fetchUsersByNameFragment(nameFragment)
+    .then(
+        payload => dispatch(receiveUsers(payload)),
+        payload => dispatch(receiveUserErrors(payload.responseJSON))
     )
 )
 

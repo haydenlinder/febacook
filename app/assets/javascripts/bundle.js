@@ -278,7 +278,7 @@ var deleteSession = function deleteSession() {
 /*!*******************************************!*\
   !*** ./frontend/actions/user_actions.jsx ***!
   \*******************************************/
-/*! exports provided: RECEIVE_USER, RECEIVE_USERS, RECEIVE_USER_ERRORS, REMOVE_USER, fetchUsers, fetchUser, updateUser */
+/*! exports provided: RECEIVE_USER, RECEIVE_USERS, RECEIVE_USER_ERRORS, REMOVE_USER, fetchUsers, fetchUsersByNameFragment, fetchUser, updateUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -288,6 +288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER_ERRORS", function() { return RECEIVE_USER_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_USER", function() { return REMOVE_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUsers", function() { return fetchUsers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUsersByNameFragment", function() { return fetchUsersByNameFragment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 /* harmony import */ var _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/user_api_util */ "./frontend/util/user_api_util.js");
@@ -328,6 +329,17 @@ var fetchUsers = function fetchUsers() {
   return function (dispatch) {
     return Object(_util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["$fetchUsers"])().then(function (payload) {
       return dispatch(receiveUsers(payload));
+    }, function (payload) {
+      return dispatch(receiveUserErrors(payload.responseJSON));
+    });
+  };
+};
+var fetchUsersByNameFragment = function fetchUsersByNameFragment(nameFragment) {
+  return function (dispatch) {
+    return Object(_util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["$fetchUsersByNameFragment"])(nameFragment).then(function (payload) {
+      return dispatch(receiveUsers(payload));
+    }, function (payload) {
+      return dispatch(receiveUserErrors(payload.responseJSON));
     });
   };
 };
@@ -616,7 +628,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       var params = new URLSearchParams();
       params.set('nameFragment', this.state.search);
       var qString = params.toString();
-      this.props.history.push("/users/?".concat(qString));
+      this.props.history.push("/users/search/?".concat(qString));
     }
   }, {
     key: "render",
@@ -684,9 +696,11 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "info-icon sprite unselected"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "git-dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/haydenlinder/febacook"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "git-icon"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "arrow-icon sprite unselected"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick(e) {
@@ -1798,17 +1812,57 @@ var UserIndex = /*#__PURE__*/function (_React$Component) {
   _inherits(UserIndex, _React$Component);
 
   function UserIndex(props) {
+    var _this;
+
     _classCallCheck(this, UserIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(UserIndex).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(UserIndex).call(this, props));
+    _this.state = {
+      users: []
+    };
+    return _this;
   }
 
   _createClass(UserIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      this.update();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.location.search !== prevProps.location.search) {
+        this.update();
+      }
+    }
+  }, {
+    key: "update",
+    value: function update() {
+      var _this2 = this;
+
       var search = this.props.location.search;
       var params = new URLSearchParams(search.slice(1));
-      this.props.fetchUsers();
+      var nameFragment = params.get('nameFragment');
+
+      if (nameFragment) {
+        this.props.fetchUsersByNameFragment(nameFragment).then(function (action) {
+          if (action.users) {
+            _this2.setState({
+              users: Object.values(action.users)
+            });
+          } else {
+            _this2.setState({
+              users: []
+            });
+          }
+        });
+      } else {
+        this.props.fetchUsers().then(function (action) {
+          return _this2.setState({
+            users: Object.values(action.users)
+          });
+        });
+      }
     }
   }, {
     key: "render",
@@ -1819,7 +1873,7 @@ var UserIndex = /*#__PURE__*/function (_React$Component) {
         className: "user-index-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-index-title"
-      }, "People"), this.props.users.map(function (user) {
+      }, "People"), this.state.users.map(function (user) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-item-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1852,6 +1906,9 @@ var mdp = function mdp(dispatch) {
   return {
     fetchUsers: function fetchUsers() {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["fetchUsers"])());
+    },
+    fetchUsersByNameFragment: function fetchUsersByNameFragment(nameFragment) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["fetchUsersByNameFragment"])(nameFragment));
     }
   };
 };
@@ -2799,10 +2856,12 @@ var usersReducer = function usersReducer() {
       return nextState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USERS"]:
-      var users = Object.values(action.users);
+      if (action.users) {
+        var users = Object.values(action.users);
 
-      for (var i = 0; i < users.length; i++) {
-        nextState[users[i].username] = users[i];
+        for (var i = 0; i < users.length; i++) {
+          nextState[users[i].username] = users[i];
+        }
       }
 
       return nextState;
@@ -3070,7 +3129,7 @@ var toggleDropdowns = function toggleDropdowns(e) {
 /*!****************************************!*\
   !*** ./frontend/util/user_api_util.js ***!
   \****************************************/
-/*! exports provided: $fetchUsers, $fetchUser, $updateUser */
+/*! exports provided: $fetchUsers, $fetchUser, $updateUser, $fetchUsersByNameFragment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3078,6 +3137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$fetchUsers", function() { return $fetchUsers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$fetchUser", function() { return $fetchUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$updateUser", function() { return $updateUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$fetchUsersByNameFragment", function() { return $fetchUsersByNameFragment; });
 var $fetchUsers = function $fetchUsers() {
   return $.ajax({
     url: "/api/users",
@@ -3097,6 +3157,12 @@ var $updateUser = function $updateUser(formData) {
     data: formData,
     contentType: false,
     processData: false
+  });
+};
+var $fetchUsersByNameFragment = function $fetchUsersByNameFragment(nameFragment) {
+  return $.ajax({
+    url: "/api/users?nameFragment=".concat(nameFragment),
+    method: "GET"
   });
 };
 

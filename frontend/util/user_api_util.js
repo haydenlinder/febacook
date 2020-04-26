@@ -21,3 +21,10 @@ export const $updateUser = formData => (
         processData: false
     })
 )
+
+export const $fetchUsersByNameFragment = nameFragment => (
+    $.ajax({
+        url: `/api/users?nameFragment=${nameFragment}`,
+        method: `GET`
+    })
+)
