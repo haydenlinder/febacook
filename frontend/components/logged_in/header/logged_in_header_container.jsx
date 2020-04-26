@@ -4,22 +4,37 @@ import { withRouter } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import { deleteSession } from '../../../actions/session_actions'
 import ProfilePhoto from '../profile/profile_photo';
-
+import { fetchUsers } from '../../../actions/user_actions';
 
 class LoggedInHeader extends React.Component {
     constructor(props){
-        super(props)
-        this.goHome = this.goHome.bind(this)
+        super(props);
+        this.goHome = this.goHome.bind(this);
+        this.state = {
+            search: ''
+        };
     }
 
     handleSignout(e) {
         this.props.deleteSession()
-        .then(() => this.props.history.push("/"))
+        .then(() => this.props.history.push("/"));
     }
 
     goHome(e) {
         this.props.location.pathname === "/" ? 
         window.location.reload(false) : this.props.history.push("/")
+    }
+
+    handleChange(e) {
+        this.setState({ search: e.target.value })
+    }
+
+    handleSearch(e) {
+        e.preventDefault();
+        let params = new URLSearchParams();
+        params.set('nameFragment', this.state.search);
+        let qString = params.toString();
+        this.props.history.push(`/users/${qString}`);
     }
 
     render(){
@@ -36,10 +51,17 @@ class LoggedInHeader extends React.Component {
                         >
                         </div>
 
-                        <div className="input-container">
-                            <input type="text" placeholder="Search"/>
-                            <div className="search-button"></div>
-                        </div>
+                        <form onSubmit={e => this.handleSearch(e)} className="input-container">
+                            <input 
+                                onChange={e => this.handleChange(e)} 
+                                type="text" 
+                                value={this.state.search} 
+                                placeholder="Search"
+                            />
+                            <button 
+                                className="search-button"
+                            ></button>
+                        </form>
                     </div>
                     <div className="middle-nav">
                         <Link 
@@ -130,12 +152,14 @@ class LoggedInHeader extends React.Component {
 }
 
 const msp = state => ({
-    currentUser: state.entities.users[state.session.username]
-})
+    currentUser: state.entities.users[state.session.username],
+    users: state.entities.users 
+});
 
 const mdp = dispatch => ({
-    deleteSession: () => dispatch(deleteSession())
-})
+    deleteSession: () => dispatch(deleteSession()),
+    fetchUsers: () => dispatch(fetchUsers())
+});
 
 const LoggedInHeaderContainer =  withRouter(connect(msp, mdp)(LoggedInHeader));
 

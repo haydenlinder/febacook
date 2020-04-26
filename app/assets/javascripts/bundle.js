@@ -545,6 +545,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_hash_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_router_hash_link__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../actions/session_actions */ "./frontend/actions/session_actions.jsx");
 /* harmony import */ var _profile_profile_photo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../profile/profile_photo */ "./frontend/components/logged_in/profile/profile_photo.jsx");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../actions/user_actions */ "./frontend/actions/user_actions.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -570,6 +571,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
   _inherits(LoggedInHeader, _React$Component);
 
@@ -580,6 +582,9 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(LoggedInHeader).call(this, props));
     _this.goHome = _this.goHome.bind(_assertThisInitialized(_this));
+    _this.state = {
+      search: ''
+    };
     return _this;
   }
 
@@ -598,6 +603,22 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       this.props.location.pathname === "/" ? window.location.reload(false) : this.props.history.push("/");
     }
   }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        search: e.target.value
+      });
+    }
+  }, {
+    key: "handleSearch",
+    value: function handleSearch(e) {
+      e.preventDefault();
+      var params = new URLSearchParams();
+      params.set('nameFragment', this.state.search);
+      var qString = params.toString();
+      this.props.history.push("/users/".concat(qString));
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
@@ -612,12 +633,19 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logo",
         onClick: this.goHome
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: function onSubmit(e) {
+          return _this3.handleSearch(e);
+        },
         className: "input-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: function onChange(e) {
+          return _this3.handleChange(e);
+        },
         type: "text",
+        value: this.state.search,
         placeholder: "Search"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "search-button"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle-nav"
@@ -673,7 +701,8 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
 
 var msp = function msp(state) {
   return {
-    currentUser: state.entities.users[state.session.username]
+    currentUser: state.entities.users[state.session.username],
+    users: state.entities.users
   };
 };
 
@@ -681,6 +710,9 @@ var mdp = function mdp(dispatch) {
   return {
     deleteSession: function deleteSession() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["deleteSession"])());
+    },
+    fetchUsers: function fetchUsers() {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_6__["fetchUsers"])());
     }
   };
 };
