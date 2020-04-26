@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { convertDateTime } from '../../../util/date_util';
 import ProfilePhoto from '../profile/profile_photo';
 
@@ -11,7 +11,7 @@ const PostIndex = ({posts, users}) => {
             <div className="not-photo">
                 <ul className="post-header">
                     <span className="link">
-                        <Link to={`/${post.authorName}`}>
+                        <Link to={`/${post.authorName}#top`}>
                             {users[post.authorName].firstName} {users[post.authorName].lastName}
                         </Link>  
                         {post.authorName !== post.recipientName ?

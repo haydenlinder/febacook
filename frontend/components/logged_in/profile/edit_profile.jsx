@@ -1,7 +1,8 @@
 import React from 'react'
 import { updateUser } from '../../../actions/user_actions';
 import { connect } from 'react-redux';
-import { closeAncestorModal, closeModal } from '../../../util/ui_util';
+import { openModal, closeModal } from '../../../util/ui_util';
+import ProfilePhoto from './profile_photo';
 
 class EditProfile extends React.Component {
     constructor(props) {
@@ -36,7 +37,43 @@ class EditProfile extends React.Component {
                 <div className="label">
                     Edit Profile
                 </div>
-
+                {/* <div className="edit-profile-photos-container">
+                    <img src={this.props.user.coverPhotoUrl} className="not-resized"/>
+                </div> */}
+                <div className="profile-header-container">
+                    <div className="cover-photo">
+                        <img className="cover-photo-picture not-resized" src={this.props.user.coverPhotoUrl} alt=""/>
+                    </div>
+                    <div 
+                        className="update-cover-container"
+                        onClick={() => {
+                            this.props.setState({type: 'cover'})
+                            openModal('update-photo-modal')
+                            openModal('background-modal')
+                        }}
+                    >
+                        <div className="camera-icon">
+                        </div>
+                        <div className="text"> 
+                            Update Cover Photo
+                        </div>
+                    </div>
+                    <div className="profile photo-container">
+                        <ProfilePhoto url={this.props.user.profilePhotoUrl} />
+                        <div 
+                            className="update"
+                            onClick={() => {
+                                this.props.setState({ type: 'profile' })
+                                openModal('update-photo-modal')
+                                openModal('background-modal')
+                            }}
+                        >
+                            <div class="other-camera"></div>
+                            <div className="update-text">
+                                Update
+                            </div>
+                        </div>
+                    </div>
                 <div className="label">
                     Edit Bio
                     <button
@@ -53,6 +90,7 @@ class EditProfile extends React.Component {
                     }}
                     value={this.state.bio || ""}
                 />
+                </div>
             </ul>
         )
     }

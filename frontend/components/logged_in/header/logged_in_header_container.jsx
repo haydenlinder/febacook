@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter, Redirect } from 'react-router-dom';
-
+import { withRouter } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { deleteSession } from '../../../actions/session_actions'
 import ProfilePhoto from '../profile/profile_photo';
 
@@ -25,6 +25,7 @@ class LoggedInHeader extends React.Component {
     render(){
         return(
             <div 
+                id="top"
                 className="logged-in-header"
                 >
                 <div className="nav">
@@ -42,7 +43,7 @@ class LoggedInHeader extends React.Component {
                     </div>
                     <div className="middle-nav">
                         <Link 
-                            to={`/${this.props.currentUser.username}`}
+                            to={`/${this.props.currentUser.username}#top`}
                             className="profile link"
                         >
                             <div className="header-link photo-container">
@@ -66,12 +67,12 @@ class LoggedInHeader extends React.Component {
                             Find Friends
                         </Link>
                         <div className="middle-nav-right-border"></div>
-                        <Link 
+                        {/* <Link 
                             to="/"
                             className="create link"
                         >
                             Create
-                        </Link>
+                        </Link> */}
                         <div className="middle-nav-right-border"></div>
                         <div className="notifications-container">
                             <div 
@@ -79,7 +80,7 @@ class LoggedInHeader extends React.Component {
                             >
                                 <ul>
                                     <li>
-                                        Friend requests
+                                       No Friend requests
                                     </li>
                                 </ul>
                             </div>
@@ -88,7 +89,7 @@ class LoggedInHeader extends React.Component {
                                 >
                                 <ul>
                                     <li>
-                                        Messages
+                                       No Messages
                                     </li>
                                 </ul>
                             </div>
@@ -97,7 +98,7 @@ class LoggedInHeader extends React.Component {
                             >
                                 <ul>
                                     <li>
-                                        Notifications
+                                       No Notifications
                                     </li>
                                 </ul>
                             </div>
@@ -107,6 +108,11 @@ class LoggedInHeader extends React.Component {
                     <div 
                         className="info-icon sprite unselected"
                     >
+                        <ul className="git-dropdown">
+                            <li className="git-icon">
+                                
+                            </li>
+                        </ul>
                     </div>
                     <div 
                         className="arrow-icon sprite unselected"

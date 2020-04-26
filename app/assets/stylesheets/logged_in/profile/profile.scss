@@ -129,14 +129,20 @@
 
 .profile.photo-container .update:hover{
     opacity: 0.8;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile-container .profile.photo-container:hover {
     cursor: pointer;
 }
 
-.profile-container .profile.photo-container:hover .update {
+.update-text {
+    font-size: 14px;
+}
+
+.profile.photo-container:hover .update {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -424,8 +430,9 @@
 
 .profile-right {
     display: flex;
+    justify-content: left;
     flex-direction: column;
-    max-width: 515px;
+    width: 515px;
 }
 
 

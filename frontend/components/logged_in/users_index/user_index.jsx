@@ -2,7 +2,7 @@ import React from 'react';
 import { fetchUsers } from '../../../actions/user_actions';
 import { connect } from 'react-redux';
 import ProfilePhoto from '../profile/profile_photo';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 class UserIndex extends React.Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class UserIndex extends React.Component {
                                 <ProfilePhoto url={user.profilePhotoUrl} />
                             </div>
                             <div className="user-item-info">
-                                <Link to={`/${user.username}`}>{user.firstName} {user.lastName}</Link> 
+                                <Link to={`/${user.username}#top`}>{user.firstName} {user.lastName}</Link> 
                                 <div className="user-item-bio">{user.bio}</div>
                             </div>
                         </div>

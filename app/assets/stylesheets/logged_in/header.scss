@@ -20,9 +20,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 195px;
-    margin-left: 180px;
-    min-width: 1000px;
+    margin-right: 65px;
+    min-width: 950px;
     height: 100%;
 }
 
@@ -259,36 +258,30 @@
 }
 
 
-
+/// dropdown container
 .unselected > ul {
     display: none;
 }
 
 .selected > ul {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    position: absolute;
     top: 34px;
-    left: -188px;
+    left: 0;
     color: black;
     background-color: white;
     border: 1px solid lightgrey;
-    width: 400px;
+    // width: 400px;
     z-index: 3;
     box-shadow: 0px 0px 5px 0px black;
 }
 
 
-.logged-in-header .selected > ul {
-	position: relative;
-	background: white;
-	border: 1px solid #a8a8a8;
-}
-
 
 .logged-in-header .selected > ul:after, .logged-in-header .selected > ul:before {
 	bottom: 100%;
-	left: 50%;
+	left: 12px;
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -310,11 +303,32 @@
 	margin-left: -11px;
 }
 
-.logged-in-header .selected > ul > li {
-    padding: 10px;
-    // display: flex;
+
+////dropdown items
+
+
+
+.selected > ul li {
+    font-weight: 600;
+    margin: 10px;
+    display: flex;
+    width: 150px;
+    min-width: fit-content;
+    font-size: 12px;
 }
 
 .logged-in-header .selected > ul > li:hover {
     cursor: pointer;
+}
+
+.selected ul.git-dropdown {
+    width: 82px;
+}
+
+.selected > ul li.git-icon {
+    width: 64px;
+    height: 64px;
+    background-image: image_url('git-icon.png');
+    background-repeat: no-repeat;
+    background-position: left;
 }

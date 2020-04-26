@@ -7,20 +7,23 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: grey;
-    top: 200px; 
+    background-color: white;
+    top: 30px; 
     left: 300px;   
     width: 650px;
-    border-radius: 2px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
     z-index: 2;
 }
 
 .edit-user-form .label {
+    font-size: 14px;
+    font-weight: 600;
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: lightgrey;
-    border-bottom: 1px solid grey;
+    background-color: #eceeee;
+    border-bottom: 1px solid rgb(207, 207, 207);
     align-items: center;
     box-sizing: border-box;
 }
@@ -32,4 +35,15 @@
 #edit-profile-modal input {
     height: 100px;
     text-align: center;
+}
+
+.edit-profile-photos-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 300px;
+}
+
+#edit-profile-modal .profile.photo-container {
+    top: 140px;
 }

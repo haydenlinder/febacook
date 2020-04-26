@@ -43,6 +43,7 @@ class UpdatePhoto extends React.Component {
             <div id="update-photo-modal" 
                 className="edit-user-form modal-hide"
                 onClick={e => {
+                    closeModal('edit-profile-modal')
                     closeModal('update-photo-modal')
                     closeModal('background-modal')
                 }}    

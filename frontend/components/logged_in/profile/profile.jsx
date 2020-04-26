@@ -15,7 +15,8 @@ class Profile extends React.Component{
 
         this.state = {
             profile: '',
-            type: 'profile'
+            type: 'profile',
+            right: 'timeline'
         }
     }
 
@@ -40,6 +41,7 @@ class Profile extends React.Component{
                 <EditProfile 
                     user={this.props.user} 
                     updateUser={this.props.updateUser}
+                    setState={this.setState.bind(this)}
                     />
                 <UpdatePhoto 
                     type={this.state.type}
@@ -80,7 +82,7 @@ class Profile extends React.Component{
                             }}
                         >
                             <div class="other-camera"></div>
-                            <div>
+                            <div className="update-text">
                                 Update
                             </div>
                         </div>
@@ -89,19 +91,23 @@ class Profile extends React.Component{
                         }
                     </div>
                     <ul className="profile-nav-container">
-                        <li className="timeline">
-                            Timeline <span className="arrow">▼</span>
+                        <li 
+                            onClick={(e) => this.setState({ right: "timeline" })}
+                            className="timeline">
+                            Timeline
                         </li>
-                        <li>
+                        {/* <li>
                             About
-                        </li>
-                        <li>
+                        </li> */}
+                        <li
+                            onClick={e => this.setState({ right: "friends" })}
+                        >
                             Friends
                         </li>
-                        <li>
+                        {/* <li>
                             Photos
-                        </li>
-                        { ownProfile ?
+                        </li> */}
+                        {/* { ownProfile ?
                         <li className="archive">
                             <span className="lock-icon"></span>  Archive
                         </li> 
@@ -109,7 +115,7 @@ class Profile extends React.Component{
                         null }
                         <li>
                             More <span className="arrow">▼</span>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 <div className="middle">
@@ -132,7 +138,7 @@ class Profile extends React.Component{
                                 Add Friend
                             </div>
                         }           
-                        <div className="activity-log-container button-border">
+                        {/* <div className="activity-log-container button-border">
                             <div className="activity-log button">
                                 <div className="icon">
                                     ._ <br/>
@@ -151,7 +157,7 @@ class Profile extends React.Component{
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="middle-background"></div>
@@ -179,6 +185,7 @@ class Profile extends React.Component{
                             </div>
                         </div>
                     </div>
+                    {this.state.right === 'timeline' ? 
                     <div className="profile-right">
                         <PostFormContainer 
                             recipientId={this.props.user.id} 
@@ -192,7 +199,8 @@ class Profile extends React.Component{
                             posts={this.props.posts}
                             users={this.props.users}
                         />
-                    </div>
+                        </div> : <div className="profile-right"><div>No Friends</div></div>
+                    }
                 </div>
             </div>
         )
