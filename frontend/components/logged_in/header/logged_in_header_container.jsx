@@ -34,7 +34,7 @@ class LoggedInHeader extends React.Component {
         let params = new URLSearchParams();
         params.set('nameFragment', this.state.search);
         let qString = params.toString();
-        this.props.history.push(`/users/${qString}`);
+        this.props.history.push(`/users/?${qString}`);
     }
 
     render(){

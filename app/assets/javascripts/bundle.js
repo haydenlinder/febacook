@@ -616,7 +616,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       var params = new URLSearchParams();
       params.set('nameFragment', this.state.search);
       var qString = params.toString();
-      this.props.history.push("/users/".concat(qString));
+      this.props.history.push("/users/?".concat(qString));
     }
   }, {
     key: "render",
@@ -1806,6 +1806,8 @@ var UserIndex = /*#__PURE__*/function (_React$Component) {
   _createClass(UserIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var search = this.props.location.search;
+      var params = new URLSearchParams(search.slice(1));
       this.props.fetchUsers();
     }
   }, {

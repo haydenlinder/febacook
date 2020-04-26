@@ -10,6 +10,8 @@ class UserIndex extends React.Component {
     }
 
     componentDidMount(){
+        let search = this.props.location.search;
+        let params = new URLSearchParams(search.slice(1));
         this.props.fetchUsers();
     }
 
