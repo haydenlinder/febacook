@@ -9,7 +9,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
+    @post = Post.includes(:likes).find_by(id: params[:id])
     if !@post
       render json: {}, status: 404
     end
