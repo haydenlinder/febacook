@@ -28,7 +28,7 @@ class Api::UsersController < ApplicationController
         unless @user
             render json: @user.errors, status: 404
         end
-        @users = @user.received_posts.map { |post| post.author }. + @user.received_posts.map { |post| post.comments.map {|comment| comment.user} }.flatten
+        @users = @user.received_posts.map { |post| post.author } + @user.received_posts.map { |post| post.comments.map {|comment| comment.user} }.flatten
         @users.push(@user) 
         render :show
     end
