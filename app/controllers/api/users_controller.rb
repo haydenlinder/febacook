@@ -35,6 +35,7 @@ class Api::UsersController < ApplicationController
 
     def index
         nameFragment = params[:nameFragment]
+        nameFragment = nameFragment.downcase if nameFragment
         @users = 
         User.includes(authored_posts: [:author, :recipient, comments: [:user]])
         .where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', "%#{nameFragment}%", "%#{nameFragment}%")        
