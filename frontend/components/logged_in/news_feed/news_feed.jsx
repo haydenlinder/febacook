@@ -23,6 +23,7 @@ class NewsFeed extends React.Component {
                 <PostIndex 
                     currentUser={this.props.currentUser}
                     posts={this.props.posts}
+                    comments={this.props.comments}
                     users={this.props.users}
                 />
             </div>
@@ -33,7 +34,8 @@ class NewsFeed extends React.Component {
 const msp = state => ({
     currentUser: state.entities.users[state.session.username],
     users: state.entities.users,
-    posts: state.entities.posts
+    posts: state.entities.posts,
+    comments: state.entities.comments
 });
 
 const mdp = dispatch => ({

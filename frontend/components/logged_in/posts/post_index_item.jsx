@@ -5,11 +5,15 @@ import { convertDateTime } from '../../../util/date_util';
 import ProfilePhoto from '../profile/profile_photo';
 import { createLike, deleteLike } from '../../../actions/like_actions';
 import { fetchPost } from '../../../actions/post_actions';
+import CommentsIndex from './comments_index';
 
 
 class PostIndexItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            active: false
+        }
     }
 
     handleLike(e, post, liked) {
@@ -31,7 +35,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        const { post, users, currentUser } = this.props;
+        const { post, comments, users, currentUser } = this.props;
         let liked = post.likes[currentUser.id];
         return(
             <ul className="post-container">
@@ -69,14 +73,15 @@ class PostIndexItem extends React.Component {
                 <li className="post-footer">
                     <div onClick={e => this.handleLike(e, post, liked)} className={`post-footer-button ${liked ? 'liked' : null}`}>
                         <span className={`like icon`}>☺</span> Like
-                </div>
-                    <div className="post-footer-button">
+                    </div>
+                    <div onClick={e => this.setState({ active: true })} className="post-footer-button">
                         <span className="comment icon">⑊</span>Comment
-                </div>
+                    </div>
                     {/* <div className="post-footer-button">
                     <span className="share icon">➦</span>Share
-                </div> */}
+                    </div> */}
                 </li>
+                <CommentsIndex active={this.state.active} post={post} comments={comments} currentUser={currentUser}/>
             </ul>  
         )
     }

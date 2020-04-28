@@ -14,6 +14,8 @@ class User < ApplicationRecord
         foreign_key: :liker_id,
         class_name: :Like
 
+    has_many :comments
+
     has_one_attached :profile_photo
     has_one_attached :cover_photo
 

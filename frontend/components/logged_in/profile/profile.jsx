@@ -25,11 +25,10 @@ class Profile extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-        let that = this
         if (prevProps.location.pathname !== this.props.match.url)
-        this.props.fetchUser(that.props.username)
+        this.props.fetchUser(this.props.username)
         .then((res) => {
-            that.setState({ user: res.user })
+            this.setState({ user: res.user })
         })
     }
 
@@ -134,7 +133,7 @@ class Profile extends React.Component{
                                 ✎ Edit Profile 
                             </div>
                             :
-                            <div className="edit-profile button button-border unselected">
+                            <div className="edit-profile add-friend button button-border unselected">
                                 Add Friend
                             </div>
                         }           
@@ -198,6 +197,7 @@ class Profile extends React.Component{
                         <PostIndex 
                             currentUser={this.props.currentUser}
                             posts={this.props.posts}
+                            comments={this.props.comments}
                             users={this.props.users}
                         />
                         </div> : <div className="profile-right"><div>No Friends</div></div>
@@ -212,6 +212,7 @@ const msp = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.username],
     username: ownProps.match.params.username,
     users: state.entities.users,
+    comments: state.entities.comments,
     user: state.entities.users[ownProps.match.params.username],
     posts: state.entities.posts
 })

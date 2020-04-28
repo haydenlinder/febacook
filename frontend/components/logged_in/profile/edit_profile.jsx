@@ -15,6 +15,12 @@ class EditProfile extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props !== prevProps) {
+            this.setState({ bio: this.props.user.bio })
+        }
+    }
+
     handleSubmit(e) {
         e.persist();
         let formData = new FormData();

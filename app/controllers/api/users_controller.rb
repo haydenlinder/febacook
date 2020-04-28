@@ -22,13 +22,13 @@ class Api::UsersController < ApplicationController
     
     def show
         @user = 
-            User.includes(received_posts: [:author, :recipient, :likers])
+            User.includes(received_posts: [:author, :recipient, :likers, comments: [:user]])
             .find_by(username: params[:username])
 
         unless @user
             render json: @user.errors, status: 404
         end
-        @users = @user.received_posts.map { |post| post.author }
+        @users = @user.received_posts.map { |post| post.author }. + @user.received_posts.map { |post| post.comments.map {|comment| comment.user} }.flatten
         @users.push(@user) 
         render :show
     end
@@ -36,8 +36,8 @@ class Api::UsersController < ApplicationController
     def index
         nameFragment = params[:nameFragment]
         @users = 
-        User.where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', "%#{nameFragment}%", "%#{nameFragment}%")        
-        # .includes(authored_posts: [:author, :recipient])
+        User.includes(authored_posts: [:author, :recipient, comments: [:user]])
+        .where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', "%#{nameFragment}%", "%#{nameFragment}%")        
         render :index
     end 
 

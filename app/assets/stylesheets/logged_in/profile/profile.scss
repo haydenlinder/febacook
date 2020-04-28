@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     margin-right: 130px;
+    margin-top: 45px;
     width: 850px;
 }
 
@@ -197,6 +198,10 @@
 .middle-right .activity-log-container {
     display: flex;
     margin-left: 20px;
+}
+
+.add-friend.button {
+    opacity: 0;
 }
 
 .profile-container .middle-right .button-border {
