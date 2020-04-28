@@ -2487,15 +2487,21 @@ var LoggedOutGreeting = function LoggedOutGreeting() {
     className: "sprite-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sprite one"
-  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "See photos and updates"), " from friends in News Feed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+    className: "bold-greeting"
+  }, "See photos and updates"), " from friends in News Feed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sprite-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sprite two"
-  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Share what's new"), " in your life on your Timeline."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+    className: "bold-greeting"
+  }, "Share what's new"), " in your life on your Timeline."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sprite-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "sprite three"
-  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Make connections"), " around the world.")));
+  }, "sprite")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+    className: "bold-greeting"
+  }, "Make connections"), " around the world.")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LoggedOutGreeting);
