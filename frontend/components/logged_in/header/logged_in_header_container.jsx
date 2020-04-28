@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import { deleteSession } from '../../../actions/session_actions'
 import ProfilePhoto from '../profile/profile_photo';
 import { fetchUsers } from '../../../actions/user_actions';
+import LeftPanel from '../left_panel/left_panel';
+import RightPanel from '../left_panel/right_panel';
 
 class LoggedInHeader extends React.Component {
     constructor(props){
@@ -52,6 +54,16 @@ class LoggedInHeader extends React.Component {
                         </div>
 
                         <form onSubmit={e => this.handleSearch(e)} className="input-container">
+                            <Route
+                                path='/users'
+                                render={() => <LeftPanel currentUser={this.props.currentUser} selected={"users"} />}
+                            />
+                            <Route
+                                exact
+                                path='/'
+                                render={() => <LeftPanel currentUser={this.props.currentUser} selected={"feed"} />}
+                            />
+
                             <input 
                                 onChange={e => this.handleChange(e)} 
                                 type="text" 
@@ -100,6 +112,8 @@ class LoggedInHeader extends React.Component {
                             <div 
                                 className="friend-icon sprite unselected"
                             >
+                                <Route path="/users" component={RightPanel} />
+                                <Route exact path="/" component={RightPanel} />
                                 <ul>
                                     <li>
                                        No Friend requests

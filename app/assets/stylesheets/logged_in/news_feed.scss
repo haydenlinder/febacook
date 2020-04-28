@@ -1,7 +1,16 @@
+.news-feed-container-container {
+    // margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll; 
+    width: 100%;
+}
+
 .news-feed-container{
-    margin: 10px;
-    margin-right: 150px;
     margin-top: 55px;
+    // margin-left: 330px;
+    width: 500px;
+    margin-right: 135px;
 }
 
 .news-feed-container .post-list {

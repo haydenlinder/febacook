@@ -42,6 +42,7 @@ class App extends React.Component {
                     }}
                 ></div>
                 <Header /> 
+
                 <Switch >
                     <Route path="/" component={Home}/>
                 </Switch>

@@ -3,6 +3,7 @@ import PostFormContainer from '../posts/post_form_container';
 import { connect } from 'react-redux';
 import PostIndex from '../posts/posts_index';
 import { fetchUsers } from '../../../actions/user_actions'
+import LeftPanel from '../left_panel/left_panel';
 class NewsFeed extends React.Component {
     constructor(props) {
         super(props);
@@ -14,19 +15,23 @@ class NewsFeed extends React.Component {
 
     render() {
         return(
-            <div className="news-feed-container">
-                <PostFormContainer 
-                    recipientId={this.props.currentUser.id}
-                    authorId={this.props.currentUser.id}
-                    currentUser={this.props.currentUser}
-                />
-                <PostIndex 
-                    currentUser={this.props.currentUser}
-                    posts={this.props.posts}
-                    comments={this.props.comments}
-                    users={this.props.users}
-                />
+            <div className="news-feed-container-container">
+
+                <div className="news-feed-container">
+                    <PostFormContainer 
+                        recipientId={this.props.currentUser.id}
+                        authorId={this.props.currentUser.id}
+                        currentUser={this.props.currentUser}
+                    />
+                    <PostIndex 
+                        currentUser={this.props.currentUser}
+                        posts={this.props.posts}
+                        comments={this.props.comments}
+                        users={this.props.users}
+                    />
+                </div>
             </div>
+
         );
     };
 };

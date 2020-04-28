@@ -3,8 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import Profile from './profile/profile';
 import NewsFeed from './news_feed/news_feed';
 import UserIndex from './users_index/user_index';
+import LeftPanel from './left_panel/left_panel';
+import { connect } from 'react-redux';
 
-const LoggedInHome = (props) => (
+const LoggedInHome = ({ currentUser }) => (
     <Switch>
         <Route path="/users" component={UserIndex} />
         <Route path="/:username" component={Profile} />
@@ -12,4 +14,8 @@ const LoggedInHome = (props) => (
     </Switch>
 );
 
-export default LoggedInHome;
+const msp = state => ({
+    currentUser: state.entities.users[state.session.username]
+})
+
+export default connect(msp, null)(LoggedInHome);
