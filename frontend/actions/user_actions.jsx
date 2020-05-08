@@ -5,20 +5,22 @@ export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 export const REMOVE_USER = "REMOVE_USER";
 
-const receiveUser =  ({ user, posts, likes, comments }) => ({
+const receiveUser =  ({ user, posts, likes, comments, friendships }) => ({
     type: RECEIVE_USER,
     user,
     posts,
     likes,
-    comments
+    comments,
+    friendships
 })
 
-const receiveUsers = ({users, posts, likes, comments}) => ({
+const receiveUsers = ({users, posts, likes, comments, friendships}) => ({
     type: RECEIVE_USERS,
     users,
     posts,
     likes,
-    comments
+    comments,
+    friendships
 })
 
 const receiveUserErrors = errors => ({

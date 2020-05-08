@@ -1,0 +1,1 @@
+json.extract! friendship, :author_handle, :recipient_handle, :id

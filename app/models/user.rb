@@ -15,11 +15,11 @@ class User < ApplicationRecord
         class_name: :Like
 
     has_many :received_friend_requests,
-        foreign_key: :recipient_id,
+        foreign_key: :recipient_handle,
         class_name: :Friendship
 
     has_many :authored_friend_requests,
-        foreign_key: :author_id,
+        foreign_key: :author_handle,
         class_name: :Friendship
 
     has_many :comments

@@ -9,3 +9,7 @@ end
 json.comments do 
     json.partial! "api/comments/comments", comments: @user.received_posts.map { |post| post.comments }.flatten
 end
+
+json.friendships do 
+    json.partial! "api/friendships/friendships", friendships: @user.received_friend_requests + @user.authored_friend_requests
+end

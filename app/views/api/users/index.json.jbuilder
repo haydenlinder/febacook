@@ -14,3 +14,7 @@ json.comments do
     json.partial! "api/comments/comments", comments: @users.map { |user| user.authored_posts.map { |post| post.comments } }.flatten
 end
 
+json.friendships do 
+    json.partial! 'api/friendships/friendships', friendships: @users.map{ |user| user.authored_friend_requests + user.received_friend_requests }.flatten
+end
+

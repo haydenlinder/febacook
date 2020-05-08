@@ -22,7 +22,11 @@ class Api::UsersController < ApplicationController
     
     def show
         @user = 
-            User.includes(received_posts: [:author, :recipient, :likers, comments: [:user]])
+            User.includes(
+                received_posts: [:author, :recipient, :likers, comments: [:user]],
+                authored_friend_requests: [:recipient],
+                received_friend_requests: [:author]
+            )
             .find_by(username: params[:username])
 
         unless @user
@@ -37,7 +41,11 @@ class Api::UsersController < ApplicationController
         nameFragment = params[:nameFragment]
         nameFragment = nameFragment.downcase if nameFragment
         @users = 
-        User.includes(authored_posts: [:author, :recipient, comments: [:user]])
+        User.includes(
+            :authored_friend_requests,
+            :received_friend_requests,
+            authored_posts: [:author, :recipient, comments: [:user]],
+        )
         .where('lower(first_name) LIKE ? OR lower(last_name) LIKE ?', "%#{nameFragment}%", "%#{nameFragment}%")        
         render :index
     end 
