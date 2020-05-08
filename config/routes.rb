@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
     resources :users, only: [:create, :update, :index]
+    resources :friendships, only: [:create, :show, :update, :index, :destroy]
     resources :posts, only: [:create, :show, :udpate, :destroy]
     get 'users/:username', to: 'users#show', as: 'username'
     get 'users:q=:v', to: 'users#index'

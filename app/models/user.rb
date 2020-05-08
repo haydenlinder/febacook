@@ -14,6 +14,14 @@ class User < ApplicationRecord
         foreign_key: :liker_id,
         class_name: :Like
 
+    has_many :received_friend_requests,
+        foreign_key: :recipient_id,
+        class_name: :Friendship
+
+    has_many :authored_friend_requests,
+        foreign_key: :author_id,
+        class_name: :Friendship
+
     has_many :comments
 
     has_one_attached :profile_photo
