@@ -11,9 +11,9 @@ class UserIndexItems extends React.Component {
     render() {
         const { users } = this.props;
         return(
-            <div className="user-index-content">
-                <div className="user-index-container">
-                    <div className="user-index-title">People</div>
+            <div className="friend-index-container">
+                <div className="user-index-content">
+                    <div className="user-index-title">Friends</div>
                     {users.map(user =>
                         <div className="user-item-container">
                             <div className="user-item-content">

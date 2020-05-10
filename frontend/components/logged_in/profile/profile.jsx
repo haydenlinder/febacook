@@ -8,6 +8,7 @@ import { openModal } from '../../../util/ui_util';
 import UpdatePhoto from './update_photo';
 import ProfilePhoto from './profile_photo';
 import { createFriendship, deleteFriendship, updateFriendship } from '../../../actions/friendship_actions';
+import UserIndexItems from '../users_index/user_index_items';
 
 class Profile extends React.Component{
 
@@ -53,6 +54,13 @@ class Profile extends React.Component{
     update() {
         const { username, fetchUser } = this.props;
         fetchUser(username).then((res) => this.setState({ user: res.users[username]}))
+    }
+
+    friends() {
+        const users = Object.values(this.props.users);
+        let user = this.state.user;
+        const friends = users.filter(cand => user.friendHandles.includes(cand.username));
+        return friends;
     }
 
     handleFriend(action, id) {
@@ -123,6 +131,7 @@ class Profile extends React.Component{
 
     render() {
         if (!this.state.user) return null;
+        const friends = this.friends();
         const ownProfile = this.props.user.id === this.props.currentUser.id;
         return(
             <div className="profile-container">
@@ -287,7 +296,15 @@ class Profile extends React.Component{
                             comments={this.props.comments}
                             users={this.props.users}
                         />
-                        </div> : <div className="profile-right"><div>No Friends</div></div>
+                        </div> : <div className="profile-right">
+                            {friends.length ?
+                            <UserIndexItems users={friends} />
+                            :
+                            <div>
+                            No Friends
+                            </div>
+                            }
+                            </div>
                     }
                 </div>
             </div>

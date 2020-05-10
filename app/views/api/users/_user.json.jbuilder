@@ -6,17 +6,17 @@ json.extract! user,
 hash = {
     receivedFriendRequests: {},
     authoredFriendRequests: {},
-    friendIds: []
+    friendHandles: []
 }
 
 user.received_friend_requests.each do |req| 
     hash[:receivedFriendRequests][req.author_handle] = [req.accepted, req.id]
-    hash[:friendIds] << req.author_handle if req.accepted
+    hash[:friendHandles] << req.author_handle if req.accepted
 end
 
 user.authored_friend_requests.each do |req| 
     hash[:authoredFriendRequests][req.recipient_handle] = [req.accepted, req.id]
-    hash[:friendIds] << req.recipient_handle if req.accepted
+    hash[:friendHandles] << req.recipient_handle if req.accepted
 end
 
 

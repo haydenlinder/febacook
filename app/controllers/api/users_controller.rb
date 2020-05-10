@@ -23,16 +23,22 @@ class Api::UsersController < ApplicationController
     def show
         @user = 
             User.includes(
+                :received_friends,
+                :authored_friends,
+                :posters,
+                :authored_posts_commenters,
+                :received_posts_commenters,
                 received_posts: [:author, :recipient, :likers, comments: [:user]],
                 authored_friend_requests: [:recipient],
-                received_friend_requests: [:author]
+                received_friend_requests: [:author],
             )
             .find_by(username: params[:username])
 
         unless @user
             render json: @user.errors, status: 404
         end
-        @users = @user.received_posts.map { |post| post.author } + @user.received_posts.map { |post| post.comments.map {|comment| comment.user} }.flatten
+        @users = @user.received_friends + @user.authored_friends + @user.posters + @user.authored_posts_commenters + @user.received_posts_commenters 
+        # @user.received_posts.map { |post| post.author } + @user.received_posts.map { |post| post.comments.map {|comment| comment.user} }.flatten
         @users.push(@user) 
         render :show
     end

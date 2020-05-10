@@ -9,6 +9,26 @@ class User < ApplicationRecord
         foreign_key: :recipient_id,
         class_name: :Post
 
+    has_many :received_posts_comments,
+        through: :received_posts,
+        source: :comments 
+    
+    has_many :authored_posts_comments,
+        through: :authored_posts,
+        source: :comments 
+        
+    has_many :posters,
+        through: :received_posts,
+        source: :author 
+
+    has_many :received_posts_commenters,
+        through: :received_posts_comments,
+        source: :user 
+    
+    has_many :authored_posts_commenters,
+        through: :authored_posts_comments,
+        source: :user 
+    
     has_many :likes,
         foreign_key: :liker_id,
         class_name: :Like
@@ -20,6 +40,22 @@ class User < ApplicationRecord
     has_many :received_friend_requests,
         foreign_key: :recipient_id,
         class_name: :Friendship
+
+    has_many :accepted_authored_friend_requests, -> { where(accepted: true) },
+        foreign_key: :author_id,
+        class_name: :Friendship
+
+    has_many :accepted_received_friend_requests, -> { where(accepted: true) },
+        foreign_key: :recipient_id,
+        class_name: :Friendship
+
+    has_many :received_friends,
+        through: :accepted_received_friend_requests,
+        source: :author
+
+    has_many :authored_friends,
+        through: :accepted_authored_friend_requests,
+        source: :author 
 
     has_many :comments
 

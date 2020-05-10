@@ -37,6 +37,7 @@ class PostIndexItem extends React.Component {
     render() {
         const { post, comments, users, currentUser } = this.props;
         let liked = post.likes[currentUser.id];
+        const numLikes = Object.values(post.likes).length;
         return(
             <ul className="post-container">
                 <div className="not-photo">
@@ -70,12 +71,15 @@ class PostIndexItem extends React.Component {
                 <div className="photos">
                     {post.photoUrls.map(url => <img className="post-photo" src={url}></img>)}
                 </div>
+                {numLikes ? 
+                    <div className={`like-count ${liked ? 'liked' : null}`}>(: {numLikes}</div>
+                : null}
                 <li className="post-footer">
                     <div onClick={e => this.handleLike(e, post, liked)} className={`post-footer-button ${liked ? 'liked' : null}`}>
-                        <span className={`like icon`}>☺</span> Like
+                        <span className={`like icon`}>(:</span> Like
                     </div>
                     <div onClick={e => this.setState({ active: true })} className="post-footer-button">
-                        <span className="comment icon">⑊</span>Comment
+                        <span className="comment icon">//</span>Comment
                     </div>
                     {/* <div className="post-footer-button">
                     <span className="share icon">➦</span>Share

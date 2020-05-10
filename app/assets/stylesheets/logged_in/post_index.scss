@@ -109,15 +109,20 @@
 }
 
 .post-footer .icon {
-    font-size: 25px;
+    font-size: 20px;
     margin-right: 10px;
     font-weight: 400;
 }
 
-.comment.icon {
-    transform: rotateX(180deg);
+// .comment.icon {
+//     transform: rotateX(180deg);
+// }
+
+.liked {
+    color: blue;
 }
 
-.post-footer-button.liked {
-    color: blue;
+.like-count {
+    margin: 5px;
+    margin-left: 10px;
 }
