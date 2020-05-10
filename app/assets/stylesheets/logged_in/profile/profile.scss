@@ -200,8 +200,12 @@
     margin-left: 20px;
 }
 
-.add-friend.button {
-    opacity: 0;
+.friend-buttons-container {
+    display: flex;
+}
+
+.add-friend {
+    margin-right: 10px;
 }
 
 .profile-container .middle-right .button-border {

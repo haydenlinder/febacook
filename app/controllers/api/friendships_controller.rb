@@ -4,14 +4,14 @@ class Api::FriendshipsController < ApplicationController
         if @friendship.save
             render :show
         else
-            render json: comment.errors, status: 422
+            render json: @friendship.errors, status: 422
         end
     end
 
     def update
         @friendship = Friendship.find_by(id: params[:id])
         if @friendship.update(friendship_params)
-            render: show
+            render :show
         else
             render json: @friendship.errors, status: 422
         end
@@ -24,6 +24,6 @@ class Api::FriendshipsController < ApplicationController
 
     private
     def friendship_params
-        params.require(:friendship).permit(:author_id, :recipient_id, :accepted)
+        params.require(:friendship).permit(:author_handle, :recipient_handle, :recipient_id, :author_id, :accepted)
     end
 end

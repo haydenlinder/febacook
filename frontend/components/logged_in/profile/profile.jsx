@@ -7,6 +7,7 @@ import PostIndex from '../posts/posts_index';
 import { openModal } from '../../../util/ui_util';
 import UpdatePhoto from './update_photo';
 import ProfilePhoto from './profile_photo';
+import { createFriendship, deleteFriendship, updateFriendship } from '../../../actions/friendship_actions';
 
 class Profile extends React.Component{
 
@@ -16,24 +17,112 @@ class Profile extends React.Component{
         this.state = {
             profile: '',
             type: 'profile',
-            right: 'timeline'
+            right: 'timeline',
+            user: ''
         }
     }
 
     componentDidMount() {
         this.props.fetchUser(this.props.username)
+        .then(res => {
+            this.setState({ user: res.users[this.props.username] })    
+        })
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.location.pathname !== this.props.match.url)
         this.props.fetchUser(this.props.username)
         .then((res) => {
-            this.setState({ user: res.user })
+            this.setState({ user: res.users[this.props.username] })
         })
     }
 
+    friendAction() {
+        const { currentUser } = this.props;
+        const { user } = this.state;
+        let received = user.authoredFriendRequests[currentUser.username];
+        let sent = user.receivedFriendRequests[currentUser.username];
+        if (sent !== undefined) {
+            return sent[0] ? ['Unfriend', sent[1]] : ['Cancel', sent[1]];
+        } else if (received !== undefined) {
+            return received[0] ? ['Unfriend', received[1]] : ['Accept/Deny', received[1]];
+        } 
+        return ['Add'];
+    }
+
+    update() {
+        const { username, fetchUser } = this.props;
+        fetchUser(username).then((res) => this.setState({ user: res.users[username]}))
+    }
+
+    handleFriend(action, id) {
+        const { user, currentUser, createFriendship, updateFriendship, deleteFriendship } = this.props;
+        if (['Deny', 'Unfriend', 'Cancel'].includes(action)) deleteFriendship(id).then(() => this.update());
+        if (action === 'Add') createFriendship({
+            friendship: {
+                author_handle: currentUser.username,
+                author_id: currentUser.id,
+                recipient_handle: user.username,
+                recipient_id: user.id,
+                accepted: false
+            }
+        }).then(() => this.update());
+        if (action === 'Accept') updateFriendship({ friendship: {accepted: true }, id: id }).then(() => this.update());
+    }
+
+    friendButton() {
+        const action = this.friendAction();
+        const str = action[0];
+        const id = action[1];
+        if (str === 'Accept/Deny') {
+            return (
+                <div className="friend-buttons-container">
+                    <div
+                        className="edit-profile add-friend button button-border unselected"
+                        onClick={e => this.handleFriend("Accept", id)}
+                    >
+                        Accept Friend Request
+                    </div>
+                    <div
+                        className="edit-profile add-friend button button-border unselected"
+                        onClick={e => this.handleFriend("Deny", id)}
+                    >
+                        Deny Friend Request
+                    </div>
+                </div>
+            )
+        } else if (str === 'Unfriend') {
+            return (
+                <div
+                    className="edit-profile add-friend button button-border unselected"
+                    onClick={e => this.handleFriend("Unfriend", id)}
+                >
+                    Unfriend
+                </div>
+            )
+        } else if (str === 'Cancel') {
+            return (
+                <div
+                    className="edit-profile add-friend button button-border unselected"
+                    onClick={e => this.handleFriend("Cancel", id)}
+                >
+                    Cancel Friend Request
+                </div>
+            )
+        } else if (str === "Add") {
+            return (
+                <div
+                    className="edit-profile add-friend button button-border unselected"
+                    onClick={e => this.handleFriend("Add", id)}
+                >
+                    Add Friend 
+                </div>
+            )
+        }
+    }
+
     render() {
-        if (!this.props.user) return null;
+        if (!this.state.user) return null;
         const ownProfile = this.props.user.id === this.props.currentUser.id;
         return(
             <div className="profile-container">
@@ -133,9 +222,7 @@ class Profile extends React.Component{
                                 ✎ Edit Profile 
                             </div>
                             :
-                            <div className="edit-profile add-friend button button-border unselected">
-                                Add Friend
-                            </div>
+                            this.friendButton()
                         }           
                         {/* <div className="activity-log-container button-border">
                             <div className="activity-log button">
@@ -214,12 +301,16 @@ const msp = (state, ownProps) => ({
     users: state.entities.users,
     comments: state.entities.comments,
     user: state.entities.users[ownProps.match.params.username],
-    posts: state.entities.posts
+    posts: state.entities.posts,
+    friendships: state.entities.friendships
 })
 
 const mdp = dispatch => ({
     fetchUser: (username) => dispatch(fetchUser(username)),
-    updateUser: (user) => dispatch(updateUser(user))
+    updateUser: (user) => dispatch(updateUser(user)),
+    createFriendship: (friendship) => dispatch(createFriendship(friendship)),
+    deleteFriendship: (id) => dispatch(deleteFriendship(id)),
+    updateFriendship: (friendship) => dispatch(updateFriendship(friendship))
 })
 
 Profile = connect(msp, mdp)(Profile)

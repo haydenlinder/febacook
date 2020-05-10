@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
     attr_reader :password
 
     has_many :authored_posts,
@@ -14,12 +13,12 @@ class User < ApplicationRecord
         foreign_key: :liker_id,
         class_name: :Like
 
-    has_many :received_friend_requests,
-        foreign_key: :recipient_handle,
-        class_name: :Friendship
-
     has_many :authored_friend_requests,
-        foreign_key: :author_handle,
+        foreign_key: :author_id,
+        class_name: :Friendship
+        
+    has_many :received_friend_requests,
+        foreign_key: :recipient_id,
         class_name: :Friendship
 
     has_many :comments
