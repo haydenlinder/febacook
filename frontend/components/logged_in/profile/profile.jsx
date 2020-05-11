@@ -19,7 +19,9 @@ class Profile extends React.Component{
             profile: '',
             type: 'profile',
             right: 'timeline',
-            user: ''
+            user: '',
+            bio: props.user.bio,
+            edit_bio: false
         }
     }
 
@@ -36,6 +38,22 @@ class Profile extends React.Component{
         .then((res) => {
             this.setState({ user: res.users[this.props.username], right: 'timeline' })
         })
+    }
+
+    handleChange(e) {
+        this.setState({ bio: e.currentTarget.value });
+    }
+
+    handleClick() {
+        const {bio, edit_bio} = this.state;
+        const { user, updateUser } = this.props;
+        if (edit_bio) {
+            const formData = new FormData();
+            formData.set('user[id]', user.id);
+            formData.set('user[bio]', bio);
+            return updateUser(formData).then(() => this.setState({ edit_bio: false }));
+        }
+        this.setState({ edit_bio: !edit_bio });
     }
 
     friendAction() {
@@ -133,13 +151,14 @@ class Profile extends React.Component{
         if (!this.state.user) return null;
         const friends = this.friends();
         const ownProfile = this.props.user.id === this.props.currentUser.id;
+        const edit_bio = this.state.edit_bio;
         return(
             <div className="profile-container">
                 <EditProfile 
                     user={this.props.user} 
                     updateUser={this.props.updateUser}
                     setState={this.setState.bind(this)}
-                    />
+                />
                 <UpdatePhoto 
                     type={this.state.type}
                     user={this.props.user}
@@ -153,7 +172,6 @@ class Profile extends React.Component{
                     <div 
                         className="update-cover-container"
                         onClick={() => {
-                            this.setState({type: 'cover'})
                             openModal('update-photo-modal')
                             openModal('background-modal')
                         }}
@@ -265,17 +283,26 @@ class Profile extends React.Component{
                                 Intro
                             </div>
                             <div className="bio-container">
+                                {edit_bio ?
+                                <textarea 
+                                    className="edit-bio-text" 
+                                    value={this.state.bio} 
+                                    onChange={e => this.handleChange(e)}
+                                ></textarea>
+                                :
                                 <div className="bio">
                                     {this.props.user.bio}
-                                </div>
+                                </div>}
                                 {ownProfile ?
                                 <div 
                                     onClick={() => {
-                                        openModal('background-modal');
-                                        openModal('edit-profile-modal');
+                                        this.handleClick()
+                                        // this.setState({ edit_bio: !edit_bio })
+                                        // openModal('background-modal');
+                                        // openModal('edit-profile-modal');
                                     }}
                                     className="bio-button">
-                                    Edit Bio 
+                                    {edit_bio ? "Save" : "Edit Bio"}
                                 </div> : null}
                             </div>
                         </div>
@@ -304,7 +331,7 @@ class Profile extends React.Component{
                             No Friends
                             </div>
                             }
-                            </div>
+                        </div>
                     }
                 </div>
             </div>

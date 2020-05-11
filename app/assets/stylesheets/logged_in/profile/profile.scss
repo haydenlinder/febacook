@@ -412,7 +412,17 @@
     display: flex;
     overflow-wrap: anywhere;
     hyphens: auto;
- }
+}
+
+.edit-bio-text {
+    resize: none;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 3px;
+    width: 90%;
+    height: 50px;
+    outline: none;
+    text-align: center;
+}
 
 .profile-left .bio-container .bio-button {
     padding-right: 125px;

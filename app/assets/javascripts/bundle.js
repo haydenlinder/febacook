@@ -2158,7 +2158,9 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       profile: '',
       type: 'profile',
       right: 'timeline',
-      user: ''
+      user: '',
+      bio: props.user.bio,
+      edit_bio: false
     };
     return _this;
   }
@@ -2187,6 +2189,40 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      this.setState({
+        bio: e.currentTarget.value
+      });
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      var _this4 = this;
+
+      var _this$state = this.state,
+          bio = _this$state.bio,
+          edit_bio = _this$state.edit_bio;
+      var _this$props = this.props,
+          user = _this$props.user,
+          updateUser = _this$props.updateUser;
+
+      if (edit_bio) {
+        var formData = new FormData();
+        formData.set('user[id]', user.id);
+        formData.set('user[bio]', bio);
+        return updateUser(formData).then(function () {
+          return _this4.setState({
+            edit_bio: false
+          });
+        });
+      }
+
+      this.setState({
+        edit_bio: !edit_bio
+      });
+    }
+  }, {
     key: "friendAction",
     value: function friendAction() {
       var currentUser = this.props.currentUser;
@@ -2205,13 +2241,13 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "update",
     value: function update() {
-      var _this4 = this;
+      var _this5 = this;
 
-      var _this$props = this.props,
-          username = _this$props.username,
-          fetchUser = _this$props.fetchUser;
+      var _this$props2 = this.props,
+          username = _this$props2.username,
+          fetchUser = _this$props2.fetchUser;
       fetchUser(username).then(function (res) {
-        return _this4.setState({
+        return _this5.setState({
           user: res.users[username]
         });
       });
@@ -2229,16 +2265,16 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleFriend",
     value: function handleFriend(action, id) {
-      var _this5 = this;
+      var _this6 = this;
 
-      var _this$props2 = this.props,
-          user = _this$props2.user,
-          currentUser = _this$props2.currentUser,
-          createFriendship = _this$props2.createFriendship,
-          updateFriendship = _this$props2.updateFriendship,
-          deleteFriendship = _this$props2.deleteFriendship;
+      var _this$props3 = this.props,
+          user = _this$props3.user,
+          currentUser = _this$props3.currentUser,
+          createFriendship = _this$props3.createFriendship,
+          updateFriendship = _this$props3.updateFriendship,
+          deleteFriendship = _this$props3.deleteFriendship;
       if (['Deny', 'Unfriend', 'Cancel'].includes(action)) deleteFriendship(id).then(function () {
-        return _this5.update();
+        return _this6.update();
       });
       if (action === 'Add') createFriendship({
         friendship: {
@@ -2249,7 +2285,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
           accepted: false
         }
       }).then(function () {
-        return _this5.update();
+        return _this6.update();
       });
       if (action === 'Accept') updateFriendship({
         friendship: {
@@ -2257,13 +2293,13 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         },
         id: id
       }).then(function () {
-        return _this5.update();
+        return _this6.update();
       });
     }
   }, {
     key: "friendButton",
     value: function friendButton() {
-      var _this6 = this;
+      var _this7 = this;
 
       var action = this.friendAction();
       var str = action[0];
@@ -2275,33 +2311,33 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "edit-profile add-friend button button-border unselected",
           onClick: function onClick(e) {
-            return _this6.handleFriend("Accept", id);
+            return _this7.handleFriend("Accept", id);
           }
         }, "Accept Friend Request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "edit-profile add-friend button button-border unselected",
           onClick: function onClick(e) {
-            return _this6.handleFriend("Deny", id);
+            return _this7.handleFriend("Deny", id);
           }
         }, "Deny Friend Request"));
       } else if (str === 'Unfriend') {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "edit-profile add-friend button button-border unselected",
           onClick: function onClick(e) {
-            return _this6.handleFriend("Unfriend", id);
+            return _this7.handleFriend("Unfriend", id);
           }
         }, "Unfriend");
       } else if (str === 'Cancel') {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "edit-profile add-friend button button-border unselected",
           onClick: function onClick(e) {
-            return _this6.handleFriend("Cancel", id);
+            return _this7.handleFriend("Cancel", id);
           }
         }, "Cancel Friend Request");
       } else if (str === "Add") {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "edit-profile add-friend button button-border unselected",
           onClick: function onClick(e) {
-            return _this6.handleFriend("Add", id);
+            return _this7.handleFriend("Add", id);
           }
         }, "Add Friend");
       }
@@ -2309,11 +2345,12 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this7 = this;
+      var _this8 = this;
 
       if (!this.state.user) return null;
       var friends = this.friends();
       var ownProfile = this.props.user.id === this.props.currentUser.id;
+      var edit_bio = this.state.edit_bio;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_profile__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2336,10 +2373,6 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       })), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "update-cover-container",
         onClick: function onClick() {
-          _this7.setState({
-            type: 'cover'
-          });
-
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('update-photo-modal');
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
         }
@@ -2354,7 +2387,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       }), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "update",
         onClick: function onClick() {
-          _this7.setState({
+          _this8.setState({
             type: 'profile'
           });
 
@@ -2369,14 +2402,14 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "profile-nav-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick(e) {
-          return _this7.setState({
+          return _this8.setState({
             right: "timeline"
           });
         },
         className: "timeline"
       }, "Timeline"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: function onClick(e) {
-          return _this7.setState({
+          return _this8.setState({
             right: "friends"
           });
         }
@@ -2406,15 +2439,23 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "icon"
       }), "Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bio-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, edit_bio ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "edit-bio-text",
+        value: this.state.bio,
+        onChange: function onChange(e) {
+          return _this8.handleChange(e);
+        }
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bio"
       }, this.props.user.bio), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick() {
-          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
-          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('edit-profile-modal');
+          _this8.handleClick(); // this.setState({ edit_bio: !edit_bio })
+          // openModal('background-modal');
+          // openModal('edit-profile-modal');
+
         },
         className: "bio-button"
-      }, "Edit Bio") : null))), this.state.right === 'timeline' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, edit_bio ? "Save" : "Edit Bio") : null))), this.state.right === 'timeline' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         recipientId: this.props.user.id,
