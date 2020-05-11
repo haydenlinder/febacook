@@ -25,7 +25,7 @@ const likesReducer = (state = {}, action) => {
             return state;
         case RECEIVE_USERS:
             if (action.likes) return action.likes;
-            return {}
+            return state
         default:
             return state;
     }

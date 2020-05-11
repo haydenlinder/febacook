@@ -28,7 +28,7 @@ const postsReducer = (state = {}, action) => {
                 posts.forEach(post => nextState[post.id] = post)
                 return nextState;
             }
-            return {}
+            return state
         default:
             return state;
     }

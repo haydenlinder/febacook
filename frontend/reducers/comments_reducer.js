@@ -31,7 +31,7 @@ const commentsReducer = (state = {}, action) => {
                 Object.values(action.comments).forEach(comment => nextState[comment.id] = comment)
                 return nextState;
             };
-            return {}
+            return state
         default:
             return state;
     }

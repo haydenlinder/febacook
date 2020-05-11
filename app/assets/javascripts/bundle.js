@@ -3672,7 +3672,7 @@ var commentsReducer = function commentsReducer() {
       }
 
       ;
-      return {};
+      return state;
 
     default:
       return state;
@@ -3829,7 +3829,7 @@ var likesReducer = function likesReducer() {
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USERS"]:
       if (action.likes) return action.likes;
-      return {};
+      return state;
 
     default:
       return state;
@@ -3900,7 +3900,7 @@ var postsReducer = function postsReducer() {
         return nextState;
       }
 
-      return {};
+      return state;
 
     default:
       return state;
