@@ -41,6 +41,14 @@ class User < ApplicationRecord
         foreign_key: :recipient_id,
         class_name: :Friendship
 
+    has_many :potential_received_friends,
+        through: :received_friend_requests,
+        source: :author 
+
+    has_many :potential_authored_friends,
+        through: :authored_friend_requests,
+        source: :recipient
+
     has_many :accepted_authored_friend_requests, -> { where(accepted: true) },
         foreign_key: :author_id,
         class_name: :Friendship

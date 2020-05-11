@@ -6,11 +6,13 @@ json.extract! user,
 hash = {
     receivedFriendRequests: {},
     authoredFriendRequests: {},
-    friendHandles: []
+    friendHandles: [],
+    friendRequestHandles: []
 }
 
 user.received_friend_requests.each do |req| 
     hash[:receivedFriendRequests][req.author_handle] = [req.accepted, req.id]
+    hash[:friendRequestHandles] << req.author_handle if !req.accepted 
     hash[:friendHandles] << req.author_handle if req.accepted
 end
 

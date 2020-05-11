@@ -4,9 +4,10 @@ import { withRouter, Route } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import { deleteSession } from '../../../actions/session_actions'
 import ProfilePhoto from '../profile/profile_photo';
-import { fetchUsers } from '../../../actions/user_actions';
+import { fetchUsers, fetchUser } from '../../../actions/user_actions';
 import LeftPanel from '../left_panel/left_panel';
 import RightPanel from '../left_panel/right_panel';
+import FriendRequests from './friend_requests';
 
 class LoggedInHeader extends React.Component {
     constructor(props){
@@ -39,10 +40,17 @@ class LoggedInHeader extends React.Component {
         this.props.history.push(`/users/search/?${qString}`);
     }
 
+    friendRequestors() {
+        const { users, currentUser } = this.props;
+        const handles = currentUser.friendRequestHandles;
+        let result = handles.map(handle => users[handle]);
+        return result;
+    }
+
     render(){
+        const friendRequestors = this.friendRequestors();
         return(
             <div 
-                id="top"
                 className="logged-in-header"
                 >
                 <div className="nav">
@@ -112,12 +120,19 @@ class LoggedInHeader extends React.Component {
                             <div 
                                 className="friend-icon sprite unselected"
                             >
+                                {friendRequestors.length? 
+                                <div className="notification-number">{friendRequestors.length}</div>:null
+                                }
                                 <Route path="/users" component={RightPanel} />
                                 <Route exact path="/" component={RightPanel} />
-                                <ul>
-                                    <li>
-                                       No Friend requests
-                                    </li>
+                                <ul className="friend-requests-dropdown">
+                                    {/* <li> */}
+                                        {!friendRequestors.length || friendRequestors.includes(undefined) ?
+                                        "No Friend requests"
+                                        :
+                                       <FriendRequests users={friendRequestors} currentUser={this.props.currentUser} />
+                                        }
+                                    {/* </li> */}
                                 </ul>
                             </div>
                             <div 
@@ -156,7 +171,7 @@ class LoggedInHeader extends React.Component {
                         className="arrow-icon sprite unselected"
                     >
                         <ul>
-                            <li onClick={(e) => this.handleSignout(e)}>
+                            <li className="sign-out-button" onClick={(e) => this.handleSignout(e)}>
                                 Sign Out
                             </li> 
                         </ul>
@@ -174,7 +189,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     deleteSession: () => dispatch(deleteSession()),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchUser: (username) => dispatch(fetchUser(username))
 });
 
 const LoggedInHeaderContainer =  withRouter(connect(msp, mdp)(LoggedInHeader));

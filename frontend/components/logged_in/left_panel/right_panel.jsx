@@ -10,7 +10,7 @@ const RightPanel = () => {
                 <div>This is a facebook clone created by <a href="https://haydenlinder.github.io/haydenlinder/">Hayden Linder</a>.</div>
             </div>
             <div className="right-panel-bottom">
-                <a href="https://github.com/haydenlinder/febacook">GitHub</a> · <a href="https://www.linkedin.com/in/hayden-linder-63360016b/">LinkedIn</a>
+                <a href="https://github.com/haydenlinder/febacook">GitHub</a> · <a href="https://www.linkedin.com/in/hayden-linder-63360016b/">LinkedIn</a> · <a href="https://haydenlinder.github.io/haydenlinder/">Portfolio</a>
             </div>
         </div>
     )

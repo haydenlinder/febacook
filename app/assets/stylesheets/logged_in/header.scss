@@ -191,7 +191,7 @@
     background-repeat: no-repeat;
 }
 
-.logged-in-header .sprite:hover {
+.logged-in-header .sprite.unselected:hover {
     cursor: pointer;
 }
 
@@ -281,8 +281,6 @@
     box-shadow: 0px 0px 5px 0px black;
 }
 
-
-
 .logged-in-header .selected > ul:after, .logged-in-header .selected > ul:before {
 	bottom: 100%;
 	left: 12px;
@@ -322,7 +320,7 @@
 }
 
 .logged-in-header .selected > ul > li:hover {
-    cursor: pointer;
+    // cursor: pointer;
 }
 
 .selected ul.git-dropdown {
@@ -335,4 +333,63 @@
     background-image: image_url('git-icon.png');
     background-repeat: no-repeat;
     background-position: left;
+}
+
+
+///////// friend requests
+
+
+.friend-requests-dropdown {
+    width: 300px;
+    padding: 10px;
+}
+
+.friend-dropdown-index-container{
+    width: 300px;
+}
+
+.friend-dropdown.photo-container {
+    width: 50px;
+    height: 50px;
+}
+
+.notification-number {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border-radius: 100%;
+    background-color: rgb(231, 0, 0);
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    line-height: 15px;
+}
+
+.friend-dropdown-buttons {
+    display: flex;
+}
+
+.friend-dropdown-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+    background-color: rgb(244, 245, 246);
+    border: 1px solid grey;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.friend-dropdown-button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.friend-dropdown.user-item-info {
+    margin-left: 10px;
+}
+
+.sign-out-button:hover {
+    cursor: pointer;
 }

@@ -6,9 +6,10 @@ export const RECEIVE_NULL_SESSION = "RECEIVE_NULL_SESSION";
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS"
 export const CLEAR_ALL_SESSION_ERRORS = "CLEAR_ALL_SESSION_ERRORS"
 
-const receiveCurrentUser = user => ({
+const receiveCurrentUser = ({ user, users }) => ({
     type: RECEIVE_CURRENT_USER,
-    user
+    user,
+    users
 })
 
 const receiveNullSession = () => ({

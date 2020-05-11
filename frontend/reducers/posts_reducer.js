@@ -6,7 +6,9 @@ const postsReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_POSTS:
-            return action.posts
+            let posts = Object.values(action.posts);
+            posts.forEach(post => nextState[post.id] = post)
+            return nextState;
         case RECEIVE_POST:
             nextState[action.post.id] = action.post
             return nextState;
@@ -14,10 +16,18 @@ const postsReducer = (state = {}, action) => {
             delete nextState[action.postId]
             return nextState;
         case RECEIVE_USER:
-            if (action.posts) return action.posts
+            if (action.posts) {
+                let posts = Object.values(action.posts);
+                posts.forEach(post => nextState[post.id] = post)
+                return nextState;
+            }
             return state;
         case RECEIVE_USERS:
-            if (action.posts) return action.posts
+            if (action.posts) {
+                let posts = Object.values(action.posts);
+                posts.forEach(post => nextState[post.id] = post)
+                return nextState;
+            }
             return {}
         default:
             return state;

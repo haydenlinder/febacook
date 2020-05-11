@@ -370,10 +370,13 @@ var RECEIVE_NULL_SESSION = "RECEIVE_NULL_SESSION";
 var CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 var CLEAR_ALL_SESSION_ERRORS = "CLEAR_ALL_SESSION_ERRORS";
 
-var receiveCurrentUser = function receiveCurrentUser(user) {
+var receiveCurrentUser = function receiveCurrentUser(_ref) {
+  var user = _ref.user,
+      users = _ref.users;
   return {
     type: RECEIVE_CURRENT_USER,
-    user: user
+    user: user,
+    users: users
   };
 };
 
@@ -707,6 +710,140 @@ Home = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp)(Home);
 
 /***/ }),
 
+/***/ "./frontend/components/logged_in/header/friend_requests.jsx":
+/*!******************************************************************!*\
+  !*** ./frontend/components/logged_in/header/friend_requests.jsx ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _profile_profile_photo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../profile/profile_photo */ "./frontend/components/logged_in/profile/profile_photo.jsx");
+/* harmony import */ var _actions_friendship_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/friendship_actions */ "./frontend/actions/friendship_actions.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../actions/user_actions */ "./frontend/actions/user_actions.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+
+var FriendRequests = /*#__PURE__*/function (_React$Component) {
+  _inherits(FriendRequests, _React$Component);
+
+  function FriendRequests(props) {
+    _classCallCheck(this, FriendRequests);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(FriendRequests).call(this, props));
+  }
+
+  _createClass(FriendRequests, [{
+    key: "handleFriend",
+    value: function handleFriend(username, accepted) {
+      var _this$props = this.props,
+          updateFriendship = _this$props.updateFriendship,
+          deleteFriendship = _this$props.deleteFriendship,
+          currentUser = _this$props.currentUser,
+          fetchUser = _this$props.fetchUser;
+      var id = currentUser.receivedFriendRequests[username][1];
+      if (accepted) return updateFriendship({
+        friendship: {
+          accepted: true
+        },
+        id: id
+      }).then(function () {
+        return fetchUser(currentUser.username);
+      });
+      return deleteFriendship(id).then(function () {
+        return fetchUser(currentUser.username);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var users = this.props.users;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "friend-dropdown-index-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-index-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-index-title"
+      }, "Friend Requests"), users.map(function (user) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "user-item-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "user-item-content"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "friend-dropdown photo-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_profile_profile_photo__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          url: user.profilePhotoUrl
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "friend-dropdown user-item-info"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/".concat(user.username, "#top")
+        }, user.firstName, " ", user.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "friend-dropdown-buttons"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "friend-dropdown-button",
+          onClick: function onClick(e) {
+            return _this.handleFriend(user.username, true);
+          }
+        }, "Accept"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "friend-dropdown-button",
+          onClick: function onClick(e) {
+            return _this.handleFriend(user.username, false);
+          }
+        }, "Deny")))));
+      })));
+    }
+  }]);
+
+  return FriendRequests;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+var mdp = function mdp(dispatch) {
+  return {
+    updateFriendship: function updateFriendship(friendship) {
+      return dispatch(Object(_actions_friendship_actions__WEBPACK_IMPORTED_MODULE_3__["updateFriendship"])(friendship));
+    },
+    deleteFriendship: function deleteFriendship(id) {
+      return dispatch(Object(_actions_friendship_actions__WEBPACK_IMPORTED_MODULE_3__["deleteFriendship"])(id));
+    },
+    fetchUser: function fetchUser(username) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_5__["fetchUser"])(username));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["connect"])(null, mdp)(FriendRequests));
+
+/***/ }),
+
 /***/ "./frontend/components/logged_in/header/logged_in_header_container.jsx":
 /*!*****************************************************************************!*\
   !*** ./frontend/components/logged_in/header/logged_in_header_container.jsx ***!
@@ -727,6 +864,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../actions/user_actions */ "./frontend/actions/user_actions.jsx");
 /* harmony import */ var _left_panel_left_panel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../left_panel/left_panel */ "./frontend/components/logged_in/left_panel/left_panel.jsx");
 /* harmony import */ var _left_panel_right_panel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../left_panel/right_panel */ "./frontend/components/logged_in/left_panel/right_panel.jsx");
+/* harmony import */ var _friend_requests__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./friend_requests */ "./frontend/components/logged_in/header/friend_requests.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -744,6 +882,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -802,12 +941,24 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       this.props.history.push("/users/search/?".concat(qString));
     }
   }, {
+    key: "friendRequestors",
+    value: function friendRequestors() {
+      var _this$props = this.props,
+          users = _this$props.users,
+          currentUser = _this$props.currentUser;
+      var handles = currentUser.friendRequestHandles;
+      var result = handles.map(function (handle) {
+        return users[handle];
+      });
+      return result;
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this3 = this;
 
+      var friendRequestors = this.friendRequestors();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "top",
         className: "logged-in-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav"
@@ -874,14 +1025,21 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
         className: "notifications-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "friend-icon sprite unselected"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+      }, friendRequestors.length ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "notification-number"
+      }, friendRequestors.length) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/users",
         component: _left_panel_right_panel__WEBPACK_IMPORTED_MODULE_8__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/",
         component: _left_panel_right_panel__WEBPACK_IMPORTED_MODULE_8__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No Friend requests"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "friend-requests-dropdown"
+      }, !friendRequestors.length || friendRequestors.includes(undefined) ? "No Friend requests" : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend_requests__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        users: friendRequestors,
+        currentUser: this.props.currentUser
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "message-icon sprite unselected"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No Messages"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bell-icon sprite unselected"
@@ -898,6 +1056,7 @@ var LoggedInHeader = /*#__PURE__*/function (_React$Component) {
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "arrow-icon sprite unselected"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "sign-out-button",
         onClick: function onClick(e) {
           return _this3.handleSignout(e);
         }
@@ -922,6 +1081,9 @@ var mdp = function mdp(dispatch) {
     },
     fetchUsers: function fetchUsers() {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_6__["fetchUsers"])());
+    },
+    fetchUser: function fetchUser(username) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_6__["fetchUser"])(username));
     }
   };
 };
@@ -1003,7 +1165,9 @@ var RightPanel = function RightPanel() {
     href: "https://github.com/haydenlinder/febacook"
   }, "GitHub"), " \xB7 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://www.linkedin.com/in/hayden-linder-63360016b/"
-  }, "LinkedIn")));
+  }, "LinkedIn"), " \xB7 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://haydenlinder.github.io/haydenlinder/"
+  }, "Portfolio")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (RightPanel);
@@ -1271,7 +1435,7 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "comment-body"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
-          to: "/".concat(author.username)
+          to: "/".concat(author.username, "#top")
         }, author.firstName, " ", author.lastName), " ", comment.body)));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2017,7 +2181,8 @@ var Profile = /*#__PURE__*/function (_React$Component) {
 
       if (prevProps.location.pathname !== this.props.match.url) this.props.fetchUser(this.props.username).then(function (res) {
         _this3.setState({
-          user: res.users[_this3.props.username]
+          user: res.users[_this3.props.username],
+          right: 'timeline'
         });
       });
     }
@@ -2160,6 +2325,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         user: this.props.user,
         updateUser: this.props.updateUser
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "top",
         className: "profile-header-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover-photo"
@@ -2273,13 +2439,19 @@ var Profile = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 var msp = function msp(state, ownProps) {
+  var posts = {};
+  var currentUser = state.entities.users[state.session.username];
+  var user = state.entities.users[ownProps.match.params.username];
+  Object.values(state.entities.posts).forEach(function (post) {
+    return post.recipientName === user.username ? posts[post.id] = post : null;
+  });
   return {
-    currentUser: state.entities.users[state.session.username],
+    currentUser: currentUser,
     username: ownProps.match.params.username,
     users: state.entities.users,
     comments: state.entities.comments,
-    user: state.entities.users[ownProps.match.params.username],
-    posts: state.entities.posts,
+    user: user,
+    posts: posts,
     friendships: state.entities.friendships
   };
 };
@@ -3481,11 +3653,25 @@ var commentsReducer = function commentsReducer() {
       return nextState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
-      if (action.comments) return action.comments;
+      if (action.comments) {
+        Object.values(action.comments).forEach(function (comment) {
+          return nextState[comment.id] = comment;
+        });
+        return nextState;
+      }
+
+      ;
       return state;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USERS"]:
-      if (action.comments) return action.comments;
+      if (action.comments) {
+        Object.values(action.comments).forEach(function (comment) {
+          return nextState[comment.id] = comment;
+        });
+        return nextState;
+      }
+
+      ;
       return {};
 
     default:
@@ -3676,7 +3862,11 @@ var postsReducer = function postsReducer() {
 
   switch (action.type) {
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POSTS"]:
-      return action.posts;
+      var posts = Object.values(action.posts);
+      posts.forEach(function (post) {
+        return nextState[post.id] = post;
+      });
+      return nextState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POST"]:
       nextState[action.post.id] = action.post;
@@ -3687,11 +3877,29 @@ var postsReducer = function postsReducer() {
       return nextState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
-      if (action.posts) return action.posts;
+      if (action.posts) {
+        var _posts = Object.values(action.posts);
+
+        _posts.forEach(function (post) {
+          return nextState[post.id] = post;
+        });
+
+        return nextState;
+      }
+
       return state;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USERS"]:
-      if (action.posts) return action.posts;
+      if (action.posts) {
+        var _posts2 = Object.values(action.posts);
+
+        _posts2.forEach(function (post) {
+          return nextState[post.id] = post;
+        });
+
+        return nextState;
+      }
+
       return {};
 
     default:
@@ -3857,15 +4065,20 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      nextState[action.user.username] = action.user;
+      var users = Object.values(action.users);
+
+      for (var i = 0; i < users.length; i++) {
+        nextState[users[i].username] = users[i];
+      }
+
       return nextState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USERS"]:
       if (action.users) {
-        var users = Object.values(action.users);
+        var _users = Object.values(action.users);
 
-        for (var i = 0; i < users.length; i++) {
-          nextState[users[i].username] = users[i];
+        for (var _i = 0; _i < _users.length; _i++) {
+          nextState[_users[_i].username] = _users[_i];
         }
       }
 

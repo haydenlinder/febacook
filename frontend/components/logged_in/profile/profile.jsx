@@ -34,7 +34,7 @@ class Profile extends React.Component{
         if (prevProps.location.pathname !== this.props.match.url)
         this.props.fetchUser(this.props.username)
         .then((res) => {
-            this.setState({ user: res.users[this.props.username] })
+            this.setState({ user: res.users[this.props.username], right: 'timeline' })
         })
     }
 
@@ -145,7 +145,7 @@ class Profile extends React.Component{
                     user={this.props.user}
                     updateUser={this.props.updateUser}
                 />
-                <div className="profile-header-container">
+                <div id="top" className="profile-header-container">
                     <div className="cover-photo">
                         <img className="cover-photo-picture not-resized" src={this.props.user.coverPhotoUrl} alt=""/>
                     </div>
@@ -312,16 +312,25 @@ class Profile extends React.Component{
     }
 }
 
-const msp = (state, ownProps) => ({
-    currentUser: state.entities.users[state.session.username],
-    username: ownProps.match.params.username,
-    users: state.entities.users,
-    comments: state.entities.comments,
-    user: state.entities.users[ownProps.match.params.username],
-    posts: state.entities.posts,
-    friendships: state.entities.friendships
-})
 
+
+const msp = (state, ownProps) => {
+    const posts = {};
+    const currentUser = state.entities.users[state.session.username];
+    const user = state.entities.users[ownProps.match.params.username];
+    Object.values(state.entities.posts).forEach(post => 
+        post.recipientName === user.username ? posts[post.id] = post : null 
+    );
+    return({
+        currentUser: currentUser,
+        username: ownProps.match.params.username,
+        users: state.entities.users,
+        comments: state.entities.comments,
+        user: user,
+        posts: posts,
+        friendships: state.entities.friendships
+    })
+}
 const mdp = dispatch => ({
     fetchUser: (username) => dispatch(fetchUser(username)),
     updateUser: (user) => dispatch(updateUser(user)),

@@ -25,6 +25,8 @@ class Api::UsersController < ApplicationController
             User.includes(
                 :received_friends,
                 :authored_friends,
+                :potential_received_friends,
+                :potential_authored_friends,
                 :posters,
                 :authored_posts_commenters,
                 :received_posts_commenters,
@@ -37,8 +39,11 @@ class Api::UsersController < ApplicationController
         unless @user
             render json: @user.errors, status: 404
         end
-        @users = @user.received_friends + @user.authored_friends + @user.posters + @user.authored_posts_commenters + @user.received_posts_commenters 
-        # @user.received_posts.map { |post| post.author } + @user.received_posts.map { |post| post.comments.map {|comment| comment.user} }.flatten
+        @users = 
+            @user.received_friends + @user.authored_friends + 
+            @user.posters + @user.authored_posts_commenters + 
+            @user.received_posts_commenters + @user.potential_authored_friends +
+            @user.potential_received_friends
         @users.push(@user) 
         render :show
     end

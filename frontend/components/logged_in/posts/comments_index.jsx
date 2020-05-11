@@ -41,7 +41,7 @@ class CommentsIndex extends React.Component {
                     <div className="photo-container">
                         <ProfilePhoto url={author.profilePhotoUrl} />
                     </div>
-            <div className="comment-body"><Link to={`/${author.username}`}>{author.firstName} {author.lastName}</Link> {comment.body}</div>
+            <div className="comment-body"><Link to={`/${author.username}#top`}>{author.firstName} {author.lastName}</Link> {comment.body}</div>
                 </div>
             </div>
             );

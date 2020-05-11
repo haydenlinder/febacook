@@ -21,10 +21,16 @@ const commentsReducer = (state = {}, action) => {
             delete nextState[action.id];
             return nextState;
         case RECEIVE_USER:
-            if (action.comments) return action.comments;
+            if (action.comments) {
+                Object.values(action.comments).forEach(comment => nextState[comment.id] = comment)
+                return nextState;
+            };
             return state;
         case RECEIVE_USERS:
-            if (action.comments) return action.comments;
+            if (action.comments) {
+                Object.values(action.comments).forEach(comment => nextState[comment.id] = comment)
+                return nextState;
+            };
             return {}
         default:
             return state;
