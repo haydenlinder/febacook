@@ -313,9 +313,9 @@ var fetchPost = function fetchPost(postId) {
     });
   };
 };
-var updatePost = function updatePost(post) {
+var updatePost = function updatePost(post, id) {
   return function (dispatch) {
-    return Object(_util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["$updatePost"])(post).then(function (payload) {
+    return Object(_util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["$updatePost"])(post, id).then(function (payload) {
       return dispatch(receivePost(payload));
     }, function (payload) {
       return dispatch(receivePostErrors(payload.responseJSON));
@@ -325,7 +325,7 @@ var updatePost = function updatePost(post) {
 var deletePost = function deletePost(postId) {
   return function (dispatch) {
     return Object(_util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["$deletePost"])(postId).then(function (payload) {
-      return dispatch(removePost(payload));
+      return dispatch(removePost(postId));
     }, function (payload) {
       return dispatch(receivePostErrors(payload.responseJSON));
     });
@@ -605,15 +605,19 @@ var App = /*#__PURE__*/function (_React$Component) {
       this.format();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "app-container",
-        onClick: _util_ui_util__WEBPACK_IMPORTED_MODULE_4__["toggleDropdowns"]
+        onClick: function onClick(e) {
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["toggleDropdowns"])(e);
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModals"])();
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "background-modal",
         className: "modal-hide",
         onClick: function onClick() {
-          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('background-modal');
-          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('edit-profile-modal');
-          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('post-form-modal');
-          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModal"])('update-photo-modal');
+          // closeModal('background-modal');
+          // closeModal('edit-profile-modal')
+          // closeModal('post-form-modal')
+          // closeModal('update-photo-modal')
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_4__["closeModals"])();
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "/",
@@ -1506,6 +1510,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _profile_profile_photo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../profile/profile_photo */ "./frontend/components/logged_in/profile/profile_photo.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1544,10 +1556,13 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PostForm).call(this, props));
     _this.state = {
-      body: "",
-      photos: {},
+      body: props.body || "",
+      photos: props.photos || {},
       author_id: _this.props.authorId,
-      recipient_id: _this.props.recipientId
+      recipient_id: _this.props.recipientId,
+      modal: 'modal-hide',
+      post: props.post,
+      signedIds: []
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -1562,15 +1577,32 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           body = _this$state.body,
           author_id = _this$state.author_id,
-          recipient_id = _this$state.recipient_id;
-      var photos = Object.values(this.state.photos);
+          recipient_id = _this$state.recipient_id,
+          signedIds = _this$state.signedIds;
+      var photos = Object.values(this.state.photos).filter(function (val) {
+        return !val.signed_id;
+      });
       var formData = new FormData();
       formData.append('post[body]', body);
       formData.append('post[author_id]', author_id);
       formData.append('post[recipient_id]', recipient_id);
+      formData.append('post[signed_ids]', signedIds);
 
       for (var i = 0; i < photos.length; i++) {
         formData.append('post[photos][]', photos[i]);
+      }
+
+      if (this.props.id) {
+        return this.props.updatePost(formData, this.props.id).then(function () {
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('post-form-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('background-modal');
+
+          _this2.props.setState({
+            edit: false
+          }, function () {
+            return Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModals"])();
+          });
+        });
       }
 
       this.props.createPost(formData).then(function () {
@@ -1580,6 +1612,8 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         _this2.setState({
           body: "",
           photos: {}
+        }, function () {
+          return Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModals"])();
         });
       });
     }
@@ -1608,14 +1642,21 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "removePhoto",
     value: function removePhoto(src) {
+      var signedId = this.state.photos[src].signed_id;
+      if (signedId) this.setState({
+        signedIds: [].concat(_toConsumableArray(this.state.signedIds), [signedId])
+      });
       delete this.state.photos[src];
-      this.setState(this.state);
+      this.setState({
+        photos: this.state.photos
+      });
     }
   }, {
     key: "render",
     value: function render() {
       var _this4 = this;
 
+      var id = this.props.id;
       var preview = Object.keys(this.state.photos).map(function (src) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "preview-item"
@@ -1632,16 +1673,20 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         }, "x"));
       });
       var empty = !this.state.body && !Object.values(this.state.photos).length;
+      var modal = this.state.modal;
+      var edit = this.props.edit;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: function onClick() {
-          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])('post-form-modal');
+        onClick: function onClick(e) {
+          e.stopPropagation();
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])(edit ? "post-form-modal-".concat(id) : "post-form-modal-new"); // this.setState({ modal: 'modal-show' })
+
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])('background-modal');
         },
-        id: "post-form-modal",
-        className: "post-form-container modal-hide"
+        id: id ? "post-form-modal-".concat(id) : "post-form-modal-new",
+        className: "post-form-container ".concat(id ? "modal-show" : "modal-hide")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "post-form-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, edit ? null : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "button-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-icon"
@@ -1653,9 +1698,9 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
         htmlFor: "file",
         className: "photo-icon"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "file"
+        htmlFor: "file-".concat(id)
       }, "Photo/Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        id: "file",
+        id: "file-".concat(id),
         name: "file",
         className: "file-input",
         type: "file",
@@ -1678,9 +1723,20 @@ var PostForm = /*#__PURE__*/function (_React$Component) {
       }), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-form-footer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit,
+        onClick: function onClick(e) {
+          return _this4.handleSubmit(e);
+        },
         className: "login ".concat(empty ? 'disabled' : 'able')
-      }, "Post"));
+      }, edit ? "Save" : "Post"), edit ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick(e) {
+          _this4.props.setState({
+            edit: false
+          }, function () {
+            return Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('background-modal');
+          });
+        },
+        className: "login cancel"
+      }, "Cancel") : null);
     }
   }]);
 
@@ -1700,6 +1756,9 @@ var mdp = function mdp(dispatch) {
   return {
     createPost: function createPost(post) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["createPost"])(post));
+    },
+    updatePost: function updatePost(post, id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["updatePost"])(post, id));
     }
   };
 };
@@ -1728,6 +1787,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../actions/like_actions */ "./frontend/actions/like_actions.jsx");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../actions/post_actions */ "./frontend/actions/post_actions.jsx");
 /* harmony import */ var _comments_index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./comments_index */ "./frontend/components/logged_in/posts/comments_index.jsx");
+/* harmony import */ var _post_form_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./post_form_container */ "./frontend/components/logged_in/posts/post_form_container.jsx");
+/* harmony import */ var _util_ui_util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../util/ui_util */ "./frontend/util/ui_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1755,6 +1816,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var PostIndexItem = /*#__PURE__*/function (_React$Component) {
   _inherits(PostIndexItem, _React$Component);
 
@@ -1765,7 +1828,9 @@ var PostIndexItem = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PostIndexItem).call(this, props));
     _this.state = {
-      active: false
+      active: false,
+      edit: false,
+      toggle: false
     };
     return _this;
   }
@@ -1791,24 +1856,77 @@ var PostIndexItem = /*#__PURE__*/function (_React$Component) {
       );
     }
   }, {
+    key: "editPost",
+    value: function editPost() {
+      var _this2 = this;
+
+      var backgroundModal = document.getElementById('background-modal');
+      if (backgroundModal) backgroundModal.addEventListener('click', function () {
+        _this2.setState.call(_this2, {
+          edit: false
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _this$props2 = this.props,
           post = _this$props2.post,
           comments = _this$props2.comments,
           users = _this$props2.users,
-          currentUser = _this$props2.currentUser;
+          currentUser = _this$props2.currentUser,
+          deletePost = _this$props2.deletePost;
+      var _this$state = this.state,
+          edit = _this$state.edit,
+          toggle = _this$state.toggle;
+      var ownPost = post.authorId === currentUser.id;
       var liked = post.likes[currentUser.id];
       var numLikes = Object.values(post.likes).length;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      return !edit ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "post-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "not-photo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "post-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, ownPost ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-dropdown-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "toggle-post-dropdown",
+        onClick: function onClick(e) {
+          e.stopPropagation();
+          var dropdown = e.currentTarget.nextElementSibling;
+
+          if (dropdown.classList.contains('modal-show')) {
+            dropdown.classList.add('modal-hide');
+            dropdown.classList.remove('modal-show');
+          } else {
+            dropdown.classList.add('modal-show');
+            dropdown.classList.remove('modal-hide');
+          }
+        }
+      }, "..."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-dropdown modal-hide"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-dropdown-item",
+        onClick: function onClick(e) {
+          e.stopPropagation();
+
+          _this3.setState({
+            edit: true
+          });
+
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_9__["openModal"])('background-modal');
+
+          _this3.editPost();
+        }
+      }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-dropdown-item",
+        onClick: function onClick(e) {
+          return deletePost(post.id);
+        }
+      }, "Delete"))) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "link"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_2__["HashLink"], {
         to: "/".concat(post.authorName, "#top")
@@ -1828,7 +1946,7 @@ var PostIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "post-body"
       }, post.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "photos"
-      }, post.photoUrls.map(function (url) {
+      }, Object.keys(post.photos).map(function (url) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "post-photo",
           src: url
@@ -1839,14 +1957,14 @@ var PostIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "post-footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick(e) {
-          return _this2.handleLike(e, post, liked);
+          return _this3.handleLike(e, post, liked);
         },
         className: "post-footer-button ".concat(liked ? 'liked' : null)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "like icon"
       }, "(:"), " Like"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick(e) {
-          return _this2.setState({
+          return _this3.setState({
             active: true
           });
         },
@@ -1858,7 +1976,16 @@ var PostIndexItem = /*#__PURE__*/function (_React$Component) {
         post: post,
         comments: comments,
         currentUser: currentUser
-      }));
+      })) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_form_container__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        recipientId: post.recipientId,
+        authorId: currentUser.id,
+        currentUser: currentUser,
+        body: post.body,
+        photos: Object.assign({}, post.photos),
+        id: post.id,
+        edit: true,
+        setState: this.setState.bind(this)
+      });
     }
   }]);
 
@@ -1881,6 +2008,9 @@ var mdp = function mdp(dispatch) {
     },
     fetchPost: function fetchPost(id) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_6__["fetchPost"])(id));
+    },
+    deletePost: function deletePost(id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_6__["deletePost"])(id));
     }
   };
 };
@@ -2013,7 +2143,10 @@ var EditProfile = /*#__PURE__*/function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         id: "edit-profile-modal",
-        className: "edit-user-form modal-hide"
+        className: "edit-user-form modal-hide",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "label"
       }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2033,6 +2166,7 @@ var EditProfile = /*#__PURE__*/function (_React$Component) {
 
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])('update-photo-modal');
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])('background-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('edit-profile-modal');
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "camera-icon"
@@ -2051,6 +2185,7 @@ var EditProfile = /*#__PURE__*/function (_React$Component) {
 
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])('update-photo-modal');
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["openModal"])('background-modal');
+          Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_3__["closeModal"])('edit-profile-modal');
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "other-camera"
@@ -2372,7 +2507,8 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         alt: ""
       })), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "update-cover-container",
-        onClick: function onClick() {
+        onClick: function onClick(e) {
+          e.stopPropagation();
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('update-photo-modal');
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
         }
@@ -2421,7 +2557,8 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "middle-right"
       }, ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: " button button-border",
-        onClick: function onClick() {
+        onClick: function onClick(e) {
+          e.stopPropagation();
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('edit-profile-modal');
         }
@@ -2449,10 +2586,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "bio"
       }, this.props.user.bio), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick() {
-          _this8.handleClick(); // this.setState({ edit_bio: !edit_bio })
-          // openModal('background-modal');
-          // openModal('edit-profile-modal');
-
+          _this8.handleClick();
         },
         className: "bio-button"
       }, edit_bio ? "Save" : "Edit Bio") : null))), this.state.right === 'timeline' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -4343,18 +4477,18 @@ var $fetchPosts = function $fetchPosts(path) {
     method: "GET"
   });
 };
-var $updatePost = function $updatePost(post) {
+var $updatePost = function $updatePost(post, id) {
   return $.ajax({
-    url: "api/posts/".concat(post.id),
+    url: "api/posts/".concat(id),
     method: "PATCH",
-    data: {
-      post: post
-    }
+    data: post,
+    contentType: false,
+    processData: false
   });
 };
 var $deletePost = function $deletePost(postId) {
   return $.ajax({
-    url: "api/posts".concat(postId),
+    url: "api/posts/".concat(postId),
     method: "DELETE"
   });
 };
@@ -4404,13 +4538,14 @@ var $createUser = function $createUser(user) {
 /*!**********************************!*\
   !*** ./frontend/util/ui_util.js ***!
   \**********************************/
-/*! exports provided: closeAncestorModal, closeModal, openModal, toggleDropdowns */
+/*! exports provided: closeAncestorModal, closeModal, closeModals, openModal, toggleDropdowns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeAncestorModal", function() { return closeAncestorModal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModals", function() { return closeModals; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openModal", function() { return openModal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toggleDropdowns", function() { return toggleDropdowns; });
 var closeAncestorModal = function closeAncestorModal(e) {
@@ -4432,6 +4567,14 @@ var closeModal = function closeModal(id) {
   if (modal) {
     modal.classList.add("modal-hide");
     modal.classList.remove("modal-show");
+  }
+};
+var closeModals = function closeModals() {
+  var modals = document.getElementsByClassName('modal-show');
+
+  while (modals.length) {
+    modals[0].classList.add('modal-hide');
+    modals[0].classList.remove('modal-show');
   }
 };
 var openModal = function openModal(id) {

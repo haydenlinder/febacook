@@ -18,7 +18,15 @@ class Api::PostsController < ApplicationController
   
   def update
     @post = Post.find_by(id: params[:id])
-    if @post.update(post_params)
+    post_params[:signed_ids].split(',').each do |signed_id|
+      @image = ActiveStorage::Blob.find_signed(signed_id)
+      @image.attachments.first.purge
+    end
+
+    new_params = post_params 
+    new_params.delete(:signed_ids)
+
+    if @post.update(new_params)
       render :show
     else
       render json: @user.errors, status: 422
@@ -32,13 +40,11 @@ class Api::PostsController < ApplicationController
 
   def destroy
     @post = Post.find_by(id: params[:id])
-    if !@post
-      render json: {}, status: 422
-    end
+    @post.delete
   end
 
   private
   def post_params
-    params.require(:post).permit(:body, :recipient_id, :author_id, {:photos => []})
+    params.require(:post).permit(:body, :recipient_id, :author_id, {:photos => []}, [:signed_ids])
   end
 end

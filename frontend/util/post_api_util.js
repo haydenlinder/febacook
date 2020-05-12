@@ -22,17 +22,19 @@ export const $fetchPosts = path => (
     })
 );
 
-export const $updatePost = post => (
+export const $updatePost = (post, id) => (
     $.ajax({
-        url: `api/posts/${post.id}`,
+        url: `api/posts/${id}`,
         method: `PATCH`,
-        data: { post: post }
+        data: post,
+        contentType: false,
+        processData: false
     })
 );
 
 export const $deletePost = postId => (
     $.ajax({
-        url: `api/posts${postId}`,
+        url: `api/posts/${postId}`,
         method: `DELETE`
     })
 );

@@ -17,6 +17,14 @@ export const closeModal = id => {
     }
 };
 
+export const closeModals = () => {
+    let modals = document.getElementsByClassName('modal-show');
+    while (modals.length) {
+        modals[0].classList.add('modal-hide')
+        modals[0].classList.remove('modal-show')
+    }
+}
+
 export const openModal = id => {
     let modal = document.getElementById(id);
     modal.classList.add("modal-show");

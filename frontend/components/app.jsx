@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './home';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import Header from './header';
-import { closeModal, toggleDropdowns } from '../util/ui_util';
+import { closeModal, toggleDropdowns, closeModals } from '../util/ui_util';
 
 class App extends React.Component {
     constructor(props){
@@ -29,16 +29,20 @@ class App extends React.Component {
         return(
             <div 
                 className="app-container"
-                onClick={toggleDropdowns}
+                onClick={(e) => {
+                    toggleDropdowns(e);
+                    closeModals();
+                }}
             >
                 <div
                     id="background-modal"
                     className="modal-hide"
                     onClick={() => {
-                        closeModal('background-modal');
-                        closeModal('edit-profile-modal')
-                        closeModal('post-form-modal')
-                        closeModal('update-photo-modal')
+                        // closeModal('background-modal');
+                        // closeModal('edit-profile-modal')
+                        // closeModal('post-form-modal')
+                        // closeModal('update-photo-modal')
+                        closeModals();
                     }}
                 ></div>
                 <Header /> 

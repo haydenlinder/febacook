@@ -1,7 +1,7 @@
 import React from 'react';
-import { createPost } from '../../../actions/post_actions'
+import { createPost, updatePost } from '../../../actions/post_actions'
 import { connect } from 'react-redux';
-import { openModal, closeModal } from '../../../util/ui_util';
+import { openModal, closeModal, closeModals } from '../../../util/ui_util';
 import ProfilePhoto from '../profile/profile_photo';
 
 class PostForm extends React.Component {
@@ -9,30 +9,42 @@ class PostForm extends React.Component {
         super(props)
 
         this.state = { 
-            body: "", 
-            photos: {}, 
+            body: props.body || "", 
+            photos: props.photos || {}, 
             author_id: this.props.authorId,
-            recipient_id: this.props.recipientId
+            recipient_id: this.props.recipientId,
+            modal: 'modal-hide',
+            post: props.post,
+            signedIds: []
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const { body, author_id, recipient_id } = this.state;
-        const photos = Object.values(this.state.photos);
+        const { body, author_id, recipient_id, signedIds } = this.state;
+        const photos = Object.values(this.state.photos).filter(val => !val.signed_id);
         const formData = new FormData();
         formData.append('post[body]', body);
         formData.append('post[author_id]', author_id);
         formData.append('post[recipient_id]', recipient_id);
+        formData.append('post[signed_ids]', signedIds);
         for (let i = 0; i < photos.length; i++) {
             formData.append('post[photos][]', photos[i]);
+        }
+        if (this.props.id) {
+            return this.props.updatePost(formData, this.props.id)
+            .then(() => {
+                closeModal('post-form-modal');
+                closeModal('background-modal')
+                this.props.setState({ edit: false }, () => closeModals())
+            });
         }
         this.props.createPost(formData)
         .then(() => {
             closeModal('post-form-modal');
             closeModal('background-modal')
-            this.setState({ body: "", photos: {} });
+            this.setState({ body: "", photos: {} }, () => closeModals());
         });
     };
 
@@ -49,11 +61,14 @@ class PostForm extends React.Component {
     };
 
     removePhoto(src) {
+        let signedId = this.state.photos[src].signed_id;
+        if (signedId) this.setState({ signedIds: [...(this.state.signedIds), signedId] })
         delete this.state.photos[src];
-        this.setState(this.state);
+        this.setState({ photos: this.state.photos });
     };
 
     render() {
+        const { id } = this.props;
         const preview = Object.keys(this.state.photos).map(src => (
             <div className="preview-item">
                 <img className="preview" src={src}></img>
@@ -64,30 +79,37 @@ class PostForm extends React.Component {
             </div>
         ));
         const empty = !this.state.body && !Object.values(this.state.photos).length;
+        const { modal } = this.state;
+        const edit = this.props.edit;
         return(
             <div 
-                onClick={() => {
-                    openModal('post-form-modal');
+                onClick={(e) => {
+                    e.stopPropagation();
+                    openModal(edit ? `post-form-modal-${id}` : `post-form-modal-new`);
+                    // this.setState({ modal: 'modal-show' })
                     openModal('background-modal');
                 }}
-                id="post-form-modal" 
-                className="post-form-container modal-hide">
+                id={id ? `post-form-modal-${id}` : `post-form-modal-new`}
+                className={`post-form-container ${id ? `modal-show` : `modal-hide`}` }>
                 <ul className="post-form-header">
+                    {edit ?
+                    null
+                    :
                     <li className="button-container">
                         <div className="post-icon">
 
                         </div>
                         Create Post
-                    </li>
+                    </li>}
                     <div className="border"></div>
                     <li className="button-container">
                         <label htmlFor="file" className="photo-icon">
 
                         </label>
-                        <label htmlFor="file">Photo/Video
+                        <label htmlFor={`file-${id}`}>Photo/Video
                         </label> 
                         <input 
-                            id="file" 
+                            id={`file-${id}`} 
                             name="file" 
                             className="file-input" 
                             type="file"
@@ -109,12 +131,22 @@ class PostForm extends React.Component {
                 {preview}
                 <div className="post-form-footer"></div>
                 <button 
-                    onClick={this.handleSubmit}
+                    onClick={e => this.handleSubmit(e)}
                     className={`login ${empty ? 'disabled' : 'able'}`}
                     
                 >
-                    Post
+                    {edit ? `Save` : `Post`}
                 </button>
+                {edit ?
+                <button 
+                    onClick={e => {
+                        this.props.setState({edit: false},
+                        () => closeModal('background-modal'));
+                    }}
+                    className={`login cancel`}
+                >
+                    Cancel
+                </button> : null }
             </div>
         )
     }
@@ -126,7 +158,8 @@ const msp = state => ({
 })
 
 const mdp = dispatch => ({
-    createPost: post => dispatch(createPost(post))
+    createPost: post => dispatch(createPost(post)),
+    updatePost: (post, id) => dispatch(updatePost(post, id))
 })
 
 const PostFormContainer = connect(msp, mdp)(PostForm);

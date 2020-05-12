@@ -42,8 +42,8 @@ export const fetchPost = postId => dispatch => (
     )
 );
 
-export const updatePost = post => dispatch => (
-    $updatePost(post)
+export const updatePost = (post, id) => dispatch => (
+    $updatePost(post, id)
     .then(
         payload => dispatch(receivePost(payload)),
         payload => dispatch(receivePostErrors(payload.responseJSON))
@@ -53,7 +53,7 @@ export const updatePost = post => dispatch => (
 export const deletePost = postId => dispatch => (
     $deletePost(postId)
     .then(
-        payload => dispatch(removePost(payload)),
+        payload => dispatch(removePost(postId)),
         payload => dispatch(receivePostErrors(payload.responseJSON))
     )
 );

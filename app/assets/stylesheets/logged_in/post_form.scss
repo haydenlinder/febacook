@@ -7,9 +7,10 @@
     background-color: white;
     position: relative;
     width: 100%;
+    margin-bottom: 10px;
 }
 
-#post-form-modal.modal-show {
+.post-form-container.modal-show {
     z-index: 4;
 }
 
@@ -160,19 +161,26 @@ label:hover {
 }
 
 .post-form-container .login {
-    padding-right: 230px;
-    padding-left: 230px;
+    // padding-right: 230px;
+    // padding-left: 230px;
     margin-bottom: 10px;
     outline: none;
+    width: 95%;
 }
 
-#post-form-modal.modal-hide .login,
-#post-form-modal.modal-hide .preview-item {
+.login.cancel {
+    background-color: rgb(243, 243, 243);
+    border: 1px solid grey;
+    color: grey
+}
+
+#post-form-modal-new.modal-hide .login,
+#post-form-modal-new.modal-hide .preview-item {
     display: none;
 }
 
-#post-form-modal.modal-show .login, 
-#post-form-modal.modal-show .preview-item {
+#post-form-modal-new.modal-show .login, 
+#post-form-modal-new.modal-show .preview-item {
     display: block;
 }
 

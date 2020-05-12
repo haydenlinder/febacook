@@ -4,16 +4,19 @@ import { HashLink as Link } from 'react-router-hash-link';
 import { convertDateTime } from '../../../util/date_util';
 import ProfilePhoto from '../profile/profile_photo';
 import { createLike, deleteLike } from '../../../actions/like_actions';
-import { fetchPost } from '../../../actions/post_actions';
+import { fetchPost, deletePost } from '../../../actions/post_actions';
 import CommentsIndex from './comments_index';
-
+import PostFormContainer from './post_form_container';
+import { openModal } from '../../../util/ui_util';
 
 class PostIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: false
-        }
+            active: false,
+            edit: false,
+            toggle: false
+        };
     }
 
     handleLike(e, post, liked) {
@@ -34,14 +37,57 @@ class PostIndexItem extends React.Component {
         ;
     }
 
+    editPost() {
+        let backgroundModal = document.getElementById('background-modal');
+        if (backgroundModal) backgroundModal.addEventListener('click', () => {
+            this.setState.call(this, { edit: false })
+        })
+    }
+
     render() {
-        const { post, comments, users, currentUser } = this.props;
+        const { post, comments, users, currentUser, deletePost } = this.props;
+        const { edit, toggle } = this.state;
+        const ownPost = post.authorId === currentUser.id;
         let liked = post.likes[currentUser.id];
         const numLikes = Object.values(post.likes).length;
-        return(
+        return !edit ? (
             <ul className="post-container">
                 <div className="not-photo">
                     <ul className="post-header">
+                        {ownPost ?
+                        <div className="post-dropdown-container"> 
+                            <div className="toggle-post-dropdown" onClick={e => {
+                                e.stopPropagation();
+                                let dropdown = e.currentTarget.nextElementSibling;
+                                if (dropdown.classList.contains('modal-show')) {
+                                    dropdown.classList.add('modal-hide');
+                                    dropdown.classList.remove('modal-show');
+                                } else {
+                                    dropdown.classList.add('modal-show');
+                                    dropdown.classList.remove('modal-hide');
+                                }
+                            }}>...</div>
+                         
+                            <div className={`post-dropdown modal-hide`}>
+                                <div 
+                                    className="post-dropdown-item"
+                                    onClick={e => {
+                                        e.stopPropagation();
+                                        this.setState({ edit: true });
+                                        openModal('background-modal');
+                                        this.editPost();
+                                    }}
+                                >
+                                    Edit
+                                </div>
+                                <div 
+                                    className="post-dropdown-item"
+                                    onClick={e => deletePost(post.id)}
+                                >
+                                    Delete
+                                </div>
+                            </div>
+                        </div> : null}
                         <span className="link">
                             <Link to={`/${post.authorName}#top`}>
                                 {users[post.authorName].firstName} {users[post.authorName].lastName}
@@ -69,7 +115,7 @@ class PostIndexItem extends React.Component {
                     </li>
                 </div>
                 <div className="photos">
-                    {post.photoUrls.map(url => <img className="post-photo" src={url}></img>)}
+                    {Object.keys(post.photos).map(url => <img className="post-photo" src={url}></img>)}
                 </div>
                 {numLikes ? 
                     <div className={`like-count ${liked ? 'liked' : null}`}>(: {numLikes}</div>
@@ -86,7 +132,18 @@ class PostIndexItem extends React.Component {
                     </div> */}
                 </li>
                 <CommentsIndex active={this.state.active} post={post} comments={comments} currentUser={currentUser}/>
-            </ul>  
+            </ul>
+        ) : (
+            <PostFormContainer
+                recipientId={post.recipientId}
+                authorId={currentUser.id}
+                currentUser={currentUser}
+                body={post.body}
+                photos={Object.assign({}, post.photos)}
+                id={post.id}
+                edit={true}
+                setState={this.setState.bind(this)}
+            />
         )
     }
 }
@@ -98,7 +155,8 @@ const msp = state => ({
 const mdp = dispatch => ({
     createLike: like => dispatch(createLike(like)),
     deleteLike: id => dispatch(deleteLike(id)),
-    fetchPost: id => dispatch(fetchPost(id))
+    fetchPost: id => dispatch(fetchPost(id)),
+    deletePost: id => dispatch(deletePost(id))
 })
 
 export default connect(msp, mdp)(PostIndexItem);

@@ -171,7 +171,8 @@ class Profile extends React.Component{
                     {ownProfile ?
                     <div 
                         className="update-cover-container"
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.stopPropagation();
                             openModal('update-photo-modal')
                             openModal('background-modal')
                         }}
@@ -241,7 +242,8 @@ class Profile extends React.Component{
                         {ownProfile ? 
                             <div 
                                 className=" button button-border"
-                                onClick={() => {
+                                onClick={(e) => {
+                                    e.stopPropagation();
                                     openModal('background-modal');
                                     openModal('edit-profile-modal');
                                 }}
@@ -296,10 +298,7 @@ class Profile extends React.Component{
                                 {ownProfile ?
                                 <div 
                                     onClick={() => {
-                                        this.handleClick()
-                                        // this.setState({ edit_bio: !edit_bio })
-                                        // openModal('background-modal');
-                                        // openModal('edit-profile-modal');
+                                        this.handleClick();
                                     }}
                                     className="bio-button">
                                     {edit_bio ? "Save" : "Edit Bio"}

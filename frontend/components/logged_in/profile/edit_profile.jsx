@@ -38,7 +38,9 @@ class EditProfile extends React.Component {
     render(){
         return(
 
-            <ul id="edit-profile-modal" className="edit-user-form modal-hide">
+            <ul id="edit-profile-modal" className="edit-user-form modal-hide"
+                onClick={e => e.stopPropagation()}
+            >
 
                 <div className="label">
                     Edit Profile
@@ -56,6 +58,7 @@ class EditProfile extends React.Component {
                             this.props.setState({type: 'cover'})
                             openModal('update-photo-modal')
                             openModal('background-modal')
+                            closeModal('edit-profile-modal')
                         }}
                     >
                         <div className="camera-icon">
@@ -72,6 +75,7 @@ class EditProfile extends React.Component {
                                 this.props.setState({ type: 'profile' })
                                 openModal('update-photo-modal')
                                 openModal('background-modal')
+                                closeModal('edit-profile-modal')
                             }}
                         >
                             <div class="other-camera"></div>
