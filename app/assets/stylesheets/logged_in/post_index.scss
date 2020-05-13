@@ -41,7 +41,6 @@
 }
 
 .toggle-post-dropdown {
-    opacity:  0.8;
     color: grey;
     font-size: 30px;
     line-height: 0px;
@@ -54,6 +53,7 @@
 
 .post-dropdown.modal-hide {
     display: none;
+    background-color: white;
 }
 
 .post-dropdown.modal-show {
@@ -70,6 +70,8 @@
 
 .post-dropdown-item {
     padding: 10px;
+    opacity: 1;
+    background-color: white;
 }
 
 .post-dropdown-item:hover{

@@ -191,7 +191,8 @@ class Profile extends React.Component{
                         {ownProfile ?
                         <div 
                             className="update"
-                            onClick={() => {
+                            onClick={e => {
+                                e.stopPropagation();
                                 this.setState({ type: 'profile' })
                                 openModal('update-photo-modal')
                                 openModal('background-modal')
@@ -284,8 +285,8 @@ class Profile extends React.Component{
                                 </div>
                                 Intro
                             </div>
-                            <div className="bio-container">
                                 {edit_bio ?
+                            <div className="bio-container">
                                 <textarea 
                                     className="edit-bio-text" 
                                     value={this.state.bio} 
@@ -302,7 +303,9 @@ class Profile extends React.Component{
                                     }}
                                     className="bio-button">
                                     {edit_bio ? "Save" : "Edit Bio"}
-                                </div> : null}
+                                </div> 
+                                
+                                : null}
                             </div>
                         </div>
                     </div>
