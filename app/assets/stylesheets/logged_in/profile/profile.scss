@@ -418,15 +418,16 @@
     resize: none;
     border: 1px solid rgb(194, 194, 194);
     border-radius: 3px;
-    width: 90%;
-    height: 50px;
+    width: 95%;
+    box-sizing: border-box;
+    height: 70px;
     outline: none;
     text-align: center;
 }
 
 .profile-left .bio-container .bio-button {
-    padding-right: 125px;
-    padding-left: 125px;
+    // padding-right: 125px;
+    // padding-left: 125px;
     padding-top: 7px;
     padding-bottom: 7px;
     border: 1px solid lightgrey;
@@ -436,6 +437,8 @@
     font-weight: 600;
     background-color: rgb(244, 245, 246);
     margin-top: 10px;
+    width: 95%;
+    text-align: center;
 }
 
 .profile-left .bio-container .bio-button:hover {

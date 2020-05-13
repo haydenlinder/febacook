@@ -292,11 +292,18 @@ class Profile extends React.Component{
                                     value={this.state.bio} 
                                     onChange={e => this.handleChange(e)}
                                 ></textarea>
+                            </div>
+
                                 :
+                                <div className="bio-container">
+
                                 <div className="bio">
                                     {this.props.user.bio}
-                                </div>}
+                                </div>
+                                </div>
+                                }
                                 {ownProfile ?
+                                <div className="bio-container">
                                 <div 
                                     onClick={() => {
                                         this.handleClick();
@@ -304,9 +311,17 @@ class Profile extends React.Component{
                                     className="bio-button">
                                     {edit_bio ? "Save" : "Edit Bio"}
                                 </div> 
+                                {edit_bio ? 
+                                <div 
+                                    onClick={() => {
+                                        this.setState({ edit_bio: false, bio: this.props.user.bio })
+                                    }}
+                                    className="bio-button">
+                                    Cancel
+                                </div> : null}
+                                </div>
                                 
                                 : null}
-                            </div>
                         </div>
                     </div>
                     {this.state.right === 'timeline' ? 
