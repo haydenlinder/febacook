@@ -24,7 +24,7 @@ class CommentsIndex extends React.Component {
                 return(
                     <CommentItem comment={comment} author={author} 
                         currentUser={currentUser} post={post} fetchPost={fetchPost}
-                        deleteComment={deleteComment} />
+                        deleteComment={deleteComment} updateComment={updateComment} />
                 );
             }
         });
@@ -37,7 +37,7 @@ class CommentsIndex extends React.Component {
                 : null}
                 {active ? 
                 <CommentForm currentUser={currentUser} post={post}
-                    createComment={createComment} updateComment={updateComment}
+                    createComment={createComment}
                     fetchPost={fetchPost}/>
                 : null}
             </div>

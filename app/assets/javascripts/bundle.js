@@ -135,7 +135,7 @@ var deleteComment = function deleteComment(commentId) {
 };
 var updateComment = function updateComment(comment) {
   return function (dispatch) {
-    return $updateComment(comment).then(function (payload) {
+    return Object(_util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["$updateComment"])(comment).then(function (payload) {
       return dispatch(receiveComment(payload));
     });
   };
@@ -1383,7 +1383,6 @@ var CommentForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentForm).call(this, props));
     _this.state = {
-      edit: false,
       body: props.body || ''
     };
     return _this;
@@ -1398,9 +1397,27 @@ var CommentForm = /*#__PURE__*/function (_React$Component) {
           currentUser = _this$props.currentUser,
           post = _this$props.post,
           createComment = _this$props.createComment,
-          fetchPost = _this$props.fetchPost;
+          fetchPost = _this$props.fetchPost,
+          updateComment = _this$props.updateComment,
+          edit = _this$props.edit,
+          id = _this$props.id,
+          setState = _this$props.setState;
       e.preventDefault();
       if (!this.state.body) return null;
+
+      if (edit) {
+        return updateComment({
+          user_id: currentUser.id,
+          post_id: post.id,
+          body: this.state.body,
+          id: id
+        }).then(function () {
+          return setState({
+            edit: false
+          });
+        });
+      }
+
       createComment({
         user_id: currentUser.id,
         post_id: post.id,
@@ -1471,6 +1488,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _profile_profile_photo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../profile/profile_photo */ "./frontend/components/logged_in/profile/profile_photo.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _comment_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./comment_form */ "./frontend/components/logged_in/posts/comment_form.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1493,27 +1511,57 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var CommentItem = /*#__PURE__*/function (_React$Component) {
   _inherits(CommentItem, _React$Component);
 
   function CommentItem(props) {
+    var _this;
+
     _classCallCheck(this, CommentItem);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CommentItem).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentItem).call(this, props));
+    _this.state = {
+      edit: false
+    };
+    return _this;
   }
 
   _createClass(CommentItem, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
           comment = _this$props.comment,
           author = _this$props.author,
           currentUser = _this$props.currentUser,
           deleteComment = _this$props.deleteComment,
           post = _this$props.post,
-          fetchPost = _this$props.fetchPost;
+          fetchPost = _this$props.fetchPost,
+          updateComment = _this$props.updateComment;
+      var edit = this.state.edit;
       var ownComment = comment.userId === currentUser.id;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return edit ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        currentUser: currentUser,
+        body: comment.body,
+        edit: true,
+        updateComment: updateComment,
+        post: post,
+        id: comment.id,
+        setState: this.setState.bind(this)
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit-delete-comment cancel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "edit-comment",
+        onClick: function onClick(e) {
+          return _this2.setState({
+            edit: false
+          });
+        }
+      }, "Cancel"))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-content"
@@ -1528,7 +1576,12 @@ var CommentItem = /*#__PURE__*/function (_React$Component) {
       }, author.firstName, " ", author.lastName), " ", comment.body), ownComment ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "edit-delete-comment"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "edit-comment"
+        className: "edit-comment",
+        onClick: function onClick(e) {
+          return _this2.setState({
+            edit: true
+          });
+        }
       }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-comment",
         onClick: function onClick(e) {
@@ -1629,7 +1682,8 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
             currentUser: currentUser,
             post: post,
             fetchPost: fetchPost,
-            deleteComment: deleteComment
+            deleteComment: deleteComment,
+            updateComment: updateComment
           });
         }
       });
@@ -1641,7 +1695,6 @@ var CommentsIndex = /*#__PURE__*/function (_React$Component) {
         currentUser: currentUser,
         post: post,
         createComment: createComment,
-        updateComment: updateComment,
         fetchPost: fetchPost
       }) : null);
     }

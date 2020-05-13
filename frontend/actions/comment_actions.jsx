@@ -1,4 +1,4 @@
-import { $createComment, $deleteComment } from "../util/comment_api_util"
+import { $createComment, $deleteComment, $updateComment } from "../util/comment_api_util"
 
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';

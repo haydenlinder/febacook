@@ -5,15 +5,22 @@ class CommentForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            edit: false,
             body: props.body || ''
         };
     }
 
     handleSubmit(e) {
-        const { currentUser, post, createComment, fetchPost } = this.props;
+        const { currentUser, post, createComment, fetchPost, updateComment, edit, id, setState } = this.props;
         e.preventDefault();
         if (!this.state.body) return null;
+        if (edit) {
+            return updateComment({
+                user_id: currentUser.id,
+                post_id: post.id,
+                body: this.state.body,
+                id: id
+            }).then(() => setState({edit: false}))
+        }
         createComment({
             user_id: currentUser.id,
             post_id: post.id,

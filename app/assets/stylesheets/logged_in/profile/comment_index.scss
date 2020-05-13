@@ -99,3 +99,17 @@
     cursor: pointer;
 }
 
+.comment-container .comment-form-content {
+    border: none;
+    margin: none;
+    padding: 0px;
+}
+
+.comment-container {
+    display: flex;
+}
+
+.edit-delete-comment.cancel {
+    display: flex;
+    align-items: center;
+}
