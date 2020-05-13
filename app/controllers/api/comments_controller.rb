@@ -14,8 +14,14 @@ class Api::CommentsController < ApplicationController
         @comment.delete
     end
 
+    def update
+        @comment = Comment.find_by(id: params[:id])
+        @comment.update(comment_params)
+        render :show
+    end
+
     private
     def comment_params
-        params.require(:comment).permit(:user_id, :post_id, :body)
+        params.require(:comment).permit(:user_id, :post_id, :body, :id)
     end
 end

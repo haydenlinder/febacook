@@ -1,78 +1,44 @@
 import React from 'react';
 import ProfilePhoto from '../profile/profile_photo';
 import { connect } from 'react-redux';
-import { createComment } from '../../../actions/comment_actions'
+import { createComment, deleteComment, updateComment } from '../../../actions/comment_actions'
 import { fetchPost } from '../../../actions/post_actions';
 import { Link } from 'react-router-dom';
+import CommentForm from './comment_form';
+import CommentItem from './comment_item';
 
 class CommentsIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             comment: ''
-        }
-    }
-
-    handleSubmit(e) {
-        const { currentUser, post, createComment, fetchPost } = this.props;
-        e.preventDefault();
-        if (!this.state.comment) return null
-        createComment({
-            user_id: currentUser.id,
-            post_id: post.id,
-            body: this.state.comment
-        }).then(() => {
-            fetchPost(post.id)
-            this.setState({ comment: '' })
-        })
-    }
-
-    handleChange(e) {
-        this.setState({ comment: e.currentTarget.value });
+        };
     }
 
     render(){
-        const { currentUser, active, comments, users } = this.props;
+        const { currentUser, active, comments, users, post, 
+            fetchPost, createComment, updateComment, deleteComment } = this.props;
         const commentList = comments.map(comment => {
-            const author = users[comment.username]
-            return(
-            <div className="comment-container">
-                <div className="comment-content">
-                    <div className="photo-container">
-                        <ProfilePhoto url={author.profilePhotoUrl} />
-                    </div>
-            <div className="comment-body"><Link to={`/${author.username}#top`}>{author.firstName} {author.lastName}</Link> {comment.body}</div>
-                </div>
-            </div>
-            );
-        })
+            if (comment) {
+                const author = users[comment.username]
+                return(
+                    <CommentItem comment={comment} author={author} 
+                        currentUser={currentUser} post={post} fetchPost={fetchPost}
+                        deleteComment={deleteComment} />
+                );
+            }
+        });
         return(
             <div className="comment-index-container">
-
                 {comments.length ?
                 <div className="comment-index-content">
                     {commentList}
                 </div> 
                 : null}
-
                 {active ? 
-                <div className="comment-form-content">
-                    <form 
-                        className="comment-form"
-                        onSubmit={e => this.handleSubmit(e)}
-                    >
-                        <div className="photo-container">
-                            <ProfilePhoto url={currentUser.profilePhotoUrl}/> 
-                        </div>
-                        <input 
-                            className="comment-input"
-                            type="text" 
-                            placeholder="Write a comment..."
-                            value={this.state.comment}
-                            onChange={e => this.handleChange(e)}
-                        /> 
-                    </form> 
-                </div>
+                <CommentForm currentUser={currentUser} post={post}
+                    createComment={createComment} updateComment={updateComment}
+                    fetchPost={fetchPost}/>
                 : null}
             </div>
         );
@@ -85,7 +51,9 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     createComment: comment => dispatch(createComment(comment)),
-    fetchPost: id => dispatch(fetchPost(id))
+    fetchPost: id => dispatch(fetchPost(id)),
+    deleteComment: id => dispatch(deleteComment(id)),
+    updateComment: comment => dispatch(updateComment(comment))
 });
 
 export default connect(msp, mdp)(CommentsIndex);

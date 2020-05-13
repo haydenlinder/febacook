@@ -19,7 +19,8 @@
 
 .comment-content .photo-container {
     height: 35px;
-    width: 35px;
+    min-width: 35px;
+    max-width: 35px;
     margin-right: 5px;
 }
 
@@ -30,6 +31,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     width: fit-content;
+    max-width: 340px;
     background-color: #eeeff0;
     border-radius: 20px;
 }
@@ -74,3 +76,26 @@
     height: 35px;
     width: 35px;
 }
+
+.comment-container:hover .edit-delete-comment {
+    display: flex;
+    align-items: center;
+}
+
+.edit-delete-comment {
+    display: none;
+    font-size: 12px;
+    color: blue;
+    margin-left: 5px;
+    min-width: fit-content;
+}
+
+.edit-comment {
+    margin-right: 5px;
+}
+
+.edit-comment:hover, .delete-comment:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+

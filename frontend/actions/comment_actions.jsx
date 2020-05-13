@@ -26,3 +26,10 @@ export const deleteComment = commentId => dispatch => (
             () => dispatch(removeComment(commentId))
         )
 )
+
+export const updateComment = comment => dispatch => (
+    $updateComment(comment)
+    .then(
+        payload => dispatch(receiveComment(payload))
+    )
+)

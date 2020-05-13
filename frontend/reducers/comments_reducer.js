@@ -8,9 +8,12 @@ const commentsReducer = (state = {}, action) => {
     switch (action.type) {
         // case RECEIVE_POSTS:
         //     return action.comments
-        // case RECEIVE_POST:
-        //     nextState[action.post.id] = action.post
-        //     return nextState;
+        case RECEIVE_POST:
+            if (action.comments) {
+                Object.values(action.comments).forEach(comment => nextState[comment.id] = comment)
+                return nextState;
+            };
+            return state;
         // case REMOVE_POST:
         //     delete nextState[action.postId]
         //     return nextState;
