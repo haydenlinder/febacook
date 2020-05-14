@@ -3,6 +3,8 @@
 
 Febacook is a Facebook clone that allows users to create accounts, make friends, and share, like, and comment on ideas and photos. 
 
+![Febacook](febacook.png)
+
 # Technologies Used
 This single-page app uses a Ruby on Rails backend API to serve a React-Redux frontend. Photos are uploaded to Amazon S3 via Rails' Active Storage.
 
