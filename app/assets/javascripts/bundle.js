@@ -2433,7 +2433,7 @@ var EditProfile = /*#__PURE__*/function (_React$Component) {
       }, "Edit Bio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
         className: "login"
-      }, "save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "save")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         cols: "30",
         rows: "10",
         onChange: function onChange(e) {
@@ -2746,6 +2746,11 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "update-cover-container",
         onClick: function onClick(e) {
           e.stopPropagation();
+
+          _this8.setState({
+            type: 'cover'
+          });
+
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('update-photo-modal');
           Object(_util_ui_util__WEBPACK_IMPORTED_MODULE_6__["openModal"])('background-modal');
         }
@@ -4499,10 +4504,14 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      var users = Object.values(action.users);
+      if (action.users) {
+        var users = Object.values(action.users);
 
-      for (var i = 0; i < users.length; i++) {
-        nextState[users[i].username] = users[i];
+        for (var i = 0; i < users.length; i++) {
+          nextState[users[i].username] = users[i];
+        }
+      } else {
+        nextState[action.user.username] = action.user;
       }
 
       return nextState;

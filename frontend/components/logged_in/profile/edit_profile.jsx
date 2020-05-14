@@ -93,7 +93,7 @@ class EditProfile extends React.Component {
                     </button>
                 </div>
 
-                <input
+                <textarea
                     cols="30" rows="10"
                     onChange={(e) => {
                         this.setState({bio: e.target.value})

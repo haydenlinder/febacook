@@ -173,6 +173,7 @@ class Profile extends React.Component{
                         className="update-cover-container"
                         onClick={(e) => {
                             e.stopPropagation();
+                            this.setState({ type: 'cover' })
                             openModal('update-photo-modal')
                             openModal('background-modal')
                         }}

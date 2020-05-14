@@ -6,9 +6,13 @@ const usersReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            let users = Object.values(action.users)
-            for (let i = 0; i < users.length; i++) {
-                nextState[users[i].username] = users[i]
+            if (action.users) {
+                let users = Object.values(action.users)
+                for (let i = 0; i < users.length; i++) {
+                    nextState[users[i].username] = users[i]
+                }
+            } else {
+                nextState[action.user.username] = action.user
             }
             return nextState;
         case RECEIVE_USERS:
