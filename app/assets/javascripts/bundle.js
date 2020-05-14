@@ -2391,7 +2391,7 @@ var EditProfile = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover-photo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "cover-photo-picture not-resized",
+        className: "cover-photo-picture",
         src: this.props.user.coverPhotoUrl,
         alt: ""
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2531,7 +2531,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       type: 'profile',
       right: 'timeline',
       user: '',
-      bio: props.user.bio,
+      bio: props.user ? props.user.bio : "",
       edit_bio: false
     };
     return _this;
@@ -2739,7 +2739,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover-photo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "cover-photo-picture not-resized",
+        className: "cover-photo-picture",
         src: this.props.user.coverPhotoUrl,
         alt: ""
       })), ownProfile ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

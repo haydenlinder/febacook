@@ -50,7 +50,7 @@ class EditProfile extends React.Component {
                 </div> */}
                 <div className="profile-header-container">
                     <div className="cover-photo">
-                        <img className="cover-photo-picture not-resized" src={this.props.user.coverPhotoUrl} alt=""/>
+                        <img className="cover-photo-picture" src={this.props.user.coverPhotoUrl} alt=""/>
                     </div>
                     <div 
                         className="update-cover-container"

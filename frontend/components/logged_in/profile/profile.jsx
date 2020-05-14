@@ -20,7 +20,7 @@ class Profile extends React.Component{
             type: 'profile',
             right: 'timeline',
             user: '',
-            bio: props.user.bio,
+            bio: props.user ? props.user.bio : "",
             edit_bio: false
         }
     }
@@ -166,7 +166,7 @@ class Profile extends React.Component{
                 />
                 <div id="top" className="profile-header-container">
                     <div className="cover-photo">
-                        <img className="cover-photo-picture not-resized" src={this.props.user.coverPhotoUrl} alt=""/>
+                        <img className="cover-photo-picture" src={this.props.user.coverPhotoUrl} alt=""/>
                     </div>
                     {ownProfile ?
                     <div 
