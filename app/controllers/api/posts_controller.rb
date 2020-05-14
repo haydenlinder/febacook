@@ -1,6 +1,9 @@
 class Api::PostsController < ApplicationController
   def create
-    @post = Post.new(post_params)
+    new_params = post_params
+    new_params.delete(:signed_ids)
+
+    @post = Post.new(new_params)
     if @post.save
       render :show
     else
